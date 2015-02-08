@@ -1,6 +1,20 @@
 BlocklyDuino
 =======================
 
+1.1 2015/02/07
+------------------
+code name: Meccano
+
+Feature: 
+
+Change:
+* update Blockly to latest (two year gap)
+* enable frameless code editor (Chrome now works locally)
+
+Fix:
+
+Credit: fraser
+
 1.0.1 2013/
 ------------------
 code name:

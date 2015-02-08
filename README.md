@@ -2,7 +2,7 @@
 
 BlocklyDuino is a **web-based visual programming editor for [Arduino](http://www.arduino.cc/)**.
 
-BlocklyDuino is based on [Blockly](http://code.google.com/p/blockly/), the web-based, graphical programming editor. Provide static type language blocks and code generators for arduino programming.
+BlocklyDuino is based on [Blockly](https://developers.google.com/blockly/), the web-based, graphical programming editor. Provide static type language blocks and code generators for arduino programming.
 
 BlocklyDuino also support [Grove](http://www.seeedstudio.com/wiki/GROVE_System) blocks to easily get started with microcontroller-based experimentation and learning.
 
@@ -34,7 +34,7 @@ The preffered way is to put the BlocklyDuino/web folder into a web server and op
 
 ### Usage (3 Steps)
 
-1. Open browser to BlocklyDuino, Drag and Drop blocks to make arduino program. 
+1. Open browser to BlocklyDuino, Drag and Drop blocks to make arduino program.
 2. Select 'Arduino' tab to copy source code to Arduino IDE
 3. press 'upload' button to burn the code into arduino
 
@@ -45,7 +45,7 @@ Check changelog [here](https://github.com/gasolin/BlocklyDuino/blob/master/CHANG
 ### Authors and Contributors
 Fred Lin (@gasolin) .
 
-Thanks Neil Fraser, Q.Neutron from Blockly http://code.google.com/p/blockly/
+Thanks Neil Fraser, Q.Neutron from Blockly https://developers.google.com/blockly/
 Thanks Arduino and Seeeduino guys for Arduino and Grove blocks.
 
 The project is also inspired by [arduiblock](https://github.com/taweili/ardublock) and [modkit](http://www.modk.it/)
