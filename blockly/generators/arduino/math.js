@@ -70,5 +70,5 @@ Blockly.Arduino['math_random_max_min'] = function(block) {
   var argument1 = Blockly.Arduino.valueToCode(block, 'MIN',
                                               Blockly.Arduino.ORDER_ATOMIC) || '0';
   var code = 'random(' + argument0 + ', ' + argument1 + ')';
-  return code;
+  return [code, Blockly.Arduino.ORDER_NONE];
 };
