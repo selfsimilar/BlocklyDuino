@@ -7,7 +7,23 @@ goog.provide('Blockly.Msg.ja');
 goog.require('Blockly.Msg');
 
 Blockly.Msg.ADD_COMMENT = "コメントを追加";
+Blockly.Msg.ARDUINO = "Arduino";
 Blockly.Msg.AUTH = "Please authorize this app to enable your work to be saved and to allow it to be shared by you.";  // untranslated
+Blockly.Msg.BLOCKS = "ブロック";
+Blockly.Msg.CATEGORY_COMMUNICATION = "通信";
+Blockly.Msg.CATEGORY_CONTROL = "制御";
+Blockly.Msg.CATEGORY_FUNCTIONS = "サブルーチン";
+Blockly.Msg.CATEGORY_GROVE = "Grove";
+Blockly.Msg.CATEGORY_GROVE_ANALOG = "Grove アナログ";
+Blockly.Msg.CATEGORY_GROVE_LCD = "Grove LCD";
+Blockly.Msg.CATEGORY_GROVE_MOTOR = "Grove モーター";
+Blockly.Msg.CATEGORY_INOUT = "IOピン制御";
+Blockly.Msg.CATEGORY_LOGIC = "演算";
+Blockly.Msg.CATEGORY_MATH = "数学";
+Blockly.Msg.CATEGORY_SERVO = "サーボ";
+Blockly.Msg.CATEGORY_TEXT = "テキスト";
+Blockly.Msg.CATEGORY_TIME = "時間";
+Blockly.Msg.CATEGORY_VARIABLES = "変数";
 Blockly.Msg.CHANGE_VALUE_TITLE = "値を変更します。";
 Blockly.Msg.CHAT = "Chat with your collaborator by typing in this box!";  // untranslated
 Blockly.Msg.COLLAPSE_ALL = "ブロックを折りたたむ";
@@ -29,6 +45,18 @@ Blockly.Msg.COLOUR_RGB_HELPURL = "http://www.december.com/html/spec/colorper.htm
 Blockly.Msg.COLOUR_RGB_RED = "赤";
 Blockly.Msg.COLOUR_RGB_TITLE = "カラーと";
 Blockly.Msg.COLOUR_RGB_TOOLTIP = "赤、緑、および青の指定された量で色を作成します。すべての値は 0 ～ 100 の間でなければなりません。";
+Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_APPENDTEXT = "シリアルデータの確認";
+Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_HELPURL = "hhttp://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3214";
+Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_TOOLTIP = "シリアルポートに何バイトのデータが到着しているかを返します。";
+Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_APPENDTEXT = "シリアル書き出し（改行付き）";
+Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_HELPURL = "hhttp://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3364";
+Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_TOOLTIP = "P人が読むことのできる形式(ASCIIテキスト)でデータを改行付きでシリアルポートへ出力します。";
+Blockly.Msg.COMMUNICATION_SERIAL_PRINT_APPENDTEXT = "シリアル書き出し";
+Blockly.Msg.COMMUNICATION_SERIAL_PRINT_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3288";
+Blockly.Msg.COMMUNICATION_SERIAL_PRINT_TOOLTIP = "人が読むことのできる形式(ASCIIテキスト)でデータをシリアルポートへ出力します。";
+Blockly.Msg.COMMUNICATION_SERIAL_READ_APPENDTEXT = "シリアル読み込み";
+Blockly.Msg.COMMUNICATION_SERIAL_READ_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3248";
+Blockly.Msg.COMMUNICATION_SERIAL_READ_TOOLTIP = "受信データを読み込みます。 ";
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "ループから抜け出す";
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "ループの次の反復処理を続行します。";
@@ -43,7 +71,7 @@ Blockly.Msg.CONTROLS_FOREACH_TOOLTIP = "リストの各項目に対して変数 
 Blockly.Msg.CONTROLS_FOR_HELPURL = "https://github.com/google/blockly/wiki/Loops#count-with";  // untranslated
 Blockly.Msg.CONTROLS_FOR_INPUT_FROM_TO = "from %1 to %2";  // untranslated
 Blockly.Msg.CONTROLS_FOR_INPUT_FROM_TO_BY = "%1 から%2、 %3 で";
-Blockly.Msg.CONTROLS_FOR_INPUT_WITH = "で、カウントします。";
+Blockly.Msg.CONTROLS_FOR_INPUT_WITH = "〜から〜まで1づつ増やす";
 Blockly.Msg.CONTROLS_FOR_TOOLTIP = "変数 %1は、指定した間隔ごとのカウントを開始番号から 終了番号まで、値をとり、指定したブロックを行う必要があります。";
 Blockly.Msg.CONTROLS_IF_ELSEIF_TOOLTIP = "場合に条件にブロック追加。";
 Blockly.Msg.CONTROLS_IF_ELSE_TOOLTIP = "Ifブロックに、すべてをキャッチする条件を追加。";
@@ -57,19 +85,20 @@ Blockly.Msg.CONTROLS_IF_TOOLTIP_2 = "値が true 場合は、ステートメン�
 Blockly.Msg.CONTROLS_IF_TOOLTIP_3 = "最初の値が true 場合は、ステートメントの最初のブロックを行います。それ以外の場合は、2 番目の値が true の場合、ステートメントの 2 番目のブロックをします。";
 Blockly.Msg.CONTROLS_IF_TOOLTIP_4 = "最初の値が true 場合は、ステートメントの最初のブロックを行います。2 番目の値が true の場合は、ステートメントの 2 番目のブロックを行います。それ以外の場合は最後のブロックのステートメントを行います。";
 Blockly.Msg.CONTROLS_REPEAT_HELPURL = "https://ja.wikipedia.org/wiki/for文";
-Blockly.Msg.CONTROLS_REPEAT_INPUT_DO = "してください";
+Blockly.Msg.CONTROLS_REPEAT_INPUT_DO = "なら";
 Blockly.Msg.CONTROLS_REPEAT_TITLE = "%1 回、繰り返します";
 Blockly.Msg.CONTROLS_REPEAT_TITLE_REPEAT = "繰り返し";
 Blockly.Msg.CONTROLS_REPEAT_TITLE_TIMES = "回";
 Blockly.Msg.CONTROLS_REPEAT_TOOLTIP = "いくつかのステートメントを数回行います。";
 Blockly.Msg.CONTROLS_WHILEUNTIL_HELPURL = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
-Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_UNTIL = "までを繰り返します";
-Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_WHILE = "つつその間、繰り返す4";
+Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_UNTIL = "〜まで繰り返す";
+Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_WHILE = "〜の間、繰り返す";
 Blockly.Msg.CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL = "値は false のあいだ、いくつかのステートメントを行います。";
 Blockly.Msg.CONTROLS_WHILEUNTIL_TOOLTIP_WHILE = "値は true のあいだ、いくつかのステートメントを行います。";
 Blockly.Msg.DELETE_BLOCK = "ブロックを消す";
 Blockly.Msg.DELETE_X_BLOCKS = "%1 個のブロックを消す";
 Blockly.Msg.DISABLE_BLOCK = "ブロックを無効にします。";
+Blockly.Msg.DISCARD = "データ消去";
 Blockly.Msg.DUPLICATE_BLOCK = "複製";
 Blockly.Msg.ENABLE_BLOCK = "ブロックを有効にします。";
 Blockly.Msg.EXPAND_ALL = "ブロックを展開します。";
@@ -77,6 +106,20 @@ Blockly.Msg.EXPAND_BLOCK = "ブロックを展開します。";
 Blockly.Msg.EXTERNAL_INPUTS = "外部入力";
 Blockly.Msg.HELP = "ヘルプ";
 Blockly.Msg.INLINE_INPUTS = "インライン入力";
+Blockly.Msg.INOUT_ANALOG_READ_APPENDTEXT = "アナログ入力 ピン番号";
+Blockly.Msg.INOUT_ANALOG_READ_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2086";
+Blockly.Msg.INOUT_ANALOG_READ_TOOLTIP = "指定したアナログピンから値を読み取ります";
+Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_PIN = "アナログ出力 ピン番号";
+Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_VALUE = "値";
+Blockly.Msg.INOUT_ANALOG_WRITE_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2135";
+Blockly.Msg.INOUT_ANALOG_WRITE_TOOLTIP = "指定したピンからアナログ値(PWM波)を出力します。";
+Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT = "デジタル入力 ピン番号";
+Blockly.Msg.INOUT_DIGITAL_READ_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2048";
+Blockly.Msg.INOUT_DIGITAL_READ_TOOLTIP = "指定したピンの値を読み取ります";
+Blockly.Msg.INOUT_DIGITAL_WRITE_APPENDTEXT_PIN = "デジタル出力 ピン番号";
+Blockly.Msg.INOUT_DIGITAL_WRITE_APPENDTEXT_STAT = "状態";
+Blockly.Msg.INOUT_DIGITAL_WRITE_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2025";
+Blockly.Msg.INOUT_DIGITAL_WRITE_TOOLTIP = "HIGHまたはLOWを、指定したピンに出力します。";
 Blockly.Msg.LISTS_CREATE_EMPTY_HELPURL = "https://en.wikipedia.org/wiki/Linked_list#Empty_lists";
 Blockly.Msg.LISTS_CREATE_EMPTY_TITLE = "空のリストを作成します。";
 Blockly.Msg.LISTS_CREATE_EMPTY_TOOLTIP = "長さゼロ、データ レコード空のリストを返します";
@@ -153,6 +196,7 @@ Blockly.Msg.LISTS_SPLIT_TOOLTIP_JOIN = "Join a list of texts into one text, sepa
 Blockly.Msg.LISTS_SPLIT_TOOLTIP_SPLIT = "Split text into a list of texts, breaking at each delimiter.";  // untranslated
 Blockly.Msg.LISTS_SPLIT_WITH_DELIMITER = "with delimiter";  // untranslated
 Blockly.Msg.LISTS_TOOLTIP = "リストが空の場合は、true を返します。";
+Blockly.Msg.LOAD_XML = "XMLの読み込み";
 Blockly.Msg.LOGIC_BOOLEAN_FALSE = "false";
 Blockly.Msg.LOGIC_BOOLEAN_HELPURL = "https://github.com/google/blockly/wiki/Logic#values";  // untranslated
 Blockly.Msg.LOGIC_BOOLEAN_TOOLTIP = "True または false を返します。";
@@ -165,14 +209,14 @@ Blockly.Msg.LOGIC_COMPARE_TOOLTIP_LT = "最初の入力が 2 番目の入力よ�
 Blockly.Msg.LOGIC_COMPARE_TOOLTIP_LTE = "もし、最初の入力が二つ目入力より少ないか、おなじであったらTRUEをかえしてください";
 Blockly.Msg.LOGIC_COMPARE_TOOLTIP_NEQ = "両方の入力が互いに等しくない場合に true を返します。";
 Blockly.Msg.LOGIC_NEGATE_HELPURL = "https://ja.wikipedia.org/wiki/否定";
-Blockly.Msg.LOGIC_NEGATE_TITLE = "%1 ではないです。";
+Blockly.Msg.LOGIC_NEGATE_TITLE = "%1 の反対";
 Blockly.Msg.LOGIC_NEGATE_TOOLTIP = "入力が false の場合は、true を返します。入力が true の場合は false を返します。";
 Blockly.Msg.LOGIC_NULL = "null";
 Blockly.Msg.LOGIC_NULL_HELPURL = "https://en.wikipedia.org/wiki/Nullable_type";
 Blockly.Msg.LOGIC_NULL_TOOLTIP = "Null を返します。";
-Blockly.Msg.LOGIC_OPERATION_AND = "そして";
+Blockly.Msg.LOGIC_OPERATION_AND = "==";
 Blockly.Msg.LOGIC_OPERATION_HELPURL = "https://github.com/google/blockly/wiki/Logic#logical-operations";  // untranslated
-Blockly.Msg.LOGIC_OPERATION_OR = "または";
+Blockly.Msg.LOGIC_OPERATION_OR = "!=";
 Blockly.Msg.LOGIC_OPERATION_TOOLTIP_AND = "両方の入力がおんなじ場わいわtrue を返します。";
 Blockly.Msg.LOGIC_OPERATION_TOOLTIP_OR = "最低少なくとも 1 つの入力が true の場合は true を返します。";
 Blockly.Msg.LOGIC_TERNARY_CONDITION = "テスト";
@@ -198,7 +242,7 @@ Blockly.Msg.MATH_CONSTRAIN_TITLE = "制限%1下リミット%2上限リミット%
 Blockly.Msg.MATH_CONSTRAIN_TOOLTIP = "値を、上限 x と下限 y のあいだに制限んする（上限と下限が、x と  y　とに同じ場合わ、上限の値は　x, 下限の値はy）。";
 Blockly.Msg.MATH_DIVISION_SYMBOL = "÷";
 Blockly.Msg.MATH_IS_DIVISIBLE_BY = "割り切れる";
-Blockly.Msg.MATH_IS_EVEN = "わ偶数";
+Blockly.Msg.MATH_IS_EVEN = "は偶数";
 Blockly.Msg.MATH_IS_NEGATIVE = "負の値";
 Blockly.Msg.MATH_IS_ODD = "奇数です。";
 Blockly.Msg.MATH_IS_POSITIVE = "正の値";
@@ -296,6 +340,7 @@ Blockly.Msg.PROCEDURES_MUTATORCONTAINER_TOOLTIP = "Add, remove, or reorder input
 Blockly.Msg.REMOVE_COMMENT = "コメントを削除します。";
 Blockly.Msg.RENAME_VARIABLE = "変数の名前を変更.";
 Blockly.Msg.RENAME_VARIABLE_TITLE = "%1の変数すべてを名前変更します。";
+Blockly.Msg.SAVE_XML = "XMLの保存";
 Blockly.Msg.TEXT_APPEND_APPENDTEXT = "テキストを追加します。";
 Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 Blockly.Msg.TEXT_APPEND_TO = "宛先";
@@ -357,6 +402,18 @@ Blockly.Msg.TEXT_TRIM_OPERATOR_BOTH = "両端のスペースを取り除く";
 Blockly.Msg.TEXT_TRIM_OPERATOR_LEFT = "左端のスペースを取り除く";
 Blockly.Msg.TEXT_TRIM_OPERATOR_RIGHT = "右端のスペースを取り除く";
 Blockly.Msg.TEXT_TRIM_TOOLTIP = "スペースを 1 つまたは両方の端から削除したのち、テキストのコピーを返します。";
+Blockly.Msg.TIMES_DELAYMICROSECONDS_APPENDTEXT = "マイクロ秒待つ";
+Blockly.Msg.TIMES_DELAYMICROSECONDS_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2595";
+Blockly.Msg.TIMES_DELAYMICROSECONDS_TOOLTIP = "プログラムを指定した時間だけ一時停止します。";
+Blockly.Msg.TIMES_DELAY_APPENDTEXT = "ミリ秒待つ";
+Blockly.Msg.TIMES_DELAY_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2564";
+Blockly.Msg.TIMES_DELAY_TOOLTIP = "プログラムを指定した時間だけ止めます。";
+Blockly.Msg.TIMES_MICROS_APPENDTEXT = "時間を測る（マイクロ秒）";
+Blockly.Msg.TIMES_MICROS_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2531";
+Blockly.Msg.TIMES_MICROS_TOOLTIP = "Arduinoボードがプログラムの実行を開始した時から現在までの時間をマイクロ秒単位で返します。";
+Blockly.Msg.TIMES_MILLIS_APPENDTEXT = "時間を測る（ミリ秒）";
+Blockly.Msg.TIMES_MILLIS_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2500";
+Blockly.Msg.TIMES_MILLIS_TOOLTIP = "Arduinoボードがプログラムの実行を開始した時から現在までの時間をミリ秒単位で返します。";
 Blockly.Msg.TODAY = "Today";  // untranslated
 Blockly.Msg.VARIABLES_DEFAULT_NAME = "項目";
 Blockly.Msg.VARIABLES_GET_CREATE_SET = "'セット%1を作成します。";
@@ -369,6 +426,7 @@ Blockly.Msg.VARIABLES_SET_HELPURL = "https://github.com/google/blockly/wiki/Vari
 Blockly.Msg.VARIABLES_SET_TAIL = "宛先";
 Blockly.Msg.VARIABLES_SET_TITLE = "セット";
 Blockly.Msg.VARIABLES_SET_TOOLTIP = "この入力を変数と等しくなるように設定します。";
+Blockly.Msg.XML = "XML";
 Blockly.Msg.PROCEDURES_DEFRETURN_TITLE = Blockly.Msg.PROCEDURES_DEFNORETURN_TITLE;
 Blockly.Msg.LISTS_GET_SUBLIST_INPUT_IN_LIST = Blockly.Msg.LISTS_INLIST;
 Blockly.Msg.LISTS_SET_INDEX_INPUT_IN_LIST = Blockly.Msg.LISTS_INLIST;

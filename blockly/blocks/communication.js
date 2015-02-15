@@ -33,48 +33,48 @@ goog.require('Blockly.Blocks');
 Blockly.Blocks.communication.HUE = 205;
 
 Blockly.Blocks['serial_print'] = {
-  helpUrl: 'http://www.arduino.cc/en/Serial/Print',
   init: function() {
+    this.setHelpUrl(Blockly.Msg.COMMUNICATION_SERIAL_PRINT_HELPURL);
     this.setColour(Blockly.Blocks.communication.HUE);
     this.appendValueInput("CONTENT", 'String')
-    .appendField("Serial Print");
+    .appendField(Blockly.Msg.COMMUNICATION_SERIAL_PRINT_APPENDTEXT);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip('Prints data to the console/serial port as human-readable ASCII text.');
+    this.setTooltip(Blockly.Msg.COMMUNICATION_SERIAL_PRINT_TOOLTIP);
   }
 };
 
 Blockly.Blocks['serial_read'] = {
   init: function() {
-    this.setHelpUrl('http://www.arduino.cc/en/Serial/Read');
+    this.setHelpUrl(Blockly.Msg.COMMUNICATION_SERIAL_READ_HELPURL);
     this.setColour(Blockly.Blocks.communication.HUE);
     this.appendDummyInput()
-    .appendField("Serial Read");
+    .appendField(Blockly.Msg.COMMUNICATION_SERIAL_READ_APPENDTEXT);
     this.setOutput(true,"byte");
-    this.setTooltip('the first byte of incoming serial data available (or -1 if no data is available)');
+    this.setTooltip(Blockly.Msg.COMMUNICATION_SERIAL_READ_TOOLTIP);
   }
 };
 
 Blockly.Blocks['serial_available'] = {
   init: function() {
-    this.setHelpUrl('http://arduino.cc/en/Serial/available');
+    this.setHelpUrl(Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_HELPURL);
     this.setColour(Blockly.Blocks.communication.HUE);
     this.appendDummyInput()
-    .appendField("Serial Available");
+    .appendField(Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_APPENDTEXT);
     this.setOutput(true, "Number");
-    this.setTooltip('Get the number of bytes (characters) available for reading from the serial port.');
+    this.setTooltip(Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_TOOLTIP);
   }
 };
 
 Blockly.Blocks['serial_println'] = {
   init: function() {
-    this.setHelpUrl('http://arduino.cc/en/Serial/Println');
+    this.setHelpUrl(Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_HELPURL);
     this.setColour(Blockly.Blocks.communication.HUE);
     this.appendValueInput("Val")
     .setCheck("String")
-    .appendField("Serial Println");
+    .appendField(Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_APPENDTEXT);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip('Prints data to the serial port as human-readable ASCII text followed by a carriage return character and a newline characte.');
+    this.setTooltip(Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_TOOLTIP);
   }
 };

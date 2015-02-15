@@ -35,52 +35,52 @@ Blockly.Blocks.times.HUE = 125;
 
 Blockly.Blocks['delay'] = {
   init: function() {
-    this.setHelpUrl('http://arduino.cc/en/Reference/delay');
+    this.setHelpUrl(Blockly.Msg.TIMES_DELAY_HELPURL);
     this.setColour(Blockly.Blocks.times.HUE);
     this.appendValueInput("DELAY_TIME")
     .setCheck("Number")
-    .appendField("delay");
+    .appendField(Blockly.Msg.TIMES_DELAY_APPENDTEXT);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip('Delay specific time');
-  }
-};
-
-Blockly.Blocks['micros'] = {
-  init: function() {
-    this.setHelpUrl('hhttp://arduino.cc/en/Reference/Micros');
-    this.setColour(Blockly.Blocks.times.HUE);
-    this.appendValueInput("DELAY_TIME")
-    .setCheck("Number")
-    .appendField("micros");
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip('Returns the number of microseconds since the Arduino board began running the current program. ');
+    this.setTooltip(Blockly.Msg.TIMES_DELAY_TOOLTIP);
   }
 };
 
 Blockly.Blocks['delayMicroseconds'] = {
   init: function() {
-    this.setHelpUrl('http://arduino.cc/en/Reference/DelayMicroseconds');
+    this.setHelpUrl(Blockly.Msg.TIMES_DELAYMICROSECONDS_HELPURL);
     this.setColour(Blockly.Blocks.times.HUE);
     this.appendValueInput("DELAY_TIME")
     .setCheck("Number")
-    .appendField("delayMicroseconds");
+    .appendField(Blockly.Msg.TIMES_DELAYMICROSECONDS_APPENDTEXT);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip('Pauses the program for the amount of time (in microseconds) specified as parameter.');
+    this.setTooltip(Blockly.Msg.TIMES_DELAYMICROSECONDS_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['micros'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TIMES_MICROS_HELPURL);
+    this.setColour(Blockly.Blocks.times.HUE);
+    this.appendValueInput("DELAY_TIME")
+    .setCheck("Number")
+    .appendField(Blockly.Msg.TIMES_MICROS_APPENDTEXT);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.TIMES_MICROS_TOOLTIP);
   }
 };
 
 Blockly.Blocks['millis'] = {
   init: function() {
-    this.setHelpUrl('hhttp://arduino.cc/en/Reference/Millis');
+    this.setHelpUrl(Blockly.Msg.TIMES_MILLIS_HELPURL);
     this.setColour(Blockly.Blocks.times.HUE);
     this.appendValueInput("DELAY_TIME")
     .setCheck("Number")
-    .appendField("millis");
+    .appendField(Blockly.Msg.TIMES_MILLIS_APPENDTEXT);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip('Returns the number of milliseconds since the Arduino board began running the current program.');
+    this.setTooltip(Blockly.Msg.TIMES_MILLIS_TOOLTIP);
   }
 };

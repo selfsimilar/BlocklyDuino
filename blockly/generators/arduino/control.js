@@ -78,7 +78,7 @@ Blockly.Arduino.controls_for = function() {
 Blockly.Arduino['controls_whileUntil'] = function(block) {
   // Do while/until loop.
   var until = block.getFieldValue('MODE') == 'UNTIL';
-  var argument0 = Blockly.Arduino.valueToCode(block, 'BOOL', until ? Blockly.Arduino.ORDER_LOGICAL_NOT : Blockly.Arduino.ORDER_NONE) || 'false';
+  var argument0 = Blockly.Arduino.valueToCode(block, 'BOOL', Blockly.Arduino.ORDER_NONE) || 'false';
   var branch = Blockly.Arduino.statementToCode(block, 'DO');
   branch = Blockly.Arduino.addLoopTrap(branch, block.id);
   if (until) {
