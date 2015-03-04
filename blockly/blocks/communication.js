@@ -70,7 +70,7 @@ Blockly.Blocks['serial_println'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_HELPURL);
     this.setColour(Blockly.Blocks.communication.HUE);
-    this.appendValueInput("Val")
+    this.appendValueInput("CONTENT")
     .setCheck("String")
     .appendField(Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_APPENDTEXT);
     this.setPreviousStatement(true);

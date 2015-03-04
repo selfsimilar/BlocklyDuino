@@ -18,6 +18,14 @@ h1 {
 }
 /* Tabs */
 
+#tab{
+  width: 100%;
+}
+
+#tabRow>tr {
+  height: 1em;
+}
+
 #tabRow>td {
   border: 1px solid #ccc;
 }
@@ -56,6 +64,8 @@ table {
   margin: 0;
   padding: 0;
   border: none;
+  height: 100%;
+  width: 100%;
 }
 
 td {
@@ -113,3 +123,108 @@ button:active {
 button:hover {
   box-shadow: 2px 2px 5px #888;
 }
+
+#content_area {
+  height: 99%;
+}
+
+#languageMenu {
+  position: absolute;
+  top: 10;
+  right: 20;
+}
+
+button#fakeload {
+  margin-right: 5px;
+}
+
+#textarea_arduino{
+  padding: 1px 1em;
+  height: 60%;
+  overflow: auto;
+  width: 100%;
+  background-color: rgba(8, 8, 8, 1);
+  color : rgba(29, 147, 47, 1);
+  font-size: 12px;
+  line-height: 12px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+#debug_arduino{
+  height: 40%;
+  border-width:2px;
+  border-color:black;
+  background-color: rgba(8, 8, 8, 1);
+  color : rgba(29, 147, 47, 1);
+  overflow: auto;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+
+}
+
+#serial_hud {
+  height: 85%;
+  overflow: auto;
+  background-color: rgba(8, 8, 8, 1);
+  color : rgba(29, 147, 47, 1);
+  font-size: 20px;
+  line-height: 20px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+#serial_monitor_content{
+  height: 100%;
+}
+
+#cb_cf_boards, #cb_cf_ports,#cb_cf_baud_rates {
+  border: 1px solid #CCC;
+  border-top-width: 1px;
+  border-right-width-value: 1px;
+  border-right-width-ltr-source: physical;
+  border-right-width-rtl-source: physical;
+  border-bottom-width: 1px;
+  border-left-width-value: 1px;
+  border-left-width-ltr-source: physical;
+  border-left-width-rtl-source: physical;
+  border-top-style: solid;
+  border-right-style-value: solid;
+  border-right-style-ltr-source: physical;
+  border-right-style-rtl-source: physical;
+  border-bottom-style: solid;
+  border-left-style-value: solid;
+  border-left-style-ltr-source: physical;
+  border-left-style-rtl-source: physical;
+  border-top-color: #CCC;
+  border-right-color-value: rgb(204, 204, 204);
+  border-right-color-ltr-source: physical;
+  border-right-color-rtl-source: physical;
+  border-bottom-color: #CCC;
+  border-left-color-value: rgb(204, 204, 204);
+  border-left-color-ltr-source: physical;
+  border-left-color-rtl-source: physical;
+  -moz-border-top-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  border-image-source: none;
+  border-image-slice: 100% 100% 100% 100%;
+  border-image-width: 1 1 1 1;
+  border-image-outset: 0 0 0 0;
+  border-image-repeat: stretch stretch;
+  background-color: rgba(242, 242, 242, 1);
+}
+
+#cb_cf_serial_monitor{
+  width: 100%;
+  height:100%;
+}
+
+#textarea_term {
+  border: none;
+}
+

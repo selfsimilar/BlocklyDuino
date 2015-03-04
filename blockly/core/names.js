@@ -91,8 +91,8 @@ Blockly.Names.prototype.getName = function(name, type) {
 Blockly.Names.prototype.getDistinctName = function(name, type) {
   var safeName = this.safeName_(name);
   var i = '';
-  while (this.dbReverse_[safeName + i] ||
-         (safeName + i) in this.reservedDict_) {
+  while (this.dbReverse_[Blockly.Names.PREFIX_ + safeName + i] ||
+         (Blockly.Names.PREFIX_ + safeName + i) in this.reservedDict_) {
     // Collision with existing name.  Create a unique name.
     i = i ? i + 1 : 2;
   }

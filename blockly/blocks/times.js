@@ -63,11 +63,9 @@ Blockly.Blocks['micros'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.TIMES_MICROS_HELPURL);
     this.setColour(Blockly.Blocks.times.HUE);
-    this.appendValueInput("DELAY_TIME")
-    .setCheck("Number")
+    this.appendDummyInput()
     .appendField(Blockly.Msg.TIMES_MICROS_APPENDTEXT);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
+    this.setOutput(true,"Number");
     this.setTooltip(Blockly.Msg.TIMES_MICROS_TOOLTIP);
   }
 };
@@ -76,11 +74,9 @@ Blockly.Blocks['millis'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.TIMES_MILLIS_HELPURL);
     this.setColour(Blockly.Blocks.times.HUE);
-    this.appendValueInput("DELAY_TIME")
-    .setCheck("Number")
+    this.appendDummyInput()
     .appendField(Blockly.Msg.TIMES_MILLIS_APPENDTEXT);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
+    this.setOutput(true,"Number");
     this.setTooltip(Blockly.Msg.TIMES_MILLIS_TOOLTIP);
   }
 };

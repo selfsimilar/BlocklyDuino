@@ -95,6 +95,7 @@ Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_UNTIL = "تکرار تا زمانی ک�
 Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_WHILE = "تکرار در حالی که";
 Blockly.Msg.CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL = "تا زمانی که یک مقدار ناصحیح است، چند عبارت را انجام بده.";
 Blockly.Msg.CONTROLS_WHILEUNTIL_TOOLTIP_WHILE = "تا زمانی که یک مقدار صحیح است، چند عبارت را انجام بده.";
+Blockly.Msg.COPY_BUTTON = "Clip Code";  // untranslated
 Blockly.Msg.DELETE_BLOCK = "حذف بلوک";
 Blockly.Msg.DELETE_X_BLOCKS = "حذف بلوک‌های %1";
 Blockly.Msg.DISABLE_BLOCK = "غیرفعال‌سازی بلوک";
@@ -249,6 +250,14 @@ Blockly.Msg.MATH_IS_POSITIVE = "مثبت است";
 Blockly.Msg.MATH_IS_PRIME = "عدد اول است";
 Blockly.Msg.MATH_IS_TOOLTIP = "بررسی می‌کند که آیا یک عدد زوج، فرد، اول، کامل، مثبت، منفی یا بخش‌پذیر عدد خاصی باشد را بررسی می‌کند. درست یا نادرست باز می‌گرداند.";
 Blockly.Msg.MATH_IS_WHOLE = "کامل است";
+Blockly.Msg.MATH_MAP_APPENDTEXT_FROMHIGH = "fromHigh";  // untranslated
+Blockly.Msg.MATH_MAP_APPENDTEXT_FROMLOW = "fromLow";  // untranslated
+Blockly.Msg.MATH_MAP_APPENDTEXT_MAP = "MAP";  // untranslated
+Blockly.Msg.MATH_MAP_APPENDTEXT_TOHIGH = "toHigh";  // untranslated
+Blockly.Msg.MATH_MAP_APPENDTEXT_TOLOW = "toLow";  // untranslated
+Blockly.Msg.MATH_MAP_APPENDTEXT_VALUE = "value";  // untranslated
+Blockly.Msg.MATH_MAP_HELPURL = "http://arduino.cc/en/Reference/map";  // untranslated
+Blockly.Msg.MATH_MAP_TOOLTIP = "Re-maps a number from one range to another. ";  // untranslated
 Blockly.Msg.MATH_MODULO_HELPURL = "https://fa.wikipedia.org/wiki/%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA_%D9%BE%DB%8C%D9%85%D8%A7%D9%86%D9%87";
 Blockly.Msg.MATH_MODULO_TITLE = "باقی‌ماندهٔ %1 + %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "باقی‌ماندهٔ تقسیم دو عدد را بر می‌گرداند.";
@@ -279,6 +288,11 @@ Blockly.Msg.MATH_RANDOM_FLOAT_TOOLTIP = "بازگرداندن کسری تصاد�
 Blockly.Msg.MATH_RANDOM_INT_HELPURL = "https://fa.wikipedia.org/wiki/%D8%AA%D9%88%D9%84%DB%8C%D8%AF_%D8%A7%D8%B9%D8%AF%D8%A7%D8%AF_%D8%AA%D8%B5%D8%A7%D8%AF%D9%81%DB%8C";
 Blockly.Msg.MATH_RANDOM_INT_TITLE = "عدد صحیح تصادفی بین %1 تا %2";
 Blockly.Msg.MATH_RANDOM_INT_TOOLTIP = "یک عدد تصادفی بین دو مقدار مشخص‌شده به صورت بسته باز می‌گرداند.";
+Blockly.Msg.MATH_RANDOM_MAX_MIN_APPENDTEXT_MAX = "Max";  // untranslated
+Blockly.Msg.MATH_RANDOM_MAX_MIN_APPENDTEXT_MIN = "Min";  // untranslated
+Blockly.Msg.MATH_RANDOM_MAX_MIN_APPENDTEXT_RANDOM = "random";  // untranslated
+Blockly.Msg.MATH_RANDOM_MAX_MIN_HELPURL = "http://arduino.cc/en/Reference/Random";  // untranslated
+Blockly.Msg.MATH_RANDOM_MAX_MIN_TOOLTIP = "The random function generates pseudo-random numbers.";  // untranslated
 Blockly.Msg.MATH_ROUND_HELPURL = "https://fa.wikipedia.org/wiki/%D8%B1%D9%88%DB%8C%D9%87_%28%D8%B9%D9%84%D9%88%D9%85_%D8%B1%D8%A7%DB%8C%D8%A7%D9%86%D9%87%29";
 Blockly.Msg.MATH_ROUND_OPERATOR_ROUND = "گردکردن";
 Blockly.Msg.MATH_ROUND_OPERATOR_ROUNDDOWN = "گرد به پایین";

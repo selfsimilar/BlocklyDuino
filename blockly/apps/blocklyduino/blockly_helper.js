@@ -169,6 +169,7 @@ function onSuccess() {
   }
 }
 
+/*
 function load_by_url(uri) {
   ajax = createAJAX();
   if (!ajax) {
@@ -183,3 +184,4 @@ function load_by_url(uri) {
 　　ajax.open ("GET", uri, true);
 　　ajax.send ("");
 }
+*/

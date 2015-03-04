@@ -109,6 +109,7 @@ Blockly.Variables.flyoutCategory = function(blocks, gaps, margin, workspace) {
   variableList.unshift(null);
   var defaultVariable = undefined;
 
+
   //add declareBlock into variables flyout //TOOD: add a flag to enable this block
   if (Blockly.Blocks['variables_declare']) {
     var block = Blockly.Block.obtain(workspace, 'variables_declare');
@@ -156,7 +157,7 @@ Blockly.Variables.generateUniqueName = function(workspace) {
   var newName = '';
   if (variableList.length) {
     var nameSuffix = 1;
-    var letters = 'ijkmnopqrstuvwxyzabcdefgh';  // No 'l'.
+    var letters = 'ijkmnopqrstuvwxyzabcdefgh';  // No '1'.
     var letterIndex = 0;
     var potName = letters.charAt(letterIndex);
     while (!newName) {

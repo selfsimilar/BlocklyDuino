@@ -105,7 +105,6 @@ Blockly.Arduino.init = function(workspace) {
     } else {
       Blockly.Arduino.variableDB_.reset();
     }
-
     var defvars = [];
     var variables = Blockly.Variables.allVariables(workspace);
     for (var x = 0; x < variables.length; x++) {

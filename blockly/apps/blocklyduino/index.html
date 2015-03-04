@@ -1,172 +1,29 @@
-<html manifest=node.manifest>
+<html>
+
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <title>BlocklyDuino</title>
   <script type="text/javascript" src="../../blockly_compressed.js"></script>
   <script type="text/javascript" src="../../blocks_compressed.js"></script>
   <script type="text/javascript" src="../../arduino_compressed.js"></script>
-  <script type="text/javascript" src="../../msg/js/en
-
-  .js"></script>
+  <!--script id="msg" type="text/javascript" src="../../msg/js/ja.js"></script-->
   <script type="text/javascript" src="Blob.js"></script>
   <script type="text/javascript" src="FileSaver.min.js"></script>
   <script type="text/javascript" src="blockly_helper.js"></script>
-  <script>
-    /**
- * List of tab names.
- * @private
- */
-    var TABS_ = ['blocks', 'arduino', 'xml'];
-
-    var selected = 'blocks';
-
-    /**
- * Switch the visible pane when a tab is clicked.
- * @param {string} clickedName Name of tab clicked.
- */
-    function tabClick(clickedName) {
-      // If the XML tab was open, save and render the content.
-      if (document.getElementById('tab_xml').className == 'tabon') {
-        var xmlTextarea = document.getElementById('content_xml');
-        var xmlText = xmlTextarea.value;
-        var xmlDom = null;
-        try {
-          xmlDom = Blockly.Xml.textToDom(xmlText);
-        } catch (e) {
-          var q =
-              window.confirm('Error parsing XML:\n' + e + '\n\nAbandon changes?');
-          if (!q) {
-            // Leave the user on the XML tab.
-            return;
-          }
-        }
-        if (xmlDom) {
-          Blockly.mainWorkspace.clear();
-          Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDom);
-        }
-      }
-
-      // Deselect all tabs and hide all panes.
-      for (var i = 0; i < TABS_.length; i++) {
-        var name = TABS_[i];
-        document.getElementById('tab_' + name).className = 'taboff';
-        document.getElementById('content_' + name).style.visibility = 'hidden';
-      }
-
-      // Select the active tab.
-      selected = clickedName;
-      document.getElementById('tab_' + clickedName).className = 'tabon';
-      // Show the selected pane.
-      document.getElementById('content_' + clickedName).style.visibility =
-        'visible';
-      renderContent();
-      Blockly.fireUiEvent(window, 'resize');
-    }
-
-    /**
- * Populate the currently selected pane with content generated from the blocks.
- */
-    function renderContent() {
-      var content = document.getElementById('content_' + selected);
-      // Initialize the pane.
-      if (content.id == 'content_blocks') {
-        // If the workspace was changed by the XML tab, Firefox will have performed
-        // an incomplete rendering due to Blockly being invisible.  Rerender.
-        Blockly.mainWorkspace.render();
-      } else if (content.id == 'content_xml') {
-        var xmlTextarea = document.getElementById('content_xml');
-        var xmlDom = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
-        var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
-        xmlTextarea.value = xmlText;
-        xmlTextarea.focus();
-        /*} else if (content.id == 'content_javascript') {
-    content.innerHTML = Blockly.JavaScript.workspaceToCode();
-  } else if (content.id == 'content_dart') {
-    content.innerHTML = Blockly.Dart.workspaceToCode();
-  } else if (content.id == 'content_python') {
-    content.innerHTML = Blockly.Python.workspaceToCode();*/
-      } else if (content.id == 'content_arduino') {
-        //content.innerHTML = Blockly.Arduino.workspaceToCode();
-        var arduinoTextarea = document.getElementById('content_arduino');
-        arduinoTextarea.value = Blockly.Arduino.workspaceToCode();
-        arduinoTextarea.focus();
-      }
-    }
-
-    /**
- * Compute the absolute coordinates and dimensions of an HTML element.
- * @param {!Element} element Element to match.
- * @return {!Object} Contains height, width, x, and y properties.
- * @private
- */
-    function getBBox_(element) {
-      var height = element.offsetHeight;
-      var width = element.offsetWidth;
-      var x = 0;
-      var y = 0;
-      do {
-        x += element.offsetLeft;
-        y += element.offsetTop;
-        element = element.offsetParent;
-      } while (element);
-      return {
-        height: height,
-        width: width,
-        x: x,
-        y: y
-      };
-    }
-
-    /**
- * Initialize Blockly.  Called on page load.
- */
-    function init() {
-      //window.onbeforeunload = function() {
-      //  return 'Leaving this page will result in the loss of your work.';
-      //};
-      var container = document.getElementById('content_area');
-      var onresize = function(e) {
-        var bBox = getBBox_(container);
-        for (var i = 0; i < TABS_.length; i++) {
-          var el = document.getElementById('content_' + TABS_[i]);
-          el.style.top = bBox.y + 'px';
-          el.style.left = bBox.x + 'px';
-          // Height and width need to be set, read back, then set again to
-          // compensate for scrollbars.
-          el.style.height = bBox.height + 'px';
-          el.style.height = (2 * bBox.height - el.offsetHeight) + 'px';
-          el.style.width = bBox.width + 'px';
-          el.style.width = (2 * bBox.width - el.offsetWidth) + 'px';
-        }
-        // Make the 'Blocks' tab line up with the toolbox.
-        if (Blockly.mainWorkspace.toolbox_.width) {
-          document.getElementById('tab_blocks').style.minWidth =
-            (Blockly.mainWorkspace.toolbox_.width - 38) + 'px';
-          // Account for the 19 pixel margin and on each side.
-        }
-      };
-      window.addEventListener('resize', onresize, false);
-
-      var toolbox = document.getElementById('toolbox');
-      Blockly.inject(document.getElementById('content_blocks'),
-                     {media: '../../media/',
-                      toolbox: toolbox});
-
-      auto_save_and_restore_blocks();
-
-      //load from url parameter (single param)
-      //http://stackoverflow.com/questions/2090551/parse-query-string-in-javascript
-      var dest = unescape(location.search.replace(/^.*\=/, '')).replace(/\+/g, " ");
-      if(dest){
-        load_by_url(dest);
-      }
-    }
-
-  </script>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="jquery.cookie.js"></script>
+  <script type="text/javascript" src="compilerflasher.js"></script>
+  <script type="text/javascript" src="init.js"></script>
+  <script type="text/javascript" src="ZeroClipboard.js"></script>
 </head>
-<body onload="init()">
-  <table height="100%" width="100%">
+
+<body>
+  <select id="languageMenu" onchange="change_lang(this)">
+    <option value="en">English</option>
+    <option value="ja">日本語</option>
+  </select>
+  <table>
     <tr>
       <td>
         <h1><a href="https://github.com/gasolin/BlocklyDuino/wiki">BlocklyDuino</a> &gt; web-based visual programming editor for arduino</h1>
@@ -174,65 +31,81 @@
     </tr>
     <tr>
       <td>
-        <table width="100%">
-          <tr id="tabRow" height="1em">
-            <td id="tab_blocks" class="tabon" onclick="tabClick('blocks')">Blocks</td>
+        <table id="tab">
+          <tr id="tabRow">
+            <td id="tab_blocks" class="tabon" onclick="tabClick('blocks')"></td>
             <td class="tabmin">&nbsp;</td>
-            <!--td id="tab_javascript" class="taboff" onclick="tabClick(this.id)">JavaScript</td>
-            <td class="tabmin">&nbsp;</td-->
-            <!--td id="tab_dart" class="taboff" onclick="tabClick(this.id)">Dart</td>
+            <td id="tab_arduino" class="taboff" onclick="tabClick('arduino')"></td>
             <td class="tabmin">&nbsp;</td>
-            <td id="tab_python" class="taboff" onclick="tabClick(this.id)">Python</td>
-            <td class="tabmin">&nbsp;</td-->
-            <td id="tab_arduino" class="taboff" onclick="tabClick('arduino')">Arduino</td>
+            <td id="tab_term" class="taboff" onclick="tabClick('term')">Console</td>
             <td class="tabmin">&nbsp;</td>
-            <td id="tab_xml" class="taboff" onclick="tabClick('xml')">XML</td>
+            <td id="tab_xml" class="taboff" onclick="tabClick('xml')"></td>
             <td class="tabmax">
-              <button onclick="discard()">Discard</button>
-              <button onclick="save()">Save XML</button>
-              <button id="fakeload">Load XML</button>
-              <input type="file" id="load" style="display: none;"/>
-              <!--button class="launch" onclick="runJS()">Run Program</button-->
+              <button id="copy-button" data-clipboard-target="textarea_arduino" data-clipboard-text="Clip Me!">Code Copy</button>
+              <button id="discard" onclick="discard()">Discard</button>
+              <button id="save" onclick="save()"></button>
+              <button id="fakeload"></button>
+              <input type="file" id="load" style="display: none;" />
             </td>
           </tr>
         </table>
       </td>
     </tr>
     <tr>
-      <td height="99%" id="content_area">
+      <td id="content_area">
       </td>
     </tr>
   </table>
   <div id="content_blocks" class="content"></div>
-  <textarea id="content_arduino" class="content" wrap="off"></textarea>
-  <textarea id="content_xml" class="content" wrap="off"></textarea>
+  <div id="content_arduino" class="content">
+    <select id="cb_cf_boards"></select>
+    <select id="cb_cf_ports"></select>
+    <select id="cb_cf_programmers"> </select>
+    <button id="cb_cf_verify_btn" class="btn btn-success">Verify code</button>
+    <button id="cb_cf_flash_btn" class="btn btn-success">Flash Arduino</button>
+    <textarea id="textarea_arduino"></textarea>
+    <p id="cb_cf_operation_output"></p>
+    <div id="debug_arduino"></div>
+  </div>
+  <div id="content_term" class="content">
+    <div id="cb_cf_band">
+      <select id="cb_cf_baud_rates"></select>
+      <button id="cb_cf_serial_monitor_connect">Serial Monitor connect</button>
+    </div>
+    <div id="cb_cf_serial_monitor"></div>
+    <div id="serial_hud"></div>
+  </div>
+  <!--div id="content_xml">
+<textarea id="textarea_xml" readonly></textarea>
+</div-->  <textarea id="content_xml" class="content" wrap="off"></textarea>
 
   <xml id="toolbox" style="display: none">
-    <category name="In/Out">
+    <category id="category_inout">
       <block type="inout_highlow"></block>
       <block type="inout_digital_write"></block>
       <block type="inout_digital_read"></block>
       <block type="inout_analog_write"></block>
       <block type="inout_analog_read"></block>
-      <block type="inout_buildin_led"></block>
+      <!--<block type="inout_buildin_led"></block>-->
     </category>
-    <category name="Communication">
+    <category id="category_communication">
       <block type="serial_available"></block>
       <block type="serial_print"></block>
       <block type="serial_println"></block>
       <block type="serial_read"></block>
     </category>
-    <category name="Servo">
+    <!--
+     <category id="category_servo">
       <block type="servo_move"></block>
       <block type="servo_read_degrees"></block>
     </category>
-    <category name="Grove Analog">
+    <category id="category_grove_analog">
       <block type="grove_rotary_angle"></block>
       <block type="grove_temporature_sensor"></block>
       <block type="grove_sound_sensor"></block>
       <block type="grove_thumb_joystick"></block>
     </category>
-    <category name="Grove">
+    <category id="category_grove">
       <block type="grove_led"></block>
       <block type="grove_button"></block>
       <block type="grove_relay"></block>
@@ -244,24 +117,25 @@
       <block type="grove_rgb_led_container"></block>
       <block type="grove_rgb_led_item"></block>
     </category>
-    <category name="Grove LCD">
+    <category id="category_grove_lcd">
       <block type="grove_serial_lcd_print"></block>
       <block type="grove_serial_lcd_power"></block>
       <block type="grove_serial_lcd_effect"></block>
       <block type="grove_ultrasonic_ranger"></block>
     </category>
-    <category name="Grove Motor">
+    <category id="category_grove_motor">
       <block type="grove_motor_shield"></block>
     </category>
+    -->
     <sep></sep>
-    <category name="Logic">
+    <category id="category_logic">
       <block type="controls_if"></block>
       <block type="logic_compare"></block>
       <block type="logic_operation"></block>
       <block type="logic_negate"></block>
       <block type="logic_null"></block>
     </category>
-    <category name="Control">
+    <category id="category_control">
       <block type="controls_for">
         <value name="FROM">
           <block type="math_number">
@@ -276,24 +150,29 @@
       </block>
       <block type="controls_whileUntil"></block>
     </category>
-    <category name="Time">
+    <category id="category_time">
       <block type="millis"></block>
       <block type="micros"></block>
       <block type="delay"></block>
       <block type="delayMicroseconds"></block>
     </category>
-    <category name="Math">
-      <block type="base_map"></block>
+    <category id="category_math">
       <block type="math_number"></block>
       <block type="math_arithmetic"></block>
       <block type="math_random_max_min"></block>
+      <block type="math_map"></block>
     </category>
-    <category name="Text">
+    <category id="category_text">
       <block type="text"></block>
     </category>
     <sep></sep>
-    <category name="Variables" custom="VARIABLE"></category>
-    <category name="Functions" custom="PROCEDURE"></category>
+    <!--category id="category_variables" custom="VARIABLE"-->
+    <category id="category_variables">
+      <block type="variables_set"></block>
+      <block type="variables_get"></block>
+    </category>
+    <category id="category_functions" custom="PROCEDURE"></category>
   </xml>
 </body>
+
 </html>

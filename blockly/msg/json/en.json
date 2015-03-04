@@ -385,6 +385,7 @@
   "BLOCKS": "Blocks",
   "ARDUINO": "Arduino",
   "XML": "XML",
+  "COPY_BUTTON": "Clip Code",
   "DISCARD": "discard",
   "SAVE_XML": "Save XML",
   "LOAD_XML": "Load XML",
@@ -425,6 +426,19 @@
   "TIMES_DELAYMICROSECONDS_TOOLTIP": "Pauses the program for the amount of time (in microseconds) specified as parameter.",
   "TIMES_MILLIS_HELPURL": "hhttp://arduino.cc/en/Reference/Millis",
   "TIMES_MILLIS_APPENDTEXT": "millis",
-  "TIMES_MILLIS_TOOLTIP": "Returns the number of milliseconds since the Arduino board began running the current program."
+  "TIMES_MILLIS_TOOLTIP": "Returns the number of milliseconds since the Arduino board began running the current program.",
+  "MATH_RANDOM_MAX_MIN_HELPURL": "http://arduino.cc/en/Reference/Random",
+  "MATH_RANDOM_MAX_MIN_APPENDTEXT_RANDOM": "random",
+  "MATH_RANDOM_MAX_MIN_APPENDTEXT_MAX": "Max",
+  "MATH_RANDOM_MAX_MIN_APPENDTEXT_MIN": "Min",
+  "MATH_RANDOM_MAX_MIN_TOOLTIP": "The random function generates pseudo-random numbers.",
+  "MATH_MAP_HELPURL": "http://arduino.cc/en/Reference/map",
+  "MATH_MAP_APPENDTEXT_MAP": "MAP",
+  "MATH_MAP_APPENDTEXT_VALUE": "value",
+  "MATH_MAP_APPENDTEXT_FROMLOW": "fromLow",
+  "MATH_MAP_APPENDTEXT_FROMHIGH": "fromHigh",
+  "MATH_MAP_APPENDTEXT_TOLOW": "toLow",
+  "MATH_MAP_APPENDTEXT_TOHIGH": "toHigh",
+  "MATH_MAP_TOOLTIP": "Re-maps a number from one range to another. "
 
 }

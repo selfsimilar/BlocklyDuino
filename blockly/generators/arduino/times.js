@@ -35,19 +35,17 @@ Blockly.Arduino['delay'] = function() {
 };
 
 Blockly.Arduino['millis'] = function() {
-  var delay_time = Blockly.Arduino.valueToCode(this, 'DELAY_TIME', Blockly.Arduino.ORDER_ATOMIC) || '1000'
-  var code = 'millis(' + delay_time + ');\n';
+  var code = 'millis()';
   return code;
 };
 
 Blockly.Arduino['micros'] = function() {
-  var delay_time = Blockly.Arduino.valueToCode(this, 'DELAY_TIME', Blockly.Arduino.ORDER_ATOMIC) || '1000'
-  var code = 'micros(' + delay_time + ');\n';
-  return code;
+  var code = 'micros()';
+  return [code,Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['delayMicroseconds'] = function() {
   var delay_time = Blockly.Arduino.valueToCode(this, 'DELAY_TIME', Blockly.Arduino.ORDER_ATOMIC) || '1000'
   var code = 'delayMicroseconds(' + delay_time + ');\n';
-  return code;
+  return [code,Blockly.Arduino.ORDER_ATOMIC];
 };

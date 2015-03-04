@@ -72,3 +72,13 @@ Blockly.Arduino['math_random_max_min'] = function(block) {
   var code = 'random(' + argument0 + ', ' + argument1 + ')';
   return [code, Blockly.Arduino.ORDER_NONE];
 };
+
+Blockly.Arduino['math_map'] = function() {
+  var value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_NONE);
+  var fromlow = Blockly.Arduino.valueToCode(this, 'FROMLOW', Blockly.Arduino.ORDER_ATOMIC) || '0';
+  var fromhigh = Blockly.Arduino.valueToCode(this, 'FROMHIGH', Blockly.Arduino.ORDER_ATOMIC) || '1024';
+  var tolow = Blockly.Arduino.valueToCode(this, 'TOLOW', Blockly.Arduino.ORDER_ATOMIC) || '0';
+  var tohigh = Blockly.Arduino.valueToCode(this, 'TOHIGH', Blockly.Arduino.ORDER_ATOMIC) || '1024';
+  var code = 'map('+value+','+fromlow+','+fromhigh+','+tolow+','+tohigh+')';
+  return [code, Blockly.Arduino.ORDER_NONE];
+};

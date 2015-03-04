@@ -45,24 +45,6 @@ Blockly.Blocks['base_delay'] = {
   }
 };
 
-Blockly.Blocks['base_map'] = {
-  init: function() {
-    this.setHelpUrl('http://arduino.cc/en/Reference/map');
-    this.setColour(230);
-    this.appendValueInput("NUM", 'Number')
-        .appendField("Map ")
-        .setCheck('Number');
-    this.appendValueInput("DMAX", 'Number')
-        .appendField("value to [0-")
-        .setCheck('Number');
-    this.appendDummyInput()
-        .appendField("]");
-    this.setInputsInline(true);
-    this.setOutput(true);
-    this.setTooltip('Re-maps a number from [0-1024] to another.');
-  }
-};
-
 Blockly.Blocks['inout_buildin_led'] = {
    init: function() {
      this.setHelpUrl("http://arduino.cc/en/Reference/DigitalWrite");
