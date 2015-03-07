@@ -100,7 +100,7 @@ Blockly.Arduino.tone = function() {
   var value_duration = Blockly.Arduino.valueToCode(this, 'duration', Blockly.Arduino.ORDER_ATOMIC) || '1000';
   var code = 'tone(' + value_pin + ',' + value_freq +',' + value_duration + ');\n';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
+  return code;
 };
 
 /*

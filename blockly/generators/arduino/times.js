@@ -47,5 +47,5 @@ Blockly.Arduino['micros'] = function() {
 Blockly.Arduino['delayMicroseconds'] = function() {
   var delay_time = Blockly.Arduino.valueToCode(this, 'DELAY_TIME', Blockly.Arduino.ORDER_ATOMIC) || '1000'
   var code = 'delayMicroseconds(' + delay_time + ');\n';
-  return [code,Blockly.Arduino.ORDER_ATOMIC];
+  return code;
 };
