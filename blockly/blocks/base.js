@@ -87,18 +87,18 @@ Blockly.Blocks['inout_digital_read'] = {
 
 Blockly.Blocks['inout_analog_write'] = {
   init: function() {
-    this.setHelpUrl(Blockly.Msg.INOUT_DIGITAL_WRITE_HELPURL);
+    this.setHelpUrl(Blockly.Msg.INOUT_ANALOG_WRITE_HELPURL);
     this.setColour(230);
     this.appendDummyInput()
-    .appendField(Blockly.Msg.INOUT_DIGITAL_WRITE_APPENDTEXT_PIN)
-        .appendField(new Blockly.FieldDropdown(profile.default.analog), "PIN");
+      .appendField(Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_PIN)
+      .appendField(new Blockly.FieldDropdown(profile.default.analog), "PIN");
     this.appendValueInput("NUM", 'Number')
-    .appendField(Blockly.Msg.INOUT_DIGITAL_WRITE_APPENDTEXT_VALUE)
-        .setCheck('Number');
+      .appendField(Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_VALUE)
+      .setCheck('Number');
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip(Blockly.Msg.INOUT_DIGITAL_WRITE_TOOLTIP);
+    this.setTooltip(Blockly.Msg.INOUT_ANALOG_WRITE_TOOLTIP);
   }
 };
 
@@ -107,8 +107,8 @@ Blockly.Blocks['inout_analog_read'] = {
     this.setHelpUrl(Blockly.Msg.INOUT_ANALOG_READ_HELPURL);
     this.setColour(230);
     this.appendDummyInput()
-  .appendField(Blockly.Msg.INOUT_ANALOG_READ_APPENDTEXT)
-        .appendField(new Blockly.FieldDropdown(profile.default.analog), "PIN");
+      .appendField(Blockly.Msg.INOUT_ANALOG_READ_APPENDTEXT)
+      .appendField(new Blockly.FieldDropdown(profile.default.analog), "PIN");
     this.setOutput(true, 'Number');
   this.setTooltip(Blockly.Msg.INOUT_ANALOG_READ_TOOLTIP);
   }
@@ -122,6 +122,45 @@ Blockly.Blocks['inout_highlow'] = {
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"], ["LOW", "LOW"]]), 'BOOL')
     this.setOutput(true, 'Boolean');
+    this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['pulsein'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(230);
+    this.appendDummyInput()
+      .appendField("PulseIn Pin#")
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "pin");
+    this.appendDummyInput()
+      .appendField("Type")
+      .appendField(new Blockly.FieldDropdown([["HIGH", "high"], ["LOW", "low"]]), "type");
+    this.appendValueInput("timeout")
+      .setCheck("Number")
+      .appendField("TimeOut");
+    this.setInputsInline(true);
+    this.setOutput(true, "Number");
+    this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['tone'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(230);
+    this.appendDummyInput()
+      .appendField("Tone Pin#")
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "pin");
+    this.appendValueInput("freq")
+      .setCheck("Number")
+      .appendField("Frequency");
+    this.appendValueInput("duration")
+      .setCheck("Number")
+      .appendField("duration");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
     this.setTooltip('');
   }
 };

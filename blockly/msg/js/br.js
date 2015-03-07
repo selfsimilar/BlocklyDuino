@@ -19,6 +19,7 @@ Blockly.Msg.CATEGORY_GROVE_LCD = "Grove LCD";  // untranslated
 Blockly.Msg.CATEGORY_GROVE_MOTOR = "Grove Motor";  // untranslated
 Blockly.Msg.CATEGORY_INOUT = "In/Out";  // untranslated
 Blockly.Msg.CATEGORY_LOGIC = "Logic";  // untranslated
+Blockly.Msg.CATEGORY_LOOPS = "loops";  // untranslated
 Blockly.Msg.CATEGORY_MATH = "Math";  // untranslated
 Blockly.Msg.CATEGORY_SERVO = "Servo";  // untranslated
 Blockly.Msg.CATEGORY_TEXT = "Text";  // untranslated

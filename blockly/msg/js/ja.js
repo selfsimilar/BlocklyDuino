@@ -19,6 +19,7 @@ Blockly.Msg.CATEGORY_GROVE_LCD = "Grove LCD";
 Blockly.Msg.CATEGORY_GROVE_MOTOR = "Grove モーター";
 Blockly.Msg.CATEGORY_INOUT = "IOピン制御";
 Blockly.Msg.CATEGORY_LOGIC = "演算";
+Blockly.Msg.CATEGORY_LOOPS = "繰り返し";
 Blockly.Msg.CATEGORY_MATH = "算数";
 Blockly.Msg.CATEGORY_SERVO = "サーボ";
 Blockly.Msg.CATEGORY_TEXT = "テキスト";
@@ -48,7 +49,7 @@ Blockly.Msg.COLOUR_RGB_TOOLTIP = "赤、緑、および青の指定された量�
 Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_APPENDTEXT = "シリアルデータの確認";
 Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3214";
 Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_TOOLTIP = "シリアルポートに何バイトのデータが到着しているかを返します。";
-Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_APPENDTEXT = "シリアル書き出し（改行付き）";
+Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_APPENDTEXT = "シリアル書き出し（改行）";
 Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3364";
 Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_TOOLTIP = "P人が読むことのできる形式(ASCIIテキスト)でデータを改行付きでシリアルポートへ出力します。";
 Blockly.Msg.COMMUNICATION_SERIAL_PRINT_APPENDTEXT = "シリアル書き出し";

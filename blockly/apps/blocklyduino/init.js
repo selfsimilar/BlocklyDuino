@@ -175,8 +175,8 @@ function setCharacter() {
   */
   category = document.getElementById('category_logic');
   category.setAttribute("name", Blockly.Msg.CATEGORY_LOGIC);
-  category = document.getElementById('category_control');
-  category.setAttribute("name", Blockly.Msg.CATEGORY_CONTROL);
+  category = document.getElementById('category_loops');
+  category.setAttribute("name", Blockly.Msg.CATEGORY_LOOPS);
   category = document.getElementById('category_time');
   category.setAttribute("name", Blockly.Msg.CATEGORY_TIME);
   category = document.getElementById('category_math');
@@ -254,7 +254,7 @@ function setScript() {
   script.type = 'text/javascript';
   script.id = 'msg';
   var c = $.cookie("lang");
-  if(c != "") var param = c;
+  if(c) var param = c;
   else param = getParam();
   if (param == "ja") {
     script.src = "../../msg/js/ja.js";

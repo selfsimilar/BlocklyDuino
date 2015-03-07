@@ -86,7 +86,6 @@ var profile = {
 };
 //set default profile to arduino standard-compatible board
 profile["default"] = profile["arduino"];
-//alert(profile.default.digital[0]);
 
 /**
  * Initialise the database of variable names.

@@ -86,7 +86,8 @@
       <block type="inout_digital_read"></block>
       <block type="inout_analog_write"></block>
       <block type="inout_analog_read"></block>
-      <!--<block type="inout_buildin_led"></block>-->
+      <block type="pulsein"></block>
+      <block type="tone"></block>
     </category>
     <category id="category_communication">
       <block type="serial_available"></block>
@@ -133,9 +134,10 @@
       <block type="logic_compare"></block>
       <block type="logic_operation"></block>
       <block type="logic_negate"></block>
-      <block type="logic_null"></block>
+      <block type="logic_boolean"></block>
     </category>
-    <category id="category_control">
+    <category id="category_loops">
+      <block type="controls_repeat"></block>
       <block type="controls_for">
         <value name="FROM">
           <block type="math_number">
@@ -149,6 +151,7 @@
         </value>
       </block>
       <block type="controls_whileUntil"></block>
+      <block type="controls_flow_statements"></block>
     </category>
     <category id="category_time">
       <block type="millis"></block>
@@ -159,6 +162,9 @@
     <category id="category_math">
       <block type="math_number"></block>
       <block type="math_arithmetic"></block>
+      <block type="math_single"></block>
+      <block type="math_constrain"></block>
+      <block type="math_pow"></block>
       <block type="math_random_max_min"></block>
       <block type="math_map"></block>
     </category>

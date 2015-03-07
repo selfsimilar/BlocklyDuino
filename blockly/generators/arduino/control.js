@@ -86,3 +86,28 @@ Blockly.Arduino['controls_whileUntil'] = function(block) {
   }
   return 'while (' + argument0 + ') {\n' + branch + '}\n';
 };
+
+Blockly.Arduino['controls_repeat'] = function(block){
+  // Repeat n times (internal number).
+  var repeats = Number(block.getFieldValue('TIMES'));
+  var branch = Blockly.Arduino.statementToCode(block, 'DO');
+  branch = Blockly.Arduino.addLoopTrap(branch, block.id);
+  var loopVar = Blockly.Arduino.variableDB_.getDistinctName(
+  'count', Blockly.Variables.NAME_TYPE);
+  var code = 'for (int ' + loopVar + ' = 0; ' +
+  loopVar + ' < ' + repeats + '; ' +
+  loopVar + '++) {\n' +
+  branch + '}\n';
+  return code;
+};
+
+Blockly.Arduino['controls_flow_statements'] = function(block) {
+  // Flow statements: continue, break.
+  switch (block.getFieldValue('FLOW')) {
+    case 'BREAK':
+      return 'break;\n';
+    case 'CONTINUE':
+      return 'continue;\n';
+  }
+  throw 'Unknown flow statement.';
+};

@@ -377,6 +377,7 @@
   "CATEGORY_GROVE_MOTOR": "Grove Motor",
   "CATEGORY_LOGIC": "Logic",
   "CATEGORY_CONTROL": "Control",
+  "CATEGORY_LOOPS": "loops",
   "CATEGORY_TIME": "Time",
   "CATEGORY_MATH": "Math",
   "CATEGORY_TEXT": "Text",

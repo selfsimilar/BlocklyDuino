@@ -60,14 +60,14 @@ Blockly.Arduino.inout_analog_write = function() {
   var dropdown_pin = this.getFieldValue('PIN');
   //var dropdown_stat = this.getFieldValue('STAT');
   var value_num = Blockly.Arduino.valueToCode(this, 'NUM', Blockly.Arduino.ORDER_ATOMIC);
-  //Blockly.Arduino.setups_['setup_output'+dropdown_pin] = 'pinMode('+dropdown_pin+', OUTPUT);';
+  Blockly.Arduino.setups_['setup_output'+dropdown_pin] = 'pinMode('+dropdown_pin+', OUTPUT);';
   var code = 'analogWrite('+dropdown_pin+','+value_num+');\n';
   return code;
 };
 
 Blockly.Arduino.inout_analog_read = function() {
   var dropdown_pin = this.getFieldValue('PIN');
-  //Blockly.Arduino.setups_['setup_input_'+dropdown_pin] = 'pinMode('+dropdown_pin+', INPUT);';
+  Blockly.Arduino.setups_['setup_input_'+dropdown_pin] = 'pinMode('+dropdown_pin+', INPUT);';
   var code = 'analogRead('+dropdown_pin+')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -75,6 +75,31 @@ Blockly.Arduino.inout_analog_read = function() {
 Blockly.Arduino.inout_highlow = function() {
   // Boolean values HIGH and LOW.
   var code = (this.getFieldValue('BOOL') == 'HIGH') ? 'HIGH' : 'LOW';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.pulsein = function() {
+  var code;
+  var value_pin = this.getFieldValue('pin');
+  var value_timeout = Blockly.Arduino.valueToCode(this, 'timeout', Blockly.Arduino.ORDER_ATOMIC) || '-1';
+  var dropdown_type = (this.getFieldValue('type') == 'HIGH') ? 'HIGH' : 'LOW';
+  console.log(value_timeout);
+  if(value_timeout > 0){
+    code = 'pulseIn(' + value_pin + ',' + dropdown_type +',' + value_timeout + ')';
+  }else{
+    code = 'pulseIn(' + value_pin + ',' + dropdown_type + ')';
+  }
+  // TODO: Change ORDER_NONE to the correct strength.
+  Blockly.Arduino.setups_['setup_output_'+ value_pin] = 'pinMode('+value_pin+', INPUT);';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.tone = function() {
+  var value_pin = this.getFieldValue('pin');
+  var value_freq = Blockly.Arduino.valueToCode(this, 'freq', Blockly.Arduino.ORDER_ATOMIC) || '262';  //262 = C
+  var value_duration = Blockly.Arduino.valueToCode(this, 'duration', Blockly.Arduino.ORDER_ATOMIC) || '1000';
+  var code = 'tone(' + value_pin + ',' + value_freq +',' + value_duration + ');\n';
+  // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 

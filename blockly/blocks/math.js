@@ -89,14 +89,12 @@ Blockly.Blocks['math_single'] = {
    * @this Blockly.Block
    */
   init: function () {
-    var OPERATORS = [[Blockly.Msg.MATH_SINGLE_OP_ROOT, 'ROOT'],
-         [Blockly.Msg.MATH_SINGLE_OP_ABSOLUTE, 'ABS'],
-         ['-', 'NEG'],
-         ['ln', 'LN'],
-         ['log10', 'LOG10'],
-         ['e^', 'EXP'],
-         ['10^', 'POW10']];
     this.setHelpUrl(Blockly.Msg.MATH_SINGLE_HELPURL);
+    var OPERATORS = [[Blockly.Msg.MATH_SINGLE_OP_ABSOLUTE, 'ABS'],
+         [Blockly.Msg.MATH_SINGLE_OP_ROOT, 'ROOT'],
+         [Blockly.Msg.MATH_TRIG_SIN, 'SIN'],
+         [Blockly.Msg.MATH_TRIG_COS, 'COS'],
+         [Blockly.Msg.MATH_TRIG_TAN, 'TAN']];
     this.setColour(Blockly.Blocks.math.HUE);
     this.setOutput(true, 'Number');
     this.interpolateMsg('%1 %2', ['OP', new Blockly.FieldDropdown(OPERATORS)], ['NUM', 'Number', Blockly.ALIGN_RIGHT],
@@ -106,13 +104,11 @@ Blockly.Blocks['math_single'] = {
     this.setTooltip(function () {
       var mode = thisBlock.getFieldValue('OP');
       var TOOLTIPS = {
-        'ROOT': Blockly.Msg.MATH_SINGLE_TOOLTIP_ROOT,
         'ABS': Blockly.Msg.MATH_SINGLE_TOOLTIP_ABS,
-        'NEG': Blockly.Msg.MATH_SINGLE_TOOLTIP_NEG,
-        'LN': Blockly.Msg.MATH_SINGLE_TOOLTIP_LN,
-        'LOG10': Blockly.Msg.MATH_SINGLE_TOOLTIP_LOG10,
-        'EXP': Blockly.Msg.MATH_SINGLE_TOOLTIP_EXP,
-        'POW10': Blockly.Msg.MATH_SINGLE_TOOLTIP_POW10
+        'ROOT': Blockly.Msg.MATH_SINGLE_TOOLTIP_ROOT,
+        'SIN': Blockly.Msg.MATH_TRIG_TOOLTIP_SIN,
+        'COS': Blockly.Msg.MATH_TRIG_TOOLTIP_COS,
+        'TAN': Blockly.Msg.MATH_TRIG_TOOLTIP_TAN
       };
       return TOOLTIPS[mode];
     });
@@ -458,5 +454,21 @@ Blockly.Blocks['math_map'] = {
       .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_TOHIGH);
     this.setOutput(true, "Number");
     this.setTooltip(Blockly.Msg.MATH_MAP_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['math_pow'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.appendValueInput("pow")
+      .setCheck("Number")
+      .appendField("Pow base");
+    this.appendValueInput("exp")
+      .setCheck("Number")
+      .appendField("exponent");
+    this.setInputsInline(true);
+    this.setOutput(true);
+    this.setTooltip('');
   }
 };

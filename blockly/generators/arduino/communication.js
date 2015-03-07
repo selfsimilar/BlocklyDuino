@@ -66,3 +66,4 @@ Blockly.Arduino.serial_println = function() {
   var code = 'Serial.println('+content+');\n';
   return code;
 };
+
