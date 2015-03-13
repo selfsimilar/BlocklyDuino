@@ -32,8 +32,8 @@ goog.require('Blockly.Blocks');
 
 
 Blockly.Blocks['base_delay'] = {
+  helpUrl: 'http://arduino.cc/en/Reference/delay',
   init: function() {
-    this.setHelpUrl('http://arduino.cc/en/Reference/delay');
     this.setColour(120);
     this.appendValueInput("DELAY_TIME", 'Number')
         .appendField("Delay")
@@ -45,9 +45,27 @@ Blockly.Blocks['base_delay'] = {
   }
 };
 
+Blockly.Blocks['base_map'] = {
+  helpUrl: 'http://arduino.cc/en/Reference/map',
+  init: function() {
+    this.setColour(230);
+    this.appendValueInput("NUM", 'Number')
+        .appendField("Map ")
+        .setCheck('Number');
+    this.appendValueInput("DMAX", 'Number')
+        .appendField("value to [0-")
+        .setCheck('Number');
+    this.appendDummyInput()
+        .appendField("]");
+    this.setInputsInline(true);
+    this.setOutput(true);
+    this.setTooltip('Re-maps a number from [0-1024] to another.');
+  }
+};
+
 Blockly.Blocks['inout_buildin_led'] = {
+   helpUrl: 'http://arduino.cc/en/Reference/DigitalWrite',
    init: function() {
-     this.setHelpUrl("http://arduino.cc/en/Reference/DigitalWrite");
      this.setColour(190);
      this.appendDummyInput()
          .appendField("Build-in LED Stat")
@@ -59,8 +77,8 @@ Blockly.Blocks['inout_buildin_led'] = {
 };
 
 Blockly.Blocks['inout_digital_write'] = {
+  helpful: Blockly.Msg.INOUT_DIGITAL_WRITE_HELPURL,
   init: function() {
-    this.setHelpUrl(Blockly.Msg.INOUT_DIGITAL_WRITE_HELPURL);
     this.setColour(230);
     this.appendDummyInput()
     .appendField(Blockly.Msg.INOUT_DIGITAL_WRITE_APPENDTEXT_PIN)
@@ -74,8 +92,8 @@ Blockly.Blocks['inout_digital_write'] = {
 };
 
 Blockly.Blocks['inout_digital_read'] = {
+  helpUrl: Blockly.Msg.INOUT_DIGITAL_READ_HELPURL,
   init: function() {
-    this.setHelpUrl(Blockly.Msg.INOUT_DIGITAL_READ_HELPURL);
     this.setColour(230);
     this.appendDummyInput()
     .appendField(Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT)
@@ -86,8 +104,8 @@ Blockly.Blocks['inout_digital_read'] = {
 };
 
 Blockly.Blocks['inout_analog_write'] = {
+  helpUrl: Blockly.Msg.INOUT_ANALOG_WRITE_HELPURL,
   init: function() {
-    this.setHelpUrl(Blockly.Msg.INOUT_ANALOG_WRITE_HELPURL);
     this.setColour(230);
     this.appendDummyInput()
       .appendField(Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_PIN)
@@ -103,8 +121,8 @@ Blockly.Blocks['inout_analog_write'] = {
 };
 
 Blockly.Blocks['inout_analog_read'] = {
+  helpUrl: Blockly.Msg.INOUT_ANALOG_READ_HELPURL,
   init: function() {
-    this.setHelpUrl(Blockly.Msg.INOUT_ANALOG_READ_HELPURL);
     this.setColour(230);
     this.appendDummyInput()
       .appendField(Blockly.Msg.INOUT_ANALOG_READ_APPENDTEXT)
@@ -115,9 +133,8 @@ Blockly.Blocks['inout_analog_read'] = {
 };
 
 Blockly.Blocks['inout_highlow'] = {
-
+  helpUrl: 'http://arduino.cc/en/Reference/Constants',
   init: function() {
-    this.setHelpUrl('http://arduino.cc/en/Reference/Constants');
     this.setColour(230);
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"], ["LOW", "LOW"]]), 'BOOL')
@@ -168,8 +185,8 @@ Blockly.Blocks['tone'] = {
 //servo block
 //http://www.seeedstudio.com/depot/emax-9g-es08a-high-sensitive-mini-servo-p-760.html?cPath=170_171
 Blockly.Blocks['servo_move'] = {
+  helpUrl: 'http://www.arduino.cc/playground/ComponentLib/servo',
   init: function() {
-    this.setHelpUrl('http://www.arduino.cc/playground/ComponentLib/servo');
     this.setColour(190);
     this.appendDummyInput()
         .appendField("Servo")
@@ -191,8 +208,8 @@ Blockly.Blocks['servo_move'] = {
 };
 
 Blockly.Blocks['servo_read_degrees'] = {
+  helpUrl: 'http://www.arduino.cc/playground/ComponentLib/servo',
   init: function() {
-    this.setHelpUrl('http://www.arduino.cc/playground/ComponentLib/servo');
     this.setColour(190);
     this.appendDummyInput()
         .appendField("Servo")
@@ -204,5 +221,17 @@ Blockly.Blocks['servo_read_degrees'] = {
         .appendField("Read Degrees")
     this.setOutput(true, 'Number');
     this.setTooltip('return that degree with the last servo move.');
+  }
+};
+
+Blockly.Blocks['serial_print'] = {
+  helpUrl: 'http://www.arduino.cc/en/Serial/Print',
+  init: function() {
+    this.setColour(230);
+    this.appendValueInput("CONTENT", 'String')
+        .appendField("Serial Print");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Prints data to the console/serial port as human-readable ASCII text.');
   }
 };

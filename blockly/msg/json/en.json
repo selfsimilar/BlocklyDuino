@@ -441,5 +441,4 @@
   "MATH_MAP_APPENDTEXT_TOLOW": "toLow",
   "MATH_MAP_APPENDTEXT_TOHIGH": "toHigh",
   "MATH_MAP_TOOLTIP": "Re-maps a number from one range to another. "
-
 }

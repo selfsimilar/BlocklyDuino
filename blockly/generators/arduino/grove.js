@@ -130,9 +130,9 @@ Blockly.Arduino.grove_relay = function() {
 Blockly.Arduino.grove_temporature_sensor = function() {
   var dropdown_pin = this.getFieldValue('PIN');
   /*
-	a=analogRead(0);
-	  resistance=(float)(1023-a)*10000/a;
-	  temperature=1/(log(resistance/10000)/B+1/298.15)-273.15;
+  a=analogRead(0);
+  resistance=(float)(1023-a)*10000/a;
+  temperature=1/(log(resistance/10000)/B+1/298.15)-273.15;
   */
   var code = 'round('+'(1/(log((float)(1023-analogRead('+dropdown_pin+'))*10000/analogRead('+dropdown_pin+'))/10000)/3975+1/298.15)-273.15'+')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];

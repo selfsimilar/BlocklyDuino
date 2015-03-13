@@ -81,7 +81,7 @@ function renderContent() {
     var arduinoTextarea = document.getElementById('textarea_arduino');
     arduinoTextarea.value = Blockly.Arduino.workspaceToCode();
     arduinoTextarea.focus();
-    button.style.display = "";
+    //button.style.display = "";
   }
 }
 
@@ -140,10 +140,19 @@ function init() {
   window.addEventListener('resize', onresize, false);
 
   var toolbox = document.getElementById('toolbox');
-  Blockly.inject(document.getElementById('content_blocks'), {
+  Blockly.inject(document.getElementById('content_blocks'),{
+    grid:
+    {spacing: 25,
+     length: 3,
+     colour: '#ccc',
+     snap: true},
+    media: '../../media/',
+    toolbox: toolbox});
+  /*
     media: '../../media/',
     toolbox: toolbox
   });
+  */
 
   auto_save_and_restore_blocks();
 

@@ -1,40 +1,41 @@
 BlocklyDuino
 =======================
 
-1.1 2015/02/07
+1.2 2015/2/25
 ------------------
-code name: Meccano
+code name: Fabuland
 
-Feature: 
+Feature:
+* update Blockly to latest (two year gap), can reuse l10n and new blockly features.
 
 Change:
-* update Blockly to latest (two year gap)
 * enable frameless code editor (Chrome now works locally)
 
 Fix:
+* improve digital write readness
 
-Credit: fraser
+Credit: fraser, fred
 
-1.0.1 2013/
+1.1 2015/2/8
 ------------------
-code name:
+code name: Dinosaurs
 
-Feature: 
+Feature:
+* python server to upload code to Arduino directly (only work on Linux and Mac)
 
 Change:
 * separate lcd include statement
 * update blockly till r546
 * rename package demos to apps
+* replaced to new Blob API
 
-Fix:
-
-Credit: gasolin
+Credit: gumbypp, gasolin, mjhoy, meln1k, Grahack
 
 1.0 2012/12/11
 ------------------
 code name: Mindstorms
 
-Feature: 
+Feature:
 
 * add procedure support with return and logic null blocks, contribute back to blockly
 * add blocks:
@@ -60,7 +61,7 @@ code name: TECHNIC
 
 Refactor blocks, rearrange import blocks and blocks with type checking
 
-Feature: 
+Feature:
 
 * add text blocks
 * add blocks:
@@ -88,7 +89,7 @@ code name: DUPLO
 
 make editor more friendly
 
-Feature: 
+Feature:
 
 * generate arduino code in textarea, easier to copy source
 * auto focus to arduino code area, can use ctrl+a to select correct source
@@ -115,7 +116,7 @@ code name: SPACE
 
 refine bootstraping process
 
-Feature: 
+Feature:
 
 * promotion video http://www.youtube.com/watch?v=_swiyXcUvNY
 * bootstraping sample blocks and document to easily custom blocks.
@@ -129,7 +130,7 @@ Change:
 
 fix:
 
-* fix servo move block cascade input issue 
+* fix servo move block cascade input issue
 
 Credit: gasolin
 
@@ -193,7 +194,7 @@ Feature:
 * Compact Digital/Analog Read/Write syntax
 * Auto setup pinMode
 * delay and map function
-* 2 Standard blocks: Build-in LED, Servo 
+* 2 Standard blocks: Build-in LED, Servo
 * 6 Grove blocks: LED, Potentiometer, Tilt switch, Piezo Buzzer, Relay
 
 Credit: gasolin

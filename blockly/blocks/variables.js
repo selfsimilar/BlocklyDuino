@@ -31,6 +31,8 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks.variables.HUE = 330;
 
+// ************************************************************************
+// THIS SECTION IS INSERTED INTO BLOCKLY BY BLOCKLYDUINO.
 Blockly.Blocks['variables_declare'] = {
   // Variable setter.
   helpUrl: Blockly.LANG_VARIABLES_SET_HELPURL,
@@ -41,7 +43,7 @@ Blockly.Blocks['variables_declare'] = {
         .appendField(new Blockly.FieldVariable(
         Blockly.LANG_VARIABLES_SET_ITEM), 'VAR')
         .appendField("as")
-       .appendField(new Blockly.FieldDropdown([["Number", "int"]]), "TYPE")
+      .appendField(new Blockly.FieldDropdown([["Number", "int"]]), "TYPE")
       .appendField("value");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -56,6 +58,7 @@ Blockly.Blocks['variables_declare'] = {
     }
   }
 };
+// ************************************************************************
 
 Blockly.Blocks['variables_get'] = {
   /**
@@ -123,7 +126,7 @@ Blockly.Blocks['variables_set'] = {
     this.setColour(Blockly.Blocks.variables.HUE);
     this.interpolateMsg(
         // TODO: Combine these messages instead of using concatenation.
-        Blockly.Msg.VARIABLES_SET_TITLE + '%1' +
+        Blockly.Msg.VARIABLES_SET_TITLE + ' %1 ' +
         Blockly.Msg.VARIABLES_SET_TAIL + ' %2',
         ['VAR', new Blockly.FieldVariable(Blockly.Msg.VARIABLES_SET_ITEM)],
         ['VALUE', null, Blockly.ALIGN_RIGHT],

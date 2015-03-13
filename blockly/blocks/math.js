@@ -36,11 +36,11 @@ Blockly.Blocks['math_number'] = {
    * Block for numeric value.
    * @this Blockly.Block
    */
-  init: function () {
+  init: function() {
     this.setHelpUrl(Blockly.Msg.MATH_NUMBER_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
     this.appendDummyInput()
-      .appendField(new Blockly.FieldTextInput('0',
+        .appendField(new Blockly.FieldTextInput('0',
         Blockly.FieldTextInput.numberValidator), 'NUM');
     this.setOutput(true, 'Number');
     this.setTooltip(Blockly.Msg.MATH_NUMBER_TOOLTIP);
@@ -52,8 +52,9 @@ Blockly.Blocks['math_arithmetic'] = {
    * Block for basic arithmetic operator.
    * @this Blockly.Block
    */
-  init: function () {
-    var OPERATORS = [[Blockly.Msg.MATH_ADDITION_SYMBOL, 'ADD'],
+  init: function() {
+    var OPERATORS =
+        [[Blockly.Msg.MATH_ADDITION_SYMBOL, 'ADD'],
          [Blockly.Msg.MATH_SUBTRACTION_SYMBOL, 'MINUS'],
          [Blockly.Msg.MATH_MULTIPLICATION_SYMBOL, 'MULTIPLY'],
          [Blockly.Msg.MATH_DIVISION_SYMBOL, 'DIVIDE'],
@@ -62,14 +63,14 @@ Blockly.Blocks['math_arithmetic'] = {
     this.setColour(Blockly.Blocks.math.HUE);
     this.setOutput(true, 'Number');
     this.appendValueInput('A')
-      .setCheck('Number');
+        .setCheck('Number');
     this.appendValueInput('B')
-      .setCheck('Number')
-      .appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
+        .setCheck('Number')
+        .appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
     this.setInputsInline(true);
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
-    this.setTooltip(function () {
+    this.setTooltip(function() {
       var mode = thisBlock.getFieldValue('OP');
       var TOOLTIPS = {
         'ADD': Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_ADD,
@@ -88,27 +89,34 @@ Blockly.Blocks['math_single'] = {
    * Block for advanced math operators with single operand.
    * @this Blockly.Block
    */
-  init: function () {
+  init: function() {
+    var OPERATORS =
+        [[Blockly.Msg.MATH_SINGLE_OP_ROOT, 'ROOT'],
+         [Blockly.Msg.MATH_SINGLE_OP_ABSOLUTE, 'ABS'],
+         ['-', 'NEG'],
+         ['ln', 'LN'],
+         ['log10', 'LOG10'],
+         ['e^', 'EXP'],
+         ['10^', 'POW10']];
     this.setHelpUrl(Blockly.Msg.MATH_SINGLE_HELPURL);
-    var OPERATORS = [[Blockly.Msg.MATH_SINGLE_OP_ABSOLUTE, 'ABS'],
-         [Blockly.Msg.MATH_SINGLE_OP_ROOT, 'ROOT'],
-         [Blockly.Msg.MATH_TRIG_SIN, 'SIN'],
-         [Blockly.Msg.MATH_TRIG_COS, 'COS'],
-         [Blockly.Msg.MATH_TRIG_TAN, 'TAN']];
     this.setColour(Blockly.Blocks.math.HUE);
     this.setOutput(true, 'Number');
-    this.interpolateMsg('%1 %2', ['OP', new Blockly.FieldDropdown(OPERATORS)], ['NUM', 'Number', Blockly.ALIGN_RIGHT],
-      Blockly.ALIGN_RIGHT);
+    this.interpolateMsg('%1 %2',
+        ['OP', new Blockly.FieldDropdown(OPERATORS)],
+        ['NUM', 'Number', Blockly.ALIGN_RIGHT],
+        Blockly.ALIGN_RIGHT);
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
-    this.setTooltip(function () {
+    this.setTooltip(function() {
       var mode = thisBlock.getFieldValue('OP');
       var TOOLTIPS = {
-        'ABS': Blockly.Msg.MATH_SINGLE_TOOLTIP_ABS,
         'ROOT': Blockly.Msg.MATH_SINGLE_TOOLTIP_ROOT,
-        'SIN': Blockly.Msg.MATH_TRIG_TOOLTIP_SIN,
-        'COS': Blockly.Msg.MATH_TRIG_TOOLTIP_COS,
-        'TAN': Blockly.Msg.MATH_TRIG_TOOLTIP_TAN
+        'ABS': Blockly.Msg.MATH_SINGLE_TOOLTIP_ABS,
+        'NEG': Blockly.Msg.MATH_SINGLE_TOOLTIP_NEG,
+        'LN': Blockly.Msg.MATH_SINGLE_TOOLTIP_LN,
+        'LOG10': Blockly.Msg.MATH_SINGLE_TOOLTIP_LOG10,
+        'EXP': Blockly.Msg.MATH_SINGLE_TOOLTIP_EXP,
+        'POW10': Blockly.Msg.MATH_SINGLE_TOOLTIP_POW10
       };
       return TOOLTIPS[mode];
     });
@@ -120,8 +128,9 @@ Blockly.Blocks['math_trig'] = {
    * Block for trigonometry operators.
    * @this Blockly.Block
    */
-  init: function () {
-    var OPERATORS = [[Blockly.Msg.MATH_TRIG_SIN, 'SIN'],
+  init: function() {
+    var OPERATORS =
+        [[Blockly.Msg.MATH_TRIG_SIN, 'SIN'],
          [Blockly.Msg.MATH_TRIG_COS, 'COS'],
          [Blockly.Msg.MATH_TRIG_TAN, 'TAN'],
          [Blockly.Msg.MATH_TRIG_ASIN, 'ASIN'],
@@ -131,11 +140,11 @@ Blockly.Blocks['math_trig'] = {
     this.setColour(Blockly.Blocks.math.HUE);
     this.setOutput(true, 'Number');
     this.appendValueInput('NUM')
-      .setCheck('Number')
-      .appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
+        .setCheck('Number')
+        .appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
-    this.setTooltip(function () {
+    this.setTooltip(function() {
       var mode = thisBlock.getFieldValue('OP');
       var TOOLTIPS = {
         'SIN': Blockly.Msg.MATH_TRIG_TOOLTIP_SIN,
@@ -155,8 +164,9 @@ Blockly.Blocks['math_constant'] = {
    * Block for constants: PI, E, the Golden Ratio, sqrt(2), 1/sqrt(2), INFINITY.
    * @this Blockly.Block
    */
-  init: function () {
-    var CONSTANTS = [['\u03c0', 'PI'],
+  init: function() {
+    var CONSTANTS =
+        [['\u03c0', 'PI'],
          ['e', 'E'],
          ['\u03c6', 'GOLDEN_RATIO'],
          ['sqrt(2)', 'SQRT2'],
@@ -166,7 +176,7 @@ Blockly.Blocks['math_constant'] = {
     this.setColour(Blockly.Blocks.math.HUE);
     this.setOutput(true, 'Number');
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown(CONSTANTS), 'CONSTANT');
+        .appendField(new Blockly.FieldDropdown(CONSTANTS), 'CONSTANT');
     this.setTooltip(Blockly.Msg.MATH_CONSTANT_TOOLTIP);
   }
 };
@@ -177,8 +187,9 @@ Blockly.Blocks['math_number_property'] = {
    * negative or if it is divisible by certain number.
    * @this Blockly.Block
    */
-  init: function () {
-    var PROPERTIES = [[Blockly.Msg.MATH_IS_EVEN, 'EVEN'],
+  init: function() {
+    var PROPERTIES =
+        [[Blockly.Msg.MATH_IS_EVEN, 'EVEN'],
          [Blockly.Msg.MATH_IS_ODD, 'ODD'],
          [Blockly.Msg.MATH_IS_PRIME, 'PRIME'],
          [Blockly.Msg.MATH_IS_WHOLE, 'WHOLE'],
@@ -187,13 +198,13 @@ Blockly.Blocks['math_number_property'] = {
          [Blockly.Msg.MATH_IS_DIVISIBLE_BY, 'DIVISIBLE_BY']];
     this.setColour(Blockly.Blocks.math.HUE);
     this.appendValueInput('NUMBER_TO_CHECK')
-      .setCheck('Number');
-    var dropdown = new Blockly.FieldDropdown(PROPERTIES, function (option) {
+        .setCheck('Number');
+    var dropdown = new Blockly.FieldDropdown(PROPERTIES, function(option) {
       var divisorInput = (option == 'DIVISIBLE_BY');
       this.sourceBlock_.updateShape_(divisorInput);
     });
     this.appendDummyInput()
-      .appendField(dropdown, 'PROPERTY');
+        .appendField(dropdown, 'PROPERTY');
     this.setInputsInline(true);
     this.setOutput(true, 'Boolean');
     this.setTooltip(Blockly.Msg.MATH_IS_TOOLTIP);
@@ -203,7 +214,7 @@ Blockly.Blocks['math_number_property'] = {
    * @return {Element} XML storage element.
    * @this Blockly.Block
    */
-  mutationToDom: function () {
+  mutationToDom: function() {
     var container = document.createElement('mutation');
     var divisorInput = (this.getFieldValue('PROPERTY') == 'DIVISIBLE_BY');
     container.setAttribute('divisor_input', divisorInput);
@@ -214,7 +225,7 @@ Blockly.Blocks['math_number_property'] = {
    * @param {!Element} xmlElement XML storage element.
    * @this Blockly.Block
    */
-  domToMutation: function (xmlElement) {
+  domToMutation: function(xmlElement) {
     var divisorInput = (xmlElement.getAttribute('divisor_input') == 'true');
     this.updateShape_(divisorInput);
   },
@@ -224,13 +235,13 @@ Blockly.Blocks['math_number_property'] = {
    * @private
    * @this Blockly.Block
    */
-  updateShape_: function (divisorInput) {
+  updateShape_: function(divisorInput) {
     // Add or remove a Value Input.
     var inputExists = this.getInput('DIVISOR');
     if (divisorInput) {
       if (!inputExists) {
         this.appendValueInput('DIVISOR')
-          .setCheck('Number');
+            .setCheck('Number');
       }
     } else if (inputExists) {
       this.removeInput('DIVISOR');
@@ -243,21 +254,23 @@ Blockly.Blocks['math_change'] = {
    * Block for adding to a variable in place.
    * @this Blockly.Block
    */
-  init: function () {
+  init: function() {
     this.setHelpUrl(Blockly.Msg.MATH_CHANGE_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
     this.interpolateMsg(
-      // TODO: Combine these messages instead of using concatenation.
-      Blockly.Msg.MATH_CHANGE_TITLE_CHANGE + ' %1 ' +
-      Blockly.Msg.MATH_CHANGE_INPUT_BY + ' %2', ['VAR', new Blockly.FieldVariable(Blockly.Msg.MATH_CHANGE_TITLE_ITEM)], ['DELTA', 'Number', Blockly.ALIGN_RIGHT],
-      Blockly.ALIGN_RIGHT);
+        // TODO: Combine these messages instead of using concatenation.
+        Blockly.Msg.MATH_CHANGE_TITLE_CHANGE + ' %1 ' +
+        Blockly.Msg.MATH_CHANGE_INPUT_BY + ' %2',
+        ['VAR', new Blockly.FieldVariable(Blockly.Msg.MATH_CHANGE_TITLE_ITEM)],
+        ['DELTA', 'Number', Blockly.ALIGN_RIGHT],
+        Blockly.ALIGN_RIGHT);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
-    this.setTooltip(function () {
+    this.setTooltip(function() {
       return Blockly.Msg.MATH_CHANGE_TOOLTIP.replace('%1',
-        thisBlock.getFieldValue('VAR'));
+          thisBlock.getFieldValue('VAR'));
     });
   },
   /**
@@ -265,7 +278,7 @@ Blockly.Blocks['math_change'] = {
    * @return {!Array.<string>} List of variable names.
    * @this Blockly.Block
    */
-  getVars: function () {
+  getVars: function() {
     return [this.getFieldValue('VAR')];
   },
   /**
@@ -275,7 +288,7 @@ Blockly.Blocks['math_change'] = {
    * @param {string} newName Renamed variable.
    * @this Blockly.Block
    */
-  renameVar: function (oldName, newName) {
+  renameVar: function(oldName, newName) {
     if (Blockly.Names.equals(oldName, this.getFieldValue('VAR'))) {
       this.setFieldValue(newName, 'VAR');
     }
@@ -287,16 +300,17 @@ Blockly.Blocks['math_round'] = {
    * Block for rounding functions.
    * @this Blockly.Block
    */
-  init: function () {
-    var OPERATORS = [[Blockly.Msg.MATH_ROUND_OPERATOR_ROUND, 'ROUND'],
+  init: function() {
+    var OPERATORS =
+        [[Blockly.Msg.MATH_ROUND_OPERATOR_ROUND, 'ROUND'],
          [Blockly.Msg.MATH_ROUND_OPERATOR_ROUNDUP, 'ROUNDUP'],
          [Blockly.Msg.MATH_ROUND_OPERATOR_ROUNDDOWN, 'ROUNDDOWN']];
     this.setHelpUrl(Blockly.Msg.MATH_ROUND_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
     this.setOutput(true, 'Number');
     this.appendValueInput('NUM')
-      .setCheck('Number')
-      .appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
+        .setCheck('Number')
+        .appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
     this.setTooltip(Blockly.Msg.MATH_ROUND_TOOLTIP);
   }
 };
@@ -307,8 +321,9 @@ Blockly.Blocks['math_on_list'] = {
    * etc.  Some functions also work on text (min, max, mode, median).
    * @this Blockly.Block
    */
-  init: function () {
-    var OPERATORS = [[Blockly.Msg.MATH_ONLIST_OPERATOR_SUM, 'SUM'],
+  init: function() {
+    var OPERATORS =
+        [[Blockly.Msg.MATH_ONLIST_OPERATOR_SUM, 'SUM'],
          [Blockly.Msg.MATH_ONLIST_OPERATOR_MIN, 'MIN'],
          [Blockly.Msg.MATH_ONLIST_OPERATOR_MAX, 'MAX'],
          [Blockly.Msg.MATH_ONLIST_OPERATOR_AVERAGE, 'AVERAGE'],
@@ -321,7 +336,7 @@ Blockly.Blocks['math_on_list'] = {
     this.setHelpUrl(Blockly.Msg.MATH_ONLIST_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
     this.setOutput(true, 'Number');
-    var dropdown = new Blockly.FieldDropdown(OPERATORS, function (newOp) {
+    var dropdown = new Blockly.FieldDropdown(OPERATORS, function(newOp) {
       if (newOp == 'MODE') {
         thisBlock.outputConnection.setCheck('Array');
       } else {
@@ -329,9 +344,9 @@ Blockly.Blocks['math_on_list'] = {
       }
     });
     this.appendValueInput('LIST')
-      .setCheck('Array')
-      .appendField(dropdown, 'OP');
-    this.setTooltip(function () {
+        .setCheck('Array')
+        .appendField(dropdown, 'OP');
+    this.setTooltip(function() {
       var mode = thisBlock.getFieldValue('OP');
       var TOOLTIPS = {
         'SUM': Blockly.Msg.MATH_ONLIST_TOOLTIP_SUM,
@@ -353,12 +368,14 @@ Blockly.Blocks['math_modulo'] = {
    * Block for remainder of a division.
    * @this Blockly.Block
    */
-  init: function () {
+  init: function() {
     this.setHelpUrl(Blockly.Msg.MATH_MODULO_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
     this.setOutput(true, 'Number');
-    this.interpolateMsg(Blockly.Msg.MATH_MODULO_TITLE, ['DIVIDEND', 'Number', Blockly.ALIGN_RIGHT], ['DIVISOR', 'Number', Blockly.ALIGN_RIGHT],
-      Blockly.ALIGN_RIGHT);
+    this.interpolateMsg(Blockly.Msg.MATH_MODULO_TITLE,
+                        ['DIVIDEND', 'Number', Blockly.ALIGN_RIGHT],
+                        ['DIVISOR', 'Number', Blockly.ALIGN_RIGHT],
+                        Blockly.ALIGN_RIGHT);
     this.setInputsInline(true);
     this.setTooltip(Blockly.Msg.MATH_MODULO_TOOLTIP);
   }
@@ -369,12 +386,15 @@ Blockly.Blocks['math_constrain'] = {
    * Block for constraining a number between two limits.
    * @this Blockly.Block
    */
-  init: function () {
+  init: function() {
     this.setHelpUrl(Blockly.Msg.MATH_CONSTRAIN_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
     this.setOutput(true, 'Number');
-    this.interpolateMsg(Blockly.Msg.MATH_CONSTRAIN_TITLE, ['VALUE', 'Number', Blockly.ALIGN_RIGHT], ['LOW', 'Number', Blockly.ALIGN_RIGHT], ['HIGH', 'Number', Blockly.ALIGN_RIGHT],
-      Blockly.ALIGN_RIGHT);
+    this.interpolateMsg(Blockly.Msg.MATH_CONSTRAIN_TITLE,
+                        ['VALUE', 'Number', Blockly.ALIGN_RIGHT],
+                        ['LOW', 'Number', Blockly.ALIGN_RIGHT],
+                        ['HIGH', 'Number', Blockly.ALIGN_RIGHT],
+                        Blockly.ALIGN_RIGHT);
     this.setInputsInline(true);
     this.setTooltip(Blockly.Msg.MATH_CONSTRAIN_TOOLTIP);
   }
@@ -385,12 +405,14 @@ Blockly.Blocks['math_random_int'] = {
    * Block for random integer between [X] and [Y].
    * @this Blockly.Block
    */
-  init: function () {
+  init: function() {
     this.setHelpUrl(Blockly.Msg.MATH_RANDOM_INT_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
     this.setOutput(true, 'Number');
-    this.interpolateMsg(Blockly.Msg.MATH_RANDOM_INT_TITLE, ['FROM', 'Number', Blockly.ALIGN_RIGHT], ['TO', 'Number', Blockly.ALIGN_RIGHT],
-      Blockly.ALIGN_RIGHT);
+    this.interpolateMsg(Blockly.Msg.MATH_RANDOM_INT_TITLE,
+                        ['FROM', 'Number', Blockly.ALIGN_RIGHT],
+                        ['TO', 'Number', Blockly.ALIGN_RIGHT],
+                        Blockly.ALIGN_RIGHT);
     this.setInputsInline(true);
     this.setTooltip(Blockly.Msg.MATH_RANDOM_INT_TOOLTIP);
   }
@@ -401,7 +423,7 @@ Blockly.Blocks['math_random_float'] = {
    * Block for random fraction between 0 and 1.
    * @this Blockly.Block
    */
-  init: function () {
+  init: function() {
     this.setHelpUrl(Blockly.Msg.MATH_RANDOM_FLOAT_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
     this.setOutput(true, 'Number');
