@@ -31,7 +31,7 @@ goog.provide('Blockly.Blocks.times');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.times.HUE = 125;
+Blockly.Blocks.times.HUE = 90;
 
 Blockly.Blocks['delay'] = {
   init: function() {

@@ -168,8 +168,8 @@ function setCharacter() {
   var category;
   category = document.getElementById('category_inout');
   category.setAttribute("name", Blockly.Msg.CATEGORY_INOUT);
-  category = document.getElementById('category_communication');
-  category.setAttribute("name", Blockly.Msg.CATEGORY_COMMUNICATION);
+  category = document.getElementById('category_serial');
+  category.setAttribute("name", Blockly.Msg.CATEGORY_SERIAL);
   /*
   category = document.getElementById('category_servo');
   category.setAttribute("name",Blockly.Msg.CATEGORY_SERVO);
@@ -196,6 +196,8 @@ function setCharacter() {
   category.setAttribute("name", Blockly.Msg.CATEGORY_VARIABLES);
   category = document.getElementById('category_functions');
   category.setAttribute("name", Blockly.Msg.CATEGORY_FUNCTIONS);
+  category = document.getElementById('category_involt');
+  category.setAttribute("name", Blockly.Msg.CATEGORY_INVOLT);
 
   var str;
   str = document.getElementById('tab_blocks');

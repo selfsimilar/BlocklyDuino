@@ -26,55 +26,55 @@
 
 //To support syntax defined in http://arduino.cc/en/Reference/HomePage
 
-goog.provide('Blockly.Blocks.communication');
+goog.provide('Blockly.Blocks.serial');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.communication.HUE = 205;
+Blockly.Blocks.serial.HUE = 205;
 
 Blockly.Blocks['serial_print'] = {
   init: function() {
-    this.setHelpUrl(Blockly.Msg.COMMUNICATION_SERIAL_PRINT_HELPURL);
-    this.setColour(Blockly.Blocks.communication.HUE);
+    this.setHelpUrl(Blockly.Msg.SERIAL_PRINT_HELPURL);
+    this.setColour(Blockly.Blocks.serial.HUE);
     this.appendValueInput("CONTENT", 'String')
-    .appendField(Blockly.Msg.COMMUNICATION_SERIAL_PRINT_APPENDTEXT);
+    .appendField(Blockly.Msg.SERIAL_PRINT_APPENDTEXT);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip(Blockly.Msg.COMMUNICATION_SERIAL_PRINT_TOOLTIP);
+    this.setTooltip(Blockly.Msg.SERIAL_PRINT_TOOLTIP);
   }
 };
 
 Blockly.Blocks['serial_read'] = {
   init: function() {
-    this.setHelpUrl(Blockly.Msg.COMMUNICATION_SERIAL_READ_HELPURL);
-    this.setColour(Blockly.Blocks.communication.HUE);
+    this.setHelpUrl(Blockly.Msg.SERIAL_READ_HELPURL);
+    this.setColour(Blockly.Blocks.serial.HUE);
     this.appendDummyInput()
-    .appendField(Blockly.Msg.COMMUNICATION_SERIAL_READ_APPENDTEXT);
+    .appendField(Blockly.Msg.SERIAL_READ_APPENDTEXT);
     this.setOutput(true,"byte");
-    this.setTooltip(Blockly.Msg.COMMUNICATION_SERIAL_READ_TOOLTIP);
+    this.setTooltip(Blockly.Msg.SERIAL_READ_TOOLTIP);
   }
 };
 
 Blockly.Blocks['serial_available'] = {
   init: function() {
-    this.setHelpUrl(Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_HELPURL);
-    this.setColour(Blockly.Blocks.communication.HUE);
+    this.setHelpUrl(Blockly.Msg.SERIAL_AVAILABLE_HELPURL);
+    this.setColour(Blockly.Blocks.serial.HUE);
     this.appendDummyInput()
-    .appendField(Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_APPENDTEXT);
+    .appendField(Blockly.Msg.SERIAL_AVAILABLE_APPENDTEXT);
     this.setOutput(true, "Number");
-    this.setTooltip(Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_TOOLTIP);
+    this.setTooltip(Blockly.Msg.SERIAL_AVAILABLE_TOOLTIP);
   }
 };
 
 Blockly.Blocks['serial_println'] = {
   init: function() {
-    this.setHelpUrl(Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_HELPURL);
-    this.setColour(Blockly.Blocks.communication.HUE);
+    this.setHelpUrl(Blockly.Msg.SERIAL_PRINTLN_HELPURL);
+    this.setColour(Blockly.Blocks.serial.HUE);
     this.appendValueInput("CONTENT")
     .setCheck("String")
-    .appendField(Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_APPENDTEXT);
+    .appendField(Blockly.Msg.SERIAL_PRINTLN_APPENDTEXT);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_TOOLTIP);
+    this.setTooltip(Blockly.Msg.SERIAL_PRINTLN_TOOLTIP);
   }
 };

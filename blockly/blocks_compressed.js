@@ -22,18 +22,6 @@
 */
 Blockly.Blocks.base={};Blockly.Blocks.base_delay={helpUrl:"http://arduino.cc/en/Reference/delay",init:function(){this.setColour(120);this.appendValueInput("DELAY_TIME","Number").appendField("Delay").setCheck("Number");this.setInputsInline(!0);this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);this.setTooltip("Delay specific time")}};
 Blockly.Blocks.base_map={helpUrl:"http://arduino.cc/en/Reference/map",init:function(){this.setColour(230);this.appendValueInput("NUM","Number").appendField("Map ").setCheck("Number");this.appendValueInput("DMAX","Number").appendField("value to [0-").setCheck("Number");this.appendDummyInput().appendField("]");this.setInputsInline(!0);this.setOutput(!0);this.setTooltip("Re-maps a number from [0-1024] to another.")}};
-Blockly.Blocks.inout_buildin_led={helpUrl:"http://arduino.cc/en/Reference/DigitalWrite",init:function(){this.setColour(190);this.appendDummyInput().appendField("Build-in LED Stat").appendField(new Blockly.FieldDropdown([["HIGH","HIGH"],["LOW","LOW"]]),"STAT");this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);this.setTooltip("light or off the build-in LED")}};
-Blockly.Blocks.inout_digital_write={helpful:Blockly.Msg.INOUT_DIGITAL_WRITE_HELPURL,init:function(){this.setColour(230);this.appendDummyInput().appendField(Blockly.Msg.INOUT_DIGITAL_WRITE_APPENDTEXT_PIN).appendField(new Blockly.FieldDropdown(profile["default"].digital),"PIN").appendField(Blockly.Msg.INOUT_DIGITAL_WRITE_APPENDTEXT_STAT).appendField(new Blockly.FieldDropdown([["HIGH","HIGH"],["LOW","LOW"]]),"STAT");this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);this.setTooltip(Blockly.Msg.INOUT_DIGITAL_WRITE_TOOLTIP)}};
-Blockly.Blocks.inout_digital_read={helpUrl:Blockly.Msg.INOUT_DIGITAL_READ_HELPURL,init:function(){this.setColour(230);this.appendDummyInput().appendField(Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT).appendField(new Blockly.FieldDropdown(profile["default"].digital),"PIN");this.setOutput(!0,"Boolean");this.setTooltip(Blockly.Msg.INOUT_DIGITAL_READ_TOOLTIP)}};
-Blockly.Blocks.inout_analog_write={helpUrl:Blockly.Msg.INOUT_ANALOG_WRITE_HELPURL,init:function(){this.setColour(230);this.appendDummyInput().appendField(Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_PIN).appendField(new Blockly.FieldDropdown(profile["default"].analog),"PIN");this.appendValueInput("NUM","Number").appendField(Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_VALUE).setCheck("Number");this.setInputsInline(!0);this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);this.setTooltip(Blockly.Msg.INOUT_ANALOG_WRITE_TOOLTIP)}};
-Blockly.Blocks.inout_analog_read={helpUrl:Blockly.Msg.INOUT_ANALOG_READ_HELPURL,init:function(){this.setColour(230);this.appendDummyInput().appendField(Blockly.Msg.INOUT_ANALOG_READ_APPENDTEXT).appendField(new Blockly.FieldDropdown(profile["default"].analog),"PIN");this.setOutput(!0,"Number");this.setTooltip(Blockly.Msg.INOUT_ANALOG_READ_TOOLTIP)}};
-Blockly.Blocks.inout_highlow={helpUrl:"http://arduino.cc/en/Reference/Constants",init:function(){this.setColour(230);this.appendDummyInput().appendField(new Blockly.FieldDropdown([["HIGH","HIGH"],["LOW","LOW"]]),"BOOL");this.setOutput(!0,"Boolean");this.setTooltip("")}};
-Blockly.Blocks.pulsein={init:function(){this.setHelpUrl("http://www.example.com/");this.setColour(230);this.appendDummyInput().appendField("PulseIn Pin#").appendField(new Blockly.FieldDropdown(profile["default"].digital),"pin");this.appendDummyInput().appendField("Type").appendField(new Blockly.FieldDropdown([["HIGH","high"],["LOW","low"]]),"type");this.appendValueInput("timeout").setCheck("Number").appendField("TimeOut");this.setInputsInline(!0);this.setOutput(!0,"Number");this.setTooltip("")}};
-Blockly.Blocks.tone={init:function(){this.setHelpUrl("http://www.example.com/");this.setColour(230);this.appendDummyInput().appendField("Tone Pin#").appendField(new Blockly.FieldDropdown(profile["default"].digital),"pin");this.appendValueInput("freq").setCheck("Number").appendField("Frequency");this.appendValueInput("duration").setCheck("Number").appendField("duration");this.setInputsInline(!0);this.setPreviousStatement(!0);this.setNextStatement(!0);this.setTooltip("")}};
-Blockly.Blocks.servo_move={helpUrl:"http://www.arduino.cc/playground/ComponentLib/servo",init:function(){this.setColour(190);this.appendDummyInput().appendField("Servo").appendField(new Blockly.FieldImage("http://www.seeedstudio.com/depot/images/product/a991.jpg",64,64)).appendField("PIN#").appendField(new Blockly.FieldDropdown(profile["default"].digital),"PIN");this.appendValueInput("DEGREE","Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField("Degree (0~180)");this.appendValueInput("DELAY_TIME",
-"Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField("Delay");this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);this.setTooltip("move between 0~180 degree")}};
-Blockly.Blocks.servo_read_degrees={helpUrl:"http://www.arduino.cc/playground/ComponentLib/servo",init:function(){this.setColour(190);this.appendDummyInput().appendField("Servo").appendField(new Blockly.FieldImage("http://www.seeedstudio.com/depot/images/product/a991.jpg",64,64)).appendField("PIN#").appendField(new Blockly.FieldDropdown(profile["default"].digital),"PIN");this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField("Read Degrees");this.setOutput(!0,"Number");this.setTooltip("return that degree with the last servo move.")}};
-Blockly.Blocks.serial_print={helpUrl:"http://www.arduino.cc/en/Serial/Print",init:function(){this.setColour(230);this.appendValueInput("CONTENT","String").appendField("Serial Print");this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);this.setTooltip("Prints data to the console/serial port as human-readable ASCII text.")}};
 // Copyright 2012 Google Inc.  Apache License 2.0
 Blockly.Blocks.colour={};Blockly.Blocks.colour.HUE=20;Blockly.Blocks.colour_picker={init:function(){this.setHelpUrl(Blockly.Msg.COLOUR_PICKER_HELPURL);this.setColour(Blockly.Blocks.colour.HUE);this.appendDummyInput().appendField(new Blockly.FieldColour("#ff0000"),"COLOUR");this.setOutput(!0,"Colour");this.setTooltip(Blockly.Msg.COLOUR_PICKER_TOOLTIP)}};
 Blockly.Blocks.colour_random={init:function(){this.setHelpUrl(Blockly.Msg.COLOUR_RANDOM_HELPURL);this.setColour(Blockly.Blocks.colour.HUE);this.appendDummyInput().appendField(Blockly.Msg.COLOUR_RANDOM_TITLE);this.setOutput(!0,"Colour");this.setTooltip(Blockly.Msg.COLOUR_RANDOM_TOOLTIP)}};
@@ -41,28 +29,6 @@ Blockly.Blocks.colour_rgb={init:function(){this.setHelpUrl(Blockly.Msg.COLOUR_RG
 this.setOutput(!0,"Colour");this.setTooltip(Blockly.Msg.COLOUR_RGB_TOOLTIP)}};
 Blockly.Blocks.colour_blend={init:function(){this.setHelpUrl(Blockly.Msg.COLOUR_BLEND_HELPURL);this.setColour(Blockly.Blocks.colour.HUE);this.appendValueInput("COLOUR1").setCheck("Colour").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.COLOUR_BLEND_TITLE).appendField(Blockly.Msg.COLOUR_BLEND_COLOUR1);this.appendValueInput("COLOUR2").setCheck("Colour").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.COLOUR_BLEND_COLOUR2);this.appendValueInput("RATIO").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.COLOUR_BLEND_RATIO);
 this.setOutput(!0,"Colour");this.setTooltip(Blockly.Msg.COLOUR_BLEND_TOOLTIP)}};/*
-
- Visual Blocks Editor
-
- Copyright 2012 Fred Lin.
- https://github.com/gasolin/BlocklyDuino
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
-*/
-Blockly.Blocks.communication={};Blockly.Blocks.communication.HUE=205;Blockly.Blocks.serial_print={init:function(){this.setHelpUrl(Blockly.Msg.COMMUNICATION_SERIAL_PRINT_HELPURL);this.setColour(Blockly.Blocks.communication.HUE);this.appendValueInput("CONTENT","String").appendField(Blockly.Msg.COMMUNICATION_SERIAL_PRINT_APPENDTEXT);this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);this.setTooltip(Blockly.Msg.COMMUNICATION_SERIAL_PRINT_TOOLTIP)}};
-Blockly.Blocks.serial_read={init:function(){this.setHelpUrl(Blockly.Msg.COMMUNICATION_SERIAL_READ_HELPURL);this.setColour(Blockly.Blocks.communication.HUE);this.appendDummyInput().appendField(Blockly.Msg.COMMUNICATION_SERIAL_READ_APPENDTEXT);this.setOutput(!0,"byte");this.setTooltip(Blockly.Msg.COMMUNICATION_SERIAL_READ_TOOLTIP)}};
-Blockly.Blocks.serial_available={init:function(){this.setHelpUrl(Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_HELPURL);this.setColour(Blockly.Blocks.communication.HUE);this.appendDummyInput().appendField(Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_APPENDTEXT);this.setOutput(!0,"Number");this.setTooltip(Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_TOOLTIP)}};
-Blockly.Blocks.serial_println={init:function(){this.setHelpUrl(Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_HELPURL);this.setColour(Blockly.Blocks.communication.HUE);this.appendValueInput("CONTENT").setCheck("String").appendField(Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_APPENDTEXT);this.setPreviousStatement(!0);this.setNextStatement(!0);this.setTooltip(Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_TOOLTIP)}};/*
 
  Visual Blocks Editor
 
@@ -114,7 +80,55 @@ b.initSvg();for(var c=b.getInput("STACK").connection,d=0;d<this.itemCount_;d++){
 this.itemCount_);c.setAlign(Blockly.ALIGN_RIGHT).appendField("Color "+(this.itemCount_+1)).appendField(new Blockly.FieldColour(b),"RGB"+this.itemCount_);a.valueConnection_&&c.connection.connect(a.valueConnection_);this.itemCount_++;a=a.nextConnection&&a.nextConnection.targetBlock()}0==this.itemCount_&&this.appendDummyInput("COLOR0").setAlign(Blockly.ALIGN_RIGHT).appendField("Color 1").appendField(new Blockly.FieldColour("#00ff00"),"RGB0")}};
 Blockly.Blocks.grove_rgb_led_container={init:function(){this.setColour(190);this.appendDummyInput().appendField("Container");this.appendStatementInput("STACK");this.setTooltip("Add, remove items to reconfigure this chain");this.contextMenu=!1}};Blockly.Blocks.grove_rgb_led_item={init:function(){this.setColour(190);this.appendDummyInput().appendField("Item");this.setPreviousStatement(!0);this.setNextStatement(!0);this.setTooltip("Add an item to the chain");this.contextMenu=!1}};
 Blockly.Blocks.grove_bluetooth_slave={category:"Network",helpUrl:"http://www.seeedstudio.com/wiki/Grove_-_Serial_Bluetooth",init:function(){this.setColour(190);this.appendDummyInput().appendField("Bluetooth Slave").appendField(new Blockly.FieldImage("http://www.seeedstudio.com/wiki/File:Twigbt00.jpg",64,64)).appendField("PIN#").appendField(new Blockly.FieldDropdown(profile["default"].digital),"PIN");this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField("Name").appendField(new Blockly.FieldTextInput("blocklyduino"),
-"NAME");this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField("Pincode").appendField(new Blockly.FieldTextInput("0000"),"PINCODE");this.appendStatementInput("RCV").setAlign(Blockly.ALIGN_RIGHT).appendField("Receive");this.appendStatementInput("SNT").setAlign(Blockly.ALIGN_RIGHT).appendField("Send");this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);this.setTooltip("Bluetooth V2.0+EDR slave. Support single slave per board")}};
+"NAME");this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField("Pincode").appendField(new Blockly.FieldTextInput("0000"),"PINCODE");this.appendStatementInput("RCV").setAlign(Blockly.ALIGN_RIGHT).appendField("Receive");this.appendStatementInput("SNT").setAlign(Blockly.ALIGN_RIGHT).appendField("Send");this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);this.setTooltip("Bluetooth V2.0+EDR slave. Support single slave per board")}};/*
+
+ Visual Blocks Editor
+
+ Copyright 2012 Fred Lin.
+ https://github.com/gasolin/BlocklyDuino
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+*/
+Blockly.Blocks.inout={};Blockly.Blocks.inout.HUE=230;Blockly.Blocks.inout_buildin_led={helpUrl:"http://arduino.cc/en/Reference/DigitalWrite",init:function(){this.setColour(Blockly.Blocks.inout.HUE);this.appendDummyInput().appendField("Build-in LED Stat").appendField(new Blockly.FieldDropdown([["HIGH","HIGH"],["LOW","LOW"]]),"STAT");this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);this.setTooltip("light or off the build-in LED")}};
+Blockly.Blocks.inout_digital_write={helpful:Blockly.Msg.INOUT_DIGITAL_WRITE_HELPURL,init:function(){this.setColour(Blockly.Blocks.inout.HUE);this.appendDummyInput().appendField(Blockly.Msg.INOUT_DIGITAL_WRITE_APPENDTEXT_PIN).appendField(new Blockly.FieldDropdown(profile["default"].digital),"PIN").appendField(Blockly.Msg.INOUT_DIGITAL_WRITE_APPENDTEXT_STAT).appendField(new Blockly.FieldDropdown([["HIGH","HIGH"],["LOW","LOW"]]),"STAT");this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);
+this.setTooltip(Blockly.Msg.INOUT_DIGITAL_WRITE_TOOLTIP)}};Blockly.Blocks.inout_digital_read={helpUrl:Blockly.Msg.INOUT_DIGITAL_READ_HELPURL,init:function(){this.setColour(Blockly.Blocks.inout.HUE);this.appendDummyInput().appendField(Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT).appendField(new Blockly.FieldDropdown(profile["default"].digital),"PIN");this.setOutput(!0,"Boolean");this.setTooltip(Blockly.Msg.INOUT_DIGITAL_READ_TOOLTIP)}};
+Blockly.Blocks.inout_analog_write={helpUrl:Blockly.Msg.INOUT_ANALOG_WRITE_HELPURL,init:function(){this.setColour(Blockly.Blocks.inout.HUE);this.appendDummyInput().appendField(Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_PIN).appendField(new Blockly.FieldDropdown(profile["default"].analog),"PIN");this.appendValueInput("NUM","Number").appendField(Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_VALUE).setCheck("Number");this.setInputsInline(!0);this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);
+this.setTooltip(Blockly.Msg.INOUT_ANALOG_WRITE_TOOLTIP)}};Blockly.Blocks.inout_analog_read={helpUrl:Blockly.Msg.INOUT_ANALOG_READ_HELPURL,init:function(){this.setColour(Blockly.Blocks.inout.HUE);this.appendDummyInput().appendField(Blockly.Msg.INOUT_ANALOG_READ_APPENDTEXT).appendField(new Blockly.FieldDropdown(profile["default"].analog),"PIN");this.setOutput(!0,"Number");this.setTooltip(Blockly.Msg.INOUT_ANALOG_READ_TOOLTIP)}};
+Blockly.Blocks.inout_highlow={helpUrl:"http://arduino.cc/en/Reference/Constants",init:function(){this.setColour(Blockly.Blocks.inout.HUE);this.appendDummyInput().appendField(new Blockly.FieldDropdown([["HIGH","HIGH"],["LOW","LOW"]]),"BOOL");this.setOutput(!0,"Boolean");this.setTooltip("")}};
+Blockly.Blocks.pulsein={init:function(){this.setHelpUrl("http://www.example.com/");this.setColour(Blockly.Blocks.inout.HUE);this.appendDummyInput().appendField("PulseIn Pin#").appendField(new Blockly.FieldDropdown(profile["default"].digital),"pin");this.appendDummyInput().appendField("Type").appendField(new Blockly.FieldDropdown([["HIGH","high"],["LOW","low"]]),"type");this.appendValueInput("timeout").setCheck("Number").appendField("TimeOut");this.setInputsInline(!0);this.setOutput(!0,"Number");this.setTooltip("")}};
+Blockly.Blocks.tone={init:function(){this.setHelpUrl("http://www.example.com/");this.setColour(Blockly.Blocks.inout.HUE);this.appendDummyInput().appendField("Tone Pin#").appendField(new Blockly.FieldDropdown(profile["default"].digital),"pin");this.appendValueInput("freq").setCheck("Number").appendField("Frequency");this.appendValueInput("duration").setCheck("Number").appendField("duration");this.setInputsInline(!0);this.setPreviousStatement(!0);this.setNextStatement(!0);this.setTooltip("")}};/*
+
+ Visual Blocks Editor
+
+ Copyright 2012 Fred Lin.
+ https://github.com/gasolin/BlocklyDuino
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+*/
+Blockly.Blocks.involt={};Blockly.Blocks.involt.HUE=65;Blockly.Blocks.involt_directmode={init:function(){this.setHelpUrl("http://www.example.com/");this.setColour(Blockly.Blocks.involt.HUE);this.appendDummyInput().appendField("directMode");this.appendDummyInput().appendField(new Blockly.FieldDropdown([["true","TRUE"],["false","FALSE"]]),"BOOL");this.setInputsInline(!0);this.setPreviousStatement(!0);this.setNextStatement(!0);this.setTooltip("")}};
+Blockly.Blocks.involt_chromereceive={init:function(){this.setHelpUrl("http://www.example.com/");this.setColour(Blockly.Blocks.involt.HUE);this.appendDummyInput().appendField("chromeReceive");this.setPreviousStatement(!0);this.setNextStatement(!0);this.setTooltip("")}};
+Blockly.Blocks.involt_sendvalue={init:function(){this.setHelpUrl("http://www.example.com/");this.setColour(Blockly.Blocks.involt.HUE);this.appendDummyInput().appendField("Send Value");this.appendDummyInput().appendField(Blockly.Msg.INOUT_DIGITAL_INPUT_APPENDTEXT).appendField(new Blockly.FieldDropdown(profile["default"].digital),"PIN");this.setInputsInline(!0);this.setPreviousStatement(!0);this.setNextStatement(!0);this.setTooltip("")}};
+Blockly.Blocks.involt_receivevalue={init:function(){this.setHelpUrl("http://www.example.com/");this.setColour(Blockly.Blocks.involt.HUE);this.appendDummyInput().appendField("Receive Value");this.appendDummyInput().appendField(Blockly.Msg.INOUT_ANALOG_READ_APPENDTEXT).appendField(new Blockly.FieldDropdown(profile["default"].analog),"PIN");this.setInputsInline(!0);this.setPreviousStatement(!0);this.setNextStatement(!0);this.setTooltip("")}};
 // Copyright 2012 Google Inc.  Apache License 2.0
 Blockly.Blocks.lists={};Blockly.Blocks.lists.HUE=260;Blockly.Blocks.lists_create_empty={init:function(){this.setHelpUrl(Blockly.Msg.LISTS_CREATE_EMPTY_HELPURL);this.setColour(Blockly.Blocks.lists.HUE);this.setOutput(!0,"Array");this.appendDummyInput().appendField(Blockly.Msg.LISTS_CREATE_EMPTY_TITLE);this.setTooltip(Blockly.Msg.LISTS_CREATE_EMPTY_TOOLTIP)}};
 Blockly.Blocks.lists_create_with={init:function(){this.setHelpUrl(Blockly.Msg.LISTS_CREATE_WITH_HELPURL);this.setColour(Blockly.Blocks.lists.HUE);this.itemCount_=3;this.updateShape_();this.setOutput(!0,"Array");this.setMutator(new Blockly.Mutator(["lists_create_with_item"]));this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_TOOLTIP)},mutationToDom:function(){var a=document.createElement("mutation");a.setAttribute("items",this.itemCount_);return a},domToMutation:function(a){this.itemCount_=parseInt(a.getAttribute("items"),
@@ -142,7 +156,7 @@ this.appendDummyInput("AT"+a);var c=new Blockly.FieldDropdown(this["WHERE_OPTION
 Blockly.Blocks.lists_split={init:function(){var a=this,b=new Blockly.FieldDropdown([[Blockly.Msg.LISTS_SPLIT_LIST_FROM_TEXT,"SPLIT"],[Blockly.Msg.LISTS_SPLIT_TEXT_FROM_LIST,"JOIN"]],function(b){"SPLIT"==b?(a.outputConnection.setCheck("Array"),a.getInput("INPUT").setCheck("String")):(a.outputConnection.setCheck("String"),a.getInput("INPUT").setCheck("Array"))});this.setHelpUrl(Blockly.Msg.LISTS_SPLIT_HELPURL);this.setColour(Blockly.Blocks.lists.HUE);this.appendValueInput("INPUT").setCheck("String").appendField(b,
 "MODE");this.appendValueInput("DELIM").setCheck("String").appendField(Blockly.Msg.LISTS_SPLIT_WITH_DELIMITER);this.setInputsInline(!0);this.setOutput(!0,"Array");this.setTooltip(function(){var b=a.getFieldValue("MODE");if("SPLIT"==b)return Blockly.Msg.LISTS_SPLIT_TOOLTIP_SPLIT;if("JOIN"==b)return Blockly.Msg.LISTS_SPLIT_TOOLTIP_JOIN;throw"Unknown mode: "+b;})}};
 // Copyright 2012 Google Inc.  Apache License 2.0
-Blockly.Blocks.logic={};Blockly.Blocks.logic.HUE=210;
+Blockly.Blocks.logic={};Blockly.Blocks.logic.HUE=270;
 Blockly.Blocks.controls_if={init:function(){this.setHelpUrl(Blockly.Msg.CONTROLS_IF_HELPURL);this.setColour(Blockly.Blocks.logic.HUE);this.appendValueInput("IF0").setCheck("Boolean").appendField(Blockly.Msg.CONTROLS_IF_MSG_IF);this.appendStatementInput("DO0").appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);this.setPreviousStatement(!0);this.setNextStatement(!0);this.setMutator(new Blockly.Mutator(["controls_if_elseif","controls_if_else"]));var a=this;this.setTooltip(function(){if(a.elseifCount_||a.elseCount_){if(!a.elseifCount_&&
 a.elseCount_)return Blockly.Msg.CONTROLS_IF_TOOLTIP_2;if(a.elseifCount_&&!a.elseCount_)return Blockly.Msg.CONTROLS_IF_TOOLTIP_3;if(a.elseifCount_&&a.elseCount_)return Blockly.Msg.CONTROLS_IF_TOOLTIP_4}else return Blockly.Msg.CONTROLS_IF_TOOLTIP_1;return""});this.elseCount_=this.elseifCount_=0},mutationToDom:function(){if(!this.elseifCount_&&!this.elseCount_)return null;var a=document.createElement("mutation");this.elseifCount_&&a.setAttribute("elseif",this.elseifCount_);this.elseCount_&&a.setAttribute("else",
 1);return a},domToMutation:function(a){this.elseifCount_=parseInt(a.getAttribute("elseif"),10);this.elseCount_=parseInt(a.getAttribute("else"),10);for(a=1;a<=this.elseifCount_;a++)this.appendValueInput("IF"+a).setCheck("Boolean").appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSEIF),this.appendStatementInput("DO"+a).appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);this.elseCount_&&this.appendStatementInput("ELSE").appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSE)},decompose:function(a){var b=Blockly.Block.obtain(a,
@@ -227,7 +241,29 @@ Blockly.Blocks.procedures_callreturn={init:function(){this.setHelpUrl(Blockly.Ms
 mutationToDom:Blockly.Blocks.procedures_callnoreturn.mutationToDom,domToMutation:Blockly.Blocks.procedures_callnoreturn.domToMutation,renameVar:Blockly.Blocks.procedures_callnoreturn.renameVar,customContextMenu:Blockly.Blocks.procedures_callnoreturn.customContextMenu};
 Blockly.Blocks.procedures_ifreturn={init:function(){this.setHelpUrl("http://c2.com/cgi/wiki?GuardClause");this.setColour(Blockly.Blocks.procedures.HUE);this.appendValueInput("CONDITION").setCheck("Boolean").appendField(Blockly.Msg.CONTROLS_IF_MSG_IF);this.appendValueInput("VALUE").appendField(Blockly.Msg.PROCEDURES_DEFRETURN_RETURN);this.setInputsInline(!0);this.setPreviousStatement(!0);this.setNextStatement(!0);this.setTooltip(Blockly.Msg.PROCEDURES_IFRETURN_TOOLTIP);this.hasReturnValue_=!0},mutationToDom:function(){var a=
 document.createElement("mutation");a.setAttribute("value",Number(this.hasReturnValue_));return a},domToMutation:function(a){this.hasReturnValue_=1==a.getAttribute("value");this.hasReturnValue_||(this.removeInput("VALUE"),this.appendDummyInput("VALUE").appendField(Blockly.Msg.PROCEDURES_DEFRETURN_RETURN))},onchange:function(){if(this.workspace){var a=!1,b=this;do{if("procedures_defnoreturn"==b.type||"procedures_defreturn"==b.type){a=!0;break}b=b.getSurroundParent()}while(b);a?("procedures_defnoreturn"==
-b.type&&this.hasReturnValue_?(this.removeInput("VALUE"),this.appendDummyInput("VALUE").appendField(Blockly.Msg.PROCEDURES_DEFRETURN_RETURN),this.hasReturnValue_=!1):"procedures_defreturn"!=b.type||this.hasReturnValue_||(this.removeInput("VALUE"),this.appendValueInput("VALUE").appendField(Blockly.Msg.PROCEDURES_DEFRETURN_RETURN),this.hasReturnValue_=!0),this.setWarningText(null)):this.setWarningText(Blockly.Msg.PROCEDURES_IFRETURN_WARNING)}}};
+b.type&&this.hasReturnValue_?(this.removeInput("VALUE"),this.appendDummyInput("VALUE").appendField(Blockly.Msg.PROCEDURES_DEFRETURN_RETURN),this.hasReturnValue_=!1):"procedures_defreturn"!=b.type||this.hasReturnValue_||(this.removeInput("VALUE"),this.appendValueInput("VALUE").appendField(Blockly.Msg.PROCEDURES_DEFRETURN_RETURN),this.hasReturnValue_=!0),this.setWarningText(null)):this.setWarningText(Blockly.Msg.PROCEDURES_IFRETURN_WARNING)}}};/*
+
+ Visual Blocks Editor
+
+ Copyright 2012 Fred Lin.
+ https://github.com/gasolin/BlocklyDuino
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+*/
+Blockly.Blocks.serial={};Blockly.Blocks.serial.HUE=205;Blockly.Blocks.serial_print={init:function(){this.setHelpUrl(Blockly.Msg.SERIAL_PRINT_HELPURL);this.setColour(Blockly.Blocks.serial.HUE);this.appendValueInput("CONTENT","String").appendField(Blockly.Msg.SERIAL_PRINT_APPENDTEXT);this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);this.setTooltip(Blockly.Msg.SERIAL_PRINT_TOOLTIP)}};
+Blockly.Blocks.serial_read={init:function(){this.setHelpUrl(Blockly.Msg.SERIAL_READ_HELPURL);this.setColour(Blockly.Blocks.serial.HUE);this.appendDummyInput().appendField(Blockly.Msg.SERIAL_READ_APPENDTEXT);this.setOutput(!0,"byte");this.setTooltip(Blockly.Msg.SERIAL_READ_TOOLTIP)}};
+Blockly.Blocks.serial_available={init:function(){this.setHelpUrl(Blockly.Msg.SERIAL_AVAILABLE_HELPURL);this.setColour(Blockly.Blocks.serial.HUE);this.appendDummyInput().appendField(Blockly.Msg.SERIAL_AVAILABLE_APPENDTEXT);this.setOutput(!0,"Number");this.setTooltip(Blockly.Msg.SERIAL_AVAILABLE_TOOLTIP)}};
+Blockly.Blocks.serial_println={init:function(){this.setHelpUrl(Blockly.Msg.SERIAL_PRINTLN_HELPURL);this.setColour(Blockly.Blocks.serial.HUE);this.appendValueInput("CONTENT").setCheck("String").appendField(Blockly.Msg.SERIAL_PRINTLN_APPENDTEXT);this.setPreviousStatement(!0);this.setNextStatement(!0);this.setTooltip(Blockly.Msg.SERIAL_PRINTLN_TOOLTIP)}};
 // Copyright 2012 Google Inc.  Apache License 2.0
 Blockly.Blocks.texts={};Blockly.Blocks.texts.HUE=160;
 Blockly.Blocks.text={init:function(){this.setHelpUrl(Blockly.Msg.TEXT_TEXT_HELPURL);this.setColour(Blockly.Blocks.texts.HUE);this.appendDummyInput().appendField(this.newQuote_(!0)).appendField(new Blockly.FieldTextInput(""),"TEXT").appendField(this.newQuote_(!1));this.setOutput(!0,"String");this.setTooltip(Blockly.Msg.TEXT_TEXT_TOOLTIP)},newQuote_:function(a){return new Blockly.FieldImage(Blockly.pathToMedia+(a==Blockly.RTL?"quote1.png":"quote0.png"),12,12,'"')}};
@@ -274,7 +310,7 @@ Blockly.Msg.TEXT_PROMPT_TOOLTIP_TEXT:Blockly.Msg.TEXT_PROMPT_TOOLTIP_NUMBER})}};
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-Blockly.Blocks.times={};Blockly.Blocks.times.HUE=125;Blockly.Blocks.delay={init:function(){this.setHelpUrl(Blockly.Msg.TIMES_DELAY_HELPURL);this.setColour(Blockly.Blocks.times.HUE);this.appendValueInput("DELAY_TIME").setCheck("Number").appendField(Blockly.Msg.TIMES_DELAY_APPENDTEXT);this.setPreviousStatement(!0);this.setNextStatement(!0);this.setTooltip(Blockly.Msg.TIMES_DELAY_TOOLTIP)}};
+Blockly.Blocks.times={};Blockly.Blocks.times.HUE=90;Blockly.Blocks.delay={init:function(){this.setHelpUrl(Blockly.Msg.TIMES_DELAY_HELPURL);this.setColour(Blockly.Blocks.times.HUE);this.appendValueInput("DELAY_TIME").setCheck("Number").appendField(Blockly.Msg.TIMES_DELAY_APPENDTEXT);this.setPreviousStatement(!0);this.setNextStatement(!0);this.setTooltip(Blockly.Msg.TIMES_DELAY_TOOLTIP)}};
 Blockly.Blocks.delayMicroseconds={init:function(){this.setHelpUrl(Blockly.Msg.TIMES_DELAYMICROSECONDS_HELPURL);this.setColour(Blockly.Blocks.times.HUE);this.appendValueInput("DELAY_TIME").setCheck("Number").appendField(Blockly.Msg.TIMES_DELAYMICROSECONDS_APPENDTEXT);this.setPreviousStatement(!0);this.setNextStatement(!0);this.setTooltip(Blockly.Msg.TIMES_DELAYMICROSECONDS_TOOLTIP)}};
 Blockly.Blocks.micros={init:function(){this.setHelpUrl(Blockly.Msg.TIMES_MICROS_HELPURL);this.setColour(Blockly.Blocks.times.HUE);this.appendDummyInput().appendField(Blockly.Msg.TIMES_MICROS_APPENDTEXT);this.setOutput(!0,"Number");this.setTooltip(Blockly.Msg.TIMES_MICROS_TOOLTIP)}};
 Blockly.Blocks.millis={init:function(){this.setHelpUrl(Blockly.Msg.TIMES_MILLIS_HELPURL);this.setColour(Blockly.Blocks.times.HUE);this.appendDummyInput().appendField(Blockly.Msg.TIMES_MILLIS_APPENDTEXT);this.setOutput(!0,"Number");this.setTooltip(Blockly.Msg.TIMES_MILLIS_TOOLTIP)}};

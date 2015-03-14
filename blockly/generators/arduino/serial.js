@@ -23,7 +23,7 @@
  */
 'use strict';
 
-goog.provide('Blockly.Arduino.communication');
+goog.provide('Blockly.Arduino.serial');
 
 goog.require('Blockly.Arduino');
 

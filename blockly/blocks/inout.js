@@ -26,65 +26,34 @@
 
 //To support syntax defined in http://arduino.cc/en/Reference/HomePage
 
-goog.provide('Blockly.Blocks.base');
+goog.provide('Blockly.Blocks.inout');
 
 goog.require('Blockly.Blocks');
 
+Blockly.Blocks.inout.HUE = 230;
 
-Blockly.Blocks['base_delay'] = {
-  helpUrl: 'http://arduino.cc/en/Reference/delay',
+Blockly.Blocks['inout_buildin_led'] = {
+  helpUrl: 'http://arduino.cc/en/Reference/DigitalWrite',
   init: function() {
-    this.setColour(120);
-    this.appendValueInput("DELAY_TIME", 'Number')
-        .appendField("Delay")
-        .setCheck('Number');
-    this.setInputsInline(true);
+    this.setColour(Blockly.Blocks.inout.HUE);
+    this.appendDummyInput()
+      .appendField("Build-in LED Stat")
+      .appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"], ["LOW", "LOW"]]), "STAT");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip('Delay specific time');
+    this.setTooltip('light or off the build-in LED');
   }
-};
-
-Blockly.Blocks['base_map'] = {
-  helpUrl: 'http://arduino.cc/en/Reference/map',
-  init: function() {
-    this.setColour(230);
-    this.appendValueInput("NUM", 'Number')
-        .appendField("Map ")
-        .setCheck('Number');
-    this.appendValueInput("DMAX", 'Number')
-        .appendField("value to [0-")
-        .setCheck('Number');
-    this.appendDummyInput()
-        .appendField("]");
-    this.setInputsInline(true);
-    this.setOutput(true);
-    this.setTooltip('Re-maps a number from [0-1024] to another.');
-  }
-};
-/*
-Blockly.Blocks['inout_buildin_led'] = {
-   helpUrl: 'http://arduino.cc/en/Reference/DigitalWrite',
-   init: function() {
-     this.setColour(190);
-     this.appendDummyInput()
-         .appendField("Build-in LED Stat")
-         .appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"], ["LOW", "LOW"]]), "STAT");
-     this.setPreviousStatement(true, null);
-     this.setNextStatement(true, null);
-     this.setTooltip('light or off the build-in LED');
-   }
 };
 
 Blockly.Blocks['inout_digital_write'] = {
   helpful: Blockly.Msg.INOUT_DIGITAL_WRITE_HELPURL,
   init: function() {
-    this.setColour(230);
+    this.setColour(Blockly.Blocks.inout.HUE);
     this.appendDummyInput()
-    .appendField(Blockly.Msg.INOUT_DIGITAL_WRITE_APPENDTEXT_PIN)
-        .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN")
-    .appendField(Blockly.Msg.INOUT_DIGITAL_WRITE_APPENDTEXT_STAT)
-        .appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"], ["LOW", "LOW"]]), "STAT");
+      .appendField(Blockly.Msg.INOUT_DIGITAL_WRITE_APPENDTEXT_PIN)
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN")
+      .appendField(Blockly.Msg.INOUT_DIGITAL_WRITE_APPENDTEXT_STAT)
+      .appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"], ["LOW", "LOW"]]), "STAT");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.INOUT_DIGITAL_WRITE_TOOLTIP);
@@ -94,10 +63,10 @@ Blockly.Blocks['inout_digital_write'] = {
 Blockly.Blocks['inout_digital_read'] = {
   helpUrl: Blockly.Msg.INOUT_DIGITAL_READ_HELPURL,
   init: function() {
-    this.setColour(230);
+    this.setColour(Blockly.Blocks.inout.HUE);
     this.appendDummyInput()
-    .appendField(Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT)
-        .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
+      .appendField(Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT)
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
     this.setOutput(true, 'Boolean');
     this.setTooltip(Blockly.Msg.INOUT_DIGITAL_READ_TOOLTIP);
   }
@@ -106,7 +75,7 @@ Blockly.Blocks['inout_digital_read'] = {
 Blockly.Blocks['inout_analog_write'] = {
   helpUrl: Blockly.Msg.INOUT_ANALOG_WRITE_HELPURL,
   init: function() {
-    this.setColour(230);
+    this.setColour(Blockly.Blocks.inout.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_PIN)
       .appendField(new Blockly.FieldDropdown(profile.default.analog), "PIN");
@@ -123,21 +92,21 @@ Blockly.Blocks['inout_analog_write'] = {
 Blockly.Blocks['inout_analog_read'] = {
   helpUrl: Blockly.Msg.INOUT_ANALOG_READ_HELPURL,
   init: function() {
-    this.setColour(230);
+    this.setColour(Blockly.Blocks.inout.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.INOUT_ANALOG_READ_APPENDTEXT)
       .appendField(new Blockly.FieldDropdown(profile.default.analog), "PIN");
     this.setOutput(true, 'Number');
-  this.setTooltip(Blockly.Msg.INOUT_ANALOG_READ_TOOLTIP);
+    this.setTooltip(Blockly.Msg.INOUT_ANALOG_READ_TOOLTIP);
   }
 };
 
 Blockly.Blocks['inout_highlow'] = {
   helpUrl: 'http://arduino.cc/en/Reference/Constants',
   init: function() {
-    this.setColour(230);
+    this.setColour(Blockly.Blocks.inout.HUE);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"], ["LOW", "LOW"]]), 'BOOL')
+      .appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"], ["LOW", "LOW"]]), 'BOOL')
     this.setOutput(true, 'Boolean');
     this.setTooltip('');
   }
@@ -146,7 +115,7 @@ Blockly.Blocks['inout_highlow'] = {
 Blockly.Blocks['pulsein'] = {
   init: function() {
     this.setHelpUrl('http://www.example.com/');
-    this.setColour(230);
+    this.setColour(Blockly.Blocks.inout.HUE);
     this.appendDummyInput()
       .appendField("PulseIn Pin#")
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "pin");
@@ -165,7 +134,7 @@ Blockly.Blocks['pulsein'] = {
 Blockly.Blocks['tone'] = {
   init: function() {
     this.setHelpUrl('http://www.example.com/');
-    this.setColour(230);
+    this.setColour(Blockly.Blocks.inout.HUE);
     this.appendDummyInput()
       .appendField("Tone Pin#")
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "pin");
@@ -181,46 +150,3 @@ Blockly.Blocks['tone'] = {
     this.setTooltip('');
   }
 };
-
-//servo block
-//http://www.seeedstudio.com/depot/emax-9g-es08a-high-sensitive-mini-servo-p-760.html?cPath=170_171
-Blockly.Blocks['servo_move'] = {
-  helpUrl: 'http://www.arduino.cc/playground/ComponentLib/servo',
-  init: function() {
-    this.setColour(190);
-    this.appendDummyInput()
-        .appendField("Servo")
-        .appendField(new Blockly.FieldImage("http://www.seeedstudio.com/depot/images/product/a991.jpg", 64, 64))
-        .appendField("PIN#")
-        .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN")
-    this.appendValueInput("DEGREE", 'Number')
-        .setCheck('Number')
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("Degree (0~180)");
-    this.appendValueInput("DELAY_TIME", 'Number')
-        .setCheck('Number')
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("Delay");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setTooltip('move between 0~180 degree');
-  }
-};
-
-Blockly.Blocks['servo_read_degrees'] = {
-  helpUrl: 'http://www.arduino.cc/playground/ComponentLib/servo',
-  init: function() {
-    this.setColour(190);
-    this.appendDummyInput()
-        .appendField("Servo")
-        .appendField(new Blockly.FieldImage("http://www.seeedstudio.com/depot/images/product/a991.jpg", 64, 64))
-        .appendField("PIN#")
-        .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
-    this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("Read Degrees")
-    this.setOutput(true, 'Number');
-    this.setTooltip('return that degree with the last servo move.');
-  }
-};
-*/

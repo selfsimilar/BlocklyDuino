@@ -10,7 +10,6 @@ Blockly.Msg.ADD_COMMENT = "コメントを追加";
 Blockly.Msg.ARDUINO = "Arduino";
 Blockly.Msg.AUTH = "Please authorize this app to enable your work to be saved and to allow it to be shared by you.";  // untranslated
 Blockly.Msg.BLOCKS = "ブロック";
-Blockly.Msg.CATEGORY_COMMUNICATION = "通信";
 Blockly.Msg.CATEGORY_CONTROL = "制御";
 Blockly.Msg.CATEGORY_FUNCTIONS = "関数";
 Blockly.Msg.CATEGORY_GROVE = "Grove";
@@ -18,9 +17,11 @@ Blockly.Msg.CATEGORY_GROVE_ANALOG = "Grove アナログ";
 Blockly.Msg.CATEGORY_GROVE_LCD = "Grove LCD";
 Blockly.Msg.CATEGORY_GROVE_MOTOR = "Grove モーター";
 Blockly.Msg.CATEGORY_INOUT = "IOピン制御";
+Blockly.Msg.CATEGORY_INVOLT = "involt";  // untranslated
 Blockly.Msg.CATEGORY_LOGIC = "演算";
 Blockly.Msg.CATEGORY_LOOPS = "繰り返し";
 Blockly.Msg.CATEGORY_MATH = "算数";
+Blockly.Msg.CATEGORY_SERIAL = "シリアル通信";
 Blockly.Msg.CATEGORY_SERVO = "サーボ";
 Blockly.Msg.CATEGORY_TEXT = "テキスト";
 Blockly.Msg.CATEGORY_TIME = "時間";
@@ -46,18 +47,6 @@ Blockly.Msg.COLOUR_RGB_HELPURL = "http://www.december.com/html/spec/colorper.htm
 Blockly.Msg.COLOUR_RGB_RED = "赤";
 Blockly.Msg.COLOUR_RGB_TITLE = "カラーと";
 Blockly.Msg.COLOUR_RGB_TOOLTIP = "赤、緑、および青の指定された量で色を作成します。すべての値は 0 ～ 100 の間でなければなりません。";
-Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_APPENDTEXT = "シリアルデータの確認";
-Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3214";
-Blockly.Msg.COMMUNICATION_SERIAL_AVAILABLE_TOOLTIP = "シリアルポートに何バイトのデータが到着しているかを返します。";
-Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_APPENDTEXT = "シリアル書き出し（改行）";
-Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3364";
-Blockly.Msg.COMMUNICATION_SERIAL_PRINTLN_TOOLTIP = "P人が読むことのできる形式(ASCIIテキスト)でデータを改行付きでシリアルポートへ出力します。";
-Blockly.Msg.COMMUNICATION_SERIAL_PRINT_APPENDTEXT = "シリアル書き出し";
-Blockly.Msg.COMMUNICATION_SERIAL_PRINT_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3288";
-Blockly.Msg.COMMUNICATION_SERIAL_PRINT_TOOLTIP = "人が読むことのできる形式(ASCIIテキスト)でデータをシリアルポートへ出力します。";
-Blockly.Msg.COMMUNICATION_SERIAL_READ_APPENDTEXT = "シリアル読み込み";
-Blockly.Msg.COMMUNICATION_SERIAL_READ_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3248";
-Blockly.Msg.COMMUNICATION_SERIAL_READ_TOOLTIP = "受信データを読み込みます。 ";
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "ループから抜け出す";
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "ループの次の反復処理を続行します。";
@@ -356,6 +345,18 @@ Blockly.Msg.REMOVE_COMMENT = "コメントを削除します。";
 Blockly.Msg.RENAME_VARIABLE = "変数の名前を変更.";
 Blockly.Msg.RENAME_VARIABLE_TITLE = "%1の変数すべてを名前変更します。";
 Blockly.Msg.SAVE_XML = "データのほぞん";
+Blockly.Msg.SERIAL_AVAILABLE_APPENDTEXT = "シリアルデータの確認";
+Blockly.Msg.SERIAL_AVAILABLE_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3214";
+Blockly.Msg.SERIAL_AVAILABLE_TOOLTIP = "シリアルポートに何バイトのデータが到着しているかを返します。";
+Blockly.Msg.SERIAL_PRINTLN_APPENDTEXT = "シリアル書き出し（改行）";
+Blockly.Msg.SERIAL_PRINTLN_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3364";
+Blockly.Msg.SERIAL_PRINTLN_TOOLTIP = "P人が読むことのできる形式(ASCIIテキスト)でデータを改行付きでシリアルポートへ出力します。";
+Blockly.Msg.SERIAL_PRINT_APPENDTEXT = "シリアル書き出し";
+Blockly.Msg.SERIAL_PRINT_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3288";
+Blockly.Msg.SERIAL_PRINT_TOOLTIP = "人が読むことのできる形式(ASCIIテキスト)でデータをシリアルポートへ出力します。";
+Blockly.Msg.SERIAL_READ_APPENDTEXT = "シリアル読み込み";
+Blockly.Msg.SERIAL_READ_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3248";
+Blockly.Msg.SERIAL_READ_TOOLTIP = "受信データを読み込みます。 ";
 Blockly.Msg.TEXT_APPEND_APPENDTEXT = "テキストを追加します。";
 Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 Blockly.Msg.TEXT_APPEND_TO = "代入";
