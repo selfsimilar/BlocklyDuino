@@ -25,6 +25,7 @@ Blockly.Msg.CATEGORY_SERIAL = "シリアル通信";
 Blockly.Msg.CATEGORY_SERVO = "サーボ";
 Blockly.Msg.CATEGORY_TEXT = "テキスト";
 Blockly.Msg.CATEGORY_TIME = "時間";
+Blockly.Msg.CATEGORY_ULTRA_SONIC = "超音波センサー";
 Blockly.Msg.CATEGORY_VARIABLES = "変数";
 Blockly.Msg.CHANGE_VALUE_TITLE = "値を変更します。";
 Blockly.Msg.CHAT = "Chat with your collaborator by typing in this box!";  // untranslated

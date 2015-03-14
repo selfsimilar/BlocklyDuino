@@ -25,6 +25,7 @@ Blockly.Msg.CATEGORY_SERIAL = "Serial";
 Blockly.Msg.CATEGORY_SERVO = "Servo";
 Blockly.Msg.CATEGORY_TEXT = "Text";
 Blockly.Msg.CATEGORY_TIME = "Time";
+Blockly.Msg.CATEGORY_ULTRA_SONIC = "UltraSonic";
 Blockly.Msg.CATEGORY_VARIABLES = "Variables";
 Blockly.Msg.CHANGE_VALUE_TITLE = "Change value:";
 Blockly.Msg.CHAT = "Chat with your collaborator by typing in this box!";

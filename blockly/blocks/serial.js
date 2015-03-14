@@ -36,8 +36,9 @@ Blockly.Blocks['serial_print'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.SERIAL_PRINT_HELPURL);
     this.setColour(Blockly.Blocks.serial.HUE);
-    this.appendValueInput("CONTENT", 'String')
-    .appendField(Blockly.Msg.SERIAL_PRINT_APPENDTEXT);
+    this.appendValueInput("CONTENT")
+      .setCheck("null")
+      .appendField(Blockly.Msg.SERIAL_PRINT_APPENDTEXT);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.SERIAL_PRINT_TOOLTIP);
@@ -71,7 +72,7 @@ Blockly.Blocks['serial_println'] = {
     this.setHelpUrl(Blockly.Msg.SERIAL_PRINTLN_HELPURL);
     this.setColour(Blockly.Blocks.serial.HUE);
     this.appendValueInput("CONTENT")
-    .setCheck("String")
+    .setCheck("null")
     .appendField(Blockly.Msg.SERIAL_PRINTLN_APPENDTEXT);
     this.setPreviousStatement(true);
     this.setNextStatement(true);

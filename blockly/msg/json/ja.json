@@ -327,6 +327,7 @@
   "PROCEDURES_IFRETURN_TOOLTIP": "1番目値が true の場合、2 番目の値を返します。",
   "PROCEDURES_IFRETURN_WARNING": "警告: このブロックは、関数定義内でのみ使用できます。",
   "CATEGORY_INOUT": "IOピン制御",
+  "CATEGORY_ULTRA_SONIC": "超音波センサー",
   "CATEGORY_SERIAL": "シリアル通信",
   "CATEGORY_SERVO": "サーボ",
   "CATEGORY_GROVE_ANALOG": "Grove アナログ",

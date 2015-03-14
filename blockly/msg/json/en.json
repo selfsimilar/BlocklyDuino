@@ -369,6 +369,7 @@
   "PROCEDURES_IFRETURN_TOOLTIP": "If a value is true, then return a second value.",
   "PROCEDURES_IFRETURN_WARNING": "Warning: This block may be used only within a function definition.",
   "CATEGORY_INOUT": "In/Out",
+  "CATEGORY_ULTRA_SONIC": "UltraSonic",
   "CATEGORY_SERIAL": "Serial",
   "CATEGORY_SERVO": "Servo",
   "CATEGORY_GROVE_ANALOG": "Grove Analog",

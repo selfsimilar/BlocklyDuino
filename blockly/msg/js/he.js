@@ -25,6 +25,7 @@ Blockly.Msg.CATEGORY_SERIAL = "Serial";  // untranslated
 Blockly.Msg.CATEGORY_SERVO = "Servo";  // untranslated
 Blockly.Msg.CATEGORY_TEXT = "Text";  // untranslated
 Blockly.Msg.CATEGORY_TIME = "Time";  // untranslated
+Blockly.Msg.CATEGORY_ULTRA_SONIC = "UltraSonic";  // untranslated
 Blockly.Msg.CATEGORY_VARIABLES = "Variables";  // untranslated
 Blockly.Msg.CHANGE_VALUE_TITLE = "שנה ערך:";
 Blockly.Msg.CHAT = "שוחח עם משתף פעולה שלך על-ידי הקלדה בתיבה זו!";

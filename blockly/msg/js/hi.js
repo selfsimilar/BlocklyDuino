@@ -25,6 +25,7 @@ Blockly.Msg.CATEGORY_SERIAL = "Serial";  // untranslated
 Blockly.Msg.CATEGORY_SERVO = "Servo";  // untranslated
 Blockly.Msg.CATEGORY_TEXT = "Text";  // untranslated
 Blockly.Msg.CATEGORY_TIME = "Time";  // untranslated
+Blockly.Msg.CATEGORY_ULTRA_SONIC = "UltraSonic";  // untranslated
 Blockly.Msg.CATEGORY_VARIABLES = "Variables";  // untranslated
 Blockly.Msg.CHANGE_VALUE_TITLE = "मान परिवर्तित करें:";
 Blockly.Msg.CHAT = "इस सन्दूक में लिखकर हमारे सहयोगी के साथ बातचीत करें!";
