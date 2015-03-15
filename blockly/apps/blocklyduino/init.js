@@ -271,7 +271,9 @@ function setScript() {
   else param = getParam();
   if (param == "ja") {
     script.src = "../../msg/js/ja.js";
-  } else {
+  } else if(param == "ja_kids"){
+    script.src = "../../msg/js/ja_kids.js";
+  }else{
     script.src = "../../msg/js/en.js";
   }
   var options = document.getElementById('languageMenu');
