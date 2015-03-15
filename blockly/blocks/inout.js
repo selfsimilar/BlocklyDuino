@@ -78,7 +78,7 @@ Blockly.Blocks['inout_analog_write'] = {
     this.setColour(Blockly.Blocks.inout.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_PIN)
-      .appendField(new Blockly.FieldDropdown(profile.default.analog), "PIN");
+      .appendField(new Blockly.FieldDropdown(profile.default.pwm), "PIN");
     this.appendValueInput("NUM", 'Number')
       .appendField(Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_VALUE)
       .setCheck('Number');
