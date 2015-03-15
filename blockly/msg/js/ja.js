@@ -105,7 +105,8 @@ Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_PIN = "アナログ出力 ピン番号
 Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_VALUE = "値";
 Blockly.Msg.INOUT_ANALOG_WRITE_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2135";
 Blockly.Msg.INOUT_ANALOG_WRITE_TOOLTIP = "指定したピンからアナログ値(PWM波)を出力します。";
-Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT = "デジタル入力 ピン番号";
+Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT_PIN = "デジタル入力 ピン番号";
+Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT_PULLUP = "プルアップ";
 Blockly.Msg.INOUT_DIGITAL_READ_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2048";
 Blockly.Msg.INOUT_DIGITAL_READ_TOOLTIP = "指定したピンの値を読み取ります";
 Blockly.Msg.INOUT_DIGITAL_WRITE_APPENDTEXT_PIN = "デジタル出力 ピン番号";

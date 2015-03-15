@@ -65,8 +65,13 @@ Blockly.Blocks['inout_digital_read'] = {
   init: function() {
     this.setColour(Blockly.Blocks.inout.HUE);
     this.appendDummyInput()
-      .appendField(Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT)
+      .appendField(Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT_PIN)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT_PULLUP);
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldDropdown([["off", "INPUT"], ["on", "INPUT_PULLUP"]]), 'INPUT_MODE');
+    this.setInputsInline(true);
     this.setOutput(true, 'Boolean');
     this.setTooltip(Blockly.Msg.INOUT_DIGITAL_READ_TOOLTIP);
   }
