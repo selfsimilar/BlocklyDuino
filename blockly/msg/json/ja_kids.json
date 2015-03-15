@@ -408,5 +408,7 @@
   "MATH_MAP_APPENDTEXT_FROMHIGH": "いまのかずのさいだい",
   "MATH_MAP_APPENDTEXT_TOLOW": "かえたいかずのさいしょう",
   "MATH_MAP_APPENDTEXT_TOHIGH": "かえたいかずのさいだい",
-  "MATH_MAP_TOOLTIP": "かずをあるはんいからべつのはんいにかえれます"
+  "MATH_MAP_TOOLTIP": "かずをあるはんいからべつのはんいにかえれます",
+  "DO": "ド",
+  "DO": "レ"
 }

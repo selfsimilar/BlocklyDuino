@@ -408,5 +408,7 @@
   "MATH_MAP_APPENDTEXT_FROMHIGH": "現在の範囲の上限",
   "MATH_MAP_APPENDTEXT_TOLOW": "変換後の範囲の下限",
   "MATH_MAP_APPENDTEXT_TOHIGH": "変換後の範囲の上限",
-  "MATH_MAP_TOOLTIP": "数値をある範囲から別の範囲に変換します。"
+  "MATH_MAP_TOOLTIP": "数値をある範囲から別の範囲に変換します。",
+  "DO": "ド",
+  "DO": "レ"
 }

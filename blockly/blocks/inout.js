@@ -136,7 +136,7 @@ Blockly.Blocks['pulsein'] = {
   }
 };
 
-Blockly.Blocks['tone'] = {
+Blockly.Blocks['custom_tone'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.INOUT_TONE_HELPURL);
     this.setColour(Blockly.Blocks.inout.HUE);
@@ -155,3 +155,21 @@ Blockly.Blocks['tone'] = {
     this.setTooltip(Blockly.Msg.INOUT_TONE_TOOLTIP);
   }
 };
+
+Blockly.Blocks['tone'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.INOUT_TONE_HELPURL);
+    this.setColour(Blockly.Blocks.inout.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_PIN)
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_FREQ)
+      .appendField(new Blockly.FieldDropdown(profile.default.tone), "FREQ");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.INOUT_TONE_TOOLTIP);
+  }
+};
+

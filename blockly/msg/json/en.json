@@ -451,5 +451,7 @@
   "MATH_MAP_APPENDTEXT_FROMHIGH": "fromHigh",
   "MATH_MAP_APPENDTEXT_TOLOW": "toLow",
   "MATH_MAP_APPENDTEXT_TOHIGH": "toHigh",
-  "MATH_MAP_TOOLTIP": "Re-maps a number from one range to another. "
+  "MATH_MAP_TOOLTIP": "Re-maps a number from one range to another. ",
+  "DO": "do",
+  "RE": "re"
 }

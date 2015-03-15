@@ -89,11 +89,19 @@ Blockly.Arduino.pulsein = function() {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
-Blockly.Arduino.tone = function() {
+Blockly.Arduino.custom_tone = function() {
   var value_pin = this.getFieldValue('pin');
   var value_freq = Blockly.Arduino.valueToCode(this, 'freq', Blockly.Arduino.ORDER_ATOMIC) || '262';  //262 = C
   var value_duration = Blockly.Arduino.valueToCode(this, 'duration', Blockly.Arduino.ORDER_ATOMIC) || '1000';
   var code = 'tone(' + value_pin + ',' + value_freq +',' + value_duration + ');\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};
+
+Blockly.Arduino.tone = function() {
+  var value_pin = this.getFieldValue('PIN');
+  var value_freq = this.getFieldValue('FREQ');
+  var code = 'tone(' + value_pin + ',' + value_freq +',300);\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
