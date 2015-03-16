@@ -59,10 +59,9 @@ Blockly.Blocks['ultrasonic_maxrange'] = {
   init: function() {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(Blockly.Blocks.ultrasonic.HUE);
-    this.appendValueInput("MAXRANGE")
-      .setCheck("Number")
-      .appendField("MaxRange");
     this.appendDummyInput()
+      .appendField("MaxRange")
+      .appendField(new Blockly.FieldTextInput("20"),"MAXRANGE")
       .appendField(new Blockly.FieldDropdown([["cm", "CM"], ["inch", "INCH"]]), "UNIT");
     this.setInputsInline(true);
     this.setPreviousStatement(true);

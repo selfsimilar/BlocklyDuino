@@ -84,9 +84,9 @@ Blockly.Blocks['inout_analog_write'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_PIN)
       .appendField(new Blockly.FieldDropdown(profile.default.pwm), "PIN");
-    this.appendValueInput("NUM", 'Number')
-      .appendField(Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_VALUE)
-      .setCheck('Number');
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_VALUE)
+        .appendField(new Blockly.FieldTextInput("100"),"NUM");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -119,20 +119,20 @@ Blockly.Blocks['inout_highlow'] = {
 
 Blockly.Blocks['pulsein'] = {
   init: function() {
-    this.setHelpUrl('http://www.example.com/');
+    this.setHelpUrl(Blockly.Msg.INOUT_PULSEIN_HELPURL);
     this.setColour(Blockly.Blocks.inout.HUE);
     this.appendDummyInput()
-      .appendField("PulseIn Pin#")
-      .appendField(new Blockly.FieldDropdown(profile.default.digital), "pin");
+      .appendField(Blockly.Msg.INOUT_PULSEIN_APPENDTEXT_PIN)
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
     this.appendDummyInput()
-      .appendField("Type")
+      .appendField(Blockly.Msg.INOUT_PULSEIN_APPENDTEXT_TYPE)
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.INOUT_HIGH, "high"], [Blockly.Msg.INOUT_LOW, "low"]]), "type");
-    this.appendValueInput("timeout")
-      .setCheck("Number")
-      .appendField("TimeOut");
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.INOUT_PULSEIN_APPENDTEXT_TIMEOUT)
+      .appendField(new Blockly.FieldTextInput("300"),"TIMEOUT");
     this.setInputsInline(true);
     this.setOutput(true, "Number");
-    this.setTooltip('');
+    this.setTooltip(Blockly.Msg.INOUT_PULSEIN_TOOLTIP);
   }
 };
 
@@ -142,13 +142,13 @@ Blockly.Blocks['custom_tone'] = {
     this.setColour(Blockly.Blocks.inout.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_PIN)
-      .appendField(new Blockly.FieldDropdown(profile.default.digital), "pin");
-    this.appendValueInput("freq")
-      .setCheck("Number")
-      .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_FREQ);
-    this.appendValueInput("duration")
-      .setCheck("Number")
-      .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_DURATION);
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_FREQ)
+      .appendField(new Blockly.FieldTextInput("262"),"FREQ");
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_DURATION)
+      .appendField(new Blockly.FieldTextInput("300"),"DURATION");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);

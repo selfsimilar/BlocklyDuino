@@ -60,7 +60,7 @@ Blockly.Arduino.ultrasonic_setting = function() {
 
 Blockly.Arduino.ultrasonic_maxrange = function() {
   var unit = this.getFieldValue('UNIT');
-  var max_range = Blockly.Arduino.valueToCode(this, 'MAXRANGE', Blockly.Arduino.ORDER_ATOMIC) || '50'
+  var max_range = this.getFieldValue('MAXRANGE');
   if(unit == "CM"){
     Blockly.Arduino.definitions_['define_sonic_timeout'] = 'int Sonic_Time_out = ' + max_range + '*2*29;\n';
   }else{
