@@ -462,18 +462,38 @@ Blockly.Blocks['math_map'] = {
     this.appendValueInput("VALUE")
       .setCheck("Number")
       .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_VALUE);
-    this.appendValueInput("FROMLOW")
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_TOLOW)
+      .appendField(new Blockly.FieldTextInput("0"),"TOLOW");
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_TOHIGH)
+      .appendField(new Blockly.FieldTextInput("255"),"TOHIGH");
+    this.setOutput(true, "Number");
+    this.setTooltip(Blockly.Msg.MATH_MAP_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['math_custom_map'] = {
+  init: function () {
+    this.setHelpUrl(Blockly.Msg.MATH_MAP_HELPURL);
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_MAP);
+    this.appendValueInput("VALUE")
       .setCheck("Number")
-      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_FROMLOW);
-    this.appendValueInput("FROMHIGH")
-      .setCheck("Number")
-      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_FROMHIGH);
-    this.appendValueInput("TOLOW")
-      .setCheck("Number")
-      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_TOLOW);
-    this.appendValueInput("TOHIGH")
-      .setCheck("Number")
-      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_TOHIGH);
+      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_VALUE);
+    this.appendDummyInput("FROMLOW")
+      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_FROMLOW)
+      .appendField(new Blockly.FieldTextInput("0"),"FROMLOW");
+    this.appendDummyInput("FROMHIGH")
+      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_FROMHIGH)
+      .appendField(new Blockly.FieldTextInput("1024"),"FROMHIGH");
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_TOLOW)
+      .appendField(new Blockly.FieldTextInput("0"),"TOLOW");
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_TOHIGH)
+      .appendField(new Blockly.FieldTextInput("255"),"TOHIGH");
     this.setOutput(true, "Number");
     this.setTooltip(Blockly.Msg.MATH_MAP_TOOLTIP);
   }

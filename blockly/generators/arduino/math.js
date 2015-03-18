@@ -77,11 +77,19 @@ Blockly.Arduino['math_random_max_min'] = function(block) {
 
 Blockly.Arduino['math_map'] = function() {
   var value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_NONE);
-  var fromlow = Blockly.Arduino.valueToCode(this, 'FROMLOW', Blockly.Arduino.ORDER_ATOMIC) || '0';
-  var fromhigh = Blockly.Arduino.valueToCode(this, 'FROMHIGH', Blockly.Arduino.ORDER_ATOMIC) || '1024';
-  var tolow = Blockly.Arduino.valueToCode(this, 'TOLOW', Blockly.Arduino.ORDER_ATOMIC) || '0';
-  var tohigh = Blockly.Arduino.valueToCode(this, 'TOHIGH', Blockly.Arduino.ORDER_ATOMIC) || '1024';
-  var code = 'map('+value+','+fromlow+','+fromhigh+','+tolow+','+tohigh+')';
+  var tolow = this.getFieldValue('TOLOW') || '0';
+  var tohigh = this.getFieldValue('TOHIGH') || '255';
+  var code = 'map('+value+',0,1024,'+tolow+','+tohigh+')';
+  return [code, Blockly.Arduino.ORDER_NONE];
+};
+
+Blockly.Arduino['math_custom_map'] = function() {
+  var value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_NONE);
+  var fromlow = this.getFieldValue('FROMLOW') || '0';
+  var fromhigh = this.getFieldValue('FROMHIGH') || '1024';
+  var tolow = this.getFieldValue('TOLOW') || '0';
+  var tohigh = this.getFieldValue('TOHIGH') || '255';
+  var code = 'map('+value+ ',' + fromlow + ',' + fromhigh + ','+tolow+','+tohigh+')';
   return [code, Blockly.Arduino.ORDER_NONE];
 };
 
