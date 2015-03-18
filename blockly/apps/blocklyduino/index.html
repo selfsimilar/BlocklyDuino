@@ -84,7 +84,13 @@
       <block type="inout_highlow"></block>
       <block type="inout_digital_write"></block>
       <block type="inout_digital_read"></block>
-      <block type="inout_analog_write"></block>
+      <block type="inout_analog_write">
+        <value name="NUM">
+          <block type="math_number">
+            <field name="NUM">255</field>
+          </block>
+        </value>
+      </block>
       <block type="inout_analog_read"></block>
       <block type="pulsein"></block>
       <block type="tone"></block>
