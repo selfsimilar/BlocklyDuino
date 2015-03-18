@@ -37,9 +37,9 @@ Blockly.Blocks['delay'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.TIMES_DELAY_HELPURL);
     this.setColour(Blockly.Blocks.times.HUE);
-    this.appendValueInput("DELAY_TIME")
-    .setCheck("Number")
-    .appendField(Blockly.Msg.TIMES_DELAY_APPENDTEXT);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.TIMES_DELAY_APPENDTEXT)
+      .appendField(new Blockly.FieldTextInput("1000"),"DELAY_TIME");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.TIMES_DELAY_TOOLTIP);
@@ -50,9 +50,9 @@ Blockly.Blocks['delayMicroseconds'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.TIMES_DELAYMICROSECONDS_HELPURL);
     this.setColour(Blockly.Blocks.times.HUE);
-    this.appendValueInput("DELAY_TIME")
-    .setCheck("Number")
-    .appendField(Blockly.Msg.TIMES_DELAYMICROSECONDS_APPENDTEXT);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.TIMES_DELAYMICROSECONDS_APPENDTEXT)
+      .appendField(new Blockly.FieldTextInput("1000"),"DELAY_TIME");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.TIMES_DELAYMICROSECONDS_TOOLTIP);
