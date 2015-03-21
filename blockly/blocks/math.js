@@ -501,16 +501,17 @@ Blockly.Blocks['math_custom_map'] = {
 
 Blockly.Blocks['math_pow'] = {
   init: function() {
-    this.setHelpUrl('http://www.example.com/');
+    this.setHelpUrl(Blockly.Msg.MATH_POW_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
     this.appendValueInput("pow")
       .setCheck("Number")
-      .appendField("Pow base");
+      .appendField(Blockly.Msg.MATH_POW_TITLE)
+      .appendField(Blockly.Msg.MATH_POW_BASE);
     this.appendValueInput("exp")
       .setCheck("Number")
-      .appendField("exponent");
+      .appendField(Blockly.Msg.MATH_POW_EXP);
     this.setInputsInline(true);
     this.setOutput(true);
-    this.setTooltip('');
+    this.setTooltip(Blockly.Msg.MATH_POW_TOOLTIP);
   }
 };

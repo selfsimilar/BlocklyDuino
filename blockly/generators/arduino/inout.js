@@ -88,7 +88,7 @@ Blockly.Arduino.pulsein = function() {
 
 Blockly.Arduino.custom_tone = function() {
   var value_pin = this.getFieldValue('PIN');
-  var value_freq = this.getFieldValue('FREQ');
+  var value_freq = Blockly.Arduino.valueToCode(this, 'FREQ', Blockly.Arduino.ORDER_ATOMIC) || '255'
   var value_duration = this.getFieldValue('DURATION');
   var code = 'tone(' + value_pin + ',' + value_freq +',' + value_duration + ');\n';
   return code;

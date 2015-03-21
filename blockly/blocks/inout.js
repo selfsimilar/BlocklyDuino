@@ -143,9 +143,9 @@ Blockly.Blocks['custom_tone'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_PIN)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_FREQ)
-      .appendField(new Blockly.FieldTextInput("262"),"FREQ");
+    this.appendValueInput("FREQ")
+      .setCheck("Number")
+      .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_FREQ);
     this.appendDummyInput()
       .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_DURATION)
       .appendField(new Blockly.FieldTextInput("300"),"DURATION");

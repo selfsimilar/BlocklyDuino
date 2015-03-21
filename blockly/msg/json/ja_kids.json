@@ -182,6 +182,11 @@
   "MATH_RANDOM_FLOAT_HELPURL": "https://en.wikipedia.org/wiki/Random_number_generation",
   "MATH_RANDOM_FLOAT_TITLE_RANDOM": "ランダムな分数",
   "MATH_RANDOM_FLOAT_TOOLTIP": "ランダムな分数を返すー0.0 (包括) の間のと 1.0 (排他的な)。",
+  "MATH_POW_HELPURL": "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2767",
+  "MATH_POW_TITLE": "べきじょう",
+  "MATH_POW_BASE": "すうじ",
+  "MATH_POW_EXP": "じょうすう",
+  "MATH_POW_TOOLTIP": "べきじょうのけいさんをします。",
   "TEXT_TEXT_HELPURL": "https://ja.wikipedia.org/wiki/文字列",
   "TEXT_TEXT_TOOLTIP": "文字、単語、または行のテキスト。",
   "TEXT_COMMENTOUT_HELPURL": "",
@@ -418,5 +423,18 @@
   "MATH_MAP_APPENDTEXT_TOHIGH": "かえたいかずのさいだい",
   "MATH_MAP_TOOLTIP": "かずをあるはんいからべつのはんいにかえれます",
   "DO": "ド",
-  "DO": "レ"
+  "DO": "レ",
+  "ULTRASONIC_SETTING_HELPURL":"",
+  "ULTRASONIC_SETTING_TITLE": "ピンのせってい",
+  "ULTRASONIC_SETTING_TRIG": "トリガー",
+  "ULTRASONIC_SETTING_ECHO": "エコー",
+  "ULTRASONIC_SETTING_RESET": "リセット",
+  "ULTRASONIC_SETTING_TOOLTIP": "",
+  "ULTRASONIC_MAXRANGE_HELPURL": "",
+  "ULTRASONIC_MAXRANGE_TITLE": "さいだいきょり",
+  "ULTRASONIC_MAXRANGE_TOOLTIP": "",
+  "ULTRASONIC_DISTANCE_HELPURL": "",
+  "ULTRASONIC_DISTANCE_TITLE": "きょり",
+  "ULTRASONIC_DISTANCE_HELPURL": ""
+
 }

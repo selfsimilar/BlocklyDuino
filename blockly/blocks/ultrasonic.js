@@ -32,54 +32,54 @@ Blockly.Blocks.ultrasonic.HUE = 0;
 
 Blockly.Blocks['ultrasonic_setting'] = {
   init: function() {
-    this.setHelpUrl('http://www.example.com/');
+    this.setHelpUrl(Blockly.Msg.ULTRASONIC_SETTING_HELPURL);
     this.setColour(Blockly.Blocks.ultrasonic.HUE);
     this.appendDummyInput()
-      .appendField("Ultrasonic Setting:");
+      .appendField(Blockly.Msg.ULTRASONIC_SETTING_TITLE);
     this.appendDummyInput()
-      .appendField("TriggerPin");
+      .appendField(Blockly.Msg.ULTRASONIC_SETTING_TRIG);
     this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "TRIG")
     this.appendDummyInput()
-      .appendField("EchoPin");
+      .appendField(Blockly.Msg.ULTRASONIC_SETTING_ECHO);
     this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "ECHO")
     this.appendDummyInput()
-      .appendField("ResetPin");
+      .appendField(Blockly.Msg.ULTRASONIC_SETTING_RESET);
     this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "RESET")
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip('');
+    this.setTooltip(Blockly.Msg.ULTRASONIC_SETTING_TOOLTIP);
   }
 };
 
 Blockly.Blocks['ultrasonic_maxrange'] = {
   init: function() {
-    this.setHelpUrl('http://www.example.com/');
+    this.setHelpUrl(Blockly.Msg.ULTRASONIC_MAXRANGE_HELPURL);
     this.setColour(Blockly.Blocks.ultrasonic.HUE);
     this.appendDummyInput()
-      .appendField("MaxRange")
+      .appendField(Blockly.Msg.ULTRASONIC_MAXRANGE_TITLE)
       .appendField(new Blockly.FieldTextInput("20"),"MAXRANGE")
       .appendField(new Blockly.FieldDropdown([["cm", "CM"], ["inch", "INCH"]]), "UNIT");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip('');
+    this.setTooltip(Blockly.Msg.ULTRASONIC_MAXRANGE_TOOLTIP);
   }
 };
 
 Blockly.Blocks['ultrasonic_distance'] = {
   init: function() {
-    this.setHelpUrl('http://www.example.com/');
+    this.setHelpUrl(Blockly.Msg.ULTRASONIC_DISTANCE_HELPURL);
     this.setColour(Blockly.Blocks.ultrasonic.HUE);
     this.appendDummyInput()
-      .appendField("Distance");
+      .appendField(Blockly.Msg.ULTRASONIC_MAXRANGE_TITLE);
     this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown([["cm", "CM"], ["inch", "INCH"]]), "UNIT");
     this.setInputsInline(true);
     this.setOutput(true, "Number");
-    this.setTooltip('');
+    this.setTooltip(Blockly.Msg.ULTRASONIC_MAXRANGE_TOOLTIP);
   }
 };
