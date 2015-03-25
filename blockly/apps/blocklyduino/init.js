@@ -165,18 +165,6 @@ function setCharacter() {
   category.setAttribute("name", Blockly.Msg.CATEGORY_INOUT);
   category = document.getElementById('category_serial');
   category.setAttribute("name", Blockly.Msg.CATEGORY_SERIAL);
-  /*
-  category = document.getElementById('category_servo');
-  category.setAttribute("name",Blockly.Msg.CATEGORY_SERVO);
-  category = document.getElementById('category_grove_analog');
-  category.setAttribute("name",Blockly.Msg.CATEGORY_GROVE_ANALOG);
-  category = document.getElementById('category_grove');
-  category.setAttribute("name",Blockly.Msg.CATEGORY_GROVE);
-  category = document.getElementById('category_grove_lcd');
-  category.setAttribute("name",Blockly.Msg.CATEGORY_GROVE_LCD);
-  category = document.getElementById('category_grove_motor');
-  category.setAttribute("name",Blockly.Msg.CATEGORY_GROVE_MOTOR);
-  */
   category = document.getElementById('category_logic');
   category.setAttribute("name", Blockly.Msg.CATEGORY_LOGIC);
   category = document.getElementById('category_ultrasonic');
@@ -203,6 +191,8 @@ function setCharacter() {
   str.textContent = Blockly.Msg.ARDUINO;
   str = document.getElementById('tab_xml');
   str.textContent = Blockly.Msg.XML;
+  //str = document.getElementById('tab_term');
+  //str.textContent = Blockly.Msg.TERM;
   str = document.getElementById('copy-button');
   str.textContent = Blockly.Msg.COPY_BUTTON;
   str = document.getElementById('discard');
@@ -211,6 +201,14 @@ function setCharacter() {
   str.textContent = Blockly.Msg.SAVE_XML;
   str = document.getElementById('fakeload');
   str.textContent = Blockly.Msg.LOAD_XML;
+  /*
+  str = document.getElementById('cb_cf_flash_btn');
+  str.textContent = Blockly.Msg.FLASH_BUTTON;
+  str = document.getElementById('cb_cf_verify_btn');
+  str.textContent = Blockly.Msg.VERIFY_BUTTON;
+  str = document.getElementById('cb_cf_serial_monitor_connect');
+  str.textContent = Blockly.Msg.SERIAL_MONITOR_CONNECT;
+  */
 }
 
 function loadfile() {

@@ -395,6 +395,7 @@
   "BLOCKS": "Blocks",
   "ARDUINO": "Arduino",
   "XML": "XML",
+  "TERM": "Console",
   "COPY_BUTTON": "Clip Code",
   "DISCARD": "discard",
   "SAVE_XML": "Save XML",

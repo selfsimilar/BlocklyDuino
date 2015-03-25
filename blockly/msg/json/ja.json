@@ -352,6 +352,7 @@
   "BLOCKS": "ブロック",
   "ARDUINO": "Arduino",
   "XML": "XML",
+  "TERM": "Console",
   "COPY_BUTTON": "コードをクリップコピー",
   "DISCARD": "初期化",
   "SAVE_XML": "データの保存",

@@ -241,8 +241,9 @@ compilerflasher = function(lf){
 
                 if (!this.plugin_found)
                 {
-                    var alert = this.browserSpecificPluginInstall("To program your Arduino from your browser, install the Codebender Plugin. ");
-                    this.owner.setOperationOutput(alert);
+                  var alert = this.browserSpecificPluginInstall("To program your Arduino from your browser, install the Codebender Plugin. ");
+                  //var alert = this.browserSpecificPluginInstall(Blockly.Msg.ALERT_INSTSLL_PLUGIN);
+                  this.owner.setOperationOutput(alert);
                     this.owner.eventManager.fire('plugin_notification', alert);
 
                     url = "https\x3A\x2F\x2Fcodebender.cc\x2Futilities\x2Flogdb\x2F35\x2FPLUGIN_META";
