@@ -72,10 +72,10 @@ Blockly.Blocks['lcd_begin'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.LCD_BEGIN_TITLE)
       .appendField(Blockly.Msg.LCD_COL)
-      .appendField(new Blockly.FieldTextInput("2"),"COLS");
+      .appendField(new Blockly.FieldTextInput("16"),"COLS");
     this.appendDummyInput()
       .appendField(Blockly.Msg.LCD_ROW)
-      .appendField(new Blockly.FieldTextInput("16"),"ROWS");
+      .appendField(new Blockly.FieldTextInput("2"),"ROWS");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);

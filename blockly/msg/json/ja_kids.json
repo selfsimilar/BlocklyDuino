@@ -451,7 +451,7 @@
   "LCD_BEGIN_HELPURL": "http://www.musashinodenpa.com/arduino/ref/index.php?f=1&pos=967",
   "LCD_BEGIN_TITLE": "ディスプレイのせってい",
   "LCD_COL": "けた",
-  "LCD_ROW": "ぎょう",
+  "LCD_ROW": "れつ",
   "LCD_BEGIN_TOOLTIP": "ディスプレイのひょうじをせっていします。",
   "LCD_PRINT_HELPURL": "http://www.musashinodenpa.com/arduino/ref/index.php?f=1&pos=1026",
   "LCD_PRINT_TITLE": "ディスプレイにもじをかく",
