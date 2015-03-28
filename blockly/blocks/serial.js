@@ -30,7 +30,7 @@ goog.provide('Blockly.Blocks.serial');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.serial.HUE = 205;
+Blockly.Blocks.serial.HUE = 200;
 
 Blockly.Blocks['serial_print'] = {
   init: function() {

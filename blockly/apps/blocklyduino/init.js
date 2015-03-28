@@ -169,6 +169,8 @@ function setCharacter() {
   category.setAttribute("name", Blockly.Msg.CATEGORY_LOGIC);
   category = document.getElementById('category_ultrasonic');
   category.setAttribute("name", Blockly.Msg.CATEGORY_ULTRA_SONIC);
+  category = document.getElementById('category_lcd');
+  category.setAttribute("name", Blockly.Msg.CATEGORY_LCD);
   category = document.getElementById('category_loops');
   category.setAttribute("name", Blockly.Msg.CATEGORY_LOOPS);
   category = document.getElementById('category_time');
