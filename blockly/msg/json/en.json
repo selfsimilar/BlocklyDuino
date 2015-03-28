@@ -490,7 +490,6 @@
   "LCD_INIT_D5": "D5",
   "LCD_INIT_D6": "D6",
   "LCD_INIT_D7": "D7",
-  "LCD_INIT_D8": "D8",
   "LCD_INIT_TOOLTIP": "Creates a variable of type LiquidCrystal.",
   "LCD_BEGIN_HELPURL": "http://arduino.cc/en/Reference/LiquidCrystalBegin",
   "LCD_BEGIN_TITLE": "LCD begin",

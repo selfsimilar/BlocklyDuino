@@ -58,9 +58,6 @@ Blockly.Blocks['lcd_init'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.LCD_INIT_D7)
       .appendField(new Blockly.FieldDropdown(profile.arduino.digital), "D7")
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.LCD_INIT_D8)
-      .appendField(new Blockly.FieldDropdown(profile.arduino.digital), "D8")
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);

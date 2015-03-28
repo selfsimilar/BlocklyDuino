@@ -1,87 +1,69 @@
 <html>
 
-  <head>
-    <script type="text/javascript" src="header.js"></script>
-    <!--
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>BlocklyDuino</title>
-    <script type="text/javascript" src="../../blockly_compressed.js"></script>
-    <script type="text/javascript" src="../../blocks_compressed.js"></script>
-    <script type="text/javascript" src="../../arduino_compressed.js"></script>
-    <script type="text/javascript" src="../../msg/js/en.js"></script>
-    <script type="text/javascript" src="Blob.js"></script>
-    <script type="text/javascript" src="spin.js"></script>
-    <script type="text/javascript" src="FileSaver.min.js"></script>
-    <script type="text/javascript" src="blockly_helper.js"></script>
-    <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
-    <script type="text/javascript" src="jquery.xdomainajax.js"></script>
-    <script type="text/javascript" src="jquery.cookie.js"></script>
-    <script type="text/javascript" src="compilerflasher.js"></script>
-    <script type="text/javascript" src="init.js"></script>
-    <script type="text/javascript" src="ZeroClipboard.js"></script>
-    -->
-  </head>
+<head>
+  <script type="text/javascript" src="header.js"></script>
+</head>
 
-  <body>
-    <select id="languageMenu" onchange="change_lang(this)">
-      <option value="en">English</option>
-      <option value="ja">日本語</option>
-      <option value="ja_kids">にほんご</option>
-    </select>
+<body>
+  <select id="languageMenu" onchange="change_lang(this)">
+    <option value="en">English</option>
+    <option value="ja">日本語</option>
+    <option value="ja_kids">にほんご</option>
+  </select>
+  <button id="button_sample" type="button"onclick=" location.href='http://lets.makewitharduino.com'">サンプル/Sample</button>
 
-    <table height="100%" width="100%">
-      <tr>
-        <td>
-          <h1><a href="https://github.com/gasolin/BlocklyDuino/wiki">BlocklyDuino</a> &gt; web-based visual programming editor for arduino</h1>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <table id="tab" width="100%">
-            <tr id="tabRow" height="1em">
-              <td id="tab_blocks" class="tabon" onclick="tabClick('blocks')">Blocks</td>
-              <td class="tabmin">&nbsp;</td>
-              <td id="tab_arduino" class="taboff" onclick="tabClick('arduino')">Arduino</td>
-              <td class="tabmin">&nbsp;</td>
-              <td id="tab_term" class="taboff" onclick="tabClick('term')">Console</td>
-              <td class="tabmin">&nbsp;</td>
-              <td id="tab_xml" class="taboff" onclick="tabClick('xml')">XML</td>
-              <td class="tabmax">
-                <button id="copy-button" data-clipboard-target="textarea_arduino" data-clipboard-text="Clip Me!">Code Copy</button>
-                <button id="discard" onclick="discard()">Discard</button>
-                <button id="save" onclick="save()">Save</button>
-                <button id="fakeload">Load</button>
-                <input type="file" id="load" style="display: none;" />
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td height="99%" id="content_area"></td>
-      </tr>
-    </table>
-    <div id="content_blocks" class="content"></div>
-    <div id="content_arduino" class="content" readonly wrap="off">
-      <select id="cb_cf_boards"></select>
-      <select id="cb_cf_ports"></select>
-      <!--select id="cb_cf_programmers"> </select-->
-      <button id="cb_cf_verify_btn" class="btn btn-success">Verify code</button>
-      <button id="cb_cf_flash_btn" class="btn btn-success">Flash Arduino</button>
-      <textarea id="textarea_arduino"></textarea>
-      <p id="cb_cf_operation_output"></p>
-      <div id="debug_arduino"></div>
+  <table height="100%" width="100%">
+    <tr>
+      <td>
+        <h1><a href="https://github.com/okhiroyuki/BlocklyDuino">BlocklyDuino</a> &gt; visual programming editor for arduino</h1>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <table id="tab" width="100%">
+          <tr id="tabRow" height="1em">
+            <td id="tab_blocks" class="tabon" onclick="tabClick('blocks')">Blocks</td>
+            <td class="tabmin">&nbsp;</td>
+            <td id="tab_arduino" class="taboff" onclick="tabClick('arduino')"></td>
+            <td class="tabmin">&nbsp;</td>
+            <td id="tab_term" class="taboff" onclick="tabClick('term')">Console</td>
+            <td class="tabmin">&nbsp;</td>
+            <td id="tab_xml" class="taboff" onclick="tabClick('xml')"></td>
+            <td class="tabmax">
+              <button id="copy-button" data-clipboard-target="textarea_arduino" data-clipboard-text="Clip Me!">Code Copy</button>
+              <button id="discard" onclick="discard()">Discard</button>
+              <button id="save" onclick="save()"></button>
+              <button id="fakeload"></button>
+              <input type="file" id="load" style="display: none;" />
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td height="99%" id="content_area"></td>
+    </tr>
+  </table>
+  <div id="content_blocks" class="content"></div>
+  <div id="content_arduino" class="content" readonly wrap="off">
+    <select id="cb_cf_boards"></select>
+    <select id="cb_cf_ports"></select>
+    <select id="cb_cf_programmers"> </select>
+    <button id="cb_cf_verify_btn" class="btn btn-success">Verify code</button>
+    <button id="cb_cf_flash_btn" class="btn btn-success">Flash Arduino</button>
+    <textarea id="textarea_arduino"></textarea>
+    <p id="cb_cf_operation_output"></p>
+    <div id="debug_arduino"></div>
+  </div>
+  <div id="content_term" class="content">
+    <div id="cb_cf_band">
+      <select id="cb_cf_baud_rates"></select>
+      <button id="cb_cf_serial_monitor_connect">Serial Monitor connect</button>
     </div>
-    <div id="content_term" class="content">
-      <div id="cb_cf_band">
-        <select id="cb_cf_baud_rates"></select>
-        <button id="cb_cf_serial_monitor_connect">Serial Monitor connect</button>
-      </div>
-      <div id="cb_cf_serial_monitor"></div>
-      <div id="serial_hud"></div>
-    </div>
-    <textarea id="content_xml" class="content" wrap="off"></textarea>
+    <div id="cb_cf_serial_monitor"></div>
+    <div id="serial_hud"></div>
+  </div>
+  <textarea id="content_xml" class="content" wrap="off"></textarea>
 
   <xml id="toolbox" style="display: none">
     <category id="category_inout">
@@ -183,7 +165,7 @@
       <block type="involt_sendvalue"></block>
       <block type="involt_receivevalue"></block>
     </category>
-    </xml>
-  </body>
+  </xml>
+</body>
 
 </html>

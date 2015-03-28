@@ -70,12 +70,6 @@ function renderContent() {
     xmlTextarea.value = xmlText;
     xmlTextarea.focus();
     button.style.display = "none";
-    /*} else if (content.id == 'content_javascript') {
-    content.innerHTML = Blockly.JavaScript.workspaceToCode();
-  } else if (content.id == 'content_dart') {
-    content.innerHTML = Blockly.Dart.workspaceToCode();
-  } else if (content.id == 'content_python') {
-    content.innerHTML = Blockly.Python.workspaceToCode();*/
   } else if (content.id == 'content_arduino') {
     //content.innerHTML = Blockly.Arduino.workspaceToCode();
     var arduinoTextarea = document.getElementById('textarea_arduino');
@@ -146,7 +140,8 @@ function init() {
      length: 3,
      colour: '#ccc',
      snap: true},
-    media: '../../media/',
+    //media: 'media/',
+    media: filepath.media,
     toolbox: toolbox});
 
     auto_save_and_restore_blocks();
@@ -193,8 +188,6 @@ function setCharacter() {
   str.textContent = Blockly.Msg.ARDUINO;
   str = document.getElementById('tab_xml');
   str.textContent = Blockly.Msg.XML;
-  //str = document.getElementById('tab_term');
-  //str.textContent = Blockly.Msg.TERM;
   str = document.getElementById('copy-button');
   str.textContent = Blockly.Msg.COPY_BUTTON;
   str = document.getElementById('discard');
@@ -203,14 +196,6 @@ function setCharacter() {
   str.textContent = Blockly.Msg.SAVE_XML;
   str = document.getElementById('fakeload');
   str.textContent = Blockly.Msg.LOAD_XML;
-  /*
-  str = document.getElementById('cb_cf_flash_btn');
-  str.textContent = Blockly.Msg.FLASH_BUTTON;
-  str = document.getElementById('cb_cf_verify_btn');
-  str.textContent = Blockly.Msg.VERIFY_BUTTON;
-  str = document.getElementById('cb_cf_serial_monitor_connect');
-  str.textContent = Blockly.Msg.SERIAL_MONITOR_CONNECT;
-  */
 }
 
 function loadfile() {
@@ -232,8 +217,8 @@ function loadfile() {
 
 function loadxml(){
   var id = getid();
+  if(typeof id === "undefined") return;
   var pass = 'https://raw.githubusercontent.com/makewitharduino/ArduinoSample/master/' + id +'/' + id + '.xml';
-  console.log(pass);
   $.ajax({
     url: pass,
     type: "GET",
@@ -304,13 +289,17 @@ function setScript() {
   var c = $.cookie("lang");
   if(c) var param = c;
   else param = getParam();
+  script.src = filepath["msg_"+param];
+  /*
   if (param == "ja") {
-    script.src = "../../msg/js/ja.js";
+    script.src = "/msg/js/ja.js";
   } else if(param == "ja_kids"){
-    script.src = "../../msg/js/ja_kids.js";
+    script.src = "/msg/js/ja_kids.js";
   }else{
-    script.src = "../../msg/js/en.js";
+    script.src = "/msg/js/en.js";
   }
+  */
+
   var options = document.getElementById('languageMenu');
   for(var i=0;i<options.length;i++){
     if(options[i].value == param){

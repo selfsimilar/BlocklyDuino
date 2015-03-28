@@ -35,16 +35,15 @@ Blockly.Arduino.lcd_init = function() {
   var dropdown_d5 = this.getFieldValue('D5');
   var dropdown_d6 = this.getFieldValue('D6');
   var dropdown_d7 = this.getFieldValue('D7');
-  var dropdown_d8 = this.getFieldValue('D8');
 
   if(dropdown_rw == "-"){
     Blockly.Arduino.setups_['setup_liquidcrystal'] = 'LiquidCrystal lcd('
       + dropdown_rs + ',' + dropdown_enable + ',' + dropdown_d4 + ','
-      + dropdown_d5 + ',' + dropdown_d6 + ',' + dropdown_d7 + ',' + dropdown_d8 + ');';
+      + dropdown_d5 + ',' + dropdown_d6 + ',' + dropdown_d7 + ');';
   }else{
     Blockly.Arduino.setups_['setup_liquidcrystal'] = 'LiquidCrystal lcd('
       + dropdown_rs + ',' + dropdown_rw + ',' + dropdown_enable + ',' + dropdown_d4 + ','
-      + dropdown_d5 + ',' + dropdown_d6 + ',' + dropdown_d7 + ',' + dropdown_d8 + ');';
+      + dropdown_d5 + ',' + dropdown_d6 + ',' + dropdown_d7 + ');';
   }
 
   Blockly.Arduino.definitions_['liquidcrystal'] = '#include <LiquidCrystal.h>\n';
