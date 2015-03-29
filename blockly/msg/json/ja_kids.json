@@ -387,6 +387,9 @@
   "INOUT_LOW": "オフ",
   "INOUT_ON": "オン",
   "INOUT_OFF": "オフ",
+  "INOUT_SETUP_HELPURL": "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3",
+  "INOUT_SETUP_APPENDTEXT": "セットアップかんすうにかく",
+  "INOUT_SETUP_TOOLTIP": "セットアップかんすうにかくと、いっかいだけじっこうされます。",
   "SERIAL_PRINT_HELPURL": "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3288",
   "SERIAL_PRINT_APPENDTEXT": "もじをおくる",
   "SERIAL_PRINT_TOOLTIP": "パソコンにもじをおくります",
@@ -462,6 +465,4 @@
   "LCD_CLEAR_HELPURL": "http://www.musashinodenpa.com/arduino/ref/index.php?f=1&pos=977",
   "LCD_CLEAR_TITLE": "ディスプレイのもじをけす",
   "LCD_CLEAR_TOOLTIP": "もじをすべてけします。"
-
-
 }

@@ -100,3 +100,12 @@ Blockly.Arduino.tone = function() {
   var code = 'tone(' + value_pin + ',' + value_freq +',300);\n';
   return code;
 };
+
+Blockly.Arduino.inout_setup = function() {
+  var branch = Blockly.Arduino.statementToCode(this, 'CONTENT');
+  branch = branch.replace(/(^\s+)|(\s+$)/g, "");
+  Blockly.Arduino.setups_['manual_add'] = branch;
+
+  var code = "";
+  return code;
+};

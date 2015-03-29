@@ -173,3 +173,17 @@ Blockly.Blocks['tone'] = {
   }
 };
 
+Blockly.Blocks['inout_setup'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.INOUT_SETUP_HELPURL);
+    this.setColour(Blockly.Blocks.inout.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.INOUT_SETUP_APPENDTEXT);
+    this.appendStatementInput("CONTENT");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.INOUT_SETUP_TOOLTIP);
+  }
+};
+

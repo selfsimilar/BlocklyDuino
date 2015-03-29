@@ -33,6 +33,7 @@ Blockly.Blocks.variables.HUE = 330;
 
 // ************************************************************************
 // THIS SECTION IS INSERTED INTO BLOCKLY BY BLOCKLYDUINO.
+/*
 Blockly.Blocks['variables_declare'] = {
   // Variable setter.
   helpUrl: Blockly.LANG_VARIABLES_SET_HELPURL,
@@ -40,11 +41,10 @@ Blockly.Blocks['variables_declare'] = {
     this.setColour(Blockly.Blocks.variables.HUE);
     this.appendValueInput('VALUE', null)
         .appendField('Declare')
-        .appendField(new Blockly.FieldVariable(
-        Blockly.LANG_VARIABLES_SET_ITEM), 'VAR')
+        .appendField(new Blockly.FieldVariable(Blockly.LANG_VARIABLES_SET_ITEM), 'VAR')
         .appendField("as")
-      .appendField(new Blockly.FieldDropdown([["Number", "int"]]), "TYPE")
-      .appendField("value");
+        .appendField(new Blockly.FieldDropdown([["Number", "int"],["String","String"]]), "TYPE")
+        .appendField("value");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip('');
@@ -58,6 +58,7 @@ Blockly.Blocks['variables_declare'] = {
     }
   }
 };
+*/
 // ************************************************************************
 
 Blockly.Blocks['variables_get'] = {

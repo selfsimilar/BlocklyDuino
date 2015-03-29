@@ -35,6 +35,7 @@ Blockly.Arduino['variables_get'] = function(block) {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+/*
 Blockly.Arduino['variables_declare'] = function() {
   // Variable setter.
   var dropdown_type = this.getFieldValue('TYPE');
@@ -46,7 +47,7 @@ Blockly.Arduino['variables_declare'] = function() {
   Blockly.Arduino.setups_['setup_var' + varName] = varName + ' = ' + argument0 + ';\n';
   return '';
 };
-
+*/
 
 Blockly.Arduino['variables_set'] = function(block) {
   // Variable setter.
