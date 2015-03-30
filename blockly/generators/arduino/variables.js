@@ -34,7 +34,6 @@ Blockly.Arduino['variables_get'] = function(block) {
       Blockly.Variables.NAME_TYPE);
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
-
 /*
 Blockly.Arduino['variables_declare'] = function() {
   // Variable setter.

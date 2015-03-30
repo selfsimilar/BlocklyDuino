@@ -8,8 +8,22 @@ goog.require('Blockly.Msg');
 
 Blockly.Msg.ADD_COMMENT = "コメントをついか";
 Blockly.Msg.ARDUINO = "arduino";
+Blockly.Msg.ARRAY_CREATE_WITH_CONTAINER_TITLE_ADD = "はいれつ";
+Blockly.Msg.ARRAY_CREATE_WITH_CONTAINER_TOOLTIP = "はいれつのついかなどをします。";
+Blockly.Msg.ARRAY_CREATE_WITH_HELPURL = "";
+Blockly.Msg.ARRAY_CREATE_WITH_INPUT_WITH = "はいれつをつくる";
+Blockly.Msg.ARRAY_CREATE_WITH_ITEM_TITLE = "item";  // untranslated
+Blockly.Msg.ARRAY_CREATE_WITH_ITEM_TOOLTIP = "アイテムをついかする。";
+Blockly.Msg.ARRAY_CREATE_WITH_TOOLTIP = "はいれつをつくります。";
+Blockly.Msg.ARRAY_GETINDEX_AT = "まえから";
+Blockly.Msg.ARRAY_GETINDEX_AT1 = "まえから";
+Blockly.Msg.ARRAY_GETINDEX_AT2 = "まえから";
+Blockly.Msg.ARRAY_GETINDEX_HELPURL = "";
+Blockly.Msg.ARRAY_GETINDEX_ITEM = "はいれつのなかみをとる";
+Blockly.Msg.ARRAY_GETINDEX_TOOLTIP = "";
 Blockly.Msg.AUTH = "Please authorize this app to enable your work to be saved and to allow it to be shared by you.";  // untranslated
 Blockly.Msg.BLOCKS = "ブロック";
+Blockly.Msg.CATEGORY_ARRAY = "はいれつ";
 Blockly.Msg.CATEGORY_FUNCTIONS = "かんすう";
 Blockly.Msg.CATEGORY_GROVE = "Grove";
 Blockly.Msg.CATEGORY_GROVE_ANALOG = "Grove アナログ";
@@ -99,6 +113,7 @@ Blockly.Msg.EXPAND_BLOCK = "ブロックをてんかします。";
 Blockly.Msg.EXTERNAL_INPUTS = "がいぶにゅうりょく";
 Blockly.Msg.HELP = "ヘルプ";
 Blockly.Msg.INLINE_INPUTS = "インラインにゅうりょく";
+Blockly.Msg.INOUT_ANALOGPIN_TEXT = "アナログピン";
 Blockly.Msg.INOUT_ANALOG_READ_APPENDTEXT = "アナログにゅうりょく ピン";
 Blockly.Msg.INOUT_ANALOG_READ_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2086";
 Blockly.Msg.INOUT_ANALOG_READ_TOOLTIP = "していしたアナログピンからあたいをよみとります";
@@ -106,6 +121,7 @@ Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_PIN = "アナログしゅつりょく 
 Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_VALUE = "あたい";
 Blockly.Msg.INOUT_ANALOG_WRITE_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2135";
 Blockly.Msg.INOUT_ANALOG_WRITE_TOOLTIP = "していしたピンからあたいをしゅつりょくします。";
+Blockly.Msg.INOUT_DIGITALPIN_TEXT = "デジタルピン";
 Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT_PIN = "デジタルにゅうりょく ピン";
 Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT_PULLUP = "スイッチ";
 Blockly.Msg.INOUT_DIGITAL_READ_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2048";

@@ -8,8 +8,22 @@ goog.require('Blockly.Msg');
 
 Blockly.Msg.ADD_COMMENT = "コメントを追加";
 Blockly.Msg.ARDUINO = "Arduino";
+Blockly.Msg.ARRAY_CREATE_WITH_CONTAINER_TITLE_ADD = "配列";
+Blockly.Msg.ARRAY_CREATE_WITH_CONTAINER_TOOLTIP = "アイテムの追加、削除などを行う。";
+Blockly.Msg.ARRAY_CREATE_WITH_HELPURL = "";
+Blockly.Msg.ARRAY_CREATE_WITH_INPUT_WITH = "配列の作成";
+Blockly.Msg.ARRAY_CREATE_WITH_ITEM_TITLE = "item";  // untranslated
+Blockly.Msg.ARRAY_CREATE_WITH_ITEM_TOOLTIP = "アイテムを追加する。";
+Blockly.Msg.ARRAY_CREATE_WITH_TOOLTIP = "配列を作成する。";
+Blockly.Msg.ARRAY_GETINDEX_AT = "前から";
+Blockly.Msg.ARRAY_GETINDEX_AT1 = "前から";
+Blockly.Msg.ARRAY_GETINDEX_AT2 = "前から";
+Blockly.Msg.ARRAY_GETINDEX_HELPURL = "";
+Blockly.Msg.ARRAY_GETINDEX_ITEM = "配列の中身を取得";
+Blockly.Msg.ARRAY_GETINDEX_TOOLTIP = "";
 Blockly.Msg.AUTH = "Please authorize this app to enable your work to be saved and to allow it to be shared by you.";  // untranslated
 Blockly.Msg.BLOCKS = "ブロック";
+Blockly.Msg.CATEGORY_ARRAY = "配列";
 Blockly.Msg.CATEGORY_FUNCTIONS = "関数";
 Blockly.Msg.CATEGORY_GROVE = "Grove";
 Blockly.Msg.CATEGORY_GROVE_ANALOG = "Grove アナログ";
@@ -99,6 +113,7 @@ Blockly.Msg.EXPAND_BLOCK = "ブロックを展開します。";
 Blockly.Msg.EXTERNAL_INPUTS = "外部入力";
 Blockly.Msg.HELP = "ヘルプ";
 Blockly.Msg.INLINE_INPUTS = "インライン入力";
+Blockly.Msg.INOUT_ANALOGPIN_TEXT = "アナログピン";
 Blockly.Msg.INOUT_ANALOG_READ_APPENDTEXT = "アナログ入力 ピン";
 Blockly.Msg.INOUT_ANALOG_READ_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2086";
 Blockly.Msg.INOUT_ANALOG_READ_TOOLTIP = "指定したアナログピンから値を読み取ります";
@@ -106,6 +121,7 @@ Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_PIN = "アナログ出力 ピン";
 Blockly.Msg.INOUT_ANALOG_WRITE_APPENDTEXT_VALUE = "値";
 Blockly.Msg.INOUT_ANALOG_WRITE_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2135";
 Blockly.Msg.INOUT_ANALOG_WRITE_TOOLTIP = "指定したピンからアナログ値(PWM波)を出力します。";
+Blockly.Msg.INOUT_DIGITALPIN_TEXT = "デジタルピン";
 Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT_PIN = "デジタル入力 ピン";
 Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT_PULLUP = "プルアップ";
 Blockly.Msg.INOUT_DIGITAL_READ_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2048";
