@@ -31,11 +31,36 @@ goog.provide('Blockly.Variables');
 goog.require('Blockly.Workspace');
 goog.require('goog.string');
 
+Blockly.Variables.TYPE_ANY = '';
+Blockly.Variables.TYPE_BOOLEAN = 'Boolean';
+Blockly.Variables.TYPE_NUMBER = 'Number';
+Blockly.Variables.TYPE_STRING = 'String';
+Blockly.Variables.TYPE_COLOUR = 'Colour';
+Blockly.Variables.TYPE_ARRAY = 'Array';
+Blockly.Variables.NAME_TYPE = 'VARIABLE';
 
 /**
- * Category to separate variable names from procedures and generated functions.
+ * A Complete list of all variables types available.
+ * Contains a tuple of both the variables display name and
+ * it's definition name.
+ * @return {Array}
  */
-Blockly.Variables.NAME_TYPE = 'VARIABLE';
+Blockly.Variables.allTypes = function(){
+  return [
+//    [Blockly.Msg.VARIABLES_TYPE_ANY,
+//     Blockly.Variables.TYPE_ANY],
+    [Blockly.Msg.VARIABLES_TYPE_NUMBER,
+     Blockly.Variables.TYPE_NUMBER],
+    [Blockly.Msg.VARIABLES_TYPE_BOOLEAN,
+     Blockly.Variables.TYPE_BOOLEAN],
+    [Blockly.Msg.VARIABLES_TYPE_STRING,
+     Blockly.Variables.TYPE_STRING],
+//    [Blockly.Msg.VARIABLES_TYPE_COLOUR,
+//     Blockly.Variables.TYPE_COLOUR],
+    [Blockly.Msg.VARIABLES_TYPE_ARRAY,
+     Blockly.Variables.TYPE_ARRAY]
+  ];
+};
 
 /**
  * Find all user-created variables.
@@ -77,6 +102,83 @@ Blockly.Variables.allVariables = function(root) {
 };
 
 /**
+ * Finds all user-created variables and their types.
+ * @param {!Blockly.Block|!Blockly.Workspace} root Root block or workspace.
+ * @return {!Array<!Array<string>>}
+ */
+Blockly.Variables.allVariablesAndTypes = function(root){
+  var blocks, workspace;
+  if (root.getDescendants) {
+    // Root is Block.
+    blocks = root.getDescendants();
+    workspace = root.workspace;
+  } else if (root.getAllBlocks) {
+    // Root is Workspace.
+    blocks = root.getAllBlocks();
+    workspace = root;
+  } else {
+    throw 'Not Block or Workspace: ' + root;
+  }
+  var variableHash = Object.create(null);
+  // Iterate through every block and add each variable to the hash.
+  for (var x = 0; x < blocks.length; x++) {
+    var func = blocks[x].getVars;
+    if (func) {
+      var blockVariables = func.call(blocks[x]);
+      for (var y = 0; y < blockVariables.length; y++) {
+        var varName = blockVariables[y];
+        // Variable name may be null if the block is only half-built.
+        if (varName) {
+          variableHash[varName.toLowerCase()] = varName;
+        }
+      }
+    }
+  }
+  // Flatten the hash into a list.
+  var variableList = [];
+  for (var name in variableHash) {
+    var type = Blockly.Variables.typeOf(name,workspace)
+      || Blockly.Variables.TYPE_ANY;
+    variableList.push([variableHash[name], type]);
+  }
+  return variableList;
+};
+
+/**
+ * Sets the type of a variable with the given name
+ * @param {string} name The variable name
+ * @param {string} type The type to change to
+ * @param {!Blockly.Workspace} workspace Workspace edit variables in.
+ */
+Blockly.Variables.changeType = function(name, type, workspace){
+  var blocks = workspace.getAllBlocks();
+  // Iterate through every block.
+  for (var x = 0; x < blocks.length; x++) {
+    var func = blocks[x].changeType;
+    if (func) {
+      func.call(blocks[x], name, type);
+    }
+  }
+};
+
+/**
+ * Gets the type of a variable with the given name
+ * @param {string} name The name of the variable to test
+ * @param {!Blockly.Workspace} workspace Workspace query variables in.
+ */
+Blockly.Variables.typeOf = function(name, workspace){
+  var blocks = workspace.getAllBlocks();
+  // Iterate through every block.
+  for (var x = 0; x < blocks.length; x++) {
+    var func = blocks[x].typeOf;
+    if (func) {
+      var type =  func.call(blocks[x], name);
+      if (type) return type;
+    }
+  }
+};
+
+/**
  * Find all instances of the specified variable and rename them.
  * @param {string} oldName Variable to rename.
  * @param {string} newName New variable name.
@@ -108,19 +210,6 @@ Blockly.Variables.flyoutCategory = function(blocks, gaps, margin, workspace) {
   // user has created a variable of the same name.
   variableList.unshift(null);
   var defaultVariable = undefined;
-
-  // ************************************************************************
-  // THIS SECTION IS INSERTED INTO BLOCKLY BY BLOCKLYDUINO.
-  // Add declareBlock into variables flyout.
-  // TOOD: Add a flag to enable this block.
-  if (Blockly.Blocks['variables_declare']) {
-    var block = Blockly.Block.obtain(workspace, 'variables_declare');
-    block.initSvg();
-    blocks.push(block);
-    gaps.push(margin * 2);
-  }
-  // ************************************************************************
-
   for (var i = 0; i < variableList.length; i++) {
     if (variableList[i] === defaultVariable) {
       continue;
@@ -144,6 +233,10 @@ Blockly.Variables.flyoutCategory = function(blocks, gaps, margin, workspace) {
     } else {
       gaps.push(margin * 2);
     }
+    getBlock && typeof getBlock.postInit === 'function'
+      && getBlock.postInit.call(getBlock);
+    setBlock && typeof setBlock.postInit === 'function'
+      && setBlock.postInit.call(setBlock);
   }
 };
 

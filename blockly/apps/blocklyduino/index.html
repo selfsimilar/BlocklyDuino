@@ -66,6 +66,9 @@
   <textarea id="content_xml" class="content" wrap="off"></textarea>
 
   <xml id="toolbox" style="display: none">
+    <category id="category_initializes">
+      <block type="initializes_setup"></block>
+    </category>
     <category id="category_inout">
       <block type="inout_highlow"></block>
       <block type="inout_digitalpin"></block>
@@ -89,7 +92,6 @@
           </block>
         </value>
       </block>
-      <block type="inout_setup"></block>
     </category>
     <category id="category_ultrasonic">
       <block type="ultrasonic_setting"></block>
@@ -144,18 +146,6 @@
       <block type="array_create_with"></block>
       <block type="array_getIndex">
         <value name="AT">
-          <block type="math_number">
-            <field name="NUM">1</field>
-          </block>
-        </value>
-      </block>
-      <block type="array_two_getIndex">
-        <value name="AT1">
-          <block type="math_number">
-            <field name="NUM">1</field>
-          </block>
-        </value>
-        <value name="AT2">
           <block type="math_number">
             <field name="NUM">1</field>
           </block>

@@ -156,6 +156,8 @@ function init() {
 
 function setCharacter() {
   var category;
+  category = document.getElementById('category_initializes');
+  category.setAttribute("name", Blockly.Msg.CATEGORY_INITIALIZES);
   category = document.getElementById('category_inout');
   category.setAttribute("name", Blockly.Msg.CATEGORY_INOUT);
   category = document.getElementById('category_serial');

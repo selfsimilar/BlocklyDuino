@@ -376,6 +376,7 @@
   "PROCEDURES_CREATE_DO": "Create '%1'",
   "PROCEDURES_IFRETURN_TOOLTIP": "If a value is true, then return a second value.",
   "PROCEDURES_IFRETURN_WARNING": "Warning: This block may be used only within a function definition.",
+  "CATEGORY_INITIALIZES": "Initializes",
   "CATEGORY_INOUT": "In/Out",
   "CATEGORY_ULTRA_SONIC": "UltraSonic",
   "CATEGORY_LCD": "LCD",
@@ -433,9 +434,6 @@
   "INOUT_LOW": "LOW",
   "INOUT_ON": "ON",
   "INOUT_OFF": "OFF",
-  "INOUT_SETUP_HELPURL": "http://www.arduino.cc/en/Reference/Setup",
-  "INOUT_SETUP_APPENDTEXT": "add setup()",
-  "INOUT_SETUP_TOOLTIP": "The setup() function is called when a sketch starts. ",
   "SERIAL_PRINT_HELPURL": "http://www.arduino.cc/en/Serial/Print",
   "SERIAL_PRINT_APPENDTEXT": "Serial Print",
   "SERIAL_PRINT_TOOLTIP": "Prints data to the console/serial port as human-readable ASCII text.",
@@ -523,6 +521,15 @@
   "ARRAY_GETINDEX_AT": "get index",
   "ARRAY_GETINDEX_AT1": "get index",
   "ARRAY_GETINDEX_AT2": "index",
-  "ARRAY_GETINDEX_TOOLTIP": ""
+  "ARRAY_GETINDEX_TOOLTIP": "",
+  "VARIABLES_TYPE_ANY": "Any",
+  "VARIABLES_TYPE_NUMBER": "int",
+  "VARIABLES_TYPE_BOOLEAN": "boolean",
+  "VARIABLES_TYPE_STRING": "String",
+  "VARIABLES_TYPE_COLOUR": "Colour",
+  "VARIABLES_TYPE_ARRAY": "Array int",
+  "INITIALIZES_SETUP_HELPURL": "http://www.arduino.cc/en/Reference/Setup",
+  "INITIALIZES_SETUP_APPENDTEXT": "add setup()",
+  "INITIALIZES_SETUP_TOOLTIP": "The setup() function is called when a sketch starts. "
 }
 
