@@ -60,6 +60,23 @@ Blockly.Blocks['inout_digital_write'] = {
   }
 };
 
+Blockly.Blocks['inout_custom_digital_write'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.INOUT_DIGITAL_WRITE_HELPURL);
+    this.setColour(Blockly.Blocks.inout.HUE);
+    this.appendValueInput("PIN")
+      .setCheck("Number")
+      .appendField(Blockly.Msg.INOUT_DIGITAL_WRITE_APPENDTEXT_PIN);
+    this.appendValueInput("STAT")
+      .setCheck('Boolean')
+      .appendField(Blockly.Msg.INOUT_DIGITAL_WRITE_APPENDTEXT_STAT)
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.INOUT_DIGITAL_WRITE_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['inout_digital_read'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.INOUT_DIGITAL_READ_HELPURL);
@@ -173,17 +190,27 @@ Blockly.Blocks['tone'] = {
   }
 };
 
-Blockly.Blocks['inout_setup'] = {
+Blockly.Blocks['inout_digitalpin'] = {
   init: function() {
-    this.setHelpUrl(Blockly.Msg.INOUT_SETUP_HELPURL);
+    this.setHelpUrl('');
     this.setColour(Blockly.Blocks.inout.HUE);
     this.appendDummyInput()
-      .appendField(Blockly.Msg.INOUT_SETUP_APPENDTEXT);
-    this.appendStatementInput("CONTENT");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.INOUT_SETUP_TOOLTIP);
+      .appendField(Blockly.Msg.INOUT_DIGITALPIN_TEXT)
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
+    this.setOutput(true, 'Number');
+    this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['inout_analogpin'] = {
+  init: function() {
+    this.setHelpUrl('');
+    this.setColour(Blockly.Blocks.inout.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.INOUT_ANALOGPIN_TEXT)
+      .appendField(new Blockly.FieldDropdown(profile.default.analog), "PIN");
+    this.setOutput(true, 'Number');
+    this.setTooltip('');
   }
 };
 

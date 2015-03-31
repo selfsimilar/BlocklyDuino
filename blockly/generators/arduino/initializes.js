@@ -1,8 +1,8 @@
 /**
  * Visual Blocks Language
  *
- * Copyright 2012 Google Inc.
- * http://blockly.googlecode.com/
+ * Copyright 2012 Fred Lin.
+ * https://github.com/gasolin/BlocklyDuino
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,18 +18,18 @@
  */
 
 /**
- * @fileoverview Generating Arduino for variable blocks.
- * @author gasolin@gmail.com  (Fred Lin)
+ * @fileoverview Helper functions for generating Arduino blocks.
+ * @author gasolin@gmail.com (Fred Lin)
  */
 'use strict';
 
-goog.provide('Blockly.Arduino.arduinofunction');
+goog.provide('Blockly.Arduino.initializes');
 
 goog.require('Blockly.Arduino');
 
-Blockly.Arduino.arduinofunction_setup = function() {
+Blockly.Arduino.initializes_setup = function() {
   var branch = Blockly.Arduino.statementToCode(this, 'CONTENT');
-  branch = branch.replace(/\s+/g, "");
+  branch = branch.replace(/(^\s+)|(\s+$)/g, "");
   Blockly.Arduino.setups_['manual_add'] = branch;
 
   var code = "";
