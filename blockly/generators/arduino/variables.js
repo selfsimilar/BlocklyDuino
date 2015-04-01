@@ -66,6 +66,12 @@ Blockly.Arduino['variables_set'] = function(block) {
       //Blockly.Variables.NAME_TYPE) + ';\n';
       Blockly.Arduino.definitions_[variables[x][0]] = code;
       return "";
+    }else if(variables[x][0] == varName && variables[x][1] == 'Array2D'){
+      code = 'int ' + variables[x][0] + '[][] = ' + argument0 + ';\n';
+      //Blockly.Arduino.variableDB_.getName(variables[x],
+      //Blockly.Variables.NAME_TYPE) + ';\n';
+      Blockly.Arduino.definitions_[variables[x][0]] = code;
+      return "";
     }
   }
   return varName + ' = ' + argument0 + ';\n';

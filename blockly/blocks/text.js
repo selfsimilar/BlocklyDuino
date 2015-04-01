@@ -333,10 +333,12 @@ Blockly.Blocks['text_charAt'] = {
     this.setOutput(true, 'String');
     this.appendValueInput('VALUE')
         .setCheck('String')
-        .appendField(Blockly.Msg.TEXT_CHARAT_INPUT_INTEXT);
+        .appendField(Blockly.Msg.TEXT_CHARAT_INTEXT);
     this.appendValueInput('INDEX')
       .setCheck('Number')
-      .appendField(Blockly.Msg.TEXT_CHARAT_INPUT_AT);
+      .appendField(Blockly.Msg.TEXT_CHARAT_FROM_START1);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.TEXT_CHARAT_FROM_START2);
     this.setInputsInline(true);
     //this.updateAt_(true);
     this.setTooltip(Blockly.Msg.TEXT_CHARAT_TOOLTIP);

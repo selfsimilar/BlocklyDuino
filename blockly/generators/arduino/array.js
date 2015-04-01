@@ -39,6 +39,18 @@ Blockly.Arduino.array_create_with = function() {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino.array2d_create_with = function() {
+  // Create a list with any number of elements of any type.
+  var code = new Array(this.itemCount_);
+  for (var n = 0; n < this.itemCount_; n++) {
+    code[n] = Blockly.Arduino.valueToCode(this, 'ADD' + n,
+                                          Blockly.Arduino.ORDER_COMMA) || 'null';
+  }
+  code = '{' + code.join(', ') + '}';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+
 Blockly.Arduino.array_getIndex = function() {
   var at = Blockly.Arduino.valueToCode(this, 'AT',
                                           Blockly.Arduino.ORDER_UNARY_NEGATION) || '1';

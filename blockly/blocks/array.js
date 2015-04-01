@@ -40,7 +40,7 @@ Blockly.Blocks['array_create_with'] = {
     this.setColour(Blockly.Blocks.array.HUE);
     this.itemCount_ = 3;
     this.updateShape_();
-    this.setOutput(true, 'Array');
+    this.setOutput(true, ['Array','Array2D']);
     this.setMutator(new Blockly.Mutator(['array_create_with_item']));
     this.setTooltip(Blockly.Msg.ARRAY_CREATE_WITH_TOOLTIP);
   },
@@ -190,7 +190,7 @@ Blockly.Blocks['array_getIndex'] = {
     this.setHelpUrl(Blockly.Msg.ARRAY_GETINDEX);
     this.setColour(Blockly.Blocks.array.HUE);
     this.appendValueInput("ITEM")
-      .setCheck("Array")
+      .setCheck('Array')
       .appendField(Blockly.Msg.ARRAY_GETINDEX_ITEM);
     this.appendValueInput("AT")
       .setCheck("Number")
@@ -206,7 +206,7 @@ Blockly.Blocks['array_two_getIndex'] = {
     this.setHelpUrl(Blockly.Msg.ARRAY_GETINDEX);
     this.setColour(Blockly.Blocks.array.HUE);
     this.appendValueInput("ITEM")
-      .setCheck("Array")
+      .setCheck('Array2D')
       .appendField(Blockly.Msg.ARRAY_GETINDEX_ITEM);
     this.appendValueInput("AT1")
       .setCheck("Number")

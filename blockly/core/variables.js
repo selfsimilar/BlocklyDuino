@@ -37,6 +37,7 @@ Blockly.Variables.TYPE_NUMBER = 'Number';
 Blockly.Variables.TYPE_STRING = 'String';
 Blockly.Variables.TYPE_COLOUR = 'Colour';
 Blockly.Variables.TYPE_ARRAY = 'Array';
+Blockly.Variables.TYPE_ARRAY2D = 'Array2D';
 Blockly.Variables.NAME_TYPE = 'VARIABLE';
 
 /**
@@ -58,7 +59,9 @@ Blockly.Variables.allTypes = function(){
 //    [Blockly.Msg.VARIABLES_TYPE_COLOUR,
 //     Blockly.Variables.TYPE_COLOUR],
     [Blockly.Msg.VARIABLES_TYPE_ARRAY,
-     Blockly.Variables.TYPE_ARRAY]
+     Blockly.Variables.TYPE_ARRAY],
+    [Blockly.Msg.VARIABLES_TYPE_ARRAY2D,
+     Blockly.Variables.TYPE_ARRAY2D]
   ];
 };
 
