@@ -36,6 +36,7 @@ Blockly.Msg.CATEGORY_LCD = "ディスプレイ";
 Blockly.Msg.CATEGORY_LOGIC = "せいぎょ";
 Blockly.Msg.CATEGORY_LOOPS = "くりかえし";
 Blockly.Msg.CATEGORY_MATH = "さんすう";
+Blockly.Msg.CATEGORY_RGBLED = "RGBLed";  // untranslated
 Blockly.Msg.CATEGORY_SERIAL = "パソコンとのやりとり";
 Blockly.Msg.CATEGORY_SERVO = "サーボ";
 Blockly.Msg.CATEGORY_TEXT = "もじ";

@@ -36,6 +36,7 @@ Blockly.Msg.CATEGORY_LCD = "LCD";  // untranslated
 Blockly.Msg.CATEGORY_LOGIC = "Logic";  // untranslated
 Blockly.Msg.CATEGORY_LOOPS = "loops";  // untranslated
 Blockly.Msg.CATEGORY_MATH = "Math";  // untranslated
+Blockly.Msg.CATEGORY_RGBLED = "RGBLed";  // untranslated
 Blockly.Msg.CATEGORY_SERIAL = "Serial";  // untranslated
 Blockly.Msg.CATEGORY_SERVO = "Servo";  // untranslated
 Blockly.Msg.CATEGORY_TEXT = "Text";  // untranslated

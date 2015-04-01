@@ -36,6 +36,7 @@ Blockly.Msg.CATEGORY_LCD = "LCD";
 Blockly.Msg.CATEGORY_LOGIC = "制御";
 Blockly.Msg.CATEGORY_LOOPS = "繰り返し";
 Blockly.Msg.CATEGORY_MATH = "算数";
+Blockly.Msg.CATEGORY_RGBLED = "RGBLed";  // untranslated
 Blockly.Msg.CATEGORY_SERIAL = "シリアル通信";
 Blockly.Msg.CATEGORY_SERVO = "サーボ";
 Blockly.Msg.CATEGORY_TEXT = "テキスト";

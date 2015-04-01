@@ -382,6 +382,7 @@
   "CATEGORY_ULTRA_SONIC": "UltraSonic",
   "CATEGORY_LCD": "LCD",
   "CATEGORY_SERIAL": "Serial",
+  "CATEGORY_RGBLED": "RGBLed",
   "CATEGORY_SERVO": "Servo",
   "CATEGORY_GROVE_ANALOG": "Grove Analog",
   "CATEGORY_GROVE": "Grove",

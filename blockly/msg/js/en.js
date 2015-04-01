@@ -36,6 +36,7 @@ Blockly.Msg.CATEGORY_LCD = "LCD";
 Blockly.Msg.CATEGORY_LOGIC = "Logic";
 Blockly.Msg.CATEGORY_LOOPS = "loops";
 Blockly.Msg.CATEGORY_MATH = "Math";
+Blockly.Msg.CATEGORY_RGBLED = "RGBLed";
 Blockly.Msg.CATEGORY_SERIAL = "Serial";
 Blockly.Msg.CATEGORY_SERVO = "Servo";
 Blockly.Msg.CATEGORY_TEXT = "Text";
