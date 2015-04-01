@@ -328,83 +328,18 @@ Blockly.Blocks['text_charAt'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.WHERE_OPTIONS =
-        [[Blockly.Msg.TEXT_CHARAT_FROM_START, 'FROM_START'],
-         [Blockly.Msg.TEXT_CHARAT_FROM_END, 'FROM_END'],
-         [Blockly.Msg.TEXT_CHARAT_FIRST, 'FIRST'],
-         [Blockly.Msg.TEXT_CHARAT_LAST, 'LAST'],
-         [Blockly.Msg.TEXT_CHARAT_RANDOM, 'RANDOM']];
     this.setHelpUrl(Blockly.Msg.TEXT_CHARAT_HELPURL);
     this.setColour(Blockly.Blocks.texts.HUE);
     this.setOutput(true, 'String');
     this.appendValueInput('VALUE')
         .setCheck('String')
         .appendField(Blockly.Msg.TEXT_CHARAT_INPUT_INTEXT);
-    this.appendDummyInput('AT');
+    this.appendValueInput('INDEX')
+      .setCheck('Number')
+      .appendField(Blockly.Msg.TEXT_CHARAT_INPUT_AT);
     this.setInputsInline(true);
-    this.updateAt_(true);
+    //this.updateAt_(true);
     this.setTooltip(Blockly.Msg.TEXT_CHARAT_TOOLTIP);
-  },
-  /**
-   * Create XML to represent whether there is an 'AT' input.
-   * @return {Element} XML storage element.
-   * @this Blockly.Block
-   */
-  mutationToDom: function() {
-    var container = document.createElement('mutation');
-    var isAt = this.getInput('AT').type == Blockly.INPUT_VALUE;
-    container.setAttribute('at', isAt);
-    return container;
-  },
-  /**
-   * Parse XML to restore the 'AT' input.
-   * @param {!Element} xmlElement XML storage element.
-   * @this Blockly.Block
-   */
-  domToMutation: function(xmlElement) {
-    // Note: Until January 2013 this block did not have mutations,
-    // so 'at' defaults to true.
-    var isAt = (xmlElement.getAttribute('at') != 'false');
-    this.updateAt_(isAt);
-  },
-  /**
-   * Create or delete an input for the numeric index.
-   * @param {boolean} isAt True if the input should exist.
-   * @private
-   * @this Blockly.Block
-   */
-  updateAt_: function(isAt) {
-    // Destroy old 'AT' and 'ORDINAL' inputs.
-    this.removeInput('AT');
-    this.removeInput('ORDINAL', true);
-    // Create either a value 'AT' input or a dummy input.
-    if (isAt) {
-      this.appendValueInput('AT').setCheck('Number');
-      if (Blockly.Msg.ORDINAL_NUMBER_SUFFIX) {
-        this.appendDummyInput('ORDINAL')
-            .appendField(Blockly.Msg.ORDINAL_NUMBER_SUFFIX);
-      }
-    } else {
-      this.appendDummyInput('AT');
-    }
-    if (Blockly.Msg.TEXT_CHARAT_TAIL) {
-      this.removeInput('TAIL', true);
-      this.appendDummyInput('TAIL')
-          .appendField(Blockly.Msg.TEXT_CHARAT_TAIL);
-    }
-    var menu = new Blockly.FieldDropdown(this.WHERE_OPTIONS, function(value) {
-      var newAt = (value == 'FROM_START') || (value == 'FROM_END');
-      // The 'isAt' variable is available due to this function being a closure.
-      if (newAt != isAt) {
-        var block = this.sourceBlock_;
-        block.updateAt_(newAt);
-        // This menu has been destroyed and replaced.  Update the replacement.
-        block.setFieldValue(value, 'WHERE');
-        return null;
-      }
-      return undefined;
-    });
-    this.getInput('AT').appendField(menu, 'WHERE');
   }
 };
 

@@ -40,3 +40,17 @@ Blockly.Arduino.text_commentout = function() {
   code = '/*\n' + branch + '\n*/\n';
   return code;
 };
+
+Blockly.Arduino.text_length = function() {
+  // String length.
+  var argument0 = Blockly.Arduino.valueToCode(this, 'VALUE',
+                                                 Blockly.Arduino.ORDER_FUNCTION_CALL) || '\'\'';
+  return [argument0 + '.length()', Blockly.Arduino.ORDER_MEMBER];
+};
+
+Blockly.Arduino.text_charAt = function(){
+  var argument0 = Blockly.Arduino.valueToCode(this,'VALUE',Blockly.Arduino.ORDER_ATOMIC) || "";
+  var index = Blockly.Arduino.valueToCode(this,'INDEX',Blockly.Arduino.ORDER_ATOMIC) || 0;
+  return [argument0 + '.charAt[' + index + '];'];
+};
+

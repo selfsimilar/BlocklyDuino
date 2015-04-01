@@ -148,6 +148,9 @@ Blockly.Msg.INOUT_TONE_APPENDTEXT_FREQ = "音色";
 Blockly.Msg.INOUT_TONE_APPENDTEXT_PIN = "音を鳴らす ピン";
 Blockly.Msg.INOUT_TONE_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2462";
 Blockly.Msg.INOUT_TONE_TOOLTIP = "出力ピンに圧電ブザーやスピーカに接続することで、一定ピッチの音を再生できます。";
+Blockly.Msg.LCD_AUTOSCROLL_HELPURL = "http://arduino.cc/en/Reference/LiquidCrystalAutoscroll";  // untranslated
+Blockly.Msg.LCD_AUTOSCROLL_TITLE = "LCD AutoScroll";  // untranslated
+Blockly.Msg.LCD_AUTOSCROLL_TOOLTIP = "Turns on automatic scrolling of the LCD.";  // untranslated
 Blockly.Msg.LCD_BEGIN_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=1&pos=967";
 Blockly.Msg.LCD_BEGIN_TITLE = "LCDの初期設定";
 Blockly.Msg.LCD_BEGIN_TOOLTIP = "ディスプレイの桁数と行数を指定します。";
@@ -165,10 +168,25 @@ Blockly.Msg.LCD_INIT_RS = "rs";
 Blockly.Msg.LCD_INIT_RW = "rw";
 Blockly.Msg.LCD_INIT_TITLE = "LCDのピン設定";
 Blockly.Msg.LCD_INIT_TOOLTIP = "LiquidCrystal型の変数を生成します。";
+Blockly.Msg.LCD_LEFTTORIGHT_HELPURL = "http://arduino.cc/en/Reference/LiquidCrystalLeftToRight";  // untranslated
+Blockly.Msg.LCD_LEFTTORIGHT_TITLE = "LCD LeftToRight";  // untranslated
+Blockly.Msg.LCD_LEFTTORIGHT_TOOLTIP = "Set the direction for text written to the LCD to left-to-right, the default.";  // untranslated
+Blockly.Msg.LCD_NOAUTOSCROLL_HELPURL = "http://arduino.cc/en/Reference/LiquidCrystalNoAutoscroll";  // untranslated
+Blockly.Msg.LCD_NOAUTOSCROLL_TITLE = "LCD NoAutoScroll";  // untranslated
+Blockly.Msg.LCD_NOAUTOSCROLL_TOOLTIP = "Turns off automatic scrolling of the LCD.";  // untranslated
 Blockly.Msg.LCD_PRINT_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=1&pos=1026";
 Blockly.Msg.LCD_PRINT_TITLE = "LCDへの表示";
 Blockly.Msg.LCD_PRINT_TOOLTIP = "テキストをLCDに表示します。";
+Blockly.Msg.LCD_RIGHTTOLEFT_HELPURL = "http://arduino.cc/en/Reference/LiquidCrystalRightToLeft";  // untranslated
+Blockly.Msg.LCD_RIGHTTOLEFT_TITLE = "LCD RightToLeft";  // untranslated
+Blockly.Msg.LCD_RIGHTTOLEFT_TOOLTIP = "Set the direction for text written to the LCD to right-to-left (the default is left-to-right). ";  // untranslated
 Blockly.Msg.LCD_ROW = "行";
+Blockly.Msg.LCD_SCROLL_DISPLAY_LEFT_HELPURL = "http://www.arduino.cc/en/Reference/LiquidCrystalScrollDisplayLeft";  // untranslated
+Blockly.Msg.LCD_SCROLL_DISPLAY_LEFT_TITLE = "LCD ScrollDisplayLeft";  // untranslated
+Blockly.Msg.LCD_SCROLL_DISPLAY_LEFT_TOOLTIP = "Scrolls the contents of the display (text and cursor) one space to the left.";  // untranslated
+Blockly.Msg.LCD_SCROLL_DISPLAY_RIGHT_HELPURL = "http://arduino.cc/en/Reference/LiquidCrystalScrollDisplayRight";  // untranslated
+Blockly.Msg.LCD_SCROLL_DISPLAY_RIGHT_TITLE = "LCD ScrollDisplayRight";  // untranslated
+Blockly.Msg.LCD_SCROLL_DISPLAY_RIGHT_TOOLTIP = "Scrolls the contents of the display (text and cursor) one space to the right.";  // untranslated
 Blockly.Msg.LCD_SETCURSOR_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=1&pos=987";
 Blockly.Msg.LCD_SETCURSOR_TITLE = "LCDのカーソル設定";
 Blockly.Msg.LCD_SETCURSOR_TOOLTIP = "カーソルの位置を指定します。続くテキストは、その位置から表示されます。";

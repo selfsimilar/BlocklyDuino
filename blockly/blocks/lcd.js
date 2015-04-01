@@ -126,3 +126,84 @@ Blockly.Blocks['lcd_clear'] = {
     this.setTooltip(Blockly.Msg.LCD_CLEAR_TOOLTIP);
   }
 };
+
+Blockly.Blocks['lcd_scrolldisplayleft'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LCD_SCROLL_DISPLAY_LEFT_HELPURL);
+    this.setColour(Blockly.Blocks.lcd.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LCD_SCROLL_DISPLAY_LEFT_TITLE);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LCD_LCD_SCROLL_DISPLAY_LEFT_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['lcd_scrolldisplayright'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LCD_SCROLL_DISPLAY_RIGHT_HELPURL);
+    this.setColour(Blockly.Blocks.lcd.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LCD_SCROLL_DISPLAY_RIGHT_TITLE);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LCD_SCROLL_DISPLAY_RIGHT_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['lcd_autoscroll'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LCD_AUTOSCROLL_HELPURL);
+    this.setColour(Blockly.Blocks.lcd.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LCD_AUTOSCROLL_TITLE);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LCD_AUTOSCROLL_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['lcd_noautoscroll'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LCD_NOAUTOSCROLL_HELPURL);
+    this.setColour(Blockly.Blocks.lcd.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LCD_NOAUTOSCROLL_TITLE);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LCD_NOAUTOSCROLL_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['lcd_lefttoright'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LCD_LEFTTORIGHT_HELPURL);
+    this.setColour(Blockly.Blocks.lcd.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LCD_LEFTTORIGHT_TITLE);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LCD_LEFTTORIGHT_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['lcd_righttoleft'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LCD_RIGHTTOLEFT_HELPURL);
+    this.setColour(Blockly.Blocks.lcd.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LCD_RIGHTTOLEFT_TITLE);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LCD_RIGHTTOLEFT_TOOLTIP);
+  }
+};
+
+
+

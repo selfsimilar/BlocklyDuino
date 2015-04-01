@@ -76,3 +76,36 @@ Blockly.Arduino.lcd_clear = function() {
   return code;
 }
 
+Blockly.Arduino.lcd_scrolldisplayleft = function() {
+  var code = 'lcd.scrollDisplayLeft();\n';
+  return code;
+}
+
+Blockly.Arduino.lcd_scrolldisplayright = function() {
+  var code = 'lcd.scrollDisplayRight();\n';
+  return code;
+}
+
+Blockly.Arduino.lcd_autoscroll = function() {
+  var code = 'lcd.autoscroll();\n';
+  return code;
+}
+
+Blockly.Arduino.lcd_noautoscroll = function() {
+  var code = 'lcd.noAutoscroll();\n';
+  return code;
+}
+
+Blockly.Arduino.lcd_lefttoright = function() {
+  var code = 'lcd.leftToRight();\n';
+  return code;
+}
+
+Blockly.Arduino.lcd_righttoleft = function() {
+  var code = 'lcd.rightToLeft();\n';
+  return code;
+}
+
+
+
+
