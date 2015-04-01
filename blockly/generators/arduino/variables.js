@@ -55,19 +55,10 @@ Blockly.Arduino['variables_set'] = function(block) {
   var varName = Blockly.Arduino.variableDB_.getName(this.getFieldValue('VAR'),
       Blockly.Variables.NAME_TYPE);
   var variables = Blockly.Variables.allVariablesAndTypes(this.workspace);
-  console.log(variables);
-  console.log(argument0);
-  console.log(varName);
   var code;
   for (var x = 0; x < variables.length; x++) {
     if(variables[x][0] == varName && variables[x][1] == 'Array'){
       code = 'int ' + variables[x][0] + '[] = ' + argument0 + ';\n';
-      //Blockly.Arduino.variableDB_.getName(variables[x],
-      //Blockly.Variables.NAME_TYPE) + ';\n';
-      Blockly.Arduino.definitions_[variables[x][0]] = code;
-      return "";
-    }else if(variables[x][0] == varName && variables[x][1] == 'Array2D'){
-      code = 'int ' + variables[x][0] + '[][] = ' + argument0 + ';\n';
       //Blockly.Arduino.variableDB_.getName(variables[x],
       //Blockly.Variables.NAME_TYPE) + ';\n';
       Blockly.Arduino.definitions_[variables[x][0]] = code;

@@ -546,7 +546,7 @@
   "VARIABLES_TYPE_BOOLEAN": "boolean",
   "VARIABLES_TYPE_STRING": "String",
   "VARIABLES_TYPE_COLOUR": "Colour",
-  "VARIABLES_TYPE_ARRAY": "Array1D int",
+  "VARIABLES_TYPE_ARRAY": "Array int",
   "VARIABLES_TYPE_ARRAY2D": "Array2D int",
   "INITIALIZES_SETUP_HELPURL": "http://www.arduino.cc/en/Reference/Setup",
   "INITIALIZES_SETUP_APPENDTEXT": "add setup()",

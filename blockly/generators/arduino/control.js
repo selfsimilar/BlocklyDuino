@@ -45,7 +45,7 @@ Blockly.Arduino.controls_for = function() {
       argument1.match(/^-?\d+(\.\d+)?$/)) {
     // Both arguments are simple numbers.
     var up = parseFloat(argument0) <= parseFloat(argument1);
-    code = 'for (int ' + variable0 + ' = ' + argument0 + '; ' +
+    code = 'for (' + variable0 + ' = ' + argument0 + '; ' +
         variable0 + (up ? ' <= ' : ' >= ') + argument1 + '; ' +
         variable0 + (up ? '++' : '--') + ') {\n' +
         branch + '}\n';

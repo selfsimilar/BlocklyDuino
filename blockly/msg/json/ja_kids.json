@@ -503,7 +503,7 @@
   "VARIABLES_TYPE_BOOLEAN": "しんぎち",
   "VARIABLES_TYPE_STRING": "テキスト",
   "VARIABLES_TYPE_COLOUR": "いろ",
-  "VARIABLES_TYPE_ARRAY": "かずのいちじげんはいれつ",
+  "VARIABLES_TYPE_ARRAY": "かずのはいれつ",
   "VARIABLES_TYPE_ARRAY2D": "かずのにじげんはいれつ",
   "INITIALIZES_SETUP_HELPURL": "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=3",
   "INITIALIZES_SETUP_APPENDTEXT": "さいしょにじっこう",
