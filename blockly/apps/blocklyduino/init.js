@@ -279,17 +279,16 @@ function getParam() {
   var categoryKey = "en";
   var url = location.href;
   var parameters = url.split("?");
-  if (Number(parameters.length) == 1) {
-    return categoryKey;
+  if (parameters.length > 1) {
+    var params = parameters[1].split("&");
+    var paramsArray = [];
+    for (var i = 0; i < params.length; i++) {
+      var neet = params[i].split("=");
+      paramsArray.push(neet[0]);
+      paramsArray[neet[0]] = neet[1];
+    }
+    categoryKey = paramsArray["lang"];
   }
-  var params = parameters[1].split("&");
-  var paramsArray = [];
-  for (var i = 0; i < params.length; i++) {
-    var neet = params[i].split("=");
-    paramsArray.push(neet[0]);
-    paramsArray[neet[0]] = neet[1];
-  }
-  categoryKey = paramsArray["lang"];
   return categoryKey;
 }
 
@@ -299,7 +298,10 @@ function setScript() {
   script.id = 'msg';
   var c = $.cookie("lang");
   if(c) var param = c;
-  else param = getParam();
+  else {
+    param = getParam();
+    if(typeof id === "undefined") param = "en";
+  }
   script.src = filepath["msg_"+param];
   /*
   if (param == "ja") {
