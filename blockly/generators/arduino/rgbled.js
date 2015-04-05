@@ -59,7 +59,6 @@ Blockly.Arduino.rgbled_setpixelcolor = function() {
         code += '0,0,255);\n';
         break;
   }
-
   return code;
 };
 

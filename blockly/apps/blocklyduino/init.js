@@ -186,8 +186,8 @@ function setCharacter() {
   category.setAttribute("name", Blockly.Msg.CATEGORY_VARIABLES);
   category = document.getElementById('category_functions');
   category.setAttribute("name", Blockly.Msg.CATEGORY_FUNCTIONS);
-  category = document.getElementById('category_involt');
-  category.setAttribute("name", Blockly.Msg.CATEGORY_INVOLT);
+  //category = document.getElementById('category_involt');
+  //category.setAttribute("name", Blockly.Msg.CATEGORY_INVOLT);
 
   var str;
   str = document.getElementById('tab_blocks');

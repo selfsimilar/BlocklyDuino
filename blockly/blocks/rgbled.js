@@ -110,4 +110,3 @@ Blockly.Blocks['rgbled_show'] = {
     this.setTooltip(Blockly.Msg.RGBLED_SHOW_TOOLTIP);
   }
 }
-
