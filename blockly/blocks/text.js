@@ -330,7 +330,6 @@ Blockly.Blocks['text_charAt'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.TEXT_CHARAT_HELPURL);
     this.setColour(Blockly.Blocks.texts.HUE);
-    this.setOutput(true, 'String');
     this.appendValueInput('VALUE')
         .setCheck('String')
         .appendField(Blockly.Msg.TEXT_CHARAT_INTEXT);
@@ -340,6 +339,7 @@ Blockly.Blocks['text_charAt'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.TEXT_CHARAT_FROM_START2);
     this.setInputsInline(true);
+    this.setOutput(true, 'String');
     //this.updateAt_(true);
     this.setTooltip(Blockly.Msg.TEXT_CHARAT_TOOLTIP);
   }

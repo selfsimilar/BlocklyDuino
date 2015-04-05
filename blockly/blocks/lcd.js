@@ -30,13 +30,16 @@ goog.provide('Blockly.Blocks.lcd');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.lcd.HUE = 190;
+Blockly.Blocks.lcd.HUE = 215;
+
+Blockly.Blocks.lcd.image = filepath.media+'/lcd.jpg';
 
 Blockly.Blocks['lcd_init'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LCD_INIT_HELPURL);
     this.setColour(Blockly.Blocks.lcd.HUE);
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.lcd.image, 64, 64))
       .appendField(Blockly.Msg.LCD_INIT_TITLE)
       .appendField(Blockly.Msg.LCD_INIT_RS)
       .appendField(new Blockly.FieldDropdown(profile.arduino.digital), "RS")
@@ -70,6 +73,7 @@ Blockly.Blocks['lcd_begin'] = {
     this.setHelpUrl(Blockly.Msg.LCD_BEGIN_HELPURL);
     this.setColour(Blockly.Blocks.lcd.HUE);
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.lcd.image, 64, 64))
       .appendField(Blockly.Msg.LCD_BEGIN_TITLE)
       .appendField(Blockly.Msg.LCD_COL)
       .appendField(new Blockly.FieldTextInput("16"),"COLS");
@@ -88,6 +92,7 @@ Blockly.Blocks['lcd_print'] = {
     this.setHelpUrl(Blockly.Msg.LCD_PRINT_HELPURL);
     this.setColour(Blockly.Blocks.lcd.HUE);
     this.appendValueInput("PRINT")
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.lcd.image, 64, 64))
       .appendField(Blockly.Msg.LCD_PRINT_TITLE);
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -101,12 +106,13 @@ Blockly.Blocks['lcd_setcursor'] = {
     this.setHelpUrl(Blockly.Msg.LCD_SETCURSOR_HELPURL);
     this.setColour(Blockly.Blocks.lcd.HUE);
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.lcd.image, 64, 64))
       .appendField(Blockly.Msg.LCD_SETCURSOR_TITLE)
       .appendField(Blockly.Msg.LCD_COL)
       .appendField(new Blockly.FieldTextInput("0"),"COL");
     this.appendDummyInput()
       .appendField(Blockly.Msg.LCD_ROW)
-      .appendField(new Blockly.FieldTextInput("1"),"ROW");
+      .appendField(new Blockly.FieldTextInput("0"),"ROW");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -119,6 +125,7 @@ Blockly.Blocks['lcd_clear'] = {
     this.setHelpUrl(Blockly.Msg.LCD_CLEAR_HELPURL);
     this.setColour(Blockly.Blocks.lcd.HUE);
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.lcd.image, 64, 64))
       .appendField(Blockly.Msg.LCD_CLEAR_TITLE);
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -132,6 +139,7 @@ Blockly.Blocks['lcd_scrolldisplayleft'] = {
     this.setHelpUrl(Blockly.Msg.LCD_SCROLL_DISPLAY_LEFT_HELPURL);
     this.setColour(Blockly.Blocks.lcd.HUE);
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.lcd.image, 64, 64))
       .appendField(Blockly.Msg.LCD_SCROLL_DISPLAY_LEFT_TITLE);
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -145,6 +153,7 @@ Blockly.Blocks['lcd_scrolldisplayright'] = {
     this.setHelpUrl(Blockly.Msg.LCD_SCROLL_DISPLAY_RIGHT_HELPURL);
     this.setColour(Blockly.Blocks.lcd.HUE);
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.lcd.image, 64, 64))
       .appendField(Blockly.Msg.LCD_SCROLL_DISPLAY_RIGHT_TITLE);
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -158,6 +167,7 @@ Blockly.Blocks['lcd_autoscroll'] = {
     this.setHelpUrl(Blockly.Msg.LCD_AUTOSCROLL_HELPURL);
     this.setColour(Blockly.Blocks.lcd.HUE);
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.lcd.image, 64, 64))
       .appendField(Blockly.Msg.LCD_AUTOSCROLL_TITLE);
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -171,6 +181,7 @@ Blockly.Blocks['lcd_noautoscroll'] = {
     this.setHelpUrl(Blockly.Msg.LCD_NOAUTOSCROLL_HELPURL);
     this.setColour(Blockly.Blocks.lcd.HUE);
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.lcd.image, 64, 64))
       .appendField(Blockly.Msg.LCD_NOAUTOSCROLL_TITLE);
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -184,6 +195,7 @@ Blockly.Blocks['lcd_lefttoright'] = {
     this.setHelpUrl(Blockly.Msg.LCD_LEFTTORIGHT_HELPURL);
     this.setColour(Blockly.Blocks.lcd.HUE);
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.lcd.image, 64, 64))
       .appendField(Blockly.Msg.LCD_LEFTTORIGHT_TITLE);
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -197,6 +209,7 @@ Blockly.Blocks['lcd_righttoleft'] = {
     this.setHelpUrl(Blockly.Msg.LCD_RIGHTTOLEFT_HELPURL);
     this.setColour(Blockly.Blocks.lcd.HUE);
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.lcd.image, 64, 64))
       .appendField(Blockly.Msg.LCD_RIGHTTOLEFT_TITLE);
     this.setInputsInline(true);
     this.setPreviousStatement(true);

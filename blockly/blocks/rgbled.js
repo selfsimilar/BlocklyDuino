@@ -28,75 +28,86 @@ goog.provide('Blockly.Blocks.rgbled');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.rgbled.HUE = 260;
+Blockly.Blocks.rgbled.HUE = 215;
+
+Blockly.Blocks.rgbled.image = filepath.media+'/rgbled.jpg';
 
 Blockly.Blocks['rgbled_begin'] = {
   init: function() {
-    this.setHelpUrl('http://www.example.com/');
+    this.setHelpUrl(Blockly.Msg.RGBLED_BEGIN_HELPURL);
     this.setColour(Blockly.Blocks.rgbled.HUE);
     this.appendDummyInput()
-      .appendField("RGBLED.begin")
-      .appendField("num")
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.rgbled.image, 64, 64))
+      .appendField(Blockly.Msg.RGBLED_BEGIN_SETTING)
+      .appendField(Blockly.Msg.RGBLED_BEGIN_NUM)
       .appendField(new Blockly.FieldTextInput("1"),"NUM");
     this.appendDummyInput()
-      .appendField("Pin#")
+      .appendField(Blockly.Msg.RGBLED_BEGIN_PIN)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip('');
-  }
-};
-
-Blockly.Blocks['rgbled_setbrightness'] = {
-  init: function() {
-    this.setHelpUrl('http://www.example.com/');
-    this.setColour(Blockly.Blocks.rgbled.HUE);
     this.appendDummyInput()
-      .appendField("RGBLED.setBrightness")
-      .appendField("brightness")
+      .appendField(Blockly.Msg.RGBLED_BEGIN_BRIGHTNESS)
       .appendField(new Blockly.FieldTextInput("50"),"BRIGHTNESS");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip('');
+    this.setTooltip(Blockly.Msg.RGBLED_BEGIN_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['rgbled_setpixelcolor'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.RGBLED_SETPIXELCOLOR_HELPURL);
+    this.setColour(Blockly.Blocks.rgbled.HUE);
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.rgbled.image, 64, 64))
+      .appendField(Blockly.Msg.RGBLED_SETPIXELCOLOR_TARGET)
+      .appendField(new Blockly.FieldTextInput("0"),"TARGET");
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.RGBLED_SETPIXELCOLOR_COLOR)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.RGBLED_SETPIXELCOLOR_RED,"red"],[Blockly.Msg.RGBLED_SETPIXELCOLOR_GREEN,"green"],[Blockly.Msg.RGBLED_SETPIXELCOLOR_BLUE,"blue"]]), "COLOR")
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.RGBLED_SETPIXELCOLOR_TOOLTIP);
   }
 }
 
 Blockly.Blocks['rgbled_custom_setpixelcolor'] = {
   init: function() {
-    this.setHelpUrl('http://www.example.com/');
+    this.setHelpUrl(Blockly.Msg.RGBLED_CUSTOM_SETPIXELCOLOR_HELPURL);
     this.setColour(Blockly.Blocks.rgbled.HUE);
     this.appendDummyInput()
-      .appendField("RGBLED.setPixelColor")
-      .appendField("target")
-      .appendField(new Blockly.FieldTextInput("0"),"TARGET");
-    this.appendDummyInput()
-      .appendField("R")
-      .appendField(new Blockly.FieldTextInput("255"),"R");
-    this.appendDummyInput()
-      .appendField("G")
-      .appendField(new Blockly.FieldTextInput("0"),"G");
-    this.appendDummyInput()
-      .appendField("B")
-      .appendField(new Blockly.FieldTextInput("0"),"B");
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.rgbled.image, 64, 64))
+    this.appendValueInput("TARGET")
+      .setCheck("Number")
+      .appendField(Blockly.Msg.RGBLED_CUSTOM_SETPIXELCOLOR_TARGET)
+    this.appendValueInput("R")
+      .setCheck("Number")
+      .appendField(Blockly.Msg.RGBLED_CUSTOM_SETPIXELCOLOR_R)
+    this.appendValueInput("G")
+      .setCheck("Number")
+      .appendField(Blockly.Msg.RGBLED_CUSTOM_SETPIXELCOLOR_G)
+    this.appendValueInput("B")
+      .setCheck("Number")
+      .appendField(Blockly.Msg.RGBLED_CUSTOM_SETPIXELCOLOR_B)
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip('');
+    this.setTooltip(Blockly.Msg.RGBLED_CUSTOM_SETPIXELCOLOR_TOOLTIP);
   }
 }
 
 Blockly.Blocks['rgbled_show'] = {
   init: function() {
-    this.setHelpUrl('http://www.example.com/');
+    this.setHelpUrl(Blockly.Msg.RGBLED_SHOW_HELPURL);
     this.setColour(Blockly.Blocks.rgbled.HUE);
     this.appendDummyInput()
-      .appendField("RGBLED.show")
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.rgbled.image, 64, 64))
+      .appendField(Blockly.Msg.RGBLED_SHOW)
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip('');
+    this.setTooltip(Blockly.Msg.RGBLED_SHOW_TOOLTIP);
   }
 }
 

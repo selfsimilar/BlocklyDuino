@@ -170,6 +170,8 @@ function setCharacter() {
   category.setAttribute("name", Blockly.Msg.CATEGORY_LCD);
   category = document.getElementById('category_rgbled');
   category.setAttribute("name", Blockly.Msg.CATEGORY_RGBLED);
+  category = document.getElementById('category_other_sensor');
+  category.setAttribute("name", Blockly.Msg.CATEGORY_OTHER_SENSOR);
   category = document.getElementById('category_loops');
   category.setAttribute("name", Blockly.Msg.CATEGORY_LOOPS);
   category = document.getElementById('category_time');

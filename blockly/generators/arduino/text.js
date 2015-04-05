@@ -51,6 +51,7 @@ Blockly.Arduino.text_length = function() {
 Blockly.Arduino.text_charAt = function(){
   var argument0 = Blockly.Arduino.valueToCode(this,'VALUE',Blockly.Arduino.ORDER_ATOMIC) || "";
   var index = Blockly.Arduino.valueToCode(this,'INDEX',Blockly.Arduino.ORDER_ATOMIC) || 0;
-  return [argument0 + '.charAt[' + index + '];'];
+  var code = argument0 + '.charAt(' + index + ')'
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
