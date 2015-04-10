@@ -1,5 +1,7 @@
 ### Welcome to BlocklyDuino
 
+[![Join the chat at https://gitter.im/okhiroyuki/BlocklyDuino](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/okhiroyuki/BlocklyDuino?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 BlocklyDuino is a **web-based visual programming editor for [Arduino](http://www.arduino.cc/)**.
 
 BlocklyDuino is based on [Blockly](https://developers.google.com/blockly/), the web-based, graphical programming editor. Provide static type language blocks and code generators for Arduino programming.
