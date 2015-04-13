@@ -1,107 +1,227 @@
-<!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Blocklyduino : BlocklyDuino is a web-based visual programming editor for arduino." />
+<head>
+  <script type="text/javascript" src="header.js"></script>
+</head>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+<body>
+  <select id="languageMenu" onchange="change_lang(this)">
+    <option value="en">English</option>
+    <option value="ja">日本語</option>
+    <option value="ja_kids">にほんご</option>
+  </select>
+  <button id="button_sample" type="button"onclick=" location.href='http://lets.makewitharduino.com'">サンプル/Sample</button>
 
-    <title>Blocklyduino</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/gasolin/BlocklyDuino">View on GitHub</a>
-
-          <h1 id="project_title">Blocklyduino</h1>
-          <h2 id="project_tagline">BlocklyDuino is a web-based visual programming editor for arduino.</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/gasolin/BlocklyDuino/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/gasolin/BlocklyDuino/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+  <table height="100%" width="100%">
+    <tr>
+      <td>
+        <h1><a href="https://github.com/okhiroyuki/BlocklyDuino">BlocklyDuino</a> &gt; visual programming editor for arduino</h1>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <table id="tab" width="100%">
+          <tr id="tabRow" height="1em">
+            <td id="tab_blocks" class="tabon" onclick="tabClick('blocks')">Blocks</td>
+            <td class="tabmin">&nbsp;</td>
+            <td id="tab_arduino" class="taboff" onclick="tabClick('arduino')"></td>
+            <td class="tabmin">&nbsp;</td>
+            <td id="tab_term" class="taboff" onclick="tabClick('term')">Console</td>
+            <td class="tabmin">&nbsp;</td>
+            <td id="tab_xml" class="taboff" onclick="tabClick('xml')"></td>
+            <td class="tabmax">
+              <button id="copy-button" data-clipboard-target="textarea_arduino" data-clipboard-text="Clip Me!">Code Copy</button>
+              <button id="discard" onclick="discard()">Discard</button>
+              <button id="save" onclick="save()"></button>
+              <button id="fakeload"></button>
+              <input type="file" id="load" style="display: none;" />
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td height="99%" id="content_area"></td>
+    </tr>
+  </table>
+  <div id="content_blocks" class="content"></div>
+  <div id="content_arduino" class="content" readonly wrap="off">
+    <select id="cb_cf_boards"></select>
+    <select id="cb_cf_ports"></select>
+    <select id="cb_cf_programmers"> </select>
+    <button id="cb_cf_verify_btn" class="btn btn-success">Verify code</button>
+    <button id="cb_cf_flash_btn" class="btn btn-success">Flash Arduino</button>
+    <textarea id="textarea_arduino"></textarea>
+    <p id="cb_cf_operation_output"></p>
+    <div id="debug_arduino"></div>
+  </div>
+  <div id="content_term" class="content">
+    <div id="cb_cf_band">
+      <select id="cb_cf_baud_rates"></select>
+      <button id="cb_cf_serial_monitor_connect">Serial Monitor connect</button>
     </div>
+    <div id="cb_cf_serial_monitor"></div>
+    <div id="serial_hud"></div>
+  </div>
+  <textarea id="content_xml" class="content" wrap="off"></textarea>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to BlocklyDuino.</h3>
+  <xml id="toolbox" style="display: none">
+    <category id="category_initializes">
+      <block type="initializes_setup"></block>
+    </category>
+    <category id="category_inout">
+      <block type="inout_highlow"></block>
+      <block type="inout_digitalpin"></block>
+      <block type="inout_digital_write"></block>
+      <block type="inout_custom_digital_write"></block>
+      <block type="inout_digital_read"></block>
+      <block type="inout_analog_write">
+        <value name="NUM">
+          <block type="math_number">
+            <field name="NUM">255</field>
+          </block>
+        </value>
+      </block>
+      <block type="inout_analog_read"></block>
+      <block type="pulsein"></block>
+      <block type="tone"></block>
+      <block type="custom_tone">
+        <value name="FREQ">
+          <block type="math_number">
+            <field name="NUM">255</field>
+          </block>
+        </value>
+      </block>
+    </category>
+    <category id="category_serial">
+      <block type="serial_available"></block>
+      <block type="serial_print"></block>
+      <block type="serial_println"></block>
+      <block type="serial_read"></block>
+    </category>
+    <sep></sep>
+    <category id="category_ultrasonic">
+      <block type="ultrasonic_setting"></block>
+      <block type="ultrasonic_maxrange"></block>
+      <block type="ultrasonic_distance"></block>
+    </category>
+    <category id="category_lcd">
+      <block type="lcd_init"></block>
+      <block type="lcd_begin"></block>
+      <block type="lcd_print"></block>
+      <block type="lcd_setcursor"></block>
+      <block type="lcd_clear"></block>
+      <!--block type="lcd_scrolldisplayright"></block-->
+      <!--block type="lcd_scrolldisplayleft"></block-->
+      <block type="lcd_autoscroll"></block>
+      <block type="lcd_noautoscroll"></block>
+      <!--block type="lcd_lefttoright"></block-->
+      <!--block type="lcd_righttoleft"></block-->
+    </category>
+    <category id= "category_rgbled">
+      <block type="rgbled_begin"></block>
+      <block type="rgbled_setpixelcolor"></block>
+      <block type="rgbled_custom_setpixelcolor">
+        <value name="TARGET">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="R">
+          <block type="math_number">
+            <field name="NUM">255</field>
+          </block>
+        </value>
+        <value name="G">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="rgbled_show"></block>
+    </category>
+    <category id="category_other_sensor">
+      <block type="dht_read"></block>
+    </category>
+    <sep></sep>
+    <category id="category_logic">
+      <block type="controls_if"></block>
+      <block type="logic_compare"></block>
+      <block type="logic_operation"></block>
+      <block type="logic_negate"></block>
+      <block type="logic_boolean"></block>
+    </category>
+    <category id="category_loops">
+      <block type="controls_repeat"></block>
+      <block type="controls_for">
+        <value name="FROM">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="TO">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+      <block type="controls_whileUntil"></block>
+      <block type="controls_flow_statements"></block>
+    </category>
+    <category id="category_time">
+      <block type="millis"></block>
+      <block type="micros"></block>
+      <block type="delay"></block>
+      <block type="delayMicroseconds"></block>
+    </category>
+    <category id="category_array">
+      <block type="array_create_with"></block>
+      <block type="array_getIndex">
+        <value name="AT">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+    </category>
+    <category id="category_math">
+      <block type="math_number"></block>
+      <block type="math_arithmetic"></block>
+      <block type="math_single"></block>
+      <block type="math_constrain"></block>
+      <block type="math_pow"></block>
+      <block type="math_random_max_min"></block>
+      <block type="math_map"></block>
+      <block type="math_custom_map"></block>
+    </category>
+    <category id="category_text">
+      <block type="text"></block>
+      <block type="text_commentout"></block>
+      <block type="text_length"></block>
+      <block type="text_charAt">
+        <value name="INDEX">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+    </category>
+    <sep></sep>
+    <category id="category_variables" custom="VARIABLE"></category>
+    <category id="category_functions" custom="PROCEDURE"></category>
+    <sep></sep>
+    <!--category id="category_involt">
+      <block type="involt_directmode"></block>
+      <block type="involt_chromereceive"></block>
+      <block type="involt_sendvalue"></block>
+      <block type="involt_receivevalue"></block>
+    </category-->
+  </xml>
+</body>
 
-<p>BlocklyDuino is a web-based visual programming editor for <a href="http://www.arduino.cc/">Arduino</a>.</p>
-
-<p>BlocklyDuino is based on <a href="http://code.google.com/p/blockly/">Blockly</a>, the web-based, graphical programming editor. Provide static type language blocks and code generators for arduino programming.</p>
-
-<p>BlocklyDuino also support <a href="http://www.seeedstudio.com/wiki/GROVE_System">Grove</a> blocks to easily get started with microcontroller-based experimentation and learning.</p>
-
-<p><a href="https://plus.google.com/111979846292233941175">We also have Google+ Page</a>.</p>
-
-<h3>Demo</h3>
-
-<p>BlocklyDuino is a web tool. You can give it a try at
-<a href="http://www.gasolin.idv.tw/public/blockly/demos/blocklyduino/index.html">Web</a> to see the working BlocklyDuino.</p>
-
-<p>You can link directly to examples</p>
-
-<ul>
-<li><a href="http://www.gasolin.idv.tw/public/blockly/demos/blocklyduino/index.html?url=/public/blockly/demos/blocklyduino/examples/blink.xml">demo 1</a></li>
-<li><a href="http://www.gasolin.idv.tw/public/blockly/demos/blocklyduino/index.html?url=/public/blockly/demos/blocklyduino/examples/blink.xml">demo 2</a></li>
-</ul><p>Or watch the <a href="http://www.youtube.com/watch?v=_swiyXcUvNY">video demo</a></p>
-
-<h3>Run locally on your web browser</h3>
-
-<p>If you want to install it locally. Get code from github and open blockly/demos/blocklyduino/index.html in your browser.</p>
-
-<p>The preffered way is to put the BlocklyDuino/web folder into a web server and open the url like localhost/public/blockly/demos/blocklyduino/index.html for use.</p>
-
-<h3>Usage (3 Step)</h3>
-
-<ol>
-<li>Open browser to BlocklyDuino, Drag and Drop blocks to make arduino program. </li>
-<li>Select 'Arduino' tab to copy source code to Arduino IDE</li>
-<li>press 'upload' button to burn the code into arduino</li>
-</ol><h3>ChangeLog</h3>
-
-<p>Check changelog <a href="https://github.com/gasolin/BlocklyDuino/blob/master/CHANGELOG.txt">here</a></p>
-
-<h3>Authors and Contributors</h3>
-
-<p>Fred Lin (<a href="https://github.com/gasolin" class="user-mention">@gasolin</a>) .</p>
-
-<p>Thanks Neil Fraser, Q.Neutron from Blockly <a href="http://code.google.com/p/blockly/">http://code.google.com/p/blockly/</a>
-Thanks Arduino and Seeeduino guys for Arduino and Grove blocks.</p>
-
-<p>The project is also inspired by arduiblock <a href="https://github.com/taweili/ardublock">https://github.com/taweili/ardublock</a> and modkit <a href="http://www.modk.it/">http://www.modk.it/</a></p>
-
-<h3>License</h3>
-
-<p>Copyright (C) 2012 Fred Lin <a href="mailto:gasolin+blockly@gmail.com">gasolin+blockly@gmail.com</a></p>
-
-<ul>
-<li>Licensed under the Apache License, Version 2.0 (the "License");</li>
-<li>you may not use this file except in compliance with the License.</li>
-<li>You may obtain a copy of the License at
-*</li>
-<li>  <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>
-</li>
-</ul>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Blocklyduino maintained by <a href="https://github.com/gasolin">gasolin</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
 </html>
