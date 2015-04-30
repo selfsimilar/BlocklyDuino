@@ -5,7 +5,13 @@
 </head>
 
 <body>
-  <h1 class="title">BlocklyDuino Editor</h1>
+  <h1 class="title">BlocklyDuino Online Editor</h1>
+  <button id="button_chrome" type="button" onllick="https://chrome.google.com/webstore/detail/blocklyduino-editor/ohncgafccgdbigbbikgkfbkiebahihmb?hl=ja">Offline Editor</button>
+  <select id="languageMenu" onchange="change_lang(this)">
+    <option value="en">English</option>
+    <option value="ja">日本語</option>
+    <option value="ja_kids">にほんご</option>
+  </select>
   <button id="button_sample" type="button" onclick=" location.href='http://lets.makewitharduino.com'">サンプル/Sample</button>
 
   <table id="main">
@@ -19,11 +25,6 @@
             <td class="tabmin">&nbsp;</td>
             <td id="tab_xml" class="taboff" onclick="tabClick('xml')"></td>
             <td class="tabmax">
-              <select id="languageMenu" onchange="change_lang(this)">
-                <option value="en">English</option>
-                <option value="ja">日本語</option>
-                <option value="ja_kids">にほんご</option>
-              </select>
               <button id="copy-button" data-clipboard-target="textarea_arduino" data-clipboard-text="Clip Me!">Code Copy</button>
               <button id="discard" onclick="discard()">Discard</button>
               <button id="save" onclick="save()"></button>
