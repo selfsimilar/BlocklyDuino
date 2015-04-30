@@ -16,7 +16,6 @@ var filepath = { media: '../../media/', msg_ja:"../../msg/js/ja.js", msg_en: "..
   html += '<script type="text/javascript" src="jquery-1.11.2.min.js"></script>';
   html += '<script type="text/javascript" src="jquery.xdomainajax.js"></script>';
   html += '<script type="text/javascript" src="jquery.cookie.js"></script>';
-  html += '<script type="text/javascript" src="compilerflasher.js"></script>';
   html += '<script type="text/javascript" src="init.js"></script>';
   html += '<script type="text/javascript" src="ZeroClipboard.js"></script>';
 
