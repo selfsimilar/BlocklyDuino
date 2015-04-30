@@ -582,6 +582,14 @@
   "RGBLED_CUSTOM_SETPIXELCOLOR_TOOLTIP": "pixels.Color takes RGB values, from 0,0,0 up to 255,255,255",
   "RGBLED_SHOW_HELPURL":"https://github.com/adafruit/Adafruit_NeoPixel",
   "RGBLED_SHOW":"Show",
-  "RGBLED_SHOW_TOOLTIP":"This sends the updated pixel color to the hardware."
-}
+  "RGBLED_SHOW_TOOLTIP":"This sends the updated pixel color to the hardware.",
+  "BUTTON_NEW": "New",
+  "BUTTON_OPEN": "Open",
+  "BUTTON_SAVE": "Save",
+  "DIALOG1_TITLE": "Delete All Blocks?",
+  "DIALOG1_YES": "Yes",
+  "DIALOG1_NO": "No",
+  "INFO_TITLE": "[no document loaded]",
+  "INFO_FILENAME":"Filename: "
 
+}

@@ -539,5 +539,13 @@
   "RGBLED_CUSTOM_SETPIXELCOLOR_TOOLTIP": "色をRBGの値（0,0,0〜255,255,255）で設定します。",
   "RGBLED_SHOW_HELPURL":"https://github.com/adafruit/Adafruit_NeoPixel",
   "RGBLED_SHOW":"表示",
-  "RGBLED_SHOW_TOOLTIP":"色の設定をLEDに送ります。"
+  "RGBLED_SHOW_TOOLTIP":"色の設定をLEDに送ります。",
+  "BUTTON_NEW": "新規作成",
+  "BUTTON_OPEN": "開く",
+  "BUTTON_SAVE": "保存",
+  "DIALOG1_TITLE": "ブロックをすべて消しますか？",
+  "DIALOG1_YES": "はい",
+  "DIALOG1_NO": "いいえ",
+  "INFO_TITLE": "[読み込んだファイルはありません]",
+  "INFO_FILENAME":"ファイル名: "
 }

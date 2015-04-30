@@ -539,5 +539,13 @@
   "RGBLED_CUSTOM_SETPIXELCOLOR_TOOLTIP": "いろをRBGのあたい（0,0,0〜255,255,255）でせっていします。",
   "RGBLED_SHOW_HELPURL":"https://github.com/adafruit/Adafruit_NeoPixel",
   "RGBLED_SHOW":"ひょうじ",
-  "RGBLED_SHOW_TOOLTIP":"いろをLEDにおくります。"
+  "RGBLED_SHOW_TOOLTIP":"いろをLEDにおくります。",
+  "BUTTON_NEW": "しんきさくせい",
+  "BUTTON_OPEN": "ひらく",
+  "BUTTON_SAVE": "ほぞん",
+  "DIALOG1_TITLE": "ブロックをすべてけしますか？",
+  "DIALOG1_YES": "はい",
+  "DIALOG1_NO": "いいえ",
+  "INFO_TITLE": "[よみこんだファイルはありません]",
+  "INFO_FILENAME":"ファイル名: "
 }
