@@ -592,5 +592,6 @@
   "INFO_TITLE": "[no document loaded]",
   "INFO_FILENAME":"Filename: ",
   "DIALOG2_TITLE": "Filename",
-  "DIALOG3_TITLE": "can't read xml file"
+  "DIALOG3_TITLE": "can't read xml file",
+  "DIALOG_SENDCHROME": "Send Sample Code for ChromeApp?"
 }

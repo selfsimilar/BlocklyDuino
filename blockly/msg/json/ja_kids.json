@@ -549,6 +549,6 @@
   "INFO_TITLE": "[よみこんだファイルはありません]",
   "INFO_FILENAME":"ファイルめい: ",
   "DIALOG2_TITLE": "ふぁいるめい",
-  "DIALOG3_TITLE": "XMLファイルがありません"
-
+  "DIALOG3_TITLE": "XMLファイルがありません",
+  "DIALOG_SENDCHROME": "ChromeAppにサンプルコードをおくりますか？"
 }
