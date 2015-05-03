@@ -540,6 +540,10 @@
   "RGBLED_SHOW_HELPURL":"https://github.com/adafruit/Adafruit_NeoPixel",
   "RGBLED_SHOW":"表示",
   "RGBLED_SHOW_TOOLTIP":"色の設定をLEDに送ります。",
+  "DOWNLOAD_CHROME_APP": "オフラインエディタのダウンロード",
+  "GO_TO_SAMPLE": "サンプルサイトへのリンク",
+  "CHANGE_LANG": "言語設定",
+  "DIALOG_LANG_TITLE": "言語を選択してください",
   "BUTTON_NEW": "初期化",
   "BUTTON_OPEN": "開く",
   "BUTTON_SAVE": "保存",
@@ -550,6 +554,7 @@
   "INFO_FILENAME":"ファイル名: ",
   "DIALOG2_TITLE": "ファイル名",
   "DIALOG3_TITLE": "XMLファイルがありません",
-  "DIALOG_SENDCHROME": "ChromeAppにサンプルコードをおくりますか？"
-
+  "DIALOG_SENDCHROME": "ChromeAppにサンプルコードをおくりますか？",
+  "DELETE_ALL1": "ブロック ",
+  "DELETE_ALL2": " 個を削除しますか？"
 }

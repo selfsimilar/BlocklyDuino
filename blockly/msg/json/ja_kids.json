@@ -540,6 +540,10 @@
   "RGBLED_SHOW_HELPURL":"https://github.com/adafruit/Adafruit_NeoPixel",
   "RGBLED_SHOW":"ひょうじ",
   "RGBLED_SHOW_TOOLTIP":"いろをLEDにおくります。",
+  "DOWNLOAD_CHROME_APP": "オフラインエディタをダウンロード",
+  "GO_TO_SAMPLE": "サンプルサイトへのリンク",
+  "CHANGE_LANG": "ことばのへんこう",
+  "DIALOG_LANG_TITLE": "ことばをえらんでください",
   "BUTTON_NEW": "しょきか",
   "BUTTON_OPEN": "ひらく",
   "BUTTON_SAVE": "ほぞん",
@@ -550,5 +554,7 @@
   "INFO_FILENAME":"ファイルめい: ",
   "DIALOG2_TITLE": "ふぁいるめい",
   "DIALOG3_TITLE": "XMLファイルがありません",
-  "DIALOG_SENDCHROME": "ChromeAppにサンプルコードをおくりますか？"
+  "DIALOG_SENDCHROME": "ChromeAppにサンプルコードをおくりますか？",
+  "DELETE_ALL1": "ブロック ",
+  "DELETE_ALL2": " こをけしますか？"
 }

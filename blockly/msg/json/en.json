@@ -583,6 +583,10 @@
   "RGBLED_SHOW_HELPURL":"https://github.com/adafruit/Adafruit_NeoPixel",
   "RGBLED_SHOW":"Show",
   "RGBLED_SHOW_TOOLTIP":"This sends the updated pixel color to the hardware.",
+  "DOWNLOAD_CHROME_APP": "Download Offline Editor",
+  "GO_TO_SAMPLE": "Link to Sample Code Page",
+  "CHANGE_LANG": "Change Language",
+  "DIALOG_LANG_TITLE": "Select Language",
   "BUTTON_NEW": "Discard",
   "BUTTON_OPEN": "Open",
   "BUTTON_SAVE": "Save",
@@ -593,5 +597,7 @@
   "INFO_FILENAME":"Filename: ",
   "DIALOG2_TITLE": "Filename",
   "DIALOG3_TITLE": "can't read xml file",
-  "DIALOG_SENDCHROME": "Send Sample Code for ChromeApp?"
+  "DIALOG_SENDCHROME": "Send Sample Code for ChromeApp?",
+  "DELETE_ALL1": "Delete all ",
+  "DELETE_ALL2": " blockls?"
 }
