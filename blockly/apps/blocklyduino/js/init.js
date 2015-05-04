@@ -200,6 +200,7 @@ function loadfile() {
     };
     // 読み込みを開始する（テキスト文字列を得る）
     reader.readAsText(file[0]);
+//    Materialize.toast(file[0].name + "を取得しました", 4000)
     alert(file[0].name + "を取得しました。");
   }, false);
 };
@@ -219,17 +220,14 @@ function setXmlContent(url){
     type: "GET",
     dataType: 'text',
     success: function(res) {
-      var obj = document.getElementById("content_xml");
       var xml = res.responseText;
       if(xml.length >0){
-        document.getElementById('tab_xml').className = 'tabon';
-        document.getElementById('tab_blocks').className = 'taboff';
-        document.getElementById('content_xml').style.visibility = 'visible';
-        renderContent();
+        Blockly.mainWorkspace.clear();
         xml = xml.replace("<html><head/><body><xml>",'');
         xml = xml.replace("</body></html>",'');
         xml = '<xml xmlns="http://www.w3.org/1999/xhtml">' + xml;
-        obj.value = xml;
+        var xmlDoc = Blockly.Xml.textToDom(xml);
+        Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDoc);
       }
     }
   });
