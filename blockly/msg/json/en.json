@@ -599,5 +599,7 @@
   "DIALOG3_TITLE": "can't read xml file",
   "DIALOG_SENDCHROME": "Send Sample Code for ChromeApp?",
   "DELETE_ALL1": "Delete all ",
-  "DELETE_ALL2": " blockls?"
+  "DELETE_ALL2": " blockls?",
+  "GO_TO_WEB": "Link to Online Editor",
+  "SETTING": "Setting"
 }

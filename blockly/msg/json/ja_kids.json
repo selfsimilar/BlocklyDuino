@@ -556,5 +556,7 @@
   "DIALOG3_TITLE": "XMLファイルがありません",
   "DIALOG_SENDCHROME": "ChromeAppにサンプルコードをおくりますか？",
   "DELETE_ALL1": "ブロック ",
-  "DELETE_ALL2": " こをけしますか？"
+  "DELETE_ALL2": " こをけしますか？",
+  "GO_TO_WEB": "オンラインエディタへのリンク",
+  "SETTING": "せってい"
 }
