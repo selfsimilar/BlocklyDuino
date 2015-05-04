@@ -601,5 +601,6 @@
   "DELETE_ALL1": "Delete all ",
   "DELETE_ALL2": " blockls?",
   "GO_TO_WEB": "Link to Online Editor",
-  "SETTING": "Setting"
+  "SETTING": "Setting",
+  "REBOOT": "Please Reboot"
 }
