@@ -602,5 +602,11 @@
   "DELETE_ALL2": " blockls?",
   "GO_TO_WEB": "Link to Online Editor",
   "SETTING": "Setting",
-  "REBOOT": "Please Reboot"
+  "REBOOT": "Please Reboot",
+  "AUTO_SAVE_TITLE": "AutoSave",
+  "RANGE_TITLE": "Interval (min)",
+  "POPUP_SAVE_DONE": "AutoSave Done",
+  "ERROR_PARSING_XML": "Error parsing XML",
+  "REPLACE_TEXT1": "Replace existing blocks?",
+  "REPLACE_TEXT2": "[Cancel] will merge."
 }

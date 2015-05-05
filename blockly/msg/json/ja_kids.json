@@ -559,5 +559,11 @@
   "DELETE_ALL2": " こをけしますか？",
   "GO_TO_WEB": "オンラインエディタへのリンク",
   "SETTING": "せってい",
-  "REBOOT": "アプリをさいきどうしてください"
+  "REBOOT": "アプリをさいきどうしてください",
+  "AUTO_SAVE_TITLE": "じどうほぞん",
+  "RANGE_TITLE": "ほぞんかんかく (ふん)",
+  "POPUP_SAVE_DONE": "じどうほぞんしました",
+  "ERROR_PARSING_XML": "XMLファイルがおかしいです",
+  "REPLACE_TEXT1": "すでにあるブロックといれかえますか？",
+  "REPLACE_TEXT2": "[キャンセル] なら、いっしょにします。"
 }

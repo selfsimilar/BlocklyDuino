@@ -559,5 +559,11 @@
   "DELETE_ALL2": " 個を削除しますか？",
   "GO_TO_WEB": "オンラインエディタへのリンク",
   "SETTING": "設定",
-  "REBOOT": "アプリを再起動してください"
+  "REBOOT": "アプリを再起動してください",
+  "AUTO_SAVE_TITLE": "自動保存",
+  "RANGE_TITLE": "保存間隔 (分)",
+  "POPUP_SAVE_DONE": "自動保存しました",
+  "ERROR_PARSING_XML": "XMLファイルがおかしいです",
+  "REPLACE_TEXT1": "すでにあるブロックと入れ替えますか？",
+  "REPLACE_TEXT2": "[キャンセル] なら、マージします。"
 }
