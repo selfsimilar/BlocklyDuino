@@ -587,10 +587,10 @@
   "GO_TO_SAMPLE": "Link to Sample Code Page",
   "CHANGE_LANG": "Change Language",
   "DIALOG_LANG_TITLE": "Select Language",
-  "BUTTON_NEW": "Discard",
+  "BUTTON_NEW": "Reset",
   "BUTTON_OPEN": "Open",
   "BUTTON_SAVE": "Save",
-  "DIALOG1_TITLE": "Delete All Blocks?",
+  "DIALOG1_TITLE": "Reset OK?",
   "DIALOG1_YES": "Yes",
   "DIALOG1_NO": "No",
   "INFO_TITLE": "[no document loaded]",
@@ -605,8 +605,9 @@
   "REBOOT": "Please Reboot",
   "AUTO_SAVE_TITLE": "AutoSave",
   "RANGE_TITLE": "Interval (min)",
-  "POPUP_SAVE_DONE": "AutoSave Done",
+  "POPUP_SAVE_DONE": "Save Done",
   "ERROR_PARSING_XML": "Error parsing XML",
   "REPLACE_TEXT1": "Replace existing blocks?",
-  "REPLACE_TEXT2": "[Cancel] will merge."
+  "REPLACE_TEXT2": "[Cancel] will merge.",
+  "ERROR_FILENAME": "Please Entry Filename!"
 }

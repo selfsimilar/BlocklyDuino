@@ -547,7 +547,7 @@
   "BUTTON_NEW": "初期化",
   "BUTTON_OPEN": "開く",
   "BUTTON_SAVE": "保存",
-  "DIALOG1_TITLE": "ブロックをすべて消しますか？",
+  "DIALOG1_TITLE": "リセットしますか？",
   "DIALOG1_YES": "はい",
   "DIALOG1_NO": "いいえ",
   "INFO_TITLE": "[読み込んだファイルはありません]",
@@ -562,8 +562,10 @@
   "REBOOT": "アプリを再起動してください",
   "AUTO_SAVE_TITLE": "自動保存",
   "RANGE_TITLE": "保存間隔 (分)",
-  "POPUP_SAVE_DONE": "自動保存しました",
+  "POPUP_SAVE_DONE": "保存しました",
   "ERROR_PARSING_XML": "XMLファイルがおかしいです",
   "REPLACE_TEXT1": "すでにあるブロックと入れ替えますか？",
-  "REPLACE_TEXT2": "[キャンセル] なら、マージします。"
+  "REPLACE_TEXT2": "[キャンセル] なら、マージします。",
+  "ERROR_FILENAME": "ファイル名を入力してください!"
+
 }

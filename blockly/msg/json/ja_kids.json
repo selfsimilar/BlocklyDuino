@@ -547,7 +547,7 @@
   "BUTTON_NEW": "しょきか",
   "BUTTON_OPEN": "ひらく",
   "BUTTON_SAVE": "ほぞん",
-  "DIALOG1_TITLE": "ブロックをすべてけしますか？",
+  "DIALOG1_TITLE": "リセットしますか？",
   "DIALOG1_YES": "はい",
   "DIALOG1_NO": "いいえ",
   "INFO_TITLE": "[よみこんだファイルはありません]",
@@ -562,8 +562,9 @@
   "REBOOT": "アプリをさいきどうしてください",
   "AUTO_SAVE_TITLE": "じどうほぞん",
   "RANGE_TITLE": "ほぞんかんかく (ふん)",
-  "POPUP_SAVE_DONE": "じどうほぞんしました",
+  "POPUP_SAVE_DONE": "ほぞんしました",
   "ERROR_PARSING_XML": "XMLファイルがおかしいです",
   "REPLACE_TEXT1": "すでにあるブロックといれかえますか？",
-  "REPLACE_TEXT2": "[キャンセル] なら、いっしょにします。"
+  "REPLACE_TEXT2": "[キャンセル] なら、いっしょにします。",
+  "ERROR_FILENAME": "ファイルめいを入力してください!"
 }
