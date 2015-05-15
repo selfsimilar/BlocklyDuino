@@ -552,7 +552,7 @@
   "DIALOG1_NO": "いいえ",
   "INFO_TITLE": "[読み込んだファイルはありません]",
   "INFO_FILENAME":"ファイル名: ",
-  "DIALOG2_TITLE": "ファイル名",
+  "DIALOG2_TITLE": "ファイル名（半角英数字）",
   "DIALOG3_TITLE": "XMLファイルがありません",
   "DIALOG_SENDCHROME": "ChromeAppにサンプルコードをおくりますか？",
   "DELETE_ALL1": "ブロック ",
@@ -566,6 +566,7 @@
   "ERROR_PARSING_XML": "XMLファイルがおかしいです",
   "REPLACE_TEXT1": "すでにあるブロックと入れ替えますか？",
   "REPLACE_TEXT2": "[キャンセル] なら、マージします。",
-  "ERROR_FILENAME": "ファイル名を入力してください!"
+  "ERROR_FILENAME": "ファイル名を入力してください!",
+  "ERROR_FILENAME2": "全角文字や日本語のファイル名は使えません！"
 
 }

@@ -552,7 +552,7 @@
   "DIALOG1_NO": "いいえ",
   "INFO_TITLE": "[よみこんだファイルはありません]",
   "INFO_FILENAME":"ファイルめい: ",
-  "DIALOG2_TITLE": "ふぁいるめい",
+  "DIALOG2_TITLE": "ふぁいるめい（はんかくのアルファベットやすうじがつかえます）",
   "DIALOG3_TITLE": "XMLファイルがありません",
   "DIALOG_SENDCHROME": "ChromeAppにサンプルコードをおくりますか？",
   "DELETE_ALL1": "ブロック ",
@@ -566,5 +566,6 @@
   "ERROR_PARSING_XML": "XMLファイルがおかしいです",
   "REPLACE_TEXT1": "すでにあるブロックといれかえますか？",
   "REPLACE_TEXT2": "[キャンセル] なら、いっしょにします。",
-  "ERROR_FILENAME": "ファイルめいを入力してください!"
+  "ERROR_FILENAME": "ファイルめいを入力してください!",
+  "ERROR_FILENAME2": "ぜんかくもじやにほんごのなまえはつかえません！"
 }

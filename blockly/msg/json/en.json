@@ -609,5 +609,6 @@
   "ERROR_PARSING_XML": "Error parsing XML",
   "REPLACE_TEXT1": "Replace existing blocks?",
   "REPLACE_TEXT2": "[Cancel] will merge.",
-  "ERROR_FILENAME": "Please Entry Filename!"
+  "ERROR_FILENAME": "Please Entry Filename!",
+  "ERROR_FILENAME2": "Filename ErrorFilename Error！"
 }
