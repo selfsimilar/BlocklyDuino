@@ -600,5 +600,6 @@
   "ERROR_FILENAME": "ファイルめいを入力してください!",
   "ERROR_FILENAME2": "ぜんかくもじやにほんごのなまえはつかえません！",
   "DROPDOWN_DISCARD": "ブロックをさくじょ",
-  "DROPDOWN_SAVE_AS": "べつめいでほぞん..."
+  "DROPDOWN_SAVE_AS": "べつめいでほぞん...",
+  "COPY_DONE": "コピーできたよ！"
 }

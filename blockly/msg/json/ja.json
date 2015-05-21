@@ -600,5 +600,6 @@
   "ERROR_FILENAME": "ファイル名を入力してください!",
   "ERROR_FILENAME2": "全角文字や日本語のファイル名は使えません！",
   "DROPDOWN_DISCARD": "ブロックを削除",
-  "DROPDOWN_SAVE_AS": "別名で保存..."
+  "DROPDOWN_SAVE_AS": "別名で保存...",
+  "COPY_DONE": "コピー完了！"
 }

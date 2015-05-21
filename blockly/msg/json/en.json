@@ -643,5 +643,7 @@
   "ERROR_FILENAME": "Please Entry Filename!",
   "ERROR_FILENAME2": "Filename ErrorFilename Error！",
   "DROPDOWN_DISCARD": "Block discard",
-  "DROPDOWN_SAVE_AS": "Save as..."
+  "DROPDOWN_SAVE_AS": "Save as...",
+  "COPY_DONE": "Copy Done!"
+
 }
