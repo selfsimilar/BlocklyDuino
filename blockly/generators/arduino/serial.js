@@ -47,6 +47,13 @@ Blockly.Arduino.serial_read = function() {
   return [code,Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino.serial_byte_number = function() {
+  var code = this.getFieldValue('NUM');
+
+  return [code,Blockly.Arduino.ORDER_ATOMIC];
+};
+
+
 Blockly.Arduino.serial_available = function() {
   var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || '0'
   //content = content.replace('(','').replace(')','');

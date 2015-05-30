@@ -51,10 +51,24 @@ Blockly.Blocks['serial_read'] = {
     this.setColour(Blockly.Blocks.serial.HUE);
     this.appendDummyInput()
     .appendField(Blockly.Msg.SERIAL_READ_APPENDTEXT);
-    this.setOutput(true,"byte");
+    this.setOutput(true,["Number","String"]);
     this.setTooltip(Blockly.Msg.SERIAL_READ_TOOLTIP);
   }
 };
+
+Blockly.Blocks['serial_byte_number'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.SERIAL_READ_HELPURL);
+    this.setColour(Blockly.Blocks.serial.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.SERIAL_BYTE_NUMBER_TEXT1)
+      .appendField(new Blockly.FieldDropdown([["0","48"],["1", "49"], ["2", "50"], ["3", "51"], ["4", "52"], ["5", "53"], ["6", "54"], ["7", "55"], ["8", "56"], ["9", "57"]]), "NUM")
+      .appendField(Blockly.Msg.SERIAL_BYTE_NUMBER_TEXT2);
+    this.setOutput(true,"NUMBER");
+    this.setTooltip(Blockly.Msg.SERIAL_READ_TOOLTIP);
+  }
+};
+
 
 Blockly.Blocks['serial_available'] = {
   init: function() {
