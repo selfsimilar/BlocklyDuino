@@ -143,7 +143,7 @@ Blockly.Blocks['pulsein'] = {
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
     this.appendDummyInput()
       .appendField(Blockly.Msg.INOUT_PULSEIN_APPENDTEXT_TYPE)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.INOUT_HIGH, "high"], [Blockly.Msg.INOUT_LOW, "low"]]), "type");
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.INOUT_HIGH, "HIGH"], [Blockly.Msg.INOUT_LOW, "LOW"]]), "type");
     this.appendDummyInput()
       .appendField(Blockly.Msg.INOUT_PULSEIN_APPENDTEXT_TIMEOUT)
       .appendField(new Blockly.FieldTextInput("300"),"TIMEOUT");
