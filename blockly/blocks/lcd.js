@@ -144,7 +144,7 @@ Blockly.Blocks['lcd_scrolldisplayleft'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.LCD_LCD_SCROLL_DISPLAY_LEFT_TOOLTIP);
+    this.setTooltip(Blockly.Msg.LCD_SCROLL_DISPLAY_LEFT_TOOLTIP);
   }
 };
 

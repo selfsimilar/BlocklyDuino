@@ -46,6 +46,20 @@ Blockly.Arduino.grove_button = function() {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino.grove_touch = function() {
+  var dropdown_pin = this.getFieldValue('PIN');
+  Blockly.Arduino.setups_['setup_touch_'+dropdown_pin] = 'pinMode('+dropdown_pin+', INPUT);';
+  var code = 'digitalRead('+dropdown_pin+')';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.grove_light_sensor = function() {
+  var dropdown_pin = this.getFieldValue('PIN');
+  var sensorValue = 'analogRead('+dropdown_pin+')';
+  var code = 'round((float)(1023-' + sensorValue + ')*10/' + sensorValue + ')';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino.grove_rotary_angle = function() {
   var dropdown_pin = this.getFieldValue('PIN');
   var code = 'analogRead('+dropdown_pin+')';
@@ -111,7 +125,7 @@ void loop() {
   }
 }
 */
-Blockly.Arduino.grove_piezo_buzzer = function() {
+Blockly.Arduino.grove_buzzer = function() {
   var dropdown_pin = this.getFieldValue('PIN');
   var dropdown_stat = this.getFieldValue('STAT');
   Blockly.Arduino.setups_['setup_piezo_buzzer_'+dropdown_pin] = 'pinMode('+dropdown_pin+', OUTPUT);';
@@ -129,12 +143,7 @@ Blockly.Arduino.grove_relay = function() {
 
 Blockly.Arduino.grove_temporature_sensor = function() {
   var dropdown_pin = this.getFieldValue('PIN');
-  /*
-  a=analogRead(0);
-  resistance=(float)(1023-a)*10000/a;
-  temperature=1/(log(resistance/10000)/B+1/298.15)-273.15;
-  */
-  var code = 'round('+'(1/(log((float)(1023-analogRead('+dropdown_pin+'))*10000/analogRead('+dropdown_pin+'))/10000)/3975+1/298.15)-273.15'+')';
+  var code = 'round('+'1/(log(((float)(1023-analogRead('+dropdown_pin+'))*10000/analogRead('+dropdown_pin+'))/10000)/3975+1/298.15)-273.15'+')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
@@ -188,9 +197,9 @@ var _get_next_pin = function(dropdown_pin) {
 Blockly.Arduino.grove_serial_lcd_print = function() {
   var dropdown_pin = this.getFieldValue('PIN');
   var text = Blockly.Arduino.valueToCode(this, 'TEXT',
-      Blockly.Arduino.ORDER_UNARY_POSTFIX) || '\'\'';
+                                         Blockly.Arduino.ORDER_UNARY_POSTFIX) || '\'\'';
   var text2 = Blockly.Arduino.valueToCode(this, 'TEXT2',
-      Blockly.Arduino.ORDER_UNARY_POSTFIX) || '\'\'';
+                                          Blockly.Arduino.ORDER_UNARY_POSTFIX) || '\'\'';
   var delay_time = Blockly.Arduino.valueToCode(this, 'DELAY_TIME', Blockly.Arduino.ORDER_ATOMIC) || '1000';
   /*if(text.length>16||text2.length>16){
       alert("string is too long");
@@ -292,63 +301,63 @@ Blockly.Arduino.grove_motor_shield = function() {
   var dropdown_direction = this.getFieldValue('DIRECTION');
   var speed = 127;//Blockly.Arduino.valueToCode(this, 'SPEED', Blockly.Arduino.ORDER_ATOMIC) || '127';
   Blockly.Arduino.setups_["setup_motor"] = "pinMode(8,OUTPUT);//I1\n"+
-  "  pinMode(11,OUTPUT);//I2\n"+
-  "  pinMode(9,OUTPUT);//speedPinA\n"+
-  "  pinMode(12,OUTPUT);//I3\n"+
-  "  pinMode(13,OUTPUT);//i4\n"+
-  "  pinMode(10,OUTPUT);//speedPinB\n";
+    "  pinMode(11,OUTPUT);//I2\n"+
+    "  pinMode(9,OUTPUT);//speedPinA\n"+
+    "  pinMode(12,OUTPUT);//I3\n"+
+    "  pinMode(13,OUTPUT);//i4\n"+
+    "  pinMode(10,OUTPUT);//speedPinB\n";
   var code = "";
   if(dropdown_direction==="forward"){
     Blockly.Arduino.definitions_['define_forward'] = "void forward()\n"+
-"{\n"+
-     "  analogWrite(9,"+speed+");//input a simulation value to set the speed\n"+
-     "  analogWrite(10,"+speed+");\n"+
-     "  digitalWrite(13,HIGH);//turn DC Motor B move clockwise\n"+
-     "  digitalWrite(12,LOW);\n"+
-     "  digitalWrite(11,LOW);//turn DC Motor A move anticlockwise\n"+
-     "  digitalWrite(8,HIGH);\n"+
-"}\n";
+      "{\n"+
+      "  analogWrite(9,"+speed+");//input a simulation value to set the speed\n"+
+      "  analogWrite(10,"+speed+");\n"+
+      "  digitalWrite(13,HIGH);//turn DC Motor B move clockwise\n"+
+      "  digitalWrite(12,LOW);\n"+
+      "  digitalWrite(11,LOW);//turn DC Motor A move anticlockwise\n"+
+      "  digitalWrite(8,HIGH);\n"+
+      "}\n";
     code="forward();\n";
   } else if (dropdown_direction==="right") {
     Blockly.Arduino.definitions_['define_right'] = "void right()\n"+
-"{\n"+
-     "  analogWrite(9,"+speed+");//input a simulation value to set the speed\n"+
-     "  analogWrite(10,"+speed+");\n"+
-     "  digitalWrite(13,LOW);//turn DC Motor B move anticlockwise\n"+
-     "  digitalWrite(12,HIGH);\n"+
-     "  digitalWrite(11,LOW);//turn DC Motor A move anticlockwise\n"+
-     "  digitalWrite(8,HIGH);\n"+
-"}\n\n";
+      "{\n"+
+      "  analogWrite(9,"+speed+");//input a simulation value to set the speed\n"+
+      "  analogWrite(10,"+speed+");\n"+
+      "  digitalWrite(13,LOW);//turn DC Motor B move anticlockwise\n"+
+      "  digitalWrite(12,HIGH);\n"+
+      "  digitalWrite(11,LOW);//turn DC Motor A move anticlockwise\n"+
+      "  digitalWrite(8,HIGH);\n"+
+      "}\n\n";
     code="right();\n";
   } else if (dropdown_direction==="left") {
     Blockly.Arduino.definitions_['define_left'] = "void left()\n"+
-"{\n"+
-     "  analogWrite(9,"+speed+");//input a simulation value to set the speed\n"+
-     "  analogWrite(10,"+speed+");\n"+
-     "  digitalWrite(13,HIGH);//turn DC Motor B move clockwise\n"+
-     "  digitalWrite(12,LOW);\n"+
-     "  digitalWrite(11,HIGH);//turn DC Motor A move clockwise\n"+
-     "  digitalWrite(8,LOW);\n"+
-"}\n\n";
+      "{\n"+
+      "  analogWrite(9,"+speed+");//input a simulation value to set the speed\n"+
+      "  analogWrite(10,"+speed+");\n"+
+      "  digitalWrite(13,HIGH);//turn DC Motor B move clockwise\n"+
+      "  digitalWrite(12,LOW);\n"+
+      "  digitalWrite(11,HIGH);//turn DC Motor A move clockwise\n"+
+      "  digitalWrite(8,LOW);\n"+
+      "}\n\n";
     code="left();\n";
   } else if (dropdown_direction==="backward"){
     Blockly.Arduino.definitions_['define_backward'] = "void backward()\n"+
-"{\n"+
-     "  analogWrite(9,"+speed+");//input a simulation value to set the speed\n"+
-     "  analogWrite(10,"+speed+");\n"+
-     "  digitalWrite(13,LOW);//turn DC Motor B move anticlockwise\n"+
-     "  digitalWrite(12,HIGH);\n"+
-     "  digitalWrite(11,HIGH);//turn DC Motor A move clockwise\n"+
-     "  digitalWrite(8,LOW);\n"+
-"}\n\n";
+      "{\n"+
+      "  analogWrite(9,"+speed+");//input a simulation value to set the speed\n"+
+      "  analogWrite(10,"+speed+");\n"+
+      "  digitalWrite(13,LOW);//turn DC Motor B move anticlockwise\n"+
+      "  digitalWrite(12,HIGH);\n"+
+      "  digitalWrite(11,HIGH);//turn DC Motor A move clockwise\n"+
+      "  digitalWrite(8,LOW);\n"+
+      "}\n\n";
     code="backward();\n";
   } else if (dropdown_direction==="stop"){
     Blockly.Arduino.definitions_['define_stop'] = "void stop()\n"+
-"{\n"+
-     "digitalWrite(9,LOW);// Unenble the pin, to stop the motor. this should be done to avid damaging the motor.\n"+
-     "digitalWrite(10,LOW);\n"+
-     "delay(1000);\n"+
-"}\n\n"
+      "{\n"+
+      "digitalWrite(9,LOW);// Unenble the pin, to stop the motor. this should be done to avid damaging the motor.\n"+
+      "digitalWrite(10,LOW);\n"+
+      "delay(1000);\n"+
+      "}\n\n"
     code="stop();\n";
   }
   return code;
@@ -382,68 +391,68 @@ Blockly.Arduino.grove_rgb_led = function() {
   Blockly.Arduino.definitions_['define_uint16'] = "#define uint16 unsigned int";
   Blockly.Arduino.definitions_['define_uint32'] = "#define uint32 unsigned long int";
   Blockly.Arduino.definitions_['define_clkproduce_'+dropdown_pin] = "void ClkProduce_"+dropdown_pin+"(void)\n"+
-  "{\n"+
-  "  digitalWrite("+dropdown_pin+", LOW);\n"+
-  "  delayMicroseconds(20);\n"+
-  "  digitalWrite("+dropdown_pin+", HIGH);\n"+
-  "  delayMicroseconds(20);\n"+
-  "}\n";
+    "{\n"+
+    "  digitalWrite("+dropdown_pin+", LOW);\n"+
+    "  delayMicroseconds(20);\n"+
+    "  digitalWrite("+dropdown_pin+", HIGH);\n"+
+    "  delayMicroseconds(20);\n"+
+    "}\n";
   Blockly.Arduino.definitions_['define_send32zero_'+dropdown_pin] = "void Send32Zero_"+dropdown_pin+"(void)\n"+
-  "{\n"+
-  "  uint8 i;\n"+
-  "  for (i=0; i<32; i++)\n"+
-  "  {\n"+
-  "    digitalWrite("+NextPIN+", LOW);\n"+
-  "    ClkProduce_"+dropdown_pin+"();\n"+
-  "  }\n"+
-  "}\n";
+    "{\n"+
+    "  uint8 i;\n"+
+    "  for (i=0; i<32; i++)\n"+
+    "  {\n"+
+    "    digitalWrite("+NextPIN+", LOW);\n"+
+    "    ClkProduce_"+dropdown_pin+"();\n"+
+    "  }\n"+
+    "}\n";
   Blockly.Arduino.definitions_['define_taskanticode'] = "uint8 TakeAntiCode(uint8 dat)\n"+
-  "{\n"+
-  "  uint8 tmp = 0;\n"+
-  "  if ((dat & 0x80) == 0)\n"+
-  "  {\n"+
-  "    tmp |= 0x02;\n"+
-  "  }\n"+
-  "  \n"+
-  "  if ((dat & 0x40) == 0)\n"+
-  "  {\n"+
-  "    tmp |= 0x01;\n"+
-  "  }\n"+
-  "  return tmp;\n"+
-  "}\n";
+    "{\n"+
+    "  uint8 tmp = 0;\n"+
+    "  if ((dat & 0x80) == 0)\n"+
+    "  {\n"+
+    "    tmp |= 0x02;\n"+
+    "  }\n"+
+    "  \n"+
+    "  if ((dat & 0x40) == 0)\n"+
+    "  {\n"+
+    "    tmp |= 0x01;\n"+
+    "  }\n"+
+    "  return tmp;\n"+
+    "}\n";
   Blockly.Arduino.definitions_['define_datasend_'+dropdown_pin] = "// gray data\n"+
-  "void DatSend_"+dropdown_pin+"(uint32 dx)\n"+
-  "{\n"+
-  "  uint8 i;\n"+
-  "  for (i=0; i<32; i++)\n"+
-  "  {\n"+
-  "    if ((dx & 0x80000000) != 0)\n"+
-  "    {\n"+
-  "      digitalWrite("+NextPIN+", HIGH);\n"+
-  "    }\n"+
-  "    else\n"+
-  "    {\n"+
-  "      digitalWrite("+NextPIN+", LOW);\n"+
-  "    }\n"+
-  "  dx <<= 1;\n"+
-  "  ClkProduce_"+dropdown_pin+"();\n"+
-  "  }\n"+
-  "}\n";
+    "void DatSend_"+dropdown_pin+"(uint32 dx)\n"+
+    "{\n"+
+    "  uint8 i;\n"+
+    "  for (i=0; i<32; i++)\n"+
+    "  {\n"+
+    "    if ((dx & 0x80000000) != 0)\n"+
+    "    {\n"+
+    "      digitalWrite("+NextPIN+", HIGH);\n"+
+    "    }\n"+
+    "    else\n"+
+    "    {\n"+
+    "      digitalWrite("+NextPIN+", LOW);\n"+
+    "    }\n"+
+    "  dx <<= 1;\n"+
+    "  ClkProduce_"+dropdown_pin+"();\n"+
+    "  }\n"+
+    "}\n";
   Blockly.Arduino.definitions_['define_datadealwithsend_'+dropdown_pin] = "// data processing\n"+
-"void DataDealWithAndSend_"+dropdown_pin+"(uint8 r, uint8 g, uint8 b)\n"+
-"{\n"+
-  "  uint32 dx = 0;\n"+
-  "  dx |= (uint32)0x03 << 30;             // highest two bits 1，flag bits\n"+
-  "  dx |= (uint32)TakeAntiCode(b) << 28;\n"+
-  "  dx |= (uint32)TakeAntiCode(g) << 26;\n"+
-  "  dx |= (uint32)TakeAntiCode(r) << 24;\n"+
- "\n"+
-  "  dx |= (uint32)b << 16;\n"+
-  "  dx |= (uint32)g << 8;\n"+
-  "  dx |= r;\n"+
- "\n"+
-  "  DatSend_"+dropdown_pin+"(dx);\n"+
-"}\n";
+    "void DataDealWithAndSend_"+dropdown_pin+"(uint8 r, uint8 g, uint8 b)\n"+
+    "{\n"+
+    "  uint32 dx = 0;\n"+
+    "  dx |= (uint32)0x03 << 30;             // highest two bits 1，flag bits\n"+
+    "  dx |= (uint32)TakeAntiCode(b) << 28;\n"+
+    "  dx |= (uint32)TakeAntiCode(g) << 26;\n"+
+    "  dx |= (uint32)TakeAntiCode(r) << 24;\n"+
+    "\n"+
+    "  dx |= (uint32)b << 16;\n"+
+    "  dx |= (uint32)g << 8;\n"+
+    "  dx |= r;\n"+
+    "\n"+
+    "  DatSend_"+dropdown_pin+"(dx);\n"+
+    "}\n";
   var code = "Send32Zero_"+dropdown_pin+"(); // begin\n";
   //console.log(this.itemCount_);
   if (this.itemCount_ == 0) {
@@ -478,31 +487,106 @@ Blockly.Arduino.grove_bluetooth_slave = function() {
   Blockly.Arduino.setups_['setup_bluetooth_'+dropdown_pin] += '  setupBlueToothConnection_'+dropdown_pin+'();\n';
 
   Blockly.Arduino.definitions_['define_setupBlueToothConnection_'+dropdown_pin] = 'void setupBlueToothConnection_'+dropdown_pin+'()\n'+
-  '{\n'+
-  '  blueToothSerial_'+dropdown_pin+'.begin(38400); //Set BluetoothBee BaudRate to default baud rate 38400\n'+
-  '  blueToothSerial_'+dropdown_pin+'.print("\\r\\n+STWMOD=0\\r\\n"); //set the bluetooth work in slave mode\n'+
-  '  blueToothSerial_'+dropdown_pin+'.print("\\r\\n+STNA='+name+'\\r\\n"); //set the bluetooth name as "'+name+'"\n'+
-  '  blueToothSerial_'+dropdown_pin+'.print("\\r\\n+STPIN=0000\\r\\n");//Set SLAVE pincode"0000"\n'+
-  '  blueToothSerial_'+dropdown_pin+'.print("\\r\\n+STOAUT=1\\r\\n"); // Permit Paired device to connect me\n'+
-  '  blueToothSerial_'+dropdown_pin+'.print("\\r\\n+STAUTO=0\\r\\n"); // Auto-connection should be forbidden here\n'+
-  '  delay(2000); // This delay is required.\n'+
-  '  blueToothSerial_'+dropdown_pin+'.print("\\r\\n+INQ=1\\r\\n"); //make the slave bluetooth inquirable \n'+
-  '  Serial.println("The slave bluetooth is inquirable!");\n'+
-  '  delay(2000); // This delay is required.\n'+
-  '  blueToothSerial_'+dropdown_pin+'.flush();\n'+
-  '}\n';
+    '{\n'+
+    '  blueToothSerial_'+dropdown_pin+'.begin(38400); //Set BluetoothBee BaudRate to default baud rate 38400\n'+
+    '  blueToothSerial_'+dropdown_pin+'.print("\\r\\n+STWMOD=0\\r\\n"); //set the bluetooth work in slave mode\n'+
+    '  blueToothSerial_'+dropdown_pin+'.print("\\r\\n+STNA='+name+'\\r\\n"); //set the bluetooth name as "'+name+'"\n'+
+    '  blueToothSerial_'+dropdown_pin+'.print("\\r\\n+STPIN=0000\\r\\n");//Set SLAVE pincode"0000"\n'+
+    '  blueToothSerial_'+dropdown_pin+'.print("\\r\\n+STOAUT=1\\r\\n"); // Permit Paired device to connect me\n'+
+    '  blueToothSerial_'+dropdown_pin+'.print("\\r\\n+STAUTO=0\\r\\n"); // Auto-connection should be forbidden here\n'+
+    '  delay(2000); // This delay is required.\n'+
+    '  blueToothSerial_'+dropdown_pin+'.print("\\r\\n+INQ=1\\r\\n"); //make the slave bluetooth inquirable \n'+
+    '  Serial.println("The slave bluetooth is inquirable!");\n'+
+    '  delay(2000); // This delay is required.\n'+
+    '  blueToothSerial_'+dropdown_pin+'.flush();\n'+
+    '}\n';
   var code = 'char recvChar_'+dropdown_pin+';\n'+
-  'while(1) {\n'+
-  '  if(blueToothSerial_'+dropdown_pin+'.available()) {//check if there is any data sent from the remote bluetooth shield\n'+
-  '    recvChar_'+dropdown_pin+' = blueToothSerial_'+dropdown_pin+'.read();\n'+
-  '    Serial.print(recvChar_'+dropdown_pin+');\n'+
-       statement_receive+
-  '  }\n'+
-  '  if(Serial.available()){//check if there is any data sent from the local serial terminal, you can add the other applications here\n'+
-  '    recvChar_'+dropdown_pin+' = Serial.read();\n'+
-  '    blueToothSerial_'+dropdown_pin+'.print(recvChar_'+dropdown_pin+');\n'+
-       statement_send+
-  '  }\n'+
-  '}\n';
+      'while(1) {\n'+
+      '  if(blueToothSerial_'+dropdown_pin+'.available()) {//check if there is any data sent from the remote bluetooth shield\n'+
+      '    recvChar_'+dropdown_pin+' = blueToothSerial_'+dropdown_pin+'.read();\n'+
+      '    Serial.print(recvChar_'+dropdown_pin+');\n'+
+      statement_receive+
+      '  }\n'+
+      '  if(Serial.available()){//check if there is any data sent from the local serial terminal, you can add the other applications here\n'+
+      '    recvChar_'+dropdown_pin+' = Serial.read();\n'+
+      '    blueToothSerial_'+dropdown_pin+'.print(recvChar_'+dropdown_pin+');\n'+
+      statement_send+
+      '  }\n'+
+      '}\n';
   return code;
 };
+
+Blockly.Arduino.grove_rgb_lcd_setcolor = function() {
+  Blockly.Arduino.definitions_['define_wire'] = '#include <Wire.h>\n';
+  Blockly.Arduino.definitions_['define_rgb_lcd'] = '#include "rgb_lcd.h"\n' + 'rgb_lcd grove_lcd;\n';
+  var colour_rgb = this.getFieldValue('RGB');
+  var code = "grove_lcd.setRGB("+hexToR(colour_rgb)+", "+hexToG(colour_rgb)+", "+hexToB(colour_rgb)+");\n";
+  return code;
+};
+
+Blockly.Arduino.grove_rgb_lcd_begin = function() {
+  var cols = this.getFieldValue('COLS');
+  var rows = this.getFieldValue('ROWS');
+  Blockly.Arduino.definitions_['define_wire'] = '#include <Wire.h>\n';
+  Blockly.Arduino.definitions_['define_rgb_lcd'] = '#include "rgb_lcd.h"\n' + 'rgb_lcd grove_lcd;\n';
+  var code = 'grove_lcd.begin(' + cols + ',' + rows + ');\n';
+  return code;
+}
+
+Blockly.Arduino.grove_rgb_lcd_print = function() {
+  var text = Blockly.Arduino.valueToCode(this, 'PRINT', Blockly.Arduino.ORDER_NONE)
+  Blockly.Arduino.definitions_['define_wire'] = '#include <Wire.h>\n';
+  Blockly.Arduino.definitions_['define_rgb_lcd'] = '#include "rgb_lcd.h"\n' + 'rgb_lcd grove_lcd;\n';
+  var code = 'grove_lcd.print(' + text + ');\n';
+  return code;
+}
+
+Blockly.Arduino.grove_rgb_lcd_setcursor = function() {
+  var col = this.getFieldValue('COL');
+  var row = this.getFieldValue('ROW');
+  Blockly.Arduino.definitions_['define_wire'] = '#include <Wire.h>\n';
+  Blockly.Arduino.definitions_['define_rgb_lcd'] = '#include "rgb_lcd.h"\n' + 'rgb_lcd grove_lcd;\n';
+  var code = 'grove_lcd.setCursor(' + col + ',' + row + ');\n';
+  return code;
+}
+
+Blockly.Arduino.grove_rgb_lcd_clear = function() {
+  Blockly.Arduino.definitions_['define_wire'] = '#include <Wire.h>\n';
+  Blockly.Arduino.definitions_['define_rgb_lcd'] = '#include "rgb_lcd.h"\n' + 'rgb_lcd grove_lcd;\n';
+  var code = 'grove_lcd.clear();\n';
+  return code;
+}
+
+Blockly.Arduino.grove_rgb_lcd_scrolldisplayleft = function() {
+  Blockly.Arduino.definitions_['define_wire'] = '#include <Wire.h>\n';
+  Blockly.Arduino.definitions_['define_rgb_lcd'] = '#include "rgb_lcd.h"\n' + 'rgb_lcd grove_lcd;\n';
+  var code = 'grove_lcd.scrollDisplayLeft();\n';
+  return code;
+}
+
+Blockly.Arduino.grove_rgb_lcd_scrolldisplayright = function() {
+  Blockly.Arduino.definitions_['define_wire'] = '#include <Wire.h>\n';
+  Blockly.Arduino.definitions_['define_rgb_lcd'] = '#include "rgb_lcd.h"\n' + 'rgb_lcd grove_lcd;\n';
+  var code = 'grove_lcd.scrollDisplayRight();\n';
+  return code;
+}
+
+Blockly.Arduino.grove_rgb_lcd_autoscroll = function() {
+  var code = 'grove_lcd.autoscroll();\n';
+  return code;
+}
+
+Blockly.Arduino.grove_rgb_lcd_noautoscroll = function() {
+  var code = 'grove_lcd.noAutoscroll();\n';
+  return code;
+}
+
+Blockly.Arduino.grove_rgb_lcd_lefttoright = function() {
+  var code = 'grove_lcd.leftToRight();\n';
+  return code;
+}
+
+Blockly.Arduino.grove_rgb_lcd_righttoleft = function() {
+  var code = 'grove_lcd.rightToLeft();\n';
+  return code;
+}

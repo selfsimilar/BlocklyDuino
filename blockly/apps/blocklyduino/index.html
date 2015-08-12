@@ -97,7 +97,18 @@
       <block type="inout_highlow"></block>
       <block type="inout_digitalpin"></block>
       <block type="inout_digital_write"></block>
-      <block type="inout_custom_digital_write"></block>
+      <block type="inout_custom_digital_write">
+        <value name="PIN">
+          <block type="inout_digitalpin">
+            <field name="PIN">1</field>
+          </block>
+        </value>
+        <value name="STAT">
+          <block type="inout_highlow">
+            <field name="BOOL">HIGH</field>
+          </block>
+        </value>
+      </block>
       <block type="inout_digital_read"></block>
       <block type="inout_analog_write">
         <value name="NUM">
@@ -119,12 +130,61 @@
     </category>
     <category id="category_serial">
       <block type="serial_available"></block>
-      <block type="serial_print"></block>
-      <block type="serial_println"></block>
+      <block type="serial_print">
+        <value name="CONTENT">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+      <block type="serial_println">
+        <value name="CONTENT">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
       <block type="serial_read"></block>
       <block type="serial_byte_number"></block>
     </category>
     <sep></sep>
+    <category name="Grove">
+      <block type="grove_led"></block>
+      <block type="grove_button"></block>
+      <block type="grove_touch"></block>
+      <block type="grove_relay"></block>
+      <!--block type="grove_tilt_switch"></block-->
+      <block type="grove_buzzer"></block>
+      <!--block type="grove_pir_motion_sensor"></block-->
+      <!--block type="grove_line_finder"></block-->
+      <!--block type="grove_rgb_led"></block-->
+      <block type="grove_light_sensor"></block>
+      <block type="grove_rotary_angle"></block>
+      <block type="grove_temporature_sensor"></block>
+      <block type="grove_sound_sensor"></block>
+      <!--block type="grove_thumb_joystick"></block-->
+      <block type="grove_rgb_lcd_begin"></block>
+      <block type="grove_rgb_lcd_print">
+        <value name="PRINT">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+      <block type="grove_rgb_lcd_setcolor"></block>
+      <block type="grove_rgb_lcd_setcursor"></block>
+      <block type="grove_rgb_lcd_clear"></block>
+      <!--block type="lcd_scrolldisplayright"></block-->
+      <!--block type="lcd_scrolldisplayleft"></block-->
+      <block type="grove_rgb_lcd_autoscroll"></block>
+      <block type="grove_rgb_lcd_noautoscroll"></block>
+      <!--block type="lcd_lefttoright"></block-->
+      <!--block type="lcd_righttoleft"></block-->
+      <!--block type="grove_serial_lcd_power"></block-->
+      <!--block type="grove_serial_lcd_effect"></block-->
+      <!--block type="grove_ultrasonic_ranger"></block-->
+      <!--block type="grove_motor_shield"></block-->
+    </category>
     <category id="category_servo">
       <block type="servo_write">
         <value name="ANGLE">
@@ -154,7 +214,13 @@
     <category id="category_lcd">
       <block type="lcd_init"></block>
       <block type="lcd_begin"></block>
-      <block type="lcd_print"></block>
+      <block type="lcd_print">
+        <value name="PRINT">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
       <block type="lcd_setcursor"></block>
       <block type="lcd_clear"></block>
       <!--block type="lcd_scrolldisplayright"></block-->
