@@ -33,6 +33,7 @@ Blockly.Msg.CATEGORY_GROVE = "Grove";  // untranslated
 Blockly.Msg.CATEGORY_GROVE_ANALOG = "Grove Analog";  // untranslated
 Blockly.Msg.CATEGORY_GROVE_LCD = "Grove LCD";  // untranslated
 Blockly.Msg.CATEGORY_GROVE_MOTOR = "Grove Motor";  // untranslated
+Blockly.Msg.CATEGORY_I2C_MATRIX = "I2C Matrix";  // untranslated
 Blockly.Msg.CATEGORY_INITIALIZES = "Initializes";  // untranslated
 Blockly.Msg.CATEGORY_INOUT = "In/Out";  // untranslated
 Blockly.Msg.CATEGORY_INVOLT = "involt";  // untranslated

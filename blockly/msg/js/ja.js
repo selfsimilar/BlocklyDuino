@@ -33,6 +33,7 @@ Blockly.Msg.CATEGORY_GROVE = "Grove";
 Blockly.Msg.CATEGORY_GROVE_ANALOG = "Grove アナログ";
 Blockly.Msg.CATEGORY_GROVE_LCD = "Grove LCD";
 Blockly.Msg.CATEGORY_GROVE_MOTOR = "Grove モーター";
+Blockly.Msg.CATEGORY_I2C_MATRIX = "I2C マトリックス";
 Blockly.Msg.CATEGORY_INITIALIZES = "初期設定";
 Blockly.Msg.CATEGORY_INOUT = "ピン制御";
 Blockly.Msg.CATEGORY_INVOLT = "involt";  // untranslated

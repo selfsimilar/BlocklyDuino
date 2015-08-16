@@ -446,6 +446,7 @@
   "CATEGORY_GROVE": "Grove",
   "CATEGORY_GROVE_LCD": "Grove LCD",
   "CATEGORY_GROVE_MOTOR": "Grove Motor",
+  "CATEGORY_I2C_MATRIX": "I2C Matrix",
   "CATEGORY_LOGIC": "Logic",
   "CATEGORY_LOOPS": "loops",
   "CATEGORY_TIME": "Time",

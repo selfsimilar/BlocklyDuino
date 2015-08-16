@@ -403,6 +403,7 @@
   "CATEGORY_GROVE": "Grove",
   "CATEGORY_GROVE_LCD": "Grove LCD",
   "CATEGORY_GROVE_MOTOR": "Grove モーター",
+  "CATEGORY_I2C_MATRIX": "I2C マトリックス",
   "CATEGORY_LOGIC": "せいぎょ",
   "CATEGORY_LOOPS": "くりかえし",
   "CATEGORY_TIME": "じかん",
