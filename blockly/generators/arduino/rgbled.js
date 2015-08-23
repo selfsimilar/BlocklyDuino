@@ -42,23 +42,15 @@ Blockly.Arduino.rgbled_begin = function() {
   return code;
 };
 
+function hexToR(h) {return parseInt((cutHex(h)).substring(0,2),16)}
+function hexToG(h) {return parseInt((cutHex(h)).substring(2,4),16)}
+function hexToB(h) {return parseInt((cutHex(h)).substring(4,6),16)}
+function cutHex(h) {return (h.charAt(0)=="#") ? h.substring(1,7):h}
 
 Blockly.Arduino.rgbled_setpixelcolor = function() {
   var target = this.getFieldValue('TARGET');
-  var color = this.getFieldValue('COLOR');
-
-  var code = 'RGBLED.setPixelColor(' + target + ',';
-  switch(color){
-      case 'red':
-        code += '255,0,0);\n';
-        break;
-      case 'green':
-        code += '0,255,0);\n';
-        break;
-      case 'blue':
-        code += '0,0,255);\n';
-        break;
-  }
+  var colour_rgb = this.getFieldValue('RGB');
+  var code = "RGBLED.setPixelColor("+hexToR(colour_rgb)+", "+hexToG(colour_rgb)+", "+hexToB(colour_rgb)+");\n";
   return code;
 };
 

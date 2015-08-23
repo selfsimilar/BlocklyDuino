@@ -552,7 +552,7 @@ Blockly.Blocks['grove_rgb_lcd_setcolor'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.GROVE_RGB_LCD_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.rgb_lcd_image, 64, 64))
-      .appendField(Blockly.Msg.GROVE_COLOR)
+      .appendField(Blockly.Msg.COLOR)
       .appendField(new Blockly.FieldColour("#00ff00"), "RGB");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -568,10 +568,10 @@ Blockly.Blocks['grove_rgb_lcd_begin'] = {
       .appendField(Blockly.Msg.GROVE_RGB_LCD_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.rgb_lcd_image, 64, 64))
       .appendField(Blockly.Msg.GROVE_RGB_LCD_BEGIN_TITLE)
-      .appendField(Blockly.Msg.GROVE_RGB_LCD_COL)
+      .appendField(Blockly.Msg.COL)
       .appendField(new Blockly.FieldTextInput("16"),"COLS");
     this.appendDummyInput()
-      .appendField(Blockly.Msg.GROVE_RGB_LCD_ROW)
+      .appendField(Blockly.Msg.ROW)
       .appendField(new Blockly.FieldTextInput("2"),"ROWS");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -603,10 +603,10 @@ Blockly.Blocks['grove_rgb_lcd_setcursor'] = {
       .appendField(Blockly.Msg.GROVE_RGB_LCD_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.rgb_lcd_image, 64, 64))
       .appendField(Blockly.Msg.GROVE_RGB_LCD_SETCURSOR_TITLE)
-      .appendField(Blockly.Msg.GROVE_RGB_LCD_COL)
+      .appendField(Blockly.Msg.COL)
       .appendField(new Blockly.FieldTextInput("0"),"COL");
     this.appendDummyInput()
-      .appendField(Blockly.Msg.GROVE_RGB_LCD_ROW)
+      .appendField(Blockly.Msg.ROW)
       .appendField(new Blockly.FieldTextInput("0"),"ROW");
     this.setInputsInline(true);
     this.setPreviousStatement(true);

@@ -63,8 +63,9 @@ Blockly.Blocks['rgbled_setpixelcolor'] = {
       .appendField(Blockly.Msg.RGBLED_SETPIXELCOLOR_TARGET)
       .appendField(new Blockly.FieldTextInput("0"),"TARGET");
     this.appendDummyInput()
-      .appendField(Blockly.Msg.RGBLED_SETPIXELCOLOR_COLOR)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.RGBLED_SETPIXELCOLOR_RED,"red"],[Blockly.Msg.RGBLED_SETPIXELCOLOR_GREEN,"green"],[Blockly.Msg.RGBLED_SETPIXELCOLOR_BLUE,"blue"]]), "COLOR")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.COLOR)
+      .appendField(new Blockly.FieldColour("#00ff00"), "RGB");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
