@@ -308,10 +308,8 @@ Blockly.Blocks['i2c_matrix_setrotation'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_mini_matrix_image, 64, 64))
-      .appendField(Blockly.Msg.I2C_MATRIX_SETROTATION);
-    this.appendValueInput("ANGLE")
-      .setCheck("Number")
-      .appendField(Blockly.Msg.I2C_MATRIX_ANGLE);
+      .appendField(Blockly.Msg.I2C_MATRIX_SETROTATION)
+      .appendField(new Blockly.FieldTextInput("1"),"ANGLE");
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);

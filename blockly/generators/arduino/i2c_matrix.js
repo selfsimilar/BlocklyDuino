@@ -98,7 +98,7 @@ Blockly.Arduino.i2c_matrix_fillrect = function() {
 };
 
 Blockly.Arduino.i2c_matrix_setrotation = function() {
-  var angle = Blockly.Arduino.valueToCode(this, 'ANGLE', Blockly.Arduino.ORDER_ATOMIC) || '0'
+  var angle = this.getFieldValue('ANGLE');
   var code = "matrix.setRotation(" + angle + ");\n";
   return code;
 };
