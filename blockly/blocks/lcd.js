@@ -75,10 +75,10 @@ Blockly.Blocks['lcd_begin'] = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.Blocks.lcd.image, 64, 64))
       .appendField(Blockly.Msg.LCD_BEGIN_TITLE)
-      .appendField(Blockly.Msg.LCD_COL)
+      .appendField(Blockly.Msg.COL)
       .appendField(new Blockly.FieldTextInput("16"),"COLS");
     this.appendDummyInput()
-      .appendField(Blockly.Msg.LCD_ROW)
+      .appendField(Blockly.Msg.ROW)
       .appendField(new Blockly.FieldTextInput("2"),"ROWS");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -108,10 +108,10 @@ Blockly.Blocks['lcd_setcursor'] = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.Blocks.lcd.image, 64, 64))
       .appendField(Blockly.Msg.LCD_SETCURSOR_TITLE)
-      .appendField(Blockly.Msg.LCD_COL)
+      .appendField(Blockly.Msg.COL)
       .appendField(new Blockly.FieldTextInput("0"),"COL");
     this.appendDummyInput()
-      .appendField(Blockly.Msg.LCD_ROW)
+      .appendField(Blockly.Msg.ROW)
       .appendField(new Blockly.FieldTextInput("0"),"ROW");
     this.setInputsInline(true);
     this.setPreviousStatement(true);

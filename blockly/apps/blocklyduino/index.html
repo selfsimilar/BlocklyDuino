@@ -260,6 +260,7 @@
     <category id="category_i2c_matrix">
       <block type="i2c_matrix_begin"></block>
       <block type="i2c_matrix_clear"></block>
+      <block type ="i2c_matrix_writedisplay" ></block>
       <block type="i2c_matrix_setcursor">
         <value name="COL">
           <block type="math_number">
@@ -272,13 +273,7 @@
           </block>
         </value>
       </block>
-      <block type ="i2c_matrix_settextsize" >
-        <value name="SIZE">
-          <block type="math_number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-      </block>
+      <block type ="i2c_matrix_settextsize" ></block>
       <block type ="i2c_matrix_settextwrap" ></block>
       <block type ="i2c_matrix_settextcolor" ></block>
       <block type="i2c_matrix_print">
@@ -288,7 +283,6 @@
           </block>
         </value>
       </block>
-      <block type ="i2c_matrix_writedisplay" ></block>
       <block type ="i2c_matrix_drawpixel" >
         <value name="X">
           <block type="math_number">
@@ -340,7 +334,7 @@
           </block>
         </value>
       </block>
-      <block type ="i2c_matrix_drawract" >
+      <block type ="i2c_matrix_drawrect" >
         <value name="X0">
           <block type="math_number">
             <field name="NUM">0</field>
@@ -353,16 +347,16 @@
         </value>
         <value name="X1">
           <block type="math_number">
-            <field name="NUM">0</field>
+            <field name="NUM">5</field>
           </block>
         </value>
         <value name="Y1">
           <block type="math_number">
-            <field name="NUM">0</field>
+            <field name="NUM">5</field>
           </block>
         </value>
       </block>
-      <block type ="i2c_matrix_fillract" >
+      <block type ="i2c_matrix_fillrect" >
         <value name="X0">
           <block type="math_number">
             <field name="NUM">0</field>
@@ -375,12 +369,12 @@
         </value>
         <value name="X1">
           <block type="math_number">
-            <field name="NUM">0</field>
+            <field name="NUM">5</field>
           </block>
         </value>
         <value name="Y1">
           <block type="math_number">
-            <field name="NUM">0</field>
+            <field name="NUM">5</field>
           </block>
         </value>
       </block>

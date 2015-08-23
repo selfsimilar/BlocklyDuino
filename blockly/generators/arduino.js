@@ -88,8 +88,7 @@ var profile = {
     lcd: [["-","-"],["0","0"],["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"]],
     dht:[["DHT11","DHT11"],["DHT21","DHT21"],["DHT22","DHT22"]],
     i2c_matrix_type: [["8x8","8x8matrix"],["16x8","8x16matrix"],["bi_color8x8","BicolorMatrix"]],
-    i2c_matrix_address: [["0x70","0x70"],["0x71","0x71"],["0x72","0x72"],["0x73","0x73"]],
-    i2c_matrix_color: [["on","LED_ON"],["off","LED_OFF"],["Green","LED_GREEN"],["Yellow","LED_YELLOW"],["Red","LED_RED"]]
+    i2c_matrix_address: [["0x70","0x70"],["0x71","0x71"],["0x72","0x72"],["0x73","0x73"]]
   },
   arduino_mega: {
     description: "Arduino Mega-compatible board"
