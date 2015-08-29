@@ -703,6 +703,7 @@
   "I2C_MATRIX_POSITION": "Position",
   "I2C_MATRIX_NUM": "Num",
   "I2C_MATRIX_DOTS": "Dots",
+  "I2C_SEVENSEG_COLON": "Colon",
   "I2C_MATRIX_DRAWCOLON": "drawColon",
   "CATEGORY_I2C_SEVENSEG": "7 Segment",
   "I2C_SEVENSEG_TITLE": "7 Segment",

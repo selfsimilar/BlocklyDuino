@@ -88,7 +88,7 @@ Blockly.Blocks['i2c_sevenseg_writedigitnum'] = {
     this.setColour(Blockly.Blocks.i2c_sevenseg.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_SEVENSEG_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.sevenseg_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_sevenseg.image, 64, 64))
       .appendField(Blockly.Msg.I2C_SEVENSEG_WRITEDIGITNUM);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_SEVENSEG_POSITION)
@@ -112,10 +112,10 @@ Blockly.Blocks['i2c_sevenseg_drawcolon'] = {
     this.setColour(Blockly.Blocks.i2c_sevenseg.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_SEVENSEG_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.sevenseg_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_sevenseg.image, 64, 64))
     this.appendValueInput("DOTS")
       .setCheck("BOOLEAN")
-      .appendField(Blockly.Msg.I2C_SEVENSEG_DOTS);
+      .appendField(Blockly.Msg.I2C_SEVENSEG_COLON);
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);

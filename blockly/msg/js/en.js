@@ -242,6 +242,7 @@ Blockly.Msg.I2C_MATRIX_Y1 = "y1";
 Blockly.Msg.I2C_SEVENSEG_ADDRESS = "Address";
 Blockly.Msg.I2C_SEVENSEG_BOOLEAN_FALSE = "hidden";
 Blockly.Msg.I2C_SEVENSEG_BOOLEAN_TRUE = "display";
+Blockly.Msg.I2C_SEVENSEG_COLON = "Colon";
 Blockly.Msg.I2C_SEVENSEG_DOTS = "Colon";
 Blockly.Msg.I2C_SEVENSEG_HELPURL = "https://github.com/adafruit/Adafruit-LED-Backpack-Library";
 Blockly.Msg.I2C_SEVENSEG_NUM = "Number";
