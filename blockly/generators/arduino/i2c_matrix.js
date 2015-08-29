@@ -107,3 +107,17 @@ Blockly.Arduino.i2c_matrix_writedisplay = function() {
   var code = "matrix.writeDisplay();\n";
   return code;
 };
+
+Blockly.Arduino.i2c_matrix_writedigitnum = function() {
+  var pos = this.getFieldValue('POSITION');
+  var num = Blockly.Arduino.valueToCode(this, 'NUM', Blockly.Arduino.ORDER_ATOMIC) || '0'
+  var bool = Blockly.Arduino.valueToCode(this, 'DOTS', Blockly.Arduino.ORDER_NONE) || 'false';
+  var code = "matrix.writeDigitNum(" + pos + "," + num + "," + bool + ");\n";
+  return code;
+};
+
+Blockly.Arduino.i2c_matrix_drawcolon = function() {
+  var bool = Blockly.Arduino.valueToCode(this, 'DOTS', Blockly.Arduino.ORDER_NONE) || 'false';
+  var code = "matrix.drawColon("+ bool + ");\n";
+  return code;
+};

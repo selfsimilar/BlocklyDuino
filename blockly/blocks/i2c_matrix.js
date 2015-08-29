@@ -32,7 +32,7 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks.i2c_matrix.HUE = 225;
 
-Blockly.Blocks.i2c_mini_matrix_image = filepath.media+'/i2c_mini_matrix.jpg';
+Blockly.Blocks.mini_matrix_image = filepath.media+'/mini_matrix.jpg';
 
 Blockly.Blocks['i2c_matrix_begin'] = {
   init: function() {
@@ -40,11 +40,11 @@ Blockly.Blocks['i2c_matrix_begin'] = {
     this.setColour(Blockly.Blocks.i2c_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.I2C_MATRIX_TYPE)
       .appendField(new Blockly.FieldDropdown(profile.default.i2c_matrix_type),"TYPE")
       .appendField(Blockly.Msg.I2C_MATRIX_ADDRESS)
-      .appendField(new Blockly.FieldDropdown(profile.default.i2c_matrix_address),"ADDRESS");
+      .appendField(new Blockly.FieldDropdown(profile.default.led_backpack_address),"ADDRESS");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip('');
@@ -57,7 +57,7 @@ Blockly.Blocks['i2c_matrix_clear'] = {
     this.setColour(Blockly.Blocks.i2c_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.I2C_MATRIX_CLEAR);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -71,7 +71,7 @@ Blockly.Blocks['i2c_matrix_setcursor'] = {
     this.setColour(Blockly.Blocks.i2c_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.I2C_MATRIX_SETCURSOR);
     this.appendValueInput("COL")
       .setCheck("Number")
@@ -92,7 +92,7 @@ Blockly.Blocks['i2c_matrix_print'] = {
     this.setColour(Blockly.Blocks.i2c_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.I2C_MATRIX_PRINT);
     this.appendValueInput("CONTENT")
       .setCheck("String")
@@ -110,7 +110,7 @@ Blockly.Blocks['i2c_matrix_settextsize'] = {
     this.setColour(Blockly.Blocks.i2c_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.I2C_MATRIX_SETTEXTSIZE)
       .appendField(new Blockly.FieldTextInput("1"),"SIZE");
     this.setInputsInline(true);
@@ -129,7 +129,7 @@ Blockly.Blocks['i2c_matrix_settextwrap'] = {
     this.setColour(Blockly.Blocks.i2c_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.I2C_MATRIX_SETTEXTWRAP);
     this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown(BOOLEANS), 'BOOL');
@@ -146,7 +146,7 @@ Blockly.Blocks['i2c_matrix_settextcolor'] = {
     this.setColour(Blockly.Blocks.i2c_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.I2C_MATRIX_SETTEXTCOLOR);
     this.appendDummyInput()
       .appendField(Blockly.Msg.COLOR)
@@ -164,7 +164,7 @@ Blockly.Blocks['i2c_matrix_drawpixel'] = {
     this.setColour(Blockly.Blocks.i2c_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.I2C_MATRIX_DRAWPIXEL);
     this.appendValueInput("X")
       .setCheck("Number")
@@ -190,7 +190,7 @@ Blockly.Blocks['i2c_matrix_drawcircle'] = {
     this.setColour(Blockly.Blocks.i2c_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.I2C_MATRIX_DRAWCIRCLE);
     this.appendValueInput("X")
       .setCheck("Number")
@@ -217,7 +217,7 @@ Blockly.Blocks['i2c_matrix_drawrect'] = {
     this.setColour(Blockly.Blocks.i2c_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.I2C_MATRIX_DRAWRECT);
     this.appendValueInput("X0")
       .setCheck("Number")
@@ -247,7 +247,7 @@ Blockly.Blocks['i2c_matrix_drawline'] = {
     this.setColour(Blockly.Blocks.i2c_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.I2C_MATRIX_DRAWLINE);
     this.appendValueInput("X0")
       .setCheck("Number")
@@ -277,7 +277,7 @@ Blockly.Blocks['i2c_matrix_fillrect'] = {
     this.setColour(Blockly.Blocks.i2c_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.I2C_MATRIX_FILLRECT);
     this.appendValueInput("X0")
       .setCheck("Number")
@@ -307,7 +307,7 @@ Blockly.Blocks['i2c_matrix_setrotation'] = {
     this.setColour(Blockly.Blocks.i2c_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.I2C_MATRIX_SETROTATION)
       .appendField(new Blockly.FieldTextInput("1"),"ANGLE");
     this.setInputsInline(true);
@@ -323,7 +323,7 @@ Blockly.Blocks['i2c_matrix_writedisplay'] = {
     this.setColour(Blockly.Blocks.i2c_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.I2C_MATRIX_WRITEDISPLAY);
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
@@ -331,4 +331,3 @@ Blockly.Blocks['i2c_matrix_writedisplay'] = {
     this.setTooltip('');
   }
 };
-

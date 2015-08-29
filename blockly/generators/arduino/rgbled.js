@@ -34,9 +34,9 @@ Blockly.Arduino.rgbled_begin = function() {
   var brightness = this.getFieldValue('BRIGHTNESS');
 
   Blockly.Arduino.definitions_['define_neopixel'] = '#include <Adafruit_NeoPixel.h>\n'
-    + 'Adafruit_NeoPixel RGBLED = Adafruit_NeoPixel(' + num + ',' + pin + ',NEO_RGB + NEO_KHZ800);\n';
-  Blockly.Arduino.setups_['setup_rgbled_begin'] = 'RGBLED.begin();\n'
-  Blockly.Arduino.setups_['setup_rgbled_brightness'] = 'RGBLED.setBrightness('+ brightness + ');\n'
+    + 'Adafruit_NeoPixel pixels = Adafruit_NeoPixel(' + num + ',' + pin + ',NEO_RGB + NEO_KHZ800);\n';
+  Blockly.Arduino.setups_['setup_rgbled_begin'] = 'pixels.begin();\n'
+  Blockly.Arduino.setups_['setup_rgbled_brightness'] = 'pixels.setBrightness('+ brightness + ');\n'
 
   var code = '';
   return code;
@@ -50,7 +50,7 @@ function cutHex(h) {return (h.charAt(0)=="#") ? h.substring(1,7):h}
 Blockly.Arduino.rgbled_setpixelcolor = function() {
   var target = this.getFieldValue('TARGET');
   var colour_rgb = this.getFieldValue('RGB');
-  var code = "RGBLED.setPixelColor("+hexToR(colour_rgb)+", "+hexToG(colour_rgb)+", "+hexToB(colour_rgb)+");\n";
+  var code = 'pixels.setPixelColor(' + target + ',pixels.Color(' +hexToR(colour_rgb)+','+hexToG(colour_rgb)+',' + hexToB(colour_rgb)+'));\n';
   return code;
 };
 
@@ -60,12 +60,12 @@ Blockly.Arduino.rgbled_custom_setpixelcolor = function() {
   var g = Blockly.Arduino.valueToCode(this, 'G', Blockly.Arduino.ORDER_ATOMIC) || '0'
   var b = Blockly.Arduino.valueToCode(this, 'B', Blockly.Arduino.ORDER_ATOMIC) || '0'
 
-  var code = 'RGBLED.setPixelColor(' + target + ',' + r + ',' + g +',' + b + ');\n';
+  var code = 'pixels.setPixelColor(' + target + ', pixels.Color(' + r + ',' + g +',' + b + '));\n';
   return code;
 };
 
 Blockly.Arduino.rgbled_show = function() {
-  var code = 'RGBLED.show();\n';
+  var code = 'pixels.show();\n';
   return code;
 };
 

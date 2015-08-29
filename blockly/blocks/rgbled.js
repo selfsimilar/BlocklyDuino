@@ -40,7 +40,7 @@ Blockly.Blocks['rgbled_begin'] = {
       .appendField(new Blockly.FieldImage(Blockly.Blocks.rgbled.image, 64, 64))
       .appendField(Blockly.Msg.RGBLED_BEGIN_SETTING)
       .appendField(Blockly.Msg.RGBLED_BEGIN_NUM)
-      .appendField(new Blockly.FieldTextInput("1"),"NUM");
+      .appendField(new Blockly.FieldTextInput("16"),"NUM");
     this.appendDummyInput()
       .appendField(Blockly.Msg.RGBLED_BEGIN_PIN)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");

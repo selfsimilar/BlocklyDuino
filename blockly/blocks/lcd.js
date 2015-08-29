@@ -217,6 +217,3 @@ Blockly.Blocks['lcd_righttoleft'] = {
     this.setTooltip(Blockly.Msg.LCD_RIGHTTOLEFT_TOOLTIP);
   }
 };
-
-
-
