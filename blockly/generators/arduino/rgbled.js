@@ -34,7 +34,7 @@ Blockly.Arduino.rgbled_begin = function() {
   var brightness = this.getFieldValue('BRIGHTNESS');
 
   Blockly.Arduino.definitions_['define_neopixel'] = '#include <Adafruit_NeoPixel.h>\n'
-    + 'Adafruit_NeoPixel pixels = Adafruit_NeoPixel(' + num + ',' + pin + ',NEO_RGB + NEO_KHZ800);\n';
+    + 'Adafruit_NeoPixel pixels = Adafruit_NeoPixel(' + num + ',' + pin + ',NEO_GRB + NEO_KHZ800);\n';
   Blockly.Arduino.setups_['setup_rgbled_begin'] = 'pixels.begin();\n'
   Blockly.Arduino.setups_['setup_rgbled_brightness'] = 'pixels.setBrightness('+ brightness + ');\n'
 
