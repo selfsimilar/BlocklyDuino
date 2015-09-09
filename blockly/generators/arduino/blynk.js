@@ -1,6 +1,6 @@
 /**
  * @license
- * Visual Blocks Editor
+ * Visual Blocks Language
  *
  * Copyright 2012 Google Inc.
  * https://developers.google.com/blockly/
@@ -19,27 +19,11 @@
  */
 
 /**
- * @fileoverview List blocks for Blockly.
+ * @fileoverview Generating Arduino for list blocks.
  * @author fraser@google.com (Neil Fraser)
  */
 'use strict';
 
-goog.provide('Blockly.Blocks.initializes');
+goog.provide('Blockly.Arduino.blynk');
 
-goog.require('Blockly.Blocks');
-
-Blockly.Blocks.initializes.HUE = 0;
-
-Blockly.Blocks['initializes_setup'] = {
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.INITIALIZES_SETUP_HELPURL);
-    this.setColour(Blockly.Blocks.initializes.HUE);
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.INITIALIZES_SETUP_APPENDTEXT);
-    this.appendStatementInput("CONTENT");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.INITIALIZES_SETUP_TOOLTIP);
-  }
-};
+goog.require('Blockly.Arduino');
