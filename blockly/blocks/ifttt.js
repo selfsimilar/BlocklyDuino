@@ -30,7 +30,7 @@ goog.provide('Blockly.Blocks.ifttt');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.ifttt.HUE = 225;
+Blockly.Blocks.ifttt.HUE = 65;
 
 Blockly.Blocks.ifttt.image = filepath.media+'/ifttt.png';
 

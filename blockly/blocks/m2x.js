@@ -30,7 +30,7 @@ goog.provide('Blockly.Blocks.m2x');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.m2x.HUE = 225;
+Blockly.Blocks.m2x.HUE = 65;
 
 Blockly.Blocks.m2x.image = filepath.media+'/m2x.png';
 
@@ -42,18 +42,18 @@ Blockly.Blocks['m2x_begin'] = {
       .appendField(new Blockly.FieldImage(Blockly.Blocks.m2x.image, 64, 64))
       .appendField(Blockly.Msg.M2X_BEGIN_TITLE)
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.ETHERNET_VERSION_1,""],[Blockly.Msg.ETHERNET_VERSION_2,"2"]]), 'VERSION')
-    this.appendDummyInput()
+    this.appendValueInput("ID")
+      .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.DEVICE_ID)
-      .appendField(new Blockly.FieldTextInput(""),"ID");
-    this.appendDummyInput()
+      .appendField(Blockly.Msg.DEVICE_ID);
+    this.appendValueInput("STREAM_NAME")
+      .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.M2X_STREAM_NAME)
-      .appendField(new Blockly.FieldTextInput(""),"STREAM_NAME");
-    this.appendDummyInput()
+      .appendField(Blockly.Msg.M2X_STREAM_NAME);
+    this.appendValueInput("KEY")
+      .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.M2X_KEY)
-      .appendField(new Blockly.FieldTextInput(""),"KEY");
+      .appendField(Blockly.Msg.M2X_KEY);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.M2X_BEGIN_TOOLTIP);

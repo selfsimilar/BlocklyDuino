@@ -30,7 +30,7 @@ goog.provide('Blockly.Blocks.blynk');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.blynk.HUE = 225;
+Blockly.Blocks.blynk.HUE = 65;
 
 Blockly.Blocks.blynk.image = filepath.media+'/blynk.png';
 

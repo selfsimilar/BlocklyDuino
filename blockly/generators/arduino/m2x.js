@@ -30,9 +30,9 @@ goog.require('Blockly.Arduino');
 
 Blockly.Arduino.m2x_begin = function() {
   var version = this.getFieldValue('VERSION');
-  var id = this.getFieldValue('ID');
-  var stream = this.getFieldValue('STREAM_NAME');
-  var key= this.getFieldValue('KEY');
+  var id = Blockly.Arduino.valueToCode(this, 'ID', Blockly.Arduino.ORDER_ATOMIC) || ''
+  var stream = Blockly.Arduino.valueToCode(this, 'STREAM_NAME', Blockly.Arduino.ORDER_ATOMIC) || ''
+  var key = Blockly.Arduino.valueToCode(this, 'KEY', Blockly.Arduino.ORDER_ATOMIC) || ''
 
   Blockly.Arduino.definitions_['define_spi'] = '#include <SPI.h>';
   Blockly.Arduino.definitions_['define_ethernet'] = '#include <Ethernet' + version + '.h>';
