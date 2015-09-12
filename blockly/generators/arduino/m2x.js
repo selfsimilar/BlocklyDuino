@@ -39,9 +39,9 @@ Blockly.Arduino.m2x_begin = function() {
   Blockly.Arduino.definitions_['define_jsonlite'] = '#include <jsonlite.h>';
   Blockly.Arduino.definitions_['define_M2XStreamClient'] = '#include <M2XStreamClient.h>';
   Blockly.Arduino.definitions_['define_ethernet_client'] = 'EthernetClient client;';
-  Blockly.Arduino.definitions_['define_m2x_id'] = 'char m2xId[] = "' + id + '";';
-  Blockly.Arduino.definitions_['define_m2x_stream_name'] = 'char m2xStream[] = "' + stream + '";';
-  Blockly.Arduino.definitions_['define_m2x_key'] = 'char m2xKey[] = "' + key + '";';
+  Blockly.Arduino.definitions_['define_m2x_id'] = 'char m2xId[] = ' + id + ';';
+  Blockly.Arduino.definitions_['define_m2x_stream_name'] = 'char m2xStream[] = ' + stream + ';';
+  Blockly.Arduino.definitions_['define_m2x_key'] = 'char m2xKey[] = ' + key + ';';
   Blockly.Arduino.definitions_['define_m2xstreamclient'] = 'M2XStreamClient m2xClient(&client, m2xKey);';
 
   return "";

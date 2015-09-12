@@ -734,7 +734,7 @@
   "CATEGORY_CLOUD_SERVICE": "クラウドサービス",
   "CATEGORY_IFTTT": "IFTTT",
   "IFTTT_GET_URL_HELPURL": "",
-  "IFTTT_GET_URL_TITLE": "GETリクエストURL",
+  "IFTTT_GET_URL_TITLE": "GETリクエストURLの作成",
   "IFTTT_EVENT": "Event",
   "IFTTT_KEY": "Key",
   "IFTTT_VALUE1": "Value1",
