@@ -33,7 +33,6 @@ goog.require('goog.dom');
 goog.require('goog.math.Size');
 goog.require('goog.userAgent');
 
-
 /**
  * Class for an editable field.
  * @param {string} text The initial content of the field.
