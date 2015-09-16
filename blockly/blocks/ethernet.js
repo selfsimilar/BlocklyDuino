@@ -34,22 +34,45 @@ Blockly.Blocks.ethernet.HUE = 225;
 
 Blockly.Blocks.ethernet.image = filepath.media+'/ethernet.jpg';
 
-Blockly.Blocks['ethernet_client_begin_dhcp'] = {
+Blockly.Blocks['ethernet_begin_dhcp'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.ETHERNET_BEGIN_HELPURL);
     this.setColour(Blockly.Blocks.ethernet.HUE);
     this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.ETHERNET_VERSION_1,""],[Blockly.Msg.ETHERNET_VERSION_2,"2"]]), 'VERSION')
       .appendField(Blockly.Msg.ETHERNET_BEGIN_DHCP_TITLE);
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.MAC_ADDRESS)
-      .appendField(new Blockly.FieldTextInput("0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED"),"MAC_ADDRESS");
+    this.appendValueInput("MAC_ADDRESS")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.MAC_ADDRESS);
     this.setOutput(true, 'Number');
-    this.setInputsInline(true);
     this.setTooltip(Blockly.Msg.ETHERNET_BEGIN_DHCP_TOOLTIP);
   }
 };
 
+Blockly.Blocks['ethernet_mac_address'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.ETHERNET_BEGIN_HELPURL);
+    this.setColour(Blockly.Blocks.ethernet.HUE);
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldTextInput("DE"),"MAC_ADDRESS_1")
+      .appendField('-')
+      .appendField(new Blockly.FieldTextInput("AD"),"MAC_ADDRESS_2")
+      .appendField('-')
+      .appendField(new Blockly.FieldTextInput("BE"),"MAC_ADDRESS_3")
+      .appendField('-')
+      .appendField(new Blockly.FieldTextInput("EF"),"MAC_ADDRESS_4")
+      .appendField('-')
+      .appendField(new Blockly.FieldTextInput("FE"),"MAC_ADDRESS_5")
+      .appendField('-')
+      .appendField(new Blockly.FieldTextInput("ED"),"MAC_ADDRESS_6");
+    this.setInputsInline(true);
+    this.setOutput(true, 'String');
+    this.setTooltip(Blockly.Msg.ETHERNET_MAC_ADDRESS_TOOLTIP);
+  }
+};
+
+/*
 Blockly.Blocks['ethernet_client_begin'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.ETHERNET_BEGIN_HELPURL);
@@ -71,6 +94,7 @@ Blockly.Blocks['ethernet_client_begin'] = {
     this.setTooltip(Blockly.Msg.ETHERNET_BEGIN_TOOLTIP);
   }
 };
+*/
 
 Blockly.Blocks['ethernet_localip'] = {
   init: function() {

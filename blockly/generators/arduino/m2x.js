@@ -20,7 +20,7 @@
 
 /**
  * @fileoverview Generating Arduino for list blocks.
- * @author fraser@google.com (Neil Fraser)
+ * @author ok.okada.hiroyuki@gmail.com (hiroyuki okada)
  */
 'use strict';
 

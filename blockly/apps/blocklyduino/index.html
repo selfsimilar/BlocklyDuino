@@ -155,8 +155,11 @@
     </category>
     <category id="category_ethernet">
       <category id="category_ethernet_init">
-        <block type="ethernet_client_begin"></block>
-        <block type="ethernet_client_begin_dhcp"></block>
+        <block type="ethernet_begin_dhcp">
+          <value name="MAC_ADDRESS">
+            <block type="ethernet_mac_address"></block>
+          </value>
+        </block>
         <block type="ethernet_localip"></block>
       </category>
       <category id="category_ethernet_client">
@@ -238,6 +241,60 @@
         <block type="m2x_delete_values"></block>
         <block type="m2x_update_location">
           <value name="LOCATION_NAME">
+            <block type="text">
+              <field name="TEXT"></field>
+            </block>
+          </value>
+        </block>
+      </category>
+      <category id="category_blynk">
+        <block type="blynk_ethernet_begin">
+          <value name="AUTH">
+            <block type="text">
+              <field name="TEXT"></field>
+            </block>
+          </value>
+          <value name="MAC_ADDRESS">
+            <block type="ethernet_mac_address"></block>
+          </value>
+        </block>
+        <block type="blynk_connect"></block>
+        <block type="blynk_write"></block>
+        <block type="blynk_param"></block>
+        <block type="blynk_merge_param"></block>
+        <block type="blynk_virtual_write">
+          <value name="VALUE">
+            <block type="math_number">
+              <field name="NUM">1</field>
+            </block>
+          </value>
+        </block>
+        <block type="blynk_email">
+          <value name="ADDRESS">
+            <block type="text">
+              <field name="TEXT"></field>
+            </block>
+          </value>
+          <value name="TITLE">
+            <block type="text">
+              <field name="TEXT"></field>
+            </block>
+          </value>
+          <value name="BODY">
+            <block type="text">
+              <field name="TEXT"></field>
+            </block>
+          </value>
+        </block>
+        <block type="blynk_notify">
+          <value name="TEXT">
+            <block type="text">
+              <field name="TEXT"></field>
+            </block>
+          </value>
+        </block>
+        <block type="blynk_tweet">
+          <value name="TEXT">
             <block type="text">
               <field name="TEXT"></field>
             </block>
