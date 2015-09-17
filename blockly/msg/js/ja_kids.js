@@ -190,7 +190,7 @@ Blockly.Msg.ERROR_PARSING_XML = "XMLファイルがおかしいです";
 Blockly.Msg.ETHERNET_AVAILABLE_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=1&pos=1529";
 Blockly.Msg.ETHERNET_AVAILABLE_TITLE = "サーバーからのデータそうすう";
 Blockly.Msg.ETHERNET_AVAILABLE_TOOLTIP = "サーバーからよみとりかのうなデータのかずをしらべます。";
-Blockly.Msg.ETHERNET_BEGIN_DHCP_TITLE = "しょきか (じどう)";
+Blockly.Msg.ETHERNET_BEGIN_DHCP_TITLE = "しょきか";
 Blockly.Msg.ETHERNET_BEGIN_DHCP_TOOLTIP = "ネットワークのせっていをじどうでしょきかします。";
 Blockly.Msg.ETHERNET_BEGIN_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=1&pos=1161";
 Blockly.Msg.ETHERNET_BEGIN_TITLE = "しょきか";
@@ -222,8 +222,8 @@ Blockly.Msg.ETHERNET_READ_HELPURL = "http://www.musashinodenpa.com/arduino/ref/i
 Blockly.Msg.ETHERNET_READ_TITLE = "データのよみとり";
 Blockly.Msg.ETHERNET_READ_TOOLTIP = "せつぞくしているサーバからおくられたデータを1こよみとります。";
 Blockly.Msg.ETHERNET_STOP_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=1&pos=1568";
-Blockly.Msg.ETHERNET_STOP_TITLE = "せつぞくをやめます";
-Blockly.Msg.ETHERNET_STOP_TOOLTIP = "サーバとのせつぞくをやめます。";
+Blockly.Msg.ETHERNET_STOP_TITLE = "せつぞくをやめる";
+Blockly.Msg.ETHERNET_STOP_TOOLTIP = "サーバとのせつぞくをやめる。";
 Blockly.Msg.ETHERNET_VERSION_1 = "イーサーネット";
 Blockly.Msg.ETHERNET_VERSION_2 = "イーサーネット2";
 Blockly.Msg.ETHERNET_VERSION_V2 = "Eternet_v2";  // untranslated

@@ -126,7 +126,7 @@ function init() {
   }
 }
 
-function setCharacter() {
+/*function setCharacter() {
   $('#category_initializes').attr('name',Blockly.Msg.CATEGORY_INITIALIZES);
   $('#category_inout').attr('name',Blockly.Msg.CATEGORY_INOUT);
   $('#category_digital').attr('name',Blockly.Msg.CATEGORY_DIGITAL);
@@ -175,6 +175,7 @@ function setCharacter() {
   $("#save").attr("data-tooltip",Blockly.Msg.SAVE_XML);
   $("#fakeload").attr("data-tooltip",Blockly.Msg.LOAD_XML);
 }
+*/
 
 function loadxml(){
   var url = getParam()["url"];
@@ -321,5 +322,7 @@ function upload() {
 }
 
 window.onload = function () {
+  //category.htmlをいちいち編集するのが面倒なので、外部ファイルにした
+  $("#toolbox").load("./category.html");
   setScript();
 }

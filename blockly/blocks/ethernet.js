@@ -39,8 +39,8 @@ Blockly.Blocks['ethernet_begin_dhcp'] = {
     this.setHelpUrl(Blockly.Msg.ETHERNET_BEGIN_HELPURL);
     this.setColour(Blockly.Blocks.ethernet.HUE);
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.ETHERNET_VERSION_1,""],[Blockly.Msg.ETHERNET_VERSION_2,"2"]]), 'VERSION')
-      .appendField(Blockly.Msg.ETHERNET_BEGIN_DHCP_TITLE);
+      .appendField(Blockly.Msg.ETHERNET_BEGIN_DHCP_TITLE)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.ETHERNET_VERSION_1,""],[Blockly.Msg.ETHERNET_VERSION_2,"2"]]), 'VERSION');
     this.appendValueInput("MAC_ADDRESS")
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
