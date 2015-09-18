@@ -10,6 +10,11 @@
 
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="header.js"></script>
+  <script>
+    $(function() {
+      $('#toolbox').load('./category.html');
+    });
+  </script>
 </head>
 
 <body>
@@ -90,6 +95,7 @@
   <textarea id="content_arduino" class="content" readonly wrap="off"></textarea>
 
   <xml id="toolbox" style="display: none"></xml>
+  
   <div class="info">
   </div>
 </body>
