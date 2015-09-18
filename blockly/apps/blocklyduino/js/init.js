@@ -272,6 +272,5 @@ function upload() {
 }
 
 window.onload = function () {
-  //category.htmlをいちいち編集するのが面倒なので、外部ファイルにした
   setScript();
 };
