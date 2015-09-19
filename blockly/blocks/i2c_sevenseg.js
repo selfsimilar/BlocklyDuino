@@ -90,9 +90,9 @@ Blockly.Blocks['i2c_sevenseg_writedigitnum'] = {
       .appendField(Blockly.Msg.I2C_SEVENSEG_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_sevenseg.image, 64, 64))
       .appendField(Blockly.Msg.I2C_SEVENSEG_WRITEDIGITNUM);
-    this.appendDummyInput()
+    this.appendValueInput("POSITION")
+      .setCheck("Number")
       .appendField(Blockly.Msg.I2C_SEVENSEG_POSITION)
-      .appendField(new Blockly.FieldTextInput("0"),"POSITION");
     this.appendValueInput("NUM")
       .setCheck("Number")
       .appendField(Blockly.Msg.I2C_SEVENSEG_NUM);

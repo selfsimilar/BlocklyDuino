@@ -73,6 +73,26 @@ Blockly.Blocks['rgbled_setpixelcolor'] = {
   }
 }
 
+Blockly.Blocks['rgbled_setpixelcolor2'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.RGBLED_CUSTOM_SETPIXELCOLOR_HELPURL);
+    this.setColour(Blockly.Blocks.rgbled.HUE);
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.rgbled.image, 64, 64))
+    this.appendValueInput("TARGET")
+      .setCheck("Number")
+      .appendField(Blockly.Msg.RGBLED_CUSTOM_SETPIXELCOLOR_TARGET)
+    this.appendDummyInput()
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.COLOR)
+      .appendField(new Blockly.FieldColour("#00ff00"), "RGB");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.RGBLED_CUSTOM_SETPIXELCOLOR_TOOLTIP);
+  }
+}
+
 Blockly.Blocks['rgbled_custom_setpixelcolor'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.RGBLED_CUSTOM_SETPIXELCOLOR_HELPURL);

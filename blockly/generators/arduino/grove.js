@@ -550,6 +550,17 @@ Blockly.Arduino.grove_rgb_lcd_setcursor = function() {
   return code;
 }
 
+Blockly.Arduino.grove_rgb_lcd_custom_setcursor = function() {
+  var col = Blockly.Arduino.valueToCode(this, 'COL', Blockly.Arduino.ORDER_NONE) || "0"
+  var row = Blockly.Arduino.valueToCode(this, 'ROW', Blockly.Arduino.ORDER_NONE) || "0"
+
+  Blockly.Arduino.definitions_['define_wire'] = '#include <Wire.h>\n';
+  Blockly.Arduino.definitions_['define_rgb_lcd'] = '#include "rgb_lcd.h"\n' + 'rgb_lcd grove_lcd;\n';
+  var code = 'grove_lcd.setCursor(' + col + ',' + row + ');\n';
+  return code;
+}
+
+
 Blockly.Arduino.grove_rgb_lcd_clear = function() {
   Blockly.Arduino.definitions_['define_wire'] = '#include <Wire.h>\n';
   Blockly.Arduino.definitions_['define_rgb_lcd'] = '#include "rgb_lcd.h"\n' + 'rgb_lcd grove_lcd;\n';

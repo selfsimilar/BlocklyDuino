@@ -615,6 +615,29 @@ Blockly.Blocks['grove_rgb_lcd_setcursor'] = {
   }
 };
 
+Blockly.Blocks['grove_rgb_lcd_custom_setcursor'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.GROVE_RGB_LCD_HELPURL);
+    this.setColour(Blockly.Blocks.grove.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.GROVE_RGB_LCD_TITLE)
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.rgb_lcd_image, 64, 64))
+      .appendField(Blockly.Msg.GROVE_RGB_LCD_SETCURSOR_TITLE);
+    this.appendValueInput("COL")
+      .setCheck('Number')
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.COL);
+    this.appendValueInput("ROW")
+      .setCheck('Number')
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.COL);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.GROVE_RGB_LCD_SETCURSOR_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['grove_rgb_lcd_clear'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.GROVE_RGB_LCD_HELPURL);

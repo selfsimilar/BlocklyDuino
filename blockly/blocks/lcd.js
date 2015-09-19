@@ -120,6 +120,27 @@ Blockly.Blocks['lcd_setcursor'] = {
   }
 };
 
+Blockly.Blocks['lcd_custom_setcursor'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LCD_SETCURSOR_HELPURL);
+    this.setColour(Blockly.Blocks.lcd.HUE);
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.lcd.image, 64, 64))
+      .appendField(Blockly.Msg.LCD_SETCURSOR_TITLE);
+    this.appendValueInput("COL")
+      .setCheck("Number")
+      .appendField(Blockly.Msg.COL);
+    this.appendValueInput("ROW")
+      .setCheck("Number")
+      .appendField(Blockly.Msg.ROW);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LCD_SETCURSOR_TOOLTIP);
+  }
+};
+
+
 Blockly.Blocks['lcd_clear'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LCD_CLEAR_HELPURL);

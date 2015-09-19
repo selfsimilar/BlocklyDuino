@@ -54,6 +54,14 @@ Blockly.Arduino.rgbled_setpixelcolor = function() {
   return code;
 };
 
+Blockly.Arduino.rgbled_setpixelcolor2 = function() {
+  var target = Blockly.Arduino.valueToCode(this, 'TARGET', Blockly.Arduino.ORDER_ATOMIC) || '0'
+  var colour_rgb = this.getFieldValue('RGB');
+
+  var code = 'pixels.setPixelColor(' + target + ',pixels.Color(' +hexToR(colour_rgb)+','+hexToG(colour_rgb)+',' + hexToB(colour_rgb)+'));\n';
+  return code;
+};
+
 Blockly.Arduino.rgbled_custom_setpixelcolor = function() {
   var target = Blockly.Arduino.valueToCode(this, 'TARGET', Blockly.Arduino.ORDER_ATOMIC) || '0'
   var r = Blockly.Arduino.valueToCode(this, 'R', Blockly.Arduino.ORDER_ATOMIC) || '255'
@@ -68,4 +76,3 @@ Blockly.Arduino.rgbled_show = function() {
   var code = 'pixels.show();\n';
   return code;
 };
-

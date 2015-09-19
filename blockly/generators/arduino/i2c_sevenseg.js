@@ -30,7 +30,7 @@ Blockly.Arduino.i2c_sevenseg_writedisplay = function() {
 };
 
 Blockly.Arduino.i2c_sevenseg_writedigitnum = function() {
-  var pos = this.getFieldValue('POSITION');
+  var pos = Blockly.Arduino.valueToCode(this, 'POSITION', Blockly.Arduino.ORDER_ATOMIC) || '0'
   var num = Blockly.Arduino.valueToCode(this, 'NUM', Blockly.Arduino.ORDER_ATOMIC) || '0'
   var bool = Blockly.Arduino.valueToCode(this, 'DOTS', Blockly.Arduino.ORDER_NONE) || 'false';
   if(num > 9)  num = 9;

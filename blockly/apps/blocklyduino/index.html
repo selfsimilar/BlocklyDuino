@@ -337,7 +337,19 @@
           </value>
         </block>
         <block type="grove_rgb_lcd_setcolor"></block>
-        <block type="grove_rgb_lcd_setcursor"></block>
+        <!--block type="grove_rgb_lcd_setcursor"></block-->
+        <block type="grove_rgb_lcd_custom_setcursor">
+          <value name="COL">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+          <value name="ROW">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+        </block>
         <block type="grove_rgb_lcd_clear"></block>
         <!--block type="lcd_scrolldisplayright"></block-->
         <!--block type="lcd_scrolldisplayleft"></block-->
@@ -352,7 +364,14 @@
     <category name="Adafruit">
       <category id="category_rgbled">
         <block type="rgbled_begin"></block>
-        <block type="rgbled_setpixelcolor"></block>
+        <!--block type="rgbled_setpixelcolor"></block-->
+        <block type="rgbled_setpixelcolor2">
+          <value name="TARGET">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+        </block>
         <block type="rgbled_custom_setpixelcolor">
           <value name="TARGET">
             <block type="math_number">
@@ -511,6 +530,11 @@
           </value>
         </block>
         <block type="i2c_sevenseg_writedigitnum">
+          <value name="POSITION">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
           <value name="NUM">
             <block type="math_number">
               <field name="NUM">1</field>
@@ -568,7 +592,19 @@
           </block>
         </value>
       </block>
-      <block type="lcd_setcursor"></block>
+      <!--block type="lcd_setcursor"></block-->
+      <block type="lcd_custom_setcursor">
+        <value name="COL">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="ROW">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
       <block type="lcd_clear"></block>
       <!--block type="lcd_scrolldisplayright"></block-->
       <!--block type="lcd_scrolldisplayleft"></block-->

@@ -71,6 +71,13 @@ Blockly.Arduino.lcd_setcursor = function() {
   return code;
 }
 
+Blockly.Arduino.lcd_custom_setcursor = function() {
+  var col = Blockly.Arduino.valueToCode(this, 'COL', Blockly.Arduino.ORDER_NONE) || "0"
+  var row = Blockly.Arduino.valueToCode(this, 'ROW', Blockly.Arduino.ORDER_NONE) || "0"
+  var code = 'lcd.setCursor(' + col + ',' + row + ');\n';
+  return code;
+}
+
 Blockly.Arduino.lcd_clear = function() {
   var code = 'lcd.clear();\n';
   return code;

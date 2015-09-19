@@ -53,7 +53,6 @@ function renderContent() {
         isIE = true;
     }
     if(!isIE){
-        alert("hoge");
         arduinoTextarea.focus();
     }
     button.style.display = "";
