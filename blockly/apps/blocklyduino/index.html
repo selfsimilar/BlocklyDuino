@@ -337,7 +337,6 @@
           </value>
         </block>
         <block type="grove_rgb_lcd_setcolor"></block>
-        <!--block type="grove_rgb_lcd_setcursor"></block-->
         <block type="grove_rgb_lcd_custom_setcursor">
           <value name="COL">
             <block type="math_number">
@@ -353,8 +352,7 @@
         <block type="grove_rgb_lcd_clear"></block>
         <!--block type="lcd_scrolldisplayright"></block-->
         <!--block type="lcd_scrolldisplayleft"></block-->
-        <block type="grove_rgb_lcd_autoscroll"></block>
-        <block type="grove_rgb_lcd_noautoscroll"></block>
+        <block type="grove_rgb_lcd_switch_scroll"></block>
         <!--block type="lcd_lefttoright"></block-->
         <!--block type="lcd_righttoleft"></block-->
         <!--block type="grove_serial_lcd_power"></block-->
@@ -608,8 +606,9 @@
       <block type="lcd_clear"></block>
       <!--block type="lcd_scrolldisplayright"></block-->
       <!--block type="lcd_scrolldisplayleft"></block-->
-      <block type="lcd_autoscroll"></block>
-      <block type="lcd_noautoscroll"></block>
+      <block type="lcd_switch_scroll"></block>
+      <!--block type="lcd_autoscroll"></block>
+      <block type="lcd_noautoscroll"></block-->
       <!--block type="lcd_lefttoright"></block-->
       <!--block type="lcd_righttoleft"></block-->
     </category>

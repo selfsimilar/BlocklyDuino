@@ -630,7 +630,7 @@ Blockly.Blocks['grove_rgb_lcd_custom_setcursor'] = {
     this.appendValueInput("ROW")
       .setCheck('Number')
       .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.COL);
+      .appendField(Blockly.Msg.ROW);
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -680,6 +680,22 @@ Blockly.Blocks['grove_rgb_lcd_scrolldisplayright'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_LCD_SCROLL_DISPLAY_RIGHT_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['grove_rgb_lcd_switch_scroll'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.GROVE_RGB_LCD_HELPURL);
+    this.setColour(Blockly.Blocks.grove.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.GROVE_RGB_LCD_TITLE)
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.rgb_lcd_image, 64, 64))
+      .appendField(Blockly.Msg.GROVE_RGB_LCD_AUTOSCROLL_TITLE)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.ON,"1"],[Blockly.Msg.OFF,"0"]]), 'SW');
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.GROVE_RGB_LCD_AUTOSCROLL_TOOLTIP);
   }
 };
 

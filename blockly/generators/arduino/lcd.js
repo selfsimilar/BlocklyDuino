@@ -90,6 +90,15 @@ Blockly.Arduino.lcd_scrolldisplayleft = function() {
 
 Blockly.Arduino.lcd_scrolldisplayright = function() {
   var code = 'lcd.scrollDisplayRight();\n';
+
+  return code;
+}
+
+Blockly.Arduino.lcd_switch_scroll = function(){
+  var sw = this.getFieldValue('SW');
+  var code = 'lcd.';
+  if( sw == 1) code += 'autoscroll();\n';
+  else         code += 'noAutoscroll();\n';
   return code;
 }
 

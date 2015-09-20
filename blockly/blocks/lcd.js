@@ -183,6 +183,21 @@ Blockly.Blocks['lcd_scrolldisplayright'] = {
   }
 };
 
+Blockly.Blocks['lcd_switch_scroll'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LCD_AUTOSCROLL_HELPURL);
+    this.setColour(Blockly.Blocks.lcd.HUE);
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.lcd.image, 64, 64))
+      .appendField(Blockly.Msg.LCD_AUTOSCROLL_TITLE)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.ON,"1"],[Blockly.Msg.OFF,"0"]]), 'SW');
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LCD_AUTOSCROLL_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['lcd_autoscroll'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LCD_AUTOSCROLL_HELPURL);

@@ -582,6 +582,14 @@ Blockly.Arduino.grove_rgb_lcd_scrolldisplayright = function() {
   return code;
 }
 
+Blockly.Arduino.grove_rgb_lcd_switch_scroll = function(){
+  var sw = this.getFieldValue('SW');
+  var code = 'grove_lcd.';
+  if( sw == 1) code += 'autoscroll();\n';
+  else         code += 'noAutoscroll();\n';
+  return code;
+}
+
 Blockly.Arduino.grove_rgb_lcd_autoscroll = function() {
   var code = 'grove_lcd.autoscroll();\n';
   return code;
