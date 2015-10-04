@@ -5,6 +5,10 @@ var filepath = { media: '../../media/', msg_ja:"../../msg/js/ja.js", msg_en: "..
   html += '<meta charset="utf-8">';
   html += '<link rel="stylesheet" type="text/css" href="css/style.css">';
   html += '<title>BlocklyDuino</title>';
+
+  html += '<script type="text/javascript" src="js/aws-sdk-2.2.4.min.js"></script>';
+  html += '<script type="text/javascript" src="js/s3.js"></script>';
+
   html += '<script type="text/javascript" src="../../blockly_compressed.js"></script>';
   html += '<script type="text/javascript" src="../../blocks_compressed.js"></script>';
   html += '<script type="text/javascript" src="../../arduino_compressed.js"></script>';

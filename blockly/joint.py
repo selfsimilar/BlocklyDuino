@@ -19,13 +19,14 @@ base_path = "./apps/blocklyduino/"
 insert = base_path + "category.xml"
 base = base_path + "base.html"
 output = base_path + "index.html"
-terget_id = 'toolbox'
+
+id = 'toolbox'
 
 html = readContent(base)
 html = html.decode('utf-8')
 root = lxml.html.fromstring(html)
 
-element = root.get_element_by_id(terget_id)
+element = root.get_element_by_id(id)
 html = readContent(insert)
 
 element.text = html

@@ -462,6 +462,45 @@
     <block type="i2c_sevenseg_boolean"></block>
   </category>
 </category>
+<category name="shield bot">
+  <block type="shield_bot_setmaxspeed"></block>
+  <block type="shield_bot_setmaxspeed_lr"></block>
+  <block type="shield_bot_drive">
+    <value name="LEFT">
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <value name="RIGHT">
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
+  <block type="shield_bot_right_motor">
+    <value name="DIRECTION">
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
+  <block type="shield_bot_left_motor">
+    <value name="DIRECTION">
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
+  <block type="shield_bot_forward"></block>
+  <block type="shield_bot_backward"></block>
+  <block type="shield_bot_stop"></block>
+  <block type="shield_bot_stopleft"></block>
+  <block type="shield_bot_stopright"></block>
+  <!--block type="shield_bot_faststop"></block>
+  <block type="shield_bot_faststop_left"></block>
+  <block type="shield_bot_faststop_right"></block-->
+  <block type="shield_bot_readsensor"></block>
+</category>
 <category id="category_servo">
   <block type="servo_write">
     <value name="ANGLE">
