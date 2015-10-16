@@ -59,7 +59,7 @@ Blockly.Blocks['shield_bot_setmaxspeed_lr'] = {
       .appendField(Blockly.Msg.SHIELD_BOT_SETMAXSPEED_TITLE)
       .appendField(Blockly.Msg.SHIELD_BOT_LEFT_SPEED)
       .appendField(new Blockly.FieldTextInput("255"),"LEFT")
-    .appendField(Blockly.Msg.SHIELD_BOT_RIGHT_SPEED)
+      .appendField(Blockly.Msg.SHIELD_BOT_RIGHT_SPEED)
       .appendField(new Blockly.FieldTextInput("255"),"RIGHT");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -84,47 +84,22 @@ Blockly.Blocks['shield_bot_right_motor'] = {
   }
 };
 
-Blockly.Blocks['shield_bot_left_motor'] = {
+Blockly.Blocks['shield_bot_motor'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.SHIELD_BOT_HELPURL);
     this.setColour(Blockly.Blocks.shield_bot.HUE);
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.Blocks.shield_bot.image, 64, 64))
-      .appendField(Blockly.Msg.SHIELD_BOT_LEFT_MOTOR_TITLE);
+      .appendField(Blockly.Msg.SHIELD_BOT_CONTROL)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.RIGHT, "rightMotor"],[Blockly.Msg.LEFT, "leftMotor"]]), "RL");
     this.appendValueInput("DIRECTION")
+      .appendField(Blockly.Msg.SHIELD_BOT_MOTOR)
       .setCheck("Number")
       .appendField(Blockly.Msg.DIRECTION);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.SHIELD_BOT_LEFT_MOTOR_TOOLTIP);
-  }
-};
-
-Blockly.Blocks['shield_bot_forward'] = {
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.SHIELD_BOT_HELPURL);
-    this.setColour(Blockly.Blocks.shield_bot.HUE);
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.shield_bot.image, 64, 64))
-      .appendField(Blockly.Msg.SHIELD_BOT_FORWARD_TITLE);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setTooltip(Blockly.Msg.SHIELD_BOT_FORWARD_TOOLTIP);
-  }
-};
-
-
-Blockly.Blocks['shield_bot_backward'] = {
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.SHIELD_BOT_HELPURL);
-    this.setColour(Blockly.Blocks.shield_bot.HUE);
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.shield_bot.image, 64, 64))
-      .appendField(Blockly.Msg.SHIELD_BOT_BACKWARD_TITLE);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setTooltip(Blockly.Msg.SHIELD_BOT_BACKWARD_TOOLTIP);
   }
 };
 
@@ -145,45 +120,6 @@ Blockly.Blocks['shield_bot_drive'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.SHIELD_BOT_DRIVE_TOOLTIP);
-  }
-};
-
-Blockly.Blocks['shield_bot_stop'] = {
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.SHIELD_BOT_HELPURL);
-    this.setColour(Blockly.Blocks.shield_bot.HUE);
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.shield_bot.image, 64, 64))
-      .appendField(Blockly.Msg.SHIELD_BOT_STOP_TITLE);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setTooltip(Blockly.Msg.SHIELD_BOT_STOP_TOOLTIP);
-  }
-};
-
-Blockly.Blocks['shield_bot_stopleft'] = {
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.SHIELD_BOT_HELPURL);
-    this.setColour(Blockly.Blocks.shield_bot.HUE);
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.shield_bot.image, 64, 64))
-      .appendField(Blockly.Msg.SHIELD_BOT_STOPLEFT_TITLE);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setTooltip(Blockly.Msg.SHIELD_BOT_STOPLEFT_TOOLTIP);
-  }
-};
-
-Blockly.Blocks['shield_bot_stopright'] = {
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.SHIELD_BOT_HELPURL);
-    this.setColour(Blockly.Blocks.shield_bot.HUE);
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.shield_bot.image, 64, 64))
-      .appendField(Blockly.Msg.SHIELD_BOT_STOPRIGHT_TITLE);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setTooltip(Blockly.Msg.SHIELD_BOT_STOPRIGHT_TOOLTIP);
   }
 };
 
@@ -223,6 +159,20 @@ Blockly.Blocks['shield_bot_faststop_right'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.SHIELD_BOT_FASTSTOP_RIGHT_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['shield_bot_move'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.SHIELD_BOT_HELPURL);
+    this.setColour(Blockly.Blocks.shield_bot.HUE);
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.shield_bot.image, 64, 64))
+      .appendField(Blockly.Msg.SHIELD_BOT_MOVE_TITLE)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.SHIELD_BOT_FORWARD, "forward"],[Blockly.Msg.SHIELD_BOT_BACKWARD, "backward"],[Blockly.Msg.SHIELD_BOT_STOP, "stop"],[Blockly.Msg.SHIELD_BOT_STOPLEFT, "stopLeft"],[Blockly.Msg.SHIELD_BOT_STOPRIGHT, "stopRight"]]), "MOVE");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.SHIELD_BOT_MOVE_TOOLTIP);
   }
 };
 

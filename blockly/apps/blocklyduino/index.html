@@ -309,6 +309,16 @@
     <block type="grove_button"></block>
     <block type="grove_touch"></block>
     <block type="grove_rotary_angle"></block>
+    <block type="grove_ir_receiver_init"></block>
+    <block type="grove_ir_receiver_check_data"></block>
+    <block type="grove_ir_receiver_receive"></block>
+    <block type="grove_ir_receiver_data">
+      <value name="INDEX">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+    </block>
     <!--block type="grove_tilt_switch"></block-->
     <!--block type="grove_thumb_joystick"></block-->
   </category>
@@ -316,6 +326,13 @@
     <block type="grove_led"></block>
     <block type="grove_relay"></block>
     <block type="grove_buzzer"></block>
+    <block type="grove_ir_emitter_set_data">
+      <value name="DATA">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+    </block>
+    <block type="grove_ir_emitter_send"></block>
     <!--block type="grove_rgb_led"></block-->
     <!--block type="grove_motor_shield"></block-->
   </category>
@@ -557,6 +574,7 @@
 <category id="category_shield_bot">
   <block type="shield_bot_setmaxspeed"></block>
   <block type="shield_bot_setmaxspeed_lr"></block>
+  <block type="shield_bot_move"></block>
   <block type="shield_bot_drive">
     <value name="LEFT">
       <block type="math_number">
@@ -569,28 +587,13 @@
       </block>
     </value>
   </block>
-  <block type="shield_bot_right_motor">
+  <block type="shield_bot_motor">
     <value name="DIRECTION">
       <block type="math_number">
         <field name="NUM">0</field>
       </block>
     </value>
   </block>
-  <block type="shield_bot_left_motor">
-    <value name="DIRECTION">
-      <block type="math_number">
-        <field name="NUM">0</field>
-      </block>
-    </value>
-  </block>
-  <block type="shield_bot_forward"></block>
-  <block type="shield_bot_backward"></block>
-  <block type="shield_bot_stop"></block>
-  <block type="shield_bot_stopleft"></block>
-  <block type="shield_bot_stopright"></block>
-  <!--block type="shield_bot_faststop"></block>
-  <block type="shield_bot_faststop_left"></block>
-  <block type="shield_bot_faststop_right"></block-->
   <block type="shield_bot_readsensor"></block>
 </category>
 <category id="category_servo">

@@ -30,94 +30,74 @@ goog.require('Blockly.Arduino');
 
 Blockly.Arduino.shield_bot_setmaxspeed = function() {
   var speed = this.getFieldValue('SPEED');
+  speed = speed.replace( /[(|)]/g, '' );
+
+  if(speed > 255) speed = 255;
+  else if(speed < 0)  speed = 0;
 
   Blockly.Arduino.definitions_['include_shield_bot'] = '#include <Shieldbot.h>';
   Blockly.Arduino.definitions_['define_shield_bot'] = 'Shieldbot shieldbot = Shieldbot();\n';
 
-  var code = 'shieldbot.setMaxSpeed(' + speed + ');\n';
+  var code = 'shieldbot.setMaxSpeed(' + String(speed) + ');\n';
   return code;
 };
-
 
 Blockly.Arduino.shield_bot_setmaxspeed_lr = function() {
   var left = this.getFieldValue('LEFT');
   var right = this.getFieldValue('RIGHT');
+  left = left.replace( /[(|)]/g, '' );
+  right = right.replace( /[(|)]/g, '' );
+  if(left > 255)  left = 255;
+  else if(left < 0)  left = 0;
+  if(right > 255)  right  = 255;
+  else if(right < 0)  right = 0;
 
   Blockly.Arduino.definitions_['include_shield_bot'] = '#include <Shieldbot.h>';
   Blockly.Arduino.definitions_['define_shield_bot'] = 'Shieldbot shieldbot = Shieldbot();\n';
 
-  var code = 'shieldbot.setMaxSpeed(' + left + ',' + right + ');\n';
+  var code = 'shieldbot.setMaxSpeed(' + String(left) + ',' + String(right) + ');\n';
   return code;
 };
 
-Blockly.Arduino.shield_bot_right_motor = function() {
-  var direction = Blockly.Arduino.valueToCode(this, 'DIRECTION', Blockly.Arduino.ORDER_ATOMIC) || ''
+Blockly.Arduino.shield_bot_motor = function() {
+  var rl = this.getFieldValue('RL');
+  var direction = Blockly.Arduino.valueToCode(this, 'DIRECTION', Blockly.Arduino.ORDER_ATOMIC) || '0'
+  direction = direction.replace( /[(|)]/g, '' );
+
+  if (direction > 127) direction = 127;
+  else if(direction < -128) direction = -128;
 
   Blockly.Arduino.definitions_['include_shield_bot'] = '#include <Shieldbot.h>';
   Blockly.Arduino.definitions_['define_shield_bot'] = 'Shieldbot shieldbot = Shieldbot();\n';
 
-  var code = 'shieldbot.rightMotor(' + direction + ');\n';
+  var code = 'shieldbot.' + rl + '(' + String(direction) + ');\n';
   return code;
 };
 
-Blockly.Arduino.shield_bot_left_motor = function() {
-  var direction = Blockly.Arduino.valueToCode(this, 'DIRECTION', Blockly.Arduino.ORDER_ATOMIC) || ''
+Blockly.Arduino.shield_bot_move = function() {
+  var move = this.getFieldValue('MOVE');
 
   Blockly.Arduino.definitions_['include_shield_bot'] = '#include <Shieldbot.h>';
   Blockly.Arduino.definitions_['define_shield_bot'] = 'Shieldbot shieldbot = Shieldbot();\n';
 
-  var code = 'shieldbot.leftMotor(' + direction + ');\n';
-  return code;
-};
-
-Blockly.Arduino.shield_bot_forward = function() {
-  Blockly.Arduino.definitions_['include_shield_bot'] = '#include <Shieldbot.h>';
-  Blockly.Arduino.definitions_['define_shield_bot'] = 'Shieldbot shieldbot = Shieldbot();\n';
-
-  var code = 'shieldbot.forward();\n';
-  return code;
-};
-
-Blockly.Arduino.shield_bot_backward = function() {
-  Blockly.Arduino.definitions_['include_shield_bot'] = '#include <Shieldbot.h>';
-  Blockly.Arduino.definitions_['define_shield_bot'] = 'Shieldbot shieldbot = Shieldbot();\n';
-
-  var code = 'shieldbot.backward();\n';
+  var code = 'shieldbot.' + move + '();\n';
   return code;
 };
 
 Blockly.Arduino.shield_bot_drive = function() {
   var left = Blockly.Arduino.valueToCode(this, 'LEFT', Blockly.Arduino.ORDER_ATOMIC) || '127'
   var right = Blockly.Arduino.valueToCode(this, 'RIGHT', Blockly.Arduino.ORDER_ATOMIC) || '127'
+  left = left.replace( /[(|)]/g, '' );
+  right = right.replace( /[(|)]/g, '' );
+  if(left > 127)  left = 127;
+  else if(left < -128)  left = -128;
+  if(right > 127)  right  = 127;
+  else if(right < -128)  right = -128;
 
   Blockly.Arduino.definitions_['include_shield_bot'] = '#include <Shieldbot.h>';
   Blockly.Arduino.definitions_['define_shield_bot'] = 'Shieldbot shieldbot = Shieldbot();\n';
 
-  var code = 'shieldbot.drive(' + left +',' + right +');\n';
-  return code;
-};
-
-Blockly.Arduino.shield_bot_stop = function() {
-  Blockly.Arduino.definitions_['include_shield_bot'] = '#include <Shieldbot.h>';
-  Blockly.Arduino.definitions_['define_shield_bot'] = 'Shieldbot shieldbot = Shieldbot();\n';
-
-  var code = 'shieldbot.stop();\n';
-  return code;
-};
-
-Blockly.Arduino.shield_bot_stopleft = function() {
-  Blockly.Arduino.definitions_['include_shield_bot'] = '#include <Shieldbot.h>';
-  Blockly.Arduino.definitions_['define_shield_bot'] = 'Shieldbot shieldbot = Shieldbot();\n';
-
-  var code = 'shieldbot.stopLeft();\n';
-  return code;
-};
-
-Blockly.Arduino.shield_bot_stopright = function() {
-  Blockly.Arduino.definitions_['include_shield_bot'] = '#include <Shieldbot.h>';
-  Blockly.Arduino.definitions_['define_shield_bot'] = 'Shieldbot shieldbot = Shieldbot();\n';
-
-  var code = 'shieldbot.stopRight();\n';
+  var code = 'shieldbot.drive(' + String(left) + ',' + String(right) +');\n';
   return code;
 };
 
@@ -151,7 +131,7 @@ Blockly.Arduino.shield_bot_readsensor = function() {
   Blockly.Arduino.definitions_['include_shield_bot'] = '#include <Shieldbot.h>';
   Blockly.Arduino.definitions_['define_shield_bot'] = 'Shieldbot shieldbot = Shieldbot();\n';
 
-  var code = 'shieldbot.readS' + sensor + '();\n';
+  var code = 'shieldbot.readS' + sensor + '()';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 

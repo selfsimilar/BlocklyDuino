@@ -90,6 +90,7 @@ var profile = {
     i2c_matrix_type: [["8x8","8x8matrix"],["16x8","8x16matrix"],["bi_color8x8","BicolorMatrix"]],
     led_backpack_address: [["0x70","0x70"],["0x71","0x71"],["0x72","0x72"],["0x73","0x73"]],
     blynk_merge_index: [["0","0"],["1","1"],["2","2"]],
+    grove_digital: [["2","2"],["3","3"],["4","4"],["5","5"],["6","6"],["7","7"],["8","8"]],
     shield_bot_sensor: [["1","1"],["2","2"],["3","3"],["4","4"],["5","5"]]
   },
   arduino_mega: {

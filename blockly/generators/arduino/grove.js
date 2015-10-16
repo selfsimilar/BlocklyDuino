@@ -609,3 +609,72 @@ Blockly.Arduino.grove_rgb_lcd_righttoleft = function() {
   var code = 'grove_lcd.rightToLeft();\n';
   return code;
 }
+
+Blockly.Arduino.grove_ir_receiver_init = function(){
+  var pin = this.getFieldValue('PIN');
+
+  Blockly.Arduino.definitions_['define_irsendrev'] = '#include <IRSendRev.h>\n';
+  Blockly.Arduino.setups_['setup_ir_init_' + pin] = 'IR.Init(' + pin + ');\n';
+
+  var code = "";
+  return code;
+}
+
+Blockly.Arduino.grove_ir_receiver_check_data = function(){
+
+  var code = "IR.IsDta()";
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+}
+
+Blockly.Arduino.grove_ir_receiver_receive = function(){
+  var length = Blockly.Arduino.valueToCode(this, 'LENGTH', Blockly.Arduino.ORDER_NONE) || 0
+
+  length = (length+1) *2 + 6;
+
+  Blockly.Arduino.definitions_['define_receive_datalength'] = 'unsigned char dta[' + length + '];\n';
+
+  var code = 'IR.Recv(dta);\n';
+  return code;
+}
+
+Blockly.Arduino.grove_ir_receiver_data = function(){
+  var index = Blockly.Arduino.valueToCode(this, 'INDEX', Blockly.Arduino.ORDER_NONE) || 0
+  index = Number(index) + 6;
+
+  Blockly.Arduino.definitions_['define_irsendrev'] = '#include <IRSendRev.h>\n';
+
+  var code = 'dta[' + index + ']';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+}
+
+Blockly.Arduino.grove_ir_emitter_send = function(){
+  var code = 'IR.Send(dtaSend,38);\n';
+  return code;
+}
+
+Blockly.Arduino.grove_ir_emitter_set_data = function(){
+  var data = Blockly.Arduino.valueToCode(this, 'DATA', Blockly.Arduino.ORDER_NONE) || 0
+  if (data < 0){
+    data = 0;
+  }else if(data > 255){
+    data = 255;
+  }
+  var length = 1;
+
+  Blockly.Arduino.definitions_['define_irsendrev'] = '#include <IRSendRev.h>\n';
+  Blockly.Arduino.definitions_['define_emmiter_datalength'] = 'unsigned char dtaSend[20];\n';
+  Blockly.Arduino.definitions_['define_dtainit'] = 'void dtaInit()\n'
+    + '{\n'
+    + '  dtaSend[0] = 11;\n'
+    + '  dtaSend[1] = 180;\n'
+    + '  dtaSend[2] = 91;\n'
+    + '  dtaSend[3] = 11;\n'
+    + '  dtaSend[4] = 33;\n'
+    + '  dtaSend[5] = ' + length +';\n'
+    + '}\n';
+
+  var code = 'dtaInit();\n';
+  code += 'dtaSend[' + 6 + '] = ' + data + ';\n';
+  return code;
+}
+
