@@ -220,13 +220,7 @@
     <block type="grove_ir_receiver_init"></block>
     <block type="grove_ir_receiver_check_data"></block>
     <block type="grove_ir_receiver_receive"></block>
-    <block type="grove_ir_receiver_data">
-      <value name="INDEX">
-        <block type="math_number">
-          <field name="NUM">0</field>
-        </block>
-      </value>
-    </block>
+    <block type="grove_ir_receiver_data"></block>
     <!--block type="grove_tilt_switch"></block-->
     <!--block type="grove_thumb_joystick"></block-->
   </category>
@@ -234,13 +228,12 @@
     <block type="grove_led"></block>
     <block type="grove_relay"></block>
     <block type="grove_buzzer"></block>
-    <block type="grove_ir_emitter_set_data">
+    <block type="grove_ir_emitter_send">
       <value name="DATA">
         <block type="math_number">
           <field name="NUM">0</field>
         </block>
     </block>
-    <block type="grove_ir_emitter_send"></block>
     <!--block type="grove_rgb_led"></block-->
     <!--block type="grove_motor_shield"></block-->
   </category>

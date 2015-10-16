@@ -627,32 +627,20 @@ Blockly.Arduino.grove_ir_receiver_check_data = function(){
 }
 
 Blockly.Arduino.grove_ir_receiver_receive = function(){
-  var length = Blockly.Arduino.valueToCode(this, 'LENGTH', Blockly.Arduino.ORDER_NONE) || 0
-
-  length = (length+1) *2 + 6;
-
-  Blockly.Arduino.definitions_['define_receive_datalength'] = 'unsigned char dta[' + length + '];\n';
+  Blockly.Arduino.definitions_['define_receive_datalength'] = 'unsigned char dta[20];\n';
 
   var code = 'IR.Recv(dta);\n';
   return code;
 }
 
 Blockly.Arduino.grove_ir_receiver_data = function(){
-  var index = Blockly.Arduino.valueToCode(this, 'INDEX', Blockly.Arduino.ORDER_NONE) || 0
-  index = Number(index) + 6;
-
   Blockly.Arduino.definitions_['define_irsendrev'] = '#include <IRSendRev.h>\n';
 
-  var code = 'dta[' + index + ']';
+  var code = 'dta[6]';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
 
 Blockly.Arduino.grove_ir_emitter_send = function(){
-  var code = 'IR.Send(dtaSend,38);\n';
-  return code;
-}
-
-Blockly.Arduino.grove_ir_emitter_set_data = function(){
   var data = Blockly.Arduino.valueToCode(this, 'DATA', Blockly.Arduino.ORDER_NONE) || 0
   if (data < 0){
     data = 0;
@@ -675,6 +663,6 @@ Blockly.Arduino.grove_ir_emitter_set_data = function(){
 
   var code = 'dtaInit();\n';
   code += 'dtaSend[' + 6 + '] = ' + data + ';\n';
+  code += 'IR.Send(dtaSend,38);\n';
   return code;
 }
-

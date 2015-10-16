@@ -130,8 +130,6 @@
   "GROVE_IR_EMITTER_TITLE": "Infrared Emitter",
   "GROVE_IR_EMITTER_SEND_TITLE": "Send",
   "GROVE_IR_EMITTER_SEND_TOOLTIP": "Send Data.",
-  "GROVE_IR_EMITTER_SET_DATA_TITLE": "Set Data",
-  "GROVE_IR_EMITTER_SET_DATA_TOOLTIP": "",
   "COLOUR_PICKER_HELPURL": "https://en.wikipedia.org/wiki/Color",
   "COLOUR_PICKER_TOOLTIP": "Choose a colour from the palette.",
   "COLOUR_RANDOM_HELPURL": "http://randomcolour.com",

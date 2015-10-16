@@ -798,9 +798,7 @@ Blockly.Blocks['grove_ir_receiver_receive'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.GROVE_IR_RECEIVER_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.ir_receiver_image, 64, 64))
-      .appendField(Blockly.Msg.GROVE_IR_RECEIVER_RECEIVE_TITLE)
-      .appendField(Blockly.Msg.DATA_LENGTH)
-      .appendField(new Blockly.FieldTextInput("20"),"LENGHT");
+      .appendField(Blockly.Msg.GROVE_IR_RECEIVER_RECEIVE_TITLE);
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -816,10 +814,6 @@ Blockly.Blocks['grove_ir_receiver_data'] = {
       .appendField(Blockly.Msg.GROVE_IR_RECEIVER_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.ir_receiver_image, 64, 64))
       .appendField(Blockly.Msg.GROVE_IR_RECEIVER_DATA_TITLE);
-    this.appendValueInput("INDEX")
-      .setCheck('Number')
-      .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.INDEX);
     this.setInputsInline(true);
     this.setOutput(true);
     this.setTooltip(Blockly.Msg.GROVE_IR_RECEIVER_DATA_TOOLTIP);
@@ -834,30 +828,12 @@ Blockly.Blocks['grove_ir_emitter_send'] = {
       .appendField(Blockly.Msg.GROVE_IR_EMITTER_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.ir_emitter_image, 64, 64))
       .appendField(Blockly.Msg.GROVE_IR_EMITTER_SEND_TITLE);
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.GROVE_IR_EMMITER_SEND_TOOLTIP);
-  }
-};
-
-Blockly.Blocks['grove_ir_emitter_set_data'] = {
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.GROVE_IR_DATA_HELPURL);
-    this.setColour(Blockly.Blocks.grove.HUE);
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.GROVE_IR_EMITTER_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.ir_emitter_image, 64, 64))
-      .appendField(Blockly.Msg.GROVE_IR_EMITTER_SET_DATA_TITLE)
     this.appendValueInput("DATA")
       .setCheck("Number")
       .appendField(Blockly.Msg.DATA);
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.GROVE_IR_EMMITER_SET_DATA_TOOLTIP);
+    this.setTooltip(Blockly.Msg.GROVE_IR_EMMITER_SEND_TOOLTIP);
   }
 };
-
-
-
