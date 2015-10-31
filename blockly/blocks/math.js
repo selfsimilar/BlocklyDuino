@@ -42,7 +42,7 @@ Blockly.Blocks['math_number'] = {
     this.appendDummyInput()
         .appendField(new Blockly.FieldTextInput('0',
         Blockly.FieldTextInput.numberValidator), 'NUM');
-    this.setOutput(true, 'Number');
+    this.setOutput(true, profile.common.number_type);
     this.setTooltip(Blockly.Msg.MATH_NUMBER_TOOLTIP);
   }
 };

@@ -87,6 +87,14 @@ Blockly.Arduino['controls_whileUntil'] = function(block) {
   return 'while (' + argument0 + ') {\n' + branch + '}\n';
 };
 
+Blockly.Arduino['controls_while'] = function(block) {
+  // Do while/until loop.
+  var argument0 = Blockly.Arduino.valueToCode(block, 'BOOL', Blockly.Arduino.ORDER_NONE) || 'false';
+  var branch = Blockly.Arduino.statementToCode(block, 'DO');
+  branch = Blockly.Arduino.addLoopTrap(branch, block.id);
+  return 'while (' + argument0 + ') {\n' + branch + '}\n';
+};
+
 Blockly.Arduino['controls_repeat'] = function(block){
   // Repeat n times (internal number).
   var repeats = Number(block.getFieldValue('TIMES'));
@@ -110,4 +118,9 @@ Blockly.Arduino['controls_flow_statements'] = function(block) {
       return 'continue;\n';
   }
   throw 'Unknown flow statement.';
+};
+
+Blockly.Arduino['controls_return'] = function(block) {
+  var value = Blockly.Arduino.valueToCode(block, 'VAL', Blockly.Arduino.ORDER_NONE) || '';
+  return 'return ' + value +';\n';
 };

@@ -76,6 +76,9 @@ Blockly.Arduino.ORDER_NONE = 99;          // (...)
  *
  */
 var profile = {
+  common:{
+    number_type: ["Number","Byte","Unsigned_Int","Long","Unsigned_Long","Word","Char","Float","Double","Volatile_Int"]
+  },
   arduino: {
     description: "Arduino standard-compatible board",
     digital: [["0","0"],["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"]],
@@ -91,7 +94,8 @@ var profile = {
     led_backpack_address: [["0x70","0x70"],["0x71","0x71"],["0x72","0x72"],["0x73","0x73"]],
     blynk_merge_index: [["0","0"],["1","1"],["2","2"]],
     grove_digital: [["2","2"],["3","3"],["4","4"],["5","5"],["6","6"],["7","7"],["8","8"]],
-    shield_bot_sensor: [["1","1"],["2","2"],["3","3"],["4","4"],["5","5"]]
+    shield_bot_sensor: [["1","1"],["2","2"],["3","3"],["4","4"],["5","5"]],
+    interrupt:[["2","0"],["3","1"]]
   },
   arduino_mega: {
     description: "Arduino Mega-compatible board"
@@ -122,7 +126,7 @@ Blockly.Arduino.init = function(workspace) {
   var defvars = [];
 //  var variables = Blockly.Variables.allVariables(workspace);
   var variables = Blockly.Variables.allVariablesAndTypes(workspace);
-  var datatype = {Number:'int',Boolean:'boolean',String:'String',Array:'int'};
+  var datatype = {Number:'int',Long:'long',Float:'float',Byte:'byte',Boolean:'boolean',Char:'char',String:'String',Array:'int',Volatile_Int:'volatile int',Word:'word',Double:'double',Unsigned_Int:'unsigned int',Unsigned_Long:'unsigned long'};
   for (var x = 0; x < variables.length; x++) {
     if(variables[x][1] == ""){
       defvars[x] = 'int ' + ' ' + variables[x][0] + ';\n';

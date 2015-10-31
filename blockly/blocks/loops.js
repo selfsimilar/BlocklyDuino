@@ -103,6 +103,26 @@ Blockly.Blocks['controls_whileUntil'] = {
   }
 };
 
+Blockly.Blocks['controls_while'] = {
+  /**
+   * Block for 'do while/until' loop.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.CONTROLS_WHILE_HELPURL);
+    this.setColour(Blockly.Blocks.loops.HUE);
+    this.appendValueInput('BOOL')
+      .setCheck('Boolean')
+      .appendField(Blockly.Msg.CONTROLS_WHILE_TITLE);
+    this.appendStatementInput('DO')
+      .appendField(Blockly.Msg.CONTROLS_WHILE_INPUT_DO);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.CONTROLS_WHILE_TOOLTIP);
+  }
+};
+
+
 Blockly.Blocks['controls_for'] = {
   /**
    * Block for 'for' loop.
@@ -276,5 +296,22 @@ Blockly.Blocks['controls_flow_statements'] = {
     } else {
       this.setWarningText(Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING);
     }
+  }
+};
+
+Blockly.Blocks['controls_return'] = {
+  /**
+   * Block for 'do while/until' loop.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.CONTROLS_RETURN_HELPURL);
+    this.setColour(Blockly.Blocks.loops.HUE);
+    this.appendValueInput('VAL')
+      .appendField(Blockly.Msg.CONTROLS_RETURN_TITLE)
+      .appendField(Blockly.Msg.VALUE);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.CONTROLS_RETURN_TOOLTIP);
   }
 };

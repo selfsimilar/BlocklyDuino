@@ -32,11 +32,20 @@ goog.require('Blockly.Workspace');
 goog.require('goog.string');
 
 Blockly.Variables.TYPE_ANY = '';
+Blockly.Variables.TYPE_NUMBER = 'Number'; //int
+Blockly.Variables.TYPE_FLOAT = 'Float';
 Blockly.Variables.TYPE_BOOLEAN = 'Boolean';
-Blockly.Variables.TYPE_NUMBER = 'Number';
 Blockly.Variables.TYPE_STRING = 'String';
-Blockly.Variables.TYPE_COLOUR = 'Colour';
 Blockly.Variables.TYPE_ARRAY = 'Array';
+Blockly.Variables.TYPE_VOLATILE_INT = 'Volatile_Int';
+Blockly.Variables.TYPE_CHAR = 'Char';
+Blockly.Variables.TYPE_BYTE = 'Byte';
+Blockly.Variables.TYPE_WORD = 'Word';
+Blockly.Variables.TYPE_LONG = 'Long';
+Blockly.Variables.TYPE_UNSIGNED_INT = 'Unsigned_Int';
+Blockly.Variables.TYPE_UNSIGNED_LONG = 'Unsigned_Long';
+Blockly.Variables.TYPE_DOUBLE = 'Double';
+Blockly.Variables.TYPE_COLOUR = 'Colour';
 Blockly.Variables.NAME_TYPE = 'VARIABLE';
 
 /**
@@ -49,16 +58,34 @@ Blockly.Variables.allTypes = function(){
   return [
 //    [Blockly.Msg.VARIABLES_TYPE_ANY,
 //     Blockly.Variables.TYPE_ANY],
-    [Blockly.Msg.VARIABLES_TYPE_NUMBER,
-     Blockly.Variables.TYPE_NUMBER],
     [Blockly.Msg.VARIABLES_TYPE_BOOLEAN,
      Blockly.Variables.TYPE_BOOLEAN],
+    [Blockly.Msg.VARIABLES_TYPE_CHAR,
+    Blockly.Variables.TYPE_CHAR],
+    [Blockly.Msg.VARIABLES_TYPE_BYTE,
+     Blockly.Variables.TYPE_BYTE],
+    [Blockly.Msg.VARIABLES_TYPE_NUMBER,
+     Blockly.Variables.TYPE_NUMBER],
+    [Blockly.Msg.VARIABLES_TYPE_UNSIGNED_INT,
+     Blockly.Variables.TYPE_UNSIGNED_INT],
+    [Blockly.Msg.VARIABLES_TYPE_WORD,
+     Blockly.Variables.TYPE_WORD],
+    [Blockly.Msg.VARIABLES_TYPE_LONG,
+     Blockly.Variables.TYPE_LONG],
+    [Blockly.Msg.VARIABLES_TYPE_UNSIGNED_LONG,
+     Blockly.Variables.TYPE_UNSINGED_LONG],
+    [Blockly.Msg.VARIABLES_TYPE_FLOAT,
+     Blockly.Variables.TYPE_FLOAT],
+    [Blockly.Msg.VARIABLES_TYPE_DOUBLE,
+     Blockly.Variables.TYPE_DOUBLE],
     [Blockly.Msg.VARIABLES_TYPE_STRING,
      Blockly.Variables.TYPE_STRING],
 //    [Blockly.Msg.VARIABLES_TYPE_COLOUR,
 //     Blockly.Variables.TYPE_COLOUR],
     [Blockly.Msg.VARIABLES_TYPE_ARRAY,
-     Blockly.Variables.TYPE_ARRAY]
+     Blockly.Variables.TYPE_ARRAY],
+    [Blockly.Msg.VARIABLES_TYPE_VOLATILE_INT,
+     Blockly.Variables.TYPE_VOLATILE_INT]
   ];
 };
 

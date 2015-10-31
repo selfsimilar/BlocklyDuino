@@ -30,7 +30,6 @@ goog.provide('Blockly.Arduino.grove');
 
 goog.require('Blockly.Arduino');
 
-
 Blockly.Arduino.grove_led = function() {
   var dropdown_pin = this.getFieldValue('PIN');
   var dropdown_stat = this.getFieldValue('STAT');
