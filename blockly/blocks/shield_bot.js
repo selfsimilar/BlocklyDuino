@@ -52,8 +52,6 @@ Blockly.Blocks.shield_bot.checkBlocks = function(obj) {
             blocks[i].type == 'shield_bot_readsensor') {
             if (blocks[i].type != current) {
                 legal = true;
-            } else {
-                legal = false;
             }
             break;
         }
@@ -79,7 +77,7 @@ Blockly.Blocks['shield_bot_setmaxspeed'] = {
             return;
         }
         if (!Blockly.Blocks.shield_bot.checkBlocks(this)) {
-            this.setWarningText(Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING);
+            this.setWarningText(Blockly.Msg.SHEILD_BOT_WARNING);
         } else {
             this.setWarningText(null);
         }
@@ -107,7 +105,7 @@ Blockly.Blocks['shield_bot_setmaxspeed_lr'] = {
             return;
         }
         if (!Blockly.Blocks.shield_bot.checkBlocks(this)) {
-            this.setWarningText(Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING);
+          this.setWarningText(Blockly.Msg.SHEILD_BOT_WARNING);
         } else {
             this.setWarningText(null);
         }
@@ -135,7 +133,7 @@ Blockly.Blocks['shield_bot_right_motor'] = {
             return;
         }
         if (!Blockly.Blocks.shield_bot.checkBlocks(this)) {
-            this.setWarningText(Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING);
+          this.setWarningText(Blockly.Msg.SHEILD_BOT_WARNING);
         } else {
             this.setWarningText(null);
         }
@@ -168,7 +166,7 @@ Blockly.Blocks['shield_bot_motor'] = {
             return;
         }
         if (!Blockly.Blocks.shield_bot.checkBlocks(this)) {
-            this.setWarningText(Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING);
+          this.setWarningText(Blockly.Msg.SHEILD_BOT_WARNING);
         } else {
             this.setWarningText(null);
         }
@@ -199,7 +197,7 @@ Blockly.Blocks['shield_bot_drive'] = {
             return;
         }
         if (!Blockly.Blocks.shield_bot.checkBlocks(this)) {
-            this.setWarningText(Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING);
+          this.setWarningText(Blockly.Msg.SHEILD_BOT_WARNING);
         } else {
             this.setWarningText(null);
         }
@@ -223,7 +221,7 @@ Blockly.Blocks['shield_bot_faststop'] = {
             return;
         }
         if (!Blockly.Blocks.shield_bot.checkBlocks(this)) {
-            this.setWarningText(Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING);
+          this.setWarningText(Blockly.Msg.SHEILD_BOT_WARNING);
         } else {
             this.setWarningText(null);
         }
@@ -247,7 +245,7 @@ Blockly.Blocks['shield_bot_faststop_left'] = {
             return;
         }
         if (!Blockly.Blocks.shield_bot.checkBlocks(this)) {
-            this.setWarningText(Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING);
+          this.setWarningText(Blockly.Msg.SHEILD_BOT_WARNING);
         } else {
             this.setWarningText(null);
         }
@@ -271,7 +269,7 @@ Blockly.Blocks['shield_bot_faststop_right'] = {
             return;
         }
         if (!Blockly.Blocks.shield_bot.checkBlocks(this)) {
-            this.setWarningText(Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING);
+          this.setWarningText(Blockly.Msg.SHEILD_BOT_WARNING);
         } else {
             this.setWarningText(null);
         }
@@ -302,7 +300,7 @@ Blockly.Blocks['shield_bot_move'] = {
             return;
         }
         if (!Blockly.Blocks.shield_bot.checkBlocks(this)) {
-            this.setWarningText(Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING);
+          this.setWarningText(Blockly.Msg.SHEILD_BOT_WARNING);
         } else {
             this.setWarningText(null);
         }
@@ -327,7 +325,7 @@ Blockly.Blocks['shield_bot_readsensor'] = {
             return;
         }
         if (!Blockly.Blocks.shield_bot.checkBlocks(this)) {
-            this.setWarningText(Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING);
+          this.setWarningText(Blockly.Msg.SHEILD_BOT_WARNING);
         } else {
             this.setWarningText(null);
         }

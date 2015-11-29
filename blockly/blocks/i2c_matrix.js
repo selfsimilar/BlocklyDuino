@@ -34,6 +34,35 @@ Blockly.Blocks.i2c_matrix.HUE = 225;
 
 Blockly.Blocks.mini_matrix_image = filepath.media+'/mini_matrix.jpg';
 
+Blockly.Blocks.i2c_matrix.checkBlocks = function(obj) {
+  var legal = null;
+  var current = obj.type;
+  var blocks = obj.workspace.getAllBlocks();
+  for (var i = 0; i < blocks.length; i++) {
+    if ((blocks[i].type == 'i2c_matrix_clear' ||
+         blocks[i].type == 'i2c_matrix_setcursor' ||
+         blocks[i].type == 'i2c_matrix_print' ||
+         blocks[i].type == 'i2c_matrix_settextsize' ||
+         blocks[i].type == 'i2c_matrix_settextwrap' ||
+         blocks[i].type == 'i2c_matrix_settextcolor' ||
+         blocks[i].type == 'i2c_matrix_drawpixel' ||
+         blocks[i].type == 'i2c_matrix_drawcircle' ||
+         blocks[i].type == 'i2c_matrix_drawrect' ||
+         blocks[i].type == 'i2c_matrix_drawline' ||
+         blocks[i].type == 'i2c_matrix_fillrect' ||
+         blocks[i].type == 'i2c_matrix_setrotation' ||
+         blocks[i].type == 'i2c_matrix_writedisplay') &&
+        legal == null){
+      if (blocks[i].type != current)  legal = true;
+      else  legal = false;
+    }
+    if(blocks[i].type == 'i2c_matrix_begin'){
+      return true;
+    }
+  }
+  return legal;
+};
+
 Blockly.Blocks['i2c_matrix_begin'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.I2C_MATRIX_HELPURL);
@@ -41,6 +70,7 @@ Blockly.Blocks['i2c_matrix_begin'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(Blockly.Msg.I2C_MATRIX_BEGIN_TITLE)
       .appendField(Blockly.Msg.I2C_MATRIX_TYPE)
       .appendField(new Blockly.FieldDropdown(profile.default.i2c_matrix_type),"TYPE")
       .appendField(Blockly.Msg.I2C_MATRIX_ADDRESS)
@@ -48,6 +78,13 @@ Blockly.Blocks['i2c_matrix_begin'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has been deleted.
+      return;
+    }
+    this.setWarningText(Blockly.Msg.I2C_MATRIX_BEGIN_WARNING);
   }
 };
 
@@ -62,7 +99,19 @@ Blockly.Blocks['i2c_matrix_clear'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_matrix.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_MATRIX_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
+
 };
 
 Blockly.Blocks['i2c_matrix_setcursor'] = {
@@ -83,6 +132,17 @@ Blockly.Blocks['i2c_matrix_setcursor'] = {
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_matrix.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_MATRIX_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -101,6 +161,17 @@ Blockly.Blocks['i2c_matrix_print'] = {
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_matrix.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_MATRIX_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -117,6 +188,17 @@ Blockly.Blocks['i2c_matrix_settextsize'] = {
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_matrix.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_MATRIX_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -137,6 +219,17 @@ Blockly.Blocks['i2c_matrix_settextwrap'] = {
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_matrix.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_MATRIX_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -155,6 +248,17 @@ Blockly.Blocks['i2c_matrix_settextcolor'] = {
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_matrix.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_MATRIX_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -181,6 +285,17 @@ Blockly.Blocks['i2c_matrix_drawpixel'] = {
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_matrix.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_MATRIX_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -208,6 +323,17 @@ Blockly.Blocks['i2c_matrix_drawcircle'] = {
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_matrix.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_MATRIX_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -238,6 +364,17 @@ Blockly.Blocks['i2c_matrix_drawrect'] = {
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_matrix.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_MATRIX_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -268,6 +405,17 @@ Blockly.Blocks['i2c_matrix_drawline'] = {
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_matrix.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_MATRIX_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -298,6 +446,17 @@ Blockly.Blocks['i2c_matrix_fillrect'] = {
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_matrix.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_MATRIX_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -314,6 +473,17 @@ Blockly.Blocks['i2c_matrix_setrotation'] = {
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_matrix.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_MATRIX_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -329,5 +499,16 @@ Blockly.Blocks['i2c_matrix_writedisplay'] = {
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_matrix.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_MATRIX_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };

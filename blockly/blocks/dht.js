@@ -34,7 +34,7 @@ Blockly.Blocks.dht.image = filepath.media+'/dht11.jpg';
 
 Blockly.Blocks['dht_read'] = {
   init: function() {
-    this.setHelpUrl(Blockly.Msg.dht_read_helpurl);
+    this.setHelpUrl(Blockly.Msg.DHT_HELPURL);
     this.setColour(Blockly.Blocks.dht.HUE);
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.Blocks.dht.image, 64, 64))
@@ -49,5 +49,12 @@ Blockly.Blocks['dht_read'] = {
     this.setInputsInline(true);
     this.setOutput(true, 'Number');
     this.setTooltip(Blockly.Msg.DHT_READ_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    this.setWarningText(Blockly.Msg.DHT_WARNING);
   }
 };

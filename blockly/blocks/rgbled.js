@@ -32,6 +32,26 @@ Blockly.Blocks.rgbled.HUE = 215;
 
 Blockly.Blocks.rgbled.image = filepath.media + '/rgbled.jpg';
 
+Blockly.Blocks.rgbled.checkBlocks = function(obj) {
+  var legal = null;
+  var current = obj.type;
+  var blocks = obj.workspace.getAllBlocks();
+  for (var i = 0; i < blocks.length; i++) {
+    if ((blocks[i].type == 'rgbled_setpixelcolor' ||
+        blocks[i].type == 'rgbled_custom_setpixelcolor' ||
+        blocks[i].type == 'rgbled_show' ||
+        blocks[i].type == 'rgbled_setpixelcolor2') &&
+        legal == null){
+        if (blocks[i].type != current)  legal = true;
+        else  legal = false;
+    }
+    if(blocks[i].type == 'rgbled_begin'){
+      return true;
+    }
+  }
+  return legal;
+};
+
 Blockly.Blocks['rgbled_begin'] = {
     init: function() {
         this.setHelpUrl(Blockly.Msg.RGBLED_BEGIN_HELPURL);
@@ -57,20 +77,7 @@ Blockly.Blocks['rgbled_begin'] = {
             // Block has been deleted.
             return;
         }
-        var legal = false;
-        var block = this;
-        do{
-          if(block.type == 'rgbled_setpixelcolor'){
-            legal = true;
-            break;
-          }
-          block = block.getSurroundParent();
-        }while(block);
-        if(legal){
-          this.setWarningText(null);
-        }else {
-          this.setWarningText(Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING);
-        }
+        this.setWarningText(Blockly.Msg.RGBLED_BEGIN_WARNING);
     }
 };
 
@@ -90,7 +97,18 @@ Blockly.Blocks['rgbled_setpixelcolor'] = {
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.RGBLED_SETPIXELCOLOR_TOOLTIP);
+    },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
     }
+    if (!Blockly.Blocks.rgbled.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.RGBLED_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
+  }
 }
 
 Blockly.Blocks['rgbled_setpixelcolor2'] = {
@@ -110,7 +128,18 @@ Blockly.Blocks['rgbled_setpixelcolor2'] = {
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.RGBLED_CUSTOM_SETPIXELCOLOR_TOOLTIP);
+    },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
     }
+    if (!Blockly.Blocks.rgbled.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.RGBLED_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
+  }
 }
 
 Blockly.Blocks['rgbled_custom_setpixelcolor'] = {
@@ -135,7 +164,18 @@ Blockly.Blocks['rgbled_custom_setpixelcolor'] = {
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.RGBLED_CUSTOM_SETPIXELCOLOR_TOOLTIP);
+    },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
     }
+    if (!Blockly.Blocks.rgbled.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.RGBLED_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
+  }
 }
 
 Blockly.Blocks['rgbled_show'] = {
@@ -149,5 +189,16 @@ Blockly.Blocks['rgbled_show'] = {
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.RGBLED_SHOW_TOOLTIP);
+    },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
     }
+    if (!Blockly.Blocks.rgbled.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.RGBLED_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
+  }
 }

@@ -34,6 +34,28 @@ Blockly.Blocks.i2c_sevenseg.HUE = 240;
 
 Blockly.Blocks.i2c_sevenseg.image = filepath.media+'/sevenseg.jpg';
 
+Blockly.Blocks.i2c_sevenseg.checkBlocks = function(obj) {
+  var legal = null;
+  var current = obj.type;
+  var blocks = obj.workspace.getAllBlocks();
+  for (var i = 0; i < blocks.length; i++) {
+    if ((blocks[i].type == 'i2c_sevenseg_print' ||
+         blocks[i].type == 'i2c_sevenseg_writedisplay' ||
+         blocks[i].type == 'i2c_sevenseg_writedigitnum' ||
+         blocks[i].type == 'i2c_sevenseg_drawcolon' ||
+         blocks[i].type == 'i2c_sevenseg_boolean') &&
+         legal == null){
+      if (blocks[i].type != current)  legal = true;
+      else  legal = false;
+    }
+    //find i2c_sevenseg_begin block
+    if(blocks[i].type == 'i2c_sevenseg_begin'){
+      return true;
+    }
+  }
+  return legal;
+};
+
 Blockly.Blocks['i2c_sevenseg_begin'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.I2C_SEVENSEG_HELPURL);
@@ -41,11 +63,19 @@ Blockly.Blocks['i2c_sevenseg_begin'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.I2C_SEVENSEG_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.i2c_sevenseg.image, 64, 64))
+      .appendField(Blockly.Msg.I2C_SEVENSEG_BEGIN_TITLE)
       .appendField(Blockly.Msg.I2C_SEVENSEG_ADDRESS)
       .appendField(new Blockly.FieldDropdown(profile.default.led_backpack_address),"ADDRESS");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    this.setWarningText(Blockly.Msg.I2C_SEVENSEG_BEGIN_WARNING);
   }
 };
 
@@ -64,6 +94,17 @@ Blockly.Blocks['i2c_sevenseg_print'] = {
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_sevenseg.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_SEVENSEG_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -79,6 +120,17 @@ Blockly.Blocks['i2c_sevenseg_writedisplay'] = {
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_sevenseg.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_SEVENSEG_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -103,6 +155,17 @@ Blockly.Blocks['i2c_sevenseg_writedigitnum'] = {
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_sevenseg.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_SEVENSEG_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -120,6 +183,17 @@ Blockly.Blocks['i2c_sevenseg_drawcolon'] = {
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
     this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_sevenseg.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_SEVENSEG_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -132,5 +206,16 @@ Blockly.Blocks['i2c_sevenseg_boolean'] = {
     this.setOutput(true, 'Boolean');
     this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown(BOOLEANS), 'BOOL');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_sevenseg.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_SEVENSEG_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
