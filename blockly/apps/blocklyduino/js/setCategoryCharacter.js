@@ -14,7 +14,9 @@ function setCategoryCharacter() {
   $('#category_blynk').attr('name',Blockly.Msg.CATEGORY_BYLNK);
   $('#category_grove').attr('name',Blockly.Msg.CATEGORY_GROVE);
   $('#category_adafruit').attr('name',Blockly.Msg.CATEGORY_ADAFRUIT);
+  $('#category_robot').attr('name',Blockly.Msg.CATEGORY_ROBOT);
   $('#category_shield_bot').attr('name',Blockly.Msg.CATEGORY_SHIELD_BOT);
+  $('#category_aerobot').attr('name',Blockly.Msg.CATEGORY_AEROBOT);
   $('#category_serial').attr('name',Blockly.Msg.CATEGORY_SERIAL);
   $('#category_servo').attr('name',Blockly.Msg.CATEGORY_SERVO);
   $('#category_logic').attr('name',Blockly.Msg.CATEGORY_LOGIC);
