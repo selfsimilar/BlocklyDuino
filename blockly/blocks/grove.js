@@ -46,6 +46,52 @@ Blockly.Blocks.grove.sound_sensor_image = filepath.media+'/grove_sound_sensor.jp
 Blockly.Blocks.grove.ir_receiver_image = filepath.media+'/grove_ir_receiver.jpg';
 Blockly.Blocks.grove.ir_emitter_image = filepath.media+'/grove_ir_emitter.jpg';
 
+Blockly.Blocks.grove.rgb_lcd_checkBlocks = function(obj) {
+  var legal = null;
+  var current = obj.type;
+  var blocks = obj.workspace.getAllBlocks();
+  for (var i = 0; i < blocks.length; i++) {
+    if ((blocks[i].type == 'grove_rgb_lcd_setcolor' ||
+         blocks[i].type == 'grove_rgb_lcd_print' ||
+         blocks[i].type == 'grove_rgb_lcd_setcursor' ||
+         blocks[i].type == 'grove_rgb_lcd_custom_setcursor' ||
+         blocks[i].type == 'grove_rgb_lcd_clear' ||
+         blocks[i].type == 'grove_rgb_lcd_scrolldisplayleft' ||
+         blocks[i].type == 'grove_rgb_lcd_scrolldisplayright' ||
+         blocks[i].type == 'grove_rgb_lcd_switch_scroll' ||
+         blocks[i].type == 'grove_rgb_lcd_autoscroll' ||
+         blocks[i].type == 'grove_rgb_lcd_noautoscroll' ||
+         blocks[i].type == 'grove_rgb_lcd_lefttoright' ||
+         blocks[i].type == 'grove_rgb_lcd_righttoleft') &&
+        legal == null){
+      if (blocks[i].type != current)  legal = true;
+      else  legal = false;
+    }
+    if(blocks[i].type == 'grove_rgb_lcd_begin'){
+      return true;
+    }
+  }
+  return legal;
+};
+
+Blockly.Blocks.grove.grove_ir_receiver_checkBlocks = function(obj) {
+  var legal = null;
+  var current = obj.type;
+  var blocks = obj.workspace.getAllBlocks();
+  for (var i = 0; i < blocks.length; i++) {
+    if ((blocks[i].type == 'grove_ir_receiver_check_data' ||
+         blocks[i].type == 'grove_ir_receiver_receive' ||
+         blocks[i].type == 'grove_ir_receiver_data') &&
+        legal == null){
+      if (blocks[i].type != current)  legal = true;
+      else  legal = false;
+    }
+    if(blocks[i].type == 'grove_ir_receiver_init'){
+      return true;
+    }
+  }
+  return legal;
+};
 
 Blockly.Blocks['grove_led'] = {
   init: function() {
@@ -559,6 +605,17 @@ Blockly.Blocks['grove_rgb_lcd_setcolor'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_RGB_LCD_SETCOLOR_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.grove.rgb_lcd_checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.GROVE_RGB_LCD_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -579,6 +636,13 @@ Blockly.Blocks['grove_rgb_lcd_begin'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_RGB_LCD_BEGIN_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has been deleted.
+      return;
+    }
+    this.setWarningText(Blockly.Msg.GROVE_RGB_LCD_BEGIN_WARNING);
   }
 };
 
@@ -594,6 +658,17 @@ Blockly.Blocks['grove_rgb_lcd_print'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_RGB_LCD_PRINT_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.grove.rgb_lcd_checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.GROVE_RGB_LCD_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -614,6 +689,17 @@ Blockly.Blocks['grove_rgb_lcd_setcursor'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_RGB_LCD_SETCURSOR_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.grove.rgb_lcd_checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.GROVE_RGB_LCD_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -637,6 +723,17 @@ Blockly.Blocks['grove_rgb_lcd_custom_setcursor'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_RGB_LCD_SETCURSOR_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.grove.rgb_lcd_checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.GROVE_RGB_LCD_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -652,6 +749,17 @@ Blockly.Blocks['grove_rgb_lcd_clear'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_RGB_LCD_CLEAR_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.grove.rgb_lcd_checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.GROVE_RGB_LCD_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -667,6 +775,17 @@ Blockly.Blocks['grove_rgb_lcd_scrolldisplayleft'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_RGB_LCD_SCROLL_DISPLAY_LEFT_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.grove.rgb_lcd_checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.GROVE_RGB_LCD_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -682,6 +801,17 @@ Blockly.Blocks['grove_rgb_lcd_scrolldisplayright'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_LCD_SCROLL_DISPLAY_RIGHT_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.grove.rgb_lcd_checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.GROVE_RGB_LCD_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -698,6 +828,17 @@ Blockly.Blocks['grove_rgb_lcd_switch_scroll'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_RGB_LCD_AUTOSCROLL_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.grove.rgb_lcd_checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.GROVE_RGB_LCD_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -713,6 +854,17 @@ Blockly.Blocks['grove_rgb_lcd_autoscroll'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_RGB_LCD_AUTOSCROLL_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.grove.rgb_lcd_checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.GROVE_RGB_LCD_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -728,6 +880,17 @@ Blockly.Blocks['grove_rgb_lcd_noautoscroll'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_RGB_LCD_NOAUTOSCROLL_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.grove.rgb_lcd_checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.GROVE_RGB_LCD_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -743,6 +906,17 @@ Blockly.Blocks['grove_rgb_lcd_lefttoright'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_RGB_LCD_LEFTTORIGHT_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.grove.rgb_lcd_checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.GROVE_RGB_LCD_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -758,6 +932,17 @@ Blockly.Blocks['grove_rgb_lcd_righttoleft'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_RGB_LCD_RIGHTTOLEFT_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.grove.rgb_lcd_checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.GROVE_RGB_LCD_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -775,6 +960,13 @@ Blockly.Blocks['grove_ir_receiver_init'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_IR_REVEIVER_INIT_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has been deleted.
+      return;
+    }
+    this.setWarningText(Blockly.Msg.GROVE_IR_RECEIVER_INIT_WARNING);
   }
 };
 
@@ -788,6 +980,17 @@ Blockly.Blocks['grove_ir_receiver_check_data'] = {
       .appendField(Blockly.Msg.GROVE_IR_RECEIVER_CHECK_DATA_TITLE);
     this.setOutput(true);
     this.setTooltip(Blockly.Msg.GROVE_IR_RECEIVER_CHECK_DATA_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.grove.grove_ir_receiver_checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.GROVE_IR_RECEIVER_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -803,6 +1006,17 @@ Blockly.Blocks['grove_ir_receiver_receive'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_IR_RECEIVER_RECEIVE_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.grove.grove_ir_receiver_checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.GROVE_IR_RECEIVER_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -817,6 +1031,17 @@ Blockly.Blocks['grove_ir_receiver_data'] = {
     this.setInputsInline(true);
     this.setOutput(true);
     this.setTooltip(Blockly.Msg.GROVE_IR_RECEIVER_DATA_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.grove.grove_ir_receiver_checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.GROVE_IR_RECEIVER_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -835,5 +1060,12 @@ Blockly.Blocks['grove_ir_emitter_send'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_IR_EMMITER_SEND_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has been deleted.
+      return;
+    }
+    this.setWarningText(Blockly.Msg.GROVE_IR_EMITTER_WARNING);
   }
 };

@@ -111,7 +111,6 @@ Blockly.Blocks['i2c_matrix_clear'] = {
       this.setWarningText(null);
     }
   }
-
 };
 
 Blockly.Blocks['i2c_matrix_setcursor'] = {
