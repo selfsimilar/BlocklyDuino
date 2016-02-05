@@ -35,6 +35,26 @@ Blockly.Blocks.aerobot.HUE = 200;
 
 Blockly.Blocks.aerobot.image = filepath.media + '/aerobot.jpg';
 
+Blockly.Blocks.aerobot.checkBlocks = function(obj) {
+  var legal = false;
+  var current = obj.type;
+  var blocks = obj.workspace.getAllBlocks();
+  for (var i = 0; i < blocks.length; i++) {
+    if (blocks[i].type == 'aerobot_move' ||
+        blocks[i].type == 'aerobot_rotate' ||
+        blocks[i].type == 'aerobot_lightsens' ||
+        blocks[i].type == 'aerobot_linesens' ||
+        blocks[i].type == 'aerobot_setled' ||
+        blocks[i].type == 'aerobot_distsens') {
+      if (blocks[i].type != current) {
+        legal = true;
+      }
+      break;
+    }
+  }
+  return legal;
+};
+
 Blockly.Blocks['aerobot_move'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.AEROBOT_HELPURL);
@@ -52,6 +72,17 @@ Blockly.Blocks['aerobot_move'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.AEROBOT_MOVE_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has been deleted.
+      return;
+    }
+    if (!Blockly.Blocks.aerobot.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.AEROBOT_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -69,9 +100,19 @@ Blockly.Blocks['aerobot_rotate'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.AEROBOT_ROTATE_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has been deleted.
+      return;
+    }
+    if (!Blockly.Blocks.aerobot.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.AEROBOT_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
-
 
 Blockly.Blocks['aerobot_lightsens'] = {
   init: function() {
@@ -88,6 +129,17 @@ Blockly.Blocks['aerobot_lightsens'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.AEROBOT_LIGHTSENS_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has been deleted.
+      return;
+    }
+    if (!Blockly.Blocks.aerobot.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.AEROBOT_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -106,6 +158,17 @@ Blockly.Blocks['aerobot_distsens'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.AEROBOT_LIGHTSENS_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has been deleted.
+      return;
+    }
+    if (!Blockly.Blocks.aerobot.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.AEROBOT_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -125,6 +188,17 @@ Blockly.Blocks['aerobot_linesens'] = {
     this.setInputsInline(true);
     this.setOutput(true, 'Number');
     this.setTooltip(Blockly.Msg.AEROBOT_LINESENS_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has been deleted.
+      return;
+    }
+    if (!Blockly.Blocks.aerobot.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.AEROBOT_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 
@@ -142,6 +216,17 @@ Blockly.Blocks['aerobot_setled'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.AEROBOT_SETLED_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has been deleted.
+      return;
+    }
+    if (!Blockly.Blocks.aerobot.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.AEROBOT_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
   }
 };
 

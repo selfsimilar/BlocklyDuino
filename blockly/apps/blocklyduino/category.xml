@@ -107,7 +107,7 @@
   <block type="interrupts"></block>
   <block type="interrupts_no"></block>
 </category>
-<sep></sep>
+<sep id="category_sep"></sep>
 <category id="category_cloud_service">
   <category id="category_ifttt">
     <block type="text">

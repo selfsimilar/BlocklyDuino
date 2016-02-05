@@ -31,7 +31,7 @@ Blockly.Arduino.aerobot_move = function() {
   var direction = this.getFieldValue('DIRECTION');
 
   Blockly.Arduino.definitions_['include_aerobot'] = '#include <AERobot.h>';
-  Blockly.Arduino.setups_['init_aerobot'] = 'initAERobot();\n';
+  Blockly.Arduino.setups_['init_aerobot'] = 'initAERobot();';
   Blockly.Arduino.setups_['seed_aerobot'] = 'randomSeed(1);\n';
 
   var code = 'move_' + direction + '();\n';
@@ -42,7 +42,7 @@ Blockly.Arduino.aerobot_rotate = function() {
   var direction = this.getFieldValue('DIRECTION');
 
   Blockly.Arduino.definitions_['include_aerobot'] = '#include <AERobot.h>';
-  Blockly.Arduino.setups_['init_aerobot'] = 'initAERobot();\n';
+  Blockly.Arduino.setups_['init_aerobot'] = 'initAERobot();';
   Blockly.Arduino.setups_['seed_aerobot'] = 'randomSeed(1);\n';
 
   var code = 'rotate_' + direction + '();\n';
@@ -64,7 +64,7 @@ Blockly.Arduino.aerobot_distsens = function() {
   var sens = this.getFieldValue('SENS');
 
   Blockly.Arduino.definitions_['include_aerobot'] = '#include <AERobot.h>';
-  Blockly.Arduino.setups_['init_aerobot'] = 'initAERobot();\n';
+  Blockly.Arduino.setups_['init_aerobot'] = 'initAERobot();';
   Blockly.Arduino.setups_['seed_aerobot'] = 'randomSeed(1);\n';
 
   var code = 'distSens(' + sens + ');\n';
@@ -75,7 +75,7 @@ Blockly.Arduino.aerobot_linesens = function() {
   var sens = this.getFieldValue('SENS');
 
   Blockly.Arduino.definitions_['include_aerobot'] = '#include <AERobot.h>';
-  Blockly.Arduino.setups_['init_aerobot'] = 'initAERobot();\n';
+  Blockly.Arduino.setups_['init_aerobot'] = 'initAERobot();';
   Blockly.Arduino.setups_['seed_aerobot'] = 'randomSeed(1);\n';
 
   var code = 'lineSens();\n';
