@@ -59,6 +59,33 @@ Blockly.Blocks['delayMicroseconds'] = {
   }
 };
 
+Blockly.Blocks['delay_custom'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TIMES_DELAY_HELPURL);
+    this.setColour(Blockly.Blocks.times.HUE);
+    this.appendValueInput("DELAY_TIME")
+      .setCheck("Number")
+      .appendField(Blockly.Msg.TIMES_DELAY_APPENDTEXT);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.TIMES_DELAY_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['delayMicroseconds_custom'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TIMES_DELAYMICROSECONDS_HELPURL);
+    this.setColour(Blockly.Blocks.times.HUE);
+    this.appendValueInput("DELAY_TIME")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.TIMES_DELAYMICROSECONDS_APPENDTEXT);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.TIMES_DELAYMICROSECONDS_TOOLTIP);
+  }
+};
+
+
 Blockly.Blocks['micros'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.TIMES_MICROS_HELPURL);

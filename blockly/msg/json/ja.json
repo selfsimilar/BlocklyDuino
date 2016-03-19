@@ -453,7 +453,7 @@
   "PROCEDURES_DEFNORETURN_DO": "",
   "PROCEDURES_DEFNORETURN_TOOLTIP": "戻り値なしで関数を作成します。",
   "PROCEDURES_DEFRETURN_HELPURL": "https://ja.wikipedia.org/wiki/サブルーチン",
-  "PROCEDURES_DEFRETURN_RETURN": "返す",
+  "PROCEDURES_DEFRETURN_RETURN": "戻り値",
   "PROCEDURES_DEFRETURN_TOOLTIP": "戻り値を持つ関数を作成します。",
   "PROCEDURES_DEF_DUPLICATE_WARNING": "警告: この関数は、重複するパラメーターがあります。",
   "PROCEDURES_CALLNORETURN_HELPURL": "https://ja.wikipedia.org/wiki/サブルーチン",
