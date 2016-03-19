@@ -73,7 +73,7 @@ Blockly.Variables.allTypes = function(){
     [Blockly.Msg.VARIABLES_TYPE_LONG,
      Blockly.Variables.TYPE_LONG],
     [Blockly.Msg.VARIABLES_TYPE_UNSIGNED_LONG,
-     Blockly.Variables.TYPE_UNSINGED_LONG],
+     Blockly.Variables.TYPE_UNSIGNED_LONG],
     [Blockly.Msg.VARIABLES_TYPE_FLOAT,
      Blockly.Variables.TYPE_FLOAT],
     [Blockly.Msg.VARIABLES_TYPE_DOUBLE,
