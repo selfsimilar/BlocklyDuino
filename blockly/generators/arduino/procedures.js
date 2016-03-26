@@ -39,10 +39,11 @@ Blockly.Arduino.procedures_defreturn = function() {
   }
   var returnValue = Blockly.Arduino.valueToCode(this, 'RETURN',
       Blockly.Arduino.ORDER_NONE) || '';
+  var type = this.getFieldValue('TYPE');
   if (returnValue) {
     returnValue = '  return ' + returnValue + ';\n';
   }
-  var returnType = returnValue ? 'Dynamic' : 'void';
+  var returnType = returnValue ? type : 'void';
   var args = [];
   for (var x = 0; x < this.arguments_.length; x++) {
     args[x] = Blockly.Arduino.variableDB_.getName(this.arguments_[x],
