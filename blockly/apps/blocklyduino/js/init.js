@@ -353,7 +353,7 @@ function import_xml(){
   var xml = $('#textarea_import').val();
   $('#textarea_import').val("");
   var xmlDoc = Blockly.Xml.textToDom(xml);
-  Blockly.mainWorkspace.clear();
+  // Blockly.mainWorkspace.clear();
   Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDoc);
 }
 
