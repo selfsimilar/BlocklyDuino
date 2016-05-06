@@ -969,6 +969,7 @@
   "GO_TO_SAMPLE": "Link to Sample Code Page",
   "CHANGE_LANG": "Change Language",
   "DIALOG_LANG_TITLE": "Select Language",
+  "DIALOG_BLOCK_TITLE": "Option Blocks",
   "BUTTON_NEW": "Create New",
   "BUTTON_OPEN": "Open",
   "BUTTON_SAVE": "Save",
@@ -996,5 +997,12 @@
   "ERROR_FILENAME2": "Filename ErrorFilename Error！",
   "DROPDOWN_DISCARD": "Block discard",
   "DROPDOWN_SAVE_AS": "Save as...",
-  "COPY_DONE": "Copy Done!"
+  "COPY_DONE": "Copy Done!",
+  "BUTTON_IMPORT": "Import",
+  "BUTTON_EXPORT": "Export",
+  "TEXTAREA_IMPORT_LABEL": "Paste Code",
+  "TEXTAREA_EXPORT_LABEL": "Copy Code",
+  "DIALOG_IMPORT_OK": "Import",
+  "DIALOG_IMPORT_CANCEL": "Cancel",
+  "DIALOG_EXPORT_OK": "Close"
 }

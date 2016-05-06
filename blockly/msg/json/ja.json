@@ -925,6 +925,7 @@
   "GO_TO_SAMPLE": "サンプルサイトへのリンク",
   "CHANGE_LANG": "言語設定",
   "DIALOG_LANG_TITLE": "言語を選択してください",
+  "DIALOG_BLOCK_TITLE": "オプションブロック",
   "BUTTON_NEW": "新規作成",
   "BUTTON_OPEN": "開く",
   "BUTTON_SAVE": "保存",
@@ -952,5 +953,12 @@
   "ERROR_FILENAME2": "全角文字や日本語のファイル名は使えません！",
   "DROPDOWN_DISCARD": "ブロックを削除",
   "DROPDOWN_SAVE_AS": "別名で保存...",
-  "COPY_DONE": "コピー完了！"
+  "COPY_DONE": "コピー完了！",
+  "BUTTON_IMPORT": "インポート",
+  "BUTTON_EXPORT": "エクスポート",
+  "TEXTAREA_IMPORT_LABEL": "コードを貼り付けてください",
+  "TEXTAREA_EXPORT_LABEL": "コードをコピーしてください",
+  "DIALOG_IMPORT_OK": "インポート",
+  "DIALOG_IMPORT_CANCEL": "キャンセル",
+  "DIALOG_EXPORT_OK": "閉じる"
 }

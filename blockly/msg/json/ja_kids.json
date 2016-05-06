@@ -918,6 +918,7 @@
   "GO_TO_SAMPLE": "サンプルサイトへのリンク",
   "CHANGE_LANG": "ことばのへんこう",
   "DIALOG_LANG_TITLE": "ことばをえらんでください",
+  "DIALOG_BLOCK_TITLE": "オプションブロック",
   "BUTTON_NEW": "しんきさくせい",
   "BUTTON_OPEN": "ひらく",
   "BUTTON_SAVE": "ほぞん",
@@ -945,5 +946,12 @@
   "ERROR_FILENAME2": "ぜんかくもじやにほんごのなまえはつかえません！",
   "DROPDOWN_DISCARD": "ブロックをさくじょ",
   "DROPDOWN_SAVE_AS": "べつめいでほぞん...",
-  "COPY_DONE": "コピーできたよ！"
+  "COPY_DONE": "コピーできたよ！",
+  "BUTTON_IMPORT": "インポート",
+  "BUTTON_EXPORT": "エクスポート",
+  "TEXTAREA_IMPORT_LABEL": "コードをはりつけてください",
+  "TEXTAREA_EXPORT_LABEL": "コードをコピーしてください",
+  "DIALOG_IMPORT_OK": "インポート",
+  "DIALOG_IMPORT_CANCEL": "キャンセル",
+  "DIALOG_EXPORT_OK": "とじる"
 }
