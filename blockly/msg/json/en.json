@@ -1004,5 +1004,20 @@
   "TEXTAREA_EXPORT_LABEL": "Copy Code",
   "DIALOG_IMPORT_OK": "Import",
   "DIALOG_IMPORT_CANCEL": "Cancel",
-  "DIALOG_EXPORT_OK": "Close"
+  "DIALOG_EXPORT_OK": "Close",
+  "CATEGORY_MPR121": "Capacitive Sensor",
+  "MPR121_HELPURL": "https://learn.adafruit.com/adafruit-mpr121-12-key-capacitive-touch-sensor-breakout-tutorial/wiring#download-adafruit-mpr121",
+  "MPR121_POSITION": "Position",
+  "MPR121_BEGIN_TITLE": "Begin",
+  "MPR121_BEGIN_TOOLTIP": "initialize the sensor",
+  "MPR121_TOUCHED_TITLE": "Touched",
+  "MPR121_TOUCHED_TOOLTIP": "touched the sensor",
+  "MPR121_RELEASED_TITLE": "Released",
+  "MPR121_RELEASED_TOOLTIP": "relesed the sensor",
+  "MPR121_VALUE_TITLE": "Capacitance Value",
+  "MPR121_VALUE_TOOLTIP": "value of capacitance",
+  "MPR121_RESET_TITLE": "Reset",
+  "MPR121_RESET_TOOLTIP": "Reset the sensor",  
+  "MPR121_BEGIN_WARNING": "Need to install the Adafruit_MPR121 library.",
+  "MPR121_WARNING": "Need to Begin block."
 }

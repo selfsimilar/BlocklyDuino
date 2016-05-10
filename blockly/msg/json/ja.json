@@ -960,5 +960,19 @@
   "TEXTAREA_EXPORT_LABEL": "コードをコピーしてください",
   "DIALOG_IMPORT_OK": "インポート",
   "DIALOG_IMPORT_CANCEL": "キャンセル",
-  "DIALOG_EXPORT_OK": "閉じる"
+  "DIALOG_EXPORT_OK": "閉じる",
+  "CATEGORY_MPR121": "静電容量センサー",
+  "MPR121_POSITION": "場所",
+  "MPR121_BEGIN_TITLE": "初期化",
+  "MPR121_BEGIN_TOOLTIP": "センサーを初期化します",
+  "MPR121_TOUCHED_TITLE": "に触った？",
+  "MPR121_TOUCHED_TOOLTIP": "センサーに触ったら、Trueを返す",
+  "MPR121_RELEASED_TITLE": "から手を離した？",
+  "MPR121_RELEASED_TOOLTIP": "センサーから手が離れたら、Trueを返す",
+  "MPR121_VALUE_TITLE": "静電容量の値",
+  "MPR121_VALUE_TOOLTIP": "静電容量の値",
+  "MPR121_RESET_TITLE": "リセット",
+  "MPR121_RESET_TOOLTIP": "センサーの値をリセットします",
+  "MPR121_BEGIN_WARNING": "Adafruit_MPR121 ライブラリをインストールしてください。",
+  "MPR121_WARNING": "初期化ブロックが必要です。"  
 }

@@ -30,7 +30,7 @@ goog.provide('Blockly.Blocks.i2c_matrix');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.i2c_matrix.HUE = 225;
+Blockly.Blocks.i2c_matrix.HUE = 215;
 
 Blockly.Blocks.mini_matrix_image = filepath.media+'/mini_matrix.jpg';
 

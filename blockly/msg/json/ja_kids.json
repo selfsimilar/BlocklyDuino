@@ -953,5 +953,19 @@
   "TEXTAREA_EXPORT_LABEL": "コードをコピーしてください",
   "DIALOG_IMPORT_OK": "インポート",
   "DIALOG_IMPORT_CANCEL": "キャンセル",
-  "DIALOG_EXPORT_OK": "とじる"
+  "DIALOG_EXPORT_OK": "とじる",
+  "CATEGORY_MPR121": "タッチセンサー",
+  "MPR121_POSITION": "ばしょ",
+  "MPR121_BEGIN_TITLE": "しょきか",
+  "MPR121_BEGIN_TOOLTIP": "センサーをしょきかします",
+  "MPR121_TOUCHED_TITLE": "にさわった？",
+  "MPR121_TOUCHED_TOOLTIP": "センサーにさわったら、トゥルーをかえす",
+  "MPR121_RELEASED_TITLE": "からてをはなした？",
+  "MPR121_RELEASED_TOOLTIP": "センサーからてがはなれたら、トゥルーをかえす",
+  "MPR121_VALUE_TITLE": "せいでんようりょうのあたい",
+  "MPR121_VALUE_TOOLTIP": "せいでんりょうようのあたい",
+  "MPR121_RESET_TITLE": "リセット",
+  "MPR121_RESET_TOOLTIP": "センサーをリセットします",
+  "MPR121_BEGIN_WARNING": "Adafruit_MPR121 ライブラリをインストールしてください。",
+  "MPR121_WARNING": "しょきかブロックがひつようです。"   
 }

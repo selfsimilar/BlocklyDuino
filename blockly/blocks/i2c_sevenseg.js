@@ -30,7 +30,7 @@ goog.provide('Blockly.Blocks.i2c_sevenseg');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.i2c_sevenseg.HUE = 240;
+Blockly.Blocks.i2c_sevenseg.HUE = 215;
 
 Blockly.Blocks.i2c_sevenseg.image = filepath.media+'/sevenseg.jpg';
 
