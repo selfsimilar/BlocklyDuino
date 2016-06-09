@@ -1,6 +1,12 @@
-var filepath = { media: '../../media/', msg_ja:"../../msg/js/ja.js", msg_en: "../../msg/js/en.js", msg_ja_kids: "../../msg/js/ja_kids.js"};
+var filepath = {
+  media: '../../media/',
+  msg_ja: "../../msg/js/ja.js",
+  msg_en: "../../msg/js/en.js",
+  msg_ja_kids: "../../msg/js/ja_kids.js",
+  msg_zh_hant: "../../msg/js/zh-hant.js"
+};
 
-(function(){
+(function() {
   var html = "";
   html += '<meta charset="utf-8">';
   html += '<link rel="stylesheet" type="text/css" href="css/style.css">';
