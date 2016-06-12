@@ -689,7 +689,7 @@
   "RGBLED_SHOW_HELPURL":"https://github.com/adafruit/Adafruit_NeoPixel",
   "RGBLED_SHOW":"表示",
   "RGBLED_SHOW_TOOLTIP":"色の設定をLEDに送ります。",
-  "CATEGORY_NEOPIXEL": "NEOPIXEL",
+  "CATEGORY_NEOPIXEL": "NeoPixel",
   "NEOPIXEL_BEGIN_HELPURL": "https://github.com/adafruit/Adafruit_NeoPixel",
   "NEOPIXEL_BEGIN_WARNING": "Adafruit_NeoPixel ライブラリをインストールしてください。",
   "NEOPIXEL_WARNING": "初期化ブロックが必要です。",
