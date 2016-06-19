@@ -713,7 +713,7 @@
   "DHT_READ_C": "Temperature C",
   "DHT_READ_F": "Temperature F",
   "DHT_READ_TOOLTIP": "The DHT sensors are made of two parts, a capacitive humidity sensor and a thermistor.",
-  "CATEGORY_RGBLED": "RGB Led(ws8211)",
+  "CATEGORY_RGBLED": "RGBLed(ws8211)",
   "RGBLED_BEGIN_HELPURL": "https://github.com/adafruit/Adafruit_NeoPixel",
   "RGBLED_BEGIN_WARNING": "Need to install the Adafruit_NeoPixel Library.",
   "RGBLED_WARNING": "Need to Begin Block.",
