@@ -33,8 +33,8 @@ Blockly.Arduino.neopixel_begin = function() {
   var pin = this.getFieldValue('PIN');
   var brightness = this.getFieldValue('BRIGHTNESS');
 
-  Blockly.Arduino.definitions_['define_neopixel'] = '#include <Adafruit_NeoPixel.h>\n'
-    + 'Adafruit_NeoPixel pixels = Adafruit_NeoPixel(' + num + ',' + pin + ',NEO_GRB + NEO_KHZ800);\n';
+  Blockly.Arduino.definitions_['define_include_neopixel'] = '#include <Adafruit_NeoPixel.h>\n';
+  Blockly.Arduino.definitions_['define_neopixel'] = 'Adafruit_NeoPixel pixels = Adafruit_NeoPixel(' + num + ',' + pin + ',NEO_GRB + NEO_KHZ800);\n';
   Blockly.Arduino.setups_['setup_neopixel_begin'] = 'pixels.begin();\n'
   Blockly.Arduino.setups_['setup_neopixel_brightness'] = 'pixels.setBrightness('+ brightness + ');\n'
 
