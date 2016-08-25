@@ -672,7 +672,7 @@ Blockly.Msg.MATH_MAP_APPENDTEXT_VALUE = "かえたいかず";
 Blockly.Msg.MATH_MAP_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2719";
 Blockly.Msg.MATH_MAP_TOOLTIP = "かずをあるはんいからべつのはんいにかえれます";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
-Blockly.Msg.MATH_MODULO_SYMBOL = "×";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";
 Blockly.Msg.MATH_MODULO_TITLE = "%1 ÷ %2 ののこり";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "2 つのすうじをわったときののこりをかえします。";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";
