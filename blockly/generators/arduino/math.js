@@ -76,14 +76,6 @@ Blockly.Arduino['math_random_max_min'] = function(block) {
   return [code, Blockly.Arduino.ORDER_NONE];
 };
 
-Blockly.Arduino['math_map'] = function() {
-  var value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_NONE);
-  var tolow = this.getFieldValue('TOLOW') || '0';
-  var tohigh = this.getFieldValue('TOHIGH') || '255';
-  var code = 'map('+value+',0,1024,'+tolow+','+tohigh+')';
-  return [code, Blockly.Arduino.ORDER_NONE];
-};
-
 Blockly.Arduino['math_custom_map'] = function() {
   var value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_NONE);
   var fromlow = this.getFieldValue('FROMLOW') || '0';
