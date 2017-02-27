@@ -671,6 +671,7 @@ Blockly.Msg.MATH_MAP_APPENDTEXT_TOLOW = "toLow";
 Blockly.Msg.MATH_MAP_APPENDTEXT_VALUE = "value";
 Blockly.Msg.MATH_MAP_HELPURL = "http://arduino.cc/en/Reference/map";
 Blockly.Msg.MATH_MAP_TOOLTIP = "Re-maps a number from one range to another. ";
+Blockly.Msg.MATH_MAP_FLOAT_APPENDTEXT_MAP = "MAP float:";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
 Blockly.Msg.MATH_MODULO_SYMBOL = "%";
 Blockly.Msg.MATH_MODULO_TITLE = "remainder of %1 ÷ %2";
