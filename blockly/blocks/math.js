@@ -62,7 +62,7 @@ Blockly.Blocks['math_arithmetic'] = {
          [Blockly.Msg.MATH_POWER_SYMBOL, 'POWER']];
     this.setHelpUrl(Blockly.Msg.MATH_ARITHMETIC_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
-    this.setOutput(true, 'Number');
+    this.setOutput(true);
     this.appendValueInput('A')
         .setCheck('Number');
     this.appendValueInput('B')
@@ -502,7 +502,7 @@ Blockly.Blocks['math_map_float'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_TOHIGH)
       .appendField(new Blockly.FieldTextInput("255"),"TOHIGH");
-    this.setOutput(true, "Number");
+    this.setOutput(true);
     this.setTooltip(Blockly.Msg.MATH_MAP_TOOLTIP);
   }
 };
