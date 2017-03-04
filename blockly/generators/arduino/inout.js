@@ -54,9 +54,22 @@ Blockly.Arduino.inout_custom_digital_write = function() {
 
 Blockly.Arduino.inout_digital_read = function() {
   var dropdown_pin = this.getFieldValue('PIN');
+  if (Blockly.Arduino.setups_['setup_input_' + dropdown_pin]) {
+    // If there's already a setup for this pin, we probably enabled the pullup.
+    // Skip overwriting it.
+  } else {
+    Blockly.Arduino.setups_['setup_input_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', INPUT);';
+  }
 
-  Blockly.Arduino.setups_['setup_input_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', INPUT);';
   var code = 'digitalRead(' + dropdown_pin + ')';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.inout_enable_pullup = function() {
+  var dropdown_pin = this.getFieldValue('PIN');
+
+  Blockly.Arduino.setups_['setup_input_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', INPUT_PULLUP);';
+  var code = ""
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 

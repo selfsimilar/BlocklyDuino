@@ -90,6 +90,18 @@ Blockly.Blocks['inout_digital_read'] = {
   }
 };
 
+Blockly.Blocks['inout_enable_pullup'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.INOUT_ENABLE_INTERNAL_PULLUP_HELPURL);
+    this.setColour(Blockly.Blocks.inout.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.INOUT_ENABLE_INTERNAL_PULLUP_PIN)
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
+      // allows pullups on analog pins (apparently exist, although rarely used)
+    this.setInputsInline(true);
+    this.setTooltip(Blockly.Msg.INOUT_ENABLE_INTERNAL_PULLUP_TOOLTIP);
+  }
+};
 
 Blockly.Blocks['inout_analog_write'] = {
   init: function() {
