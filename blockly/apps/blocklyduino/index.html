@@ -78,7 +78,10 @@
                                     <input type="checkbox" class="filled-in" id="chbox_category_cloud_service" value="category_cloud_service">
                                     <label for="chbox_category_cloud_service">category_cloud_service</label>
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_sparkfun" value="category_sparkfun">
+                                    <label for="chbox_category_sparkfun">SparkFun</label>
+                                </td>
                             </tr>
                             <tr>
                                 <td>
@@ -728,6 +731,12 @@
             </value>
         </block>
         <block type="mpr121_reset"></block>
+    </category>
+</category>
+<category id="category_sparkfun">
+    <category id="category_ir_remote">
+        <block type="ir_remote_get"></block>
+        <block type="ir_remote_button"></block>
     </category>
 </category>
 <category id="category_robot">

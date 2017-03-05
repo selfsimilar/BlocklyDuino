@@ -538,6 +538,12 @@
         <block type="mpr121_reset"></block>
     </category>
 </category>
+<category id="category_sparkfun">
+    <category id="category_ir_remote">
+        <block type="ir_remote_get"></block>
+        <block type="ir_remote_button"></block>
+    </category>
+</category>
 <category id="category_robot">
     <category id="category_shield_bot">
         <block type="shield_bot_setmaxspeed"></block>
@@ -720,6 +726,7 @@
 <sep></sep>
 <category id="category_variables" custom="VARIABLE"></category>
 <category id="category_functions" custom="PROCEDURE"></category>
+
 <sep></sep>
 <!--category id="category_involt">
 <block type="involt_directmode"></block>
