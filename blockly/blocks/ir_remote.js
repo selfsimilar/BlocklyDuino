@@ -8,7 +8,7 @@ goog.provide('Blockly.Arduino.ir_remote');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.ir_remote.HUE = 215;
+Blockly.Arduino.ir_remote.HUE = 215;
 
 Blockly.Blocks['ir_remote_get'] = {
   init: function() {
@@ -16,7 +16,7 @@ Blockly.Blocks['ir_remote_get'] = {
         .setCheck("Number")
         .appendField("get button press on pin");
     this.setOutput(true, "String");
-    this.setColour(Blockly.Blocks.ir_remote.HUE);
+    this.setColour(Blockly.Arduino.ir_remote.HUE);
     this.setTooltip('');
     this.setHelpUrl('');
   }
@@ -33,12 +33,12 @@ Blockly.Blocks['ir_remote_button'] = {
        [Blockly.Msg.IR_REMOTE_BUTTON_DOWN, 'DOWN'],
        [Blockly.Msg.IR_REMOTE_BUTTON_LEFT, 'LEFT'],
        [Blockly.Msg.IR_REMOTE_BUTTON_RIGHT, 'RIGHT'],
-       [Blockly.Msg.IR_REMOTE_BUTTON_ENTER, 'ENTER']]
+       [Blockly.Msg.IR_REMOTE_BUTTON_SELECT, 'SELECT']]
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown(BUTTONS), 'BUTTON')
         .appendField(' ' + Blockly.Msg.IR_REMOTE_BUTTON_BUTTON);
     this.setOutput(true, "remote_button"); // TODO: investigate proper location
-    this.setColour(Blockly.Blocks.ir_remote.HUE);
+    this.setColour(Blockly.Arduino.ir_remote.HUE);
     this.setHelpUrl(Blockly.Msg.IR_REMOTE_BUTTON_HELPURL);
     var thisBlock = this;
     this.setTooltip(function() {
@@ -52,7 +52,7 @@ Blockly.Blocks['ir_remote_button'] = {
         'DOWN': Blockly.Msg.IR_REMOTE_TOOLTIP_BUTTON_DOWN,
         'LEFT': Blockly.Msg.IR_REMOTE_TOOLTIP_BUTTON_LEFT,
         'RIGHT': Blockly.Msg.IR_REMOTE_TOOLTIP_BUTTON_RIGHT,
-        'ENTER': Blockly.Msg.IR_REMOTE_TOOLTIP_BUTTON_ENTER
+        'SELECT': Blockly.Msg.IR_REMOTE_TOOLTIP_BUTTON_SELECT
       };
       return TOOLTIPS[currButton];
     });
