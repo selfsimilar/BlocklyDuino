@@ -57,7 +57,7 @@ Blockly.Arduino.ORDER_MULTIPLICATIVE = 3; // * / % ~/
 Blockly.Arduino.ORDER_ADDITIVE = 4;       // + -
 Blockly.Arduino.ORDER_SHIFT = 5;          // << >>
 Blockly.Arduino.ORDER_RELATIONAL = 6;     // is is! >= > <= <
-Blockly.Arduino.ORDER_EQUALITY = 7;       // == != === !==
+Blockly.Arduino.ORDER_EQUALITY = 7;       // == !=
 Blockly.Arduino.ORDER_BITWISE_AND = 8;    // &
 Blockly.Arduino.ORDER_BITWISE_XOR = 9;    // ^
 Blockly.Arduino.ORDER_BITWISE_OR = 10;    // |
