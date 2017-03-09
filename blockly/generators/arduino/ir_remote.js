@@ -24,11 +24,18 @@ Blockly.Arduino['ir_remote_get'] = function(block) {
       'decode_results results'+value_pin+';\n';
       // example: IRrecv irrecv1(1);
       //          decode_results results1;
+  Blockly.Arduino.definitions_['ir_remote_shell'] = 
+    'unsigned long getDecodedValue(IRrecv receiver, decode_results results) {\n'+
+    '  if (receiver.decode(&results)) {\n'+
+    '      return results.value;\n'+
+    '    }\n'+
+    '  return 0;\n'+
+    '}\n'
   Blockly.Arduino.setups_['setup_ir_reader_'+value_pin] = 
       'irrecv'+value_pin+'.enableIRIn(); // Start the receiver\n';
       // example: irrecv1.enableIRIn();
 
-  var code = 'irrecv'+value_pin+'.decode(&results'+value_pin+')';
+  var code = 'getDecodedValue(irrecv'+value_pin+',results'+value_pin+')';
   return [code, Blockly.Arduino.ORDER_MEMBER];
 };
 
