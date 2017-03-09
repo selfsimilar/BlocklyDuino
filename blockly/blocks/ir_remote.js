@@ -12,9 +12,9 @@ Blockly.Arduino.ir_remote.HUE = 215;
 
 Blockly.Blocks['ir_remote_get'] = {
   init: function() {
-    this.appendValueInput("PIN")
-        .setCheck("Number")
-        .appendField("get button press on pin");
+    this.appendDummyInput()
+        .appendField("get button press on pin")
+        .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
     this.setOutput(true, "String");
     this.setColour(Blockly.Arduino.ir_remote.HUE);
     this.setTooltip('');
