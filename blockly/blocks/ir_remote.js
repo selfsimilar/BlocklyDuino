@@ -13,9 +13,9 @@ Blockly.Arduino.ir_remote.HUE = 215;
 Blockly.Blocks['ir_remote_get'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("get button press on pin")
+        .appendField("get new button press on pin")
         .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
-    this.setOutput(true, profile.arduino.ir_remote_button);
+    this.setOutput(true, "Unsigned_Long");
     this.setColour(Blockly.Arduino.ir_remote.HUE);
     this.setTooltip('');
     this.setHelpUrl('');
@@ -37,7 +37,7 @@ Blockly.Blocks['ir_remote_button'] = {
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown(BUTTONS), 'BUTTON')
         .appendField(' ' + Blockly.Msg.IR_REMOTE_BUTTON_BUTTON);
-    this.setOutput(true, profile.arduino.ir_remote_button);
+    this.setOutput(true, "Unsigned_Long");
     this.setColour(Blockly.Arduino.ir_remote.HUE);
     this.setHelpUrl(Blockly.Msg.IR_REMOTE_BUTTON_HELPURL);
     var thisBlock = this;
