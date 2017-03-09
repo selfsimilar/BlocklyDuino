@@ -95,7 +95,8 @@ var profile = {
     blynk_merge_index: [["0","0"],["1","1"],["2","2"]],
     // grove_digital: [["2","2"],["3","3"],["4","4"],["5","5"],["6","6"],["7","7"],["8","8"]],
     shield_bot_sensor: [["1","1"],["2","2"],["3","3"],["4","4"],["5","5"]],
-    interrupt:[["2","0"],["3","1"]]
+    interrupt:[["2","0"],["3","1"]],
+    ir_remote_button:[['Power', 'POWER'],['A', 'A'],['B', 'B'],['C', 'C'],['Up', 'UP'],['Down', 'DOWN'],['Left', 'LEFT'],['Right', 'RIGHT'],['Select', 'SELECT']]
   },
   arduino_mega: {
     description: "Arduino Mega-compatible board"

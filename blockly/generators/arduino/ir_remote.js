@@ -29,10 +29,10 @@ Blockly.Arduino['ir_remote_get'] = function(block) {
       // example: irrecv1.enableIRIn();
 
   var code = 'irrecv'+value_pin+'.decode(&results'+value_pin+')';
-  return [code, Blockly.Arduino.ORDER_NONE];
+  return [code, Blockly.Arduino.ORDER_MEMBER];
 };
 
 Blockly.Arduino['ir_remote_button'] = function(block) {
-  // TODO: implement
-  return "";
+  var button_choice = block.getFieldValue('BUTTON');
+  return [button_choice, Blockly.Arduino.ORDER_ATOMIC];
 };

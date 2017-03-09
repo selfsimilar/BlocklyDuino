@@ -15,7 +15,7 @@ Blockly.Blocks['ir_remote_get'] = {
     this.appendDummyInput()
         .appendField("get button press on pin")
         .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
-    this.setOutput(true, "String");
+    this.setOutput(true, profile.arduino.ir_remote_button);
     this.setColour(Blockly.Arduino.ir_remote.HUE);
     this.setTooltip('');
     this.setHelpUrl('');
@@ -37,7 +37,7 @@ Blockly.Blocks['ir_remote_button'] = {
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown(BUTTONS), 'BUTTON')
         .appendField(' ' + Blockly.Msg.IR_REMOTE_BUTTON_BUTTON);
-    this.setOutput(true, "remote_button"); // TODO: investigate proper location
+    this.setOutput(true, profile.arduino.ir_remote_button);
     this.setColour(Blockly.Arduino.ir_remote.HUE);
     this.setHelpUrl(Blockly.Msg.IR_REMOTE_BUTTON_HELPURL);
     var thisBlock = this;
