@@ -27,6 +27,7 @@ Blockly.Arduino['ir_remote_get'] = function(block) {
   Blockly.Arduino.definitions_['ir_remote_shell'] = 
     'unsigned long getDecodedValue(IRrecv receiver, decode_results results) {\n'+
     '  if (receiver.decode(&results)) {\n'+
+    '      receiver.resume();\n'+
     '      return results.value;\n'+
     '    }\n'+
     '  return 0;\n'+
