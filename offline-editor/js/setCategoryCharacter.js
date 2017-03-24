@@ -10,6 +10,7 @@ function setCategoryCharacter() {
   $('#category_ethernet_client').attr('name',Blockly.Msg.CATEGORY_ETHERNET_CLIENT);
   $('#category_cloud_service').attr('name',Blockly.Msg.CATEGORY_CLOUD_SERVICE);
   $('#category_ifttt').attr('name',Blockly.Msg.CATEGORY_IFTTT);
+  $('#category_ir_remote').attr('name',Blockly.Msg.CATEGORY_IR_REMOTE);
   $('#category_m2x').attr('name',Blockly.Msg.CATEGORY_M2X);
   $('#category_blynk').attr('name',Blockly.Msg.CATEGORY_BYLNK);
   $('#category_grove').attr('name',Blockly.Msg.CATEGORY_GROVE);
@@ -26,6 +27,7 @@ function setCategoryCharacter() {
   $('#category_grove_output').attr('name',Blockly.Msg.CATEGORY_GROVE_OUTPUT);
   $('#category_grove_sensor').attr('name',Blockly.Msg.CATEGORY_GROVE_SENSOR);
   $('#category_adafruit').attr('name',Blockly.Msg.CATEGORY_ADAFRUIT);
+  $('#category_sparkfun').attr('name',Blockly.Msg.CATEGORY_SPARKFUN);
   $('#category_rgbled').attr('name',Blockly.Msg.CATEGORY_RGBLED);
   $('#category_neopixel').attr('name',Blockly.Msg.CATEGORY_NEOPIXEL);
   $('#category_i2c_matrix').attr('name',Blockly.Msg.CATEGORY_I2C_MATRIX);
@@ -44,10 +46,12 @@ function setCategoryCharacter() {
   $('label[for="chbox_category_ethernet"]').text(Blockly.Msg.CATEGORY_ETHERNET);
   $('label[for="chbox_category_cloud_service"]').text(Blockly.Msg.CATEGORY_CLOUD_SERVICE);
   $('label[for="chbox_category_ifttt"]').text(Blockly.Msg.CATEGORY_IFTTT);
+  $('label[for="chbox_category_ir_remote"]').text(Blockly.Msg.CATEGORY_IR_REMOTE);
   $('label[for="chbox_category_m2x"]').text(Blockly.Msg.CATEGORY_M2X);
   $('label[for="chbox_category_blynk"]').text(Blockly.Msg.CATEGORY_BYLNK);
   $('label[for="chbox_category_grove"]').text(Blockly.Msg.CATEGORY_GROVE);
   $('label[for="chbox_category_adafruit"]').text(Blockly.Msg.CATEGORY_ADAFRUIT);
+  $('label[for="chbox_category_sparkfun"]').text(Blockly.Msg.CATEGORY_SPARKFUN);
   $('label[for="chbox_category_robot"]').text(Blockly.Msg.CATEGORY_ROBOT);
   $('label[for="chbox_category_shield_bot"]').text(Blockly.Msg.CATEGORY_SHIELD_BOT);
   $('label[for="chbox_category_aerobot"]').text(Blockly.Msg.CATEGORY_AEROBOT);
@@ -60,4 +64,7 @@ function setCategoryCharacter() {
   $('label[for="chbox_category_i2c_matrix"]').text(Blockly.Msg.CATEGORY_I2C_MATRIX);
   $('label[for="chbox_category_i2c_sevenseg"]').text(Blockly.Msg.CATEGORY_I2C_SEVENSEG);
   $('label[for="chbox_category_other_sensor"]').text(Blockly.Msg.CATEGORY_OTHER_SENSOR);
+
+  $('#category_linkit').attr('name',Blockly.Msg.CATEGORY_LINKIT);
+  $('label[for="chbox_category_linkit"]').text(Blockly.Msg.CATEGORY_LINKIT);
 }

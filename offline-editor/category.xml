@@ -19,6 +19,7 @@
             </value>
         </block>
         <block type="inout_digital_read"></block>
+        <block type="inout_enable_pullup"></block>
     </category>
     <category id="category_analog">
         <block type="inout_analog_write">
@@ -537,6 +538,12 @@
         <block type="mpr121_reset"></block>
     </category>
 </category>
+<category id="category_sparkfun">
+    <category id="category_ir_remote">
+        <block type="ir_remote_get"></block>
+        <block type="ir_remote_button"></block>
+    </category>
+</category>
 <category id="category_robot">
     <category id="category_shield_bot">
         <block type="shield_bot_setmaxspeed"></block>
@@ -701,8 +708,8 @@
     <block type="math_constrain"></block>
     <block type="math_pow"></block>
     <block type="math_random_max_min"></block>
-    <block type="math_map"></block>
-    <block type="math_custom_map"></block>
+    <block type="math_map_int"></block>
+    <block type="math_map_float"></block>
 </category>
 <category id="category_text">
     <block type="text"></block>

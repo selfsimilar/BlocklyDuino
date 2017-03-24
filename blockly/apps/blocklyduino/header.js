@@ -23,8 +23,6 @@ var filepath = { media: '../../media/', msg_en: "../../msg/js/en.js", msg_zh:"..
   html += '<script type="text/javascript" src="js/jquery.cookie.js"></script>';
   html += '<script type="text/javascript" src="js/setCategoryCharacter.js"></script>';
   html += '<script type="text/javascript" src="js/init.js"></script>';
-  html += '<script type="text/javascript" src="js/editor.js"></script>';
-  html += '<script type="text/javascript" src="js/popup.js"></script>';
   html += '<script type="text/javascript" src="js/my_materialize.js"></script>';
   html += '<script type="text/javascript" src="js/ZeroClipboard.js"></script>';
   document.write(html);

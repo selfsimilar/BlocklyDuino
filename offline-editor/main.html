@@ -52,10 +52,6 @@
         <div class="nav-wrapper blue-grey darken-4">
             <a href="./" class="brand-logo">BlocklyDuino Editor</a>
             <ul class="right">
-                <li><a class="tooltipped" href="http://code.makewitharduino.com" target="_blank" id="go-to-web" data-tooltip="I am tooltip"><i class="material-icons">home</i></a>
-                </li>
-                <li><a class="tooltipped" href="http://lets.makewitharduino.com" target="_blank" id="go-to-sample" data-tooltip="I am tooltip"><i class="material-icons">receipt</i></a>
-                </li>
                 <!-- Modal3 Trigger -->
                 <li><a class="waves-effect waves-light tooltipped" id="open-setting" data-tooltip="I am tooltip"><i class="material-icons">settings</i></a>
                 </li>
@@ -284,6 +280,7 @@
             </value>
         </block>
         <block type="inout_digital_read"></block>
+        <block type="inout_enable_pullup"></block>
     </category>
     <category id="category_analog">
         <block type="inout_analog_write">
@@ -802,6 +799,12 @@
         <block type="mpr121_reset"></block>
     </category>
 </category>
+<category id="category_sparkfun">
+    <category id="category_ir_remote">
+        <block type="ir_remote_get"></block>
+        <block type="ir_remote_button"></block>
+    </category>
+</category>
 <category id="category_robot">
     <category id="category_shield_bot">
         <block type="shield_bot_setmaxspeed"></block>
@@ -966,8 +969,8 @@
     <block type="math_constrain"></block>
     <block type="math_pow"></block>
     <block type="math_random_max_min"></block>
-    <block type="math_map"></block>
-    <block type="math_custom_map"></block>
+    <block type="math_map_int"></block>
+    <block type="math_map_float"></block>
 </category>
 <category id="category_text">
     <block type="text"></block>
