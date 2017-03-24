@@ -70,10 +70,7 @@
                                     <input type="checkbox" class="filled-in" id="chbox_category_cloud_service" value="category_cloud_service">
                                     <label for="chbox_category_cloud_service">category_cloud_service</label>
                                 </td>
-                                <td>
-                                    <input type="checkbox" class="filled-in" id="chbox_category_sparkfun" value="category_sparkfun">
-                                    <label for="chbox_category_sparkfun">SparkFun</label>
-                                </td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>
@@ -94,12 +91,15 @@
                                     <input type="checkbox" class="filled-in" id="chbox_category_other_sensor" value="category_other_sensor">
                                     <label for="chbox_category_other_sensor">other sensor</label>
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_linkit" value="category_linkit">
+                                    <label for="chbox_category_linkit">linkit</label>
+                                </td>
                                 <td></td>
                             </tr>
                         </tbody>
                     </table>
-
+                
             </form>
         </div>
         <div class="modal-footer">
@@ -727,33 +727,7 @@
 </category>
 <category id="category_sparkfun">
     <category id="category_ir_remote">
-
-        <block type="variables_set" inline="false">
-            <field name="TYPE">Unsigned_Long</field>
-            <field name="VAR">button</field>
-            <value name="VALUE">
-                <block type="ir_remote_get"></block>
-            </value>
-        </block> <!-- ir_get shown inside a set var block -->
-        <!--
-        <block type="logic_compare">
-            <field name="OP">EQ</field>
-            <value name="A">
-                <block type="variables_get">
-                    <field name="TYPE">Unsigned_Long</field>
-                    <field name="VAR">button</field>
-                </block>
-            </value>
-            <value name="B">
-                <block type="ir_remote_button">
-                    <field name="BUTTON">POWER</field>
-                </block>
-            </value>
-        </block> <!- - ir_button compared w/ variable in an equals block - ->
-        -->
-        <!--
         <block type="ir_remote_get"></block>
-        -->
         <block type="ir_remote_button"></block>
     </category>
 </category>
@@ -945,7 +919,24 @@
 <block type="involt_chromereceive"></block>
 <block type="involt_sendvalue"></block>
 <block type="involt_receivevalue"></block>
-</category--></xml>
+</category-->
+<sep></sep>
+<category id="category_linkit">
+  <block type="linkit_wifi_status"></block>
+  <block type="linkit_wifi">
+      <value name="SSID">
+          <block type="text">
+              <field name="TEXT"></field>
+          </block>
+      </value>
+      <value name="PASSWORD">
+          <block type="text">
+              <field name="TEXT"></field>
+          </block>
+      </value>
+  </block>
+</category>
+</xml>
 
     <div class="info">
     </div>
