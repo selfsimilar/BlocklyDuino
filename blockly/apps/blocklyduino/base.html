@@ -19,10 +19,6 @@
         <div class="nav-wrapper blue-grey darken-4">
             <a href="./" class="brand-logo">BlocklyDuino Editor</a>
             <ul class="right show-on-small">
-                <li><a class="tooltipped" href="https://chrome.google.com/webstore/detail/blocklyduino-editor/ohncgafccgdbigbbikgkfbkiebahihmb" target="_blank" id="get-app" data-tooltip="I am tooltip"><i class="material-icons">get_app</i></a>
-                </li>
-                <li><a class="tooltipped" href="http://lets.makewitharduino.com" target="_blank" id="go-to-sample" data-tooltip="I am tooltip"><i class="material-icons">receipt</i></a>
-                </li>
                 <li><a class="waves-effect waves-light modal-trigger tooltipped" id="change-lang" href="#modal1" data-tooltip="I am tooltip"><i class="material-icons">settings</i></a>
                 </li>
             </ul>
@@ -42,12 +38,8 @@
                                 <label for="select-lang-en" id="label-en">English</label>
                             </td>
                             <td>
-                                <input class="with-gap" name="group1" type="radio" id="select-lang-ja" value="ja" />
-                                <label for="select-lang-ja" id="label-ja">日本語</label>
-                            </td>
-                            <td>
-                                <input class="with-gap" name="group1" type="radio" id="select-lang-ja_kids" value="ja_kids" />
-                                <label for="select-lang-ja_kids" id="label-ja-kids">にほんご</label>
+                                <input class="with-gap" name="group1" type="radio" id="select-lang-zh" value="zh">
+                                <label for="select-lang-zh" id="label-zh">正體中文</label>
                             </td>
                         </tr>
                     </tbody>
@@ -126,7 +118,7 @@
             <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">CANCEL</a>
         </div>
     </div>
-    
+
     <!-- modal_import Structure -->
     <div id="modal_import" class="modal">
         <div class="modal-content">
@@ -153,7 +145,7 @@
             <a id="dialog_export_ok" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
         </div>
     </div>
-    
+
     <!-- Dropdown Structure -->
     <ul id="dropdown1" class="dropdown-content">
         <li><a class="modal-trigger" href="#modal_import" id="button_import">Import</a>
@@ -162,7 +154,7 @@
         <li><a class="modal-trigger" href="#!" id="button_export" onclick="export_xml()">Export</a>
         </li>
     </ul>
-    
+
     <table id="main">
         <tr>
             <td>
