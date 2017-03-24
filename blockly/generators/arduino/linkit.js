@@ -44,6 +44,6 @@ Blockly.Arduino.linkit_wifi = function() {
 };
 
 Blockly.Arduino.linkit_wifi_status = function() {
-  var code = this.getFieldValue('VALUE');
+  var code = this.getFieldValue('String');
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };

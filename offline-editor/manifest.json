@@ -1,0 +1,31 @@
+{
+   "app": {
+      "background": {
+         "scripts": [ "background.js" ]
+      }
+   },
+   "author": "@okhiroyuki",
+   "default_locale": "ja",
+   "description": "__MSG_appDesc__",
+   "externally_connectable": {
+      "matches": [ "*://okhiroyuki.github.io/*", "*://*.makewitharduino.com/*" ]
+   },
+   "file_handlers": {
+      "text": {
+         "types": [ "text/*" ]
+      }
+   },
+   "icons": {
+      "128": "media/icon_128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu6WQ1cPzGHh0SR7BZUTFnI4Ttj7H9CMb9IJHsFj5BpaDziUV4b8/544AhC0zbOVV0OOkw87qHKymvmkIqaIx1U1AaQIGCIQCf3IYFO2cVTF8p/V6RsMNrXwf9+/+5OLwK81B5yVyZCYdjMw0XuRVznGni8qBPfu3J3dhUyFsWx4LAGDOrqCqs0fLMvjqjmTNfNhz1yFd/T6371EbCDNK8/bdrBoWs8/0GR4Cl4ocAH8h708tpo/ZQY9foOGND/wTLNaTKWKFtIllZW6jpzyE95jo0JFqgOzRiWhWmY/sDezyNhuMLz6KWs9R2II3Qcy1lbeEu0BrLli3xLy/G5R+twIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "33",
+   "name": "__MSG_appName__",
+   "offline_enabled": true,
+   "permissions": [ {
+      "fileSystem": [ "write", "retainEntries", "directory" ]
+   }, "storage", "https://raw.githubusercontent.com/makewitharduino/*", "alarms" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.7.0"
+}

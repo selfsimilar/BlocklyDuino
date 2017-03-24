@@ -49,6 +49,14 @@
                         <tbody>
                             <tr>
                                 <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_linkit" value="category_linkit">
+                                    <label for="chbox_category_linkit">linkit</label>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
                                     <input type="checkbox" class="filled-in" id="chbox_category_adafruit" value="category_adafruit">
                                     <label for="chbox_category_adafruit">adafruit</label>
                                 </td>
@@ -91,15 +99,12 @@
                                     <input type="checkbox" class="filled-in" id="chbox_category_other_sensor" value="category_other_sensor">
                                     <label for="chbox_category_other_sensor">other sensor</label>
                                 </td>
-                                <td>
-                                    <input type="checkbox" class="filled-in" id="chbox_category_linkit" value="category_linkit">
-                                    <label for="chbox_category_linkit">linkit</label>
-                                </td>
+                                <td></td>
                                 <td></td>
                             </tr>
                         </tbody>
                     </table>
-                
+
             </form>
         </div>
         <div class="modal-footer">
@@ -171,6 +176,9 @@
                             <a href="#" class="hide-link tooltipped" id="discard" onclick="discard()" data-tooltip="I am tooltip"><i class="small material-icons">delete</i></a>
                             <a href="#" class="hide-link tooltipped" data-tooltip="I am tooltip" id="save" onclick="save()"><i class="small material-icons">cloud_download</i></a>
                             <a href="#" class="hide-link tooltipped" id="fakeload" data-tooltip="I am tooltip"><i class="small material-icons">cloud_upload</i></a>
+                            <a href="#" class="hide-link tooltipped" id="button_new" data-tooltip="I am tooltip"><i class="small material-icons">create</i></a>
+                            <a href="#" class="hide-link tooltipped" id="button_open" data-tooltip="I am tooltip"><i class="small material-icons">folder_open</i></a>
+                            <a href="#" class="hide-link tooltipped" data-tooltip="I am tooltip" id="button_save" onclick="handleSaveButton()"><i class="small material-icons">save</i></a>
                             <a class="hide-link dropdown-button" href="#" data-activates="dropdown1"><i class="small material-icons">arrow_drop_down</i></a>
                             <input type="file" id="load" style="display: none;">
                         </td>
