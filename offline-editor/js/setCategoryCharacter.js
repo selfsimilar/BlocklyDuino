@@ -66,5 +66,6 @@ function setCategoryCharacter() {
   $('label[for="chbox_category_other_sensor"]').text(Blockly.Msg.CATEGORY_OTHER_SENSOR);
 
   $('#category_linkit').attr('name',Blockly.Msg.CATEGORY_LINKIT);
+  $('#category_linkit_wifi').attr('name',Blockly.Msg.CATEGORY_LINKIT_WIFI);
   $('label[for="chbox_category_linkit"]').text(Blockly.Msg.CATEGORY_LINKIT);
 }

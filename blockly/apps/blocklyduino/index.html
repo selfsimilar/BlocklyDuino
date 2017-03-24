@@ -104,7 +104,7 @@
                             </tr>
                         </tbody>
                     </table>
-
+                
             </form>
         </div>
         <div class="modal-footer">
@@ -176,9 +176,6 @@
                             <a href="#" class="hide-link tooltipped" id="discard" onclick="discard()" data-tooltip="I am tooltip"><i class="small material-icons">delete</i></a>
                             <a href="#" class="hide-link tooltipped" data-tooltip="I am tooltip" id="save" onclick="save()"><i class="small material-icons">cloud_download</i></a>
                             <a href="#" class="hide-link tooltipped" id="fakeload" data-tooltip="I am tooltip"><i class="small material-icons">cloud_upload</i></a>
-                            <a href="#" class="hide-link tooltipped" id="button_new" data-tooltip="I am tooltip"><i class="small material-icons">create</i></a>
-                            <a href="#" class="hide-link tooltipped" id="button_open" data-tooltip="I am tooltip"><i class="small material-icons">folder_open</i></a>
-                            <a href="#" class="hide-link tooltipped" data-tooltip="I am tooltip" id="button_save" onclick="handleSaveButton()"><i class="small material-icons">save</i></a>
                             <a class="hide-link dropdown-button" href="#" data-activates="dropdown1"><i class="small material-icons">arrow_drop_down</i></a>
                             <input type="file" id="load" style="display: none;">
                         </td>
@@ -930,19 +927,21 @@
 </category-->
 <sep></sep>
 <category id="category_linkit">
-  <block type="linkit_wifi_status"></block>
-  <block type="linkit_wifi">
-      <value name="SSID">
-          <block type="text">
-              <field name="TEXT"></field>
-          </block>
-      </value>
-      <value name="PASSWORD">
-          <block type="text">
-              <field name="TEXT"></field>
-          </block>
-      </value>
-  </block>
+  <category id="category_linkit_wifi">
+    <block type="linkit_wifi_status"></block>
+    <block type="linkit_wifi">
+        <value name="SSID">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <value name="PASSWORD">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+  </category>
 </category>
 </xml>
 
