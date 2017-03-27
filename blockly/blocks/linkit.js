@@ -34,6 +34,35 @@ Blockly.Blocks.linkit.HUE = 35;
 
 Blockly.Blocks.linkit.image = filepath.media+'/linkit_7697.png';
 
+Blockly.Blocks['linkit_ble_ibeacon'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_IBEACON_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_SET_IBEACON_TITLE)
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
+    this.appendValueInput("UUID")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_IBEACON_UUID);
+    this.appendValueInput("MAJOR")
+      .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_IBEACON_MAJOR);
+    this.appendValueInput("MINOR")
+      .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_IBEACON_MINOR);
+    this.appendValueInput("RSSI")
+      .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_IBEACON_RSSI);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LINKIT_SET_IBEACON_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['linkit_ble_wait_until_ready'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_HELPURL);

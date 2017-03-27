@@ -28,6 +28,28 @@ goog.provide('Blockly.Arduino.linkit');
 
 goog.require('Blockly.Arduino');
 
+Blockly.Arduino.linkit_ble_ibeacon = function() {
+
+  var uuid = Blockly.Arduino.valueToCode(this, 'UUID', Blockly.Arduino.ORDER_ATOMIC) || ''
+  var majorId = Blockly.Arduino.valueToCode(this, 'MAJOR', Blockly.Arduino.ORDER_ATOMIC) || ''
+  var minorId = Blockly.Arduino.valueToCode(this, 'MINOR', Blockly.Arduino.ORDER_ATOMIC) || ''
+  var rssi = Blockly.Arduino.valueToCode(this, 'RSSI', Blockly.Arduino.ORDER_ATOMIC) || ''
+  uuid = uuid.replace(/\"/g, "");
+  majorId = majorId.replace(/\"/g, "");
+  minorId = minorId.replace(/\"/g, "");
+  rssi = rssi.replace(/\"/g, "");
+
+  Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
+  Blockly.Arduino.definitions_['define_linkit_ble_periphral_include'] = '#include <LBLEPeriphral.h>';
+
+  Blockly.Arduino.setups_['define_linkit_ble_ibeacon_init'] = 'LBLEAdvertisementData __beaconData;';
+  Blockly.Arduino.setups_['define_linkit_ble_ibeacon_config'] = '__beaconData.configAsIBeacon("' + uuid + '", ' + majorId + ', ' + minorId + ', ' + rssi + ');';
+  Blockly.Arduino.setups_['define_linkit_ble_ibeacon_advertise'] = 'LBLEPeripheral.advertise(__beaconData);';
+
+  var code = "\n";
+  return code;
+};
+
 Blockly.Arduino.linkit_ble_wait_until_ready = function() {
 
   Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';

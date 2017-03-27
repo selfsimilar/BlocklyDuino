@@ -1088,7 +1088,14 @@ Blockly.Msg.LINKIT_SET_WIFI_UNTIL_READY_TITLE = "等待 WiFi 就緒";
 Blockly.Msg.CATEGORY_LINKIT_MCS = "MCS";
 // BLE
 Blockly.Msg.CATEGORY_LINKIT_BLE = "藍牙";
-Blockly.Msg.LINKIT_SET_BLE_HELPURL = "";
+Blockly.Msg.LINKIT_SET_BLE_HELPURL = "https://docs.labs.mediatek.com/resource/linkit7697-arduino/en/using-bluetooth";
 Blockly.Msg.LINKIT_SET_BLE_TOOLTIP = "";
 Blockly.Msg.LINKIT_SET_BLE_READY_TITLE = "藍牙就緒狀態";
 Blockly.Msg.LINKIT_SET_BLE_UNTIL_READY_TITLE = "等待藍牙就緒";
+Blockly.Msg.LINKIT_SET_IBEACON_HELPURL = "https://docs.labs.mediatek.com/resource/linkit7697-arduino/en/using-bluetooth#UsingBluetooth-UsingLinkIt7697asaniBeacon";
+Blockly.Msg.LINKIT_SET_IBEACON_TITLE = "iBeacon";
+Blockly.Msg.LINKIT_SET_IBEACON_UUID = "UUID";
+Blockly.Msg.LINKIT_SET_IBEACON_MAJOR = "主要 ID";
+Blockly.Msg.LINKIT_SET_IBEACON_MINOR = "次要 ID";
+Blockly.Msg.LINKIT_SET_IBEACON_RSSI = "RSSI 最小值";
+Blockly.Msg.LINKIT_SET_IBEACON_TOOLTIP = "";
