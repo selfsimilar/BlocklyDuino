@@ -736,6 +736,18 @@
 <sep></sep>
 <category id="category_linkit">
   <category id="category_linkit_wifi">
+    <block type="linkit_wifi_wait_until_ready">
+        <value name="SSID">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <value name="PASSWORD">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
     <block type="linkit_wifi">
         <value name="SSID">
             <block type="text">

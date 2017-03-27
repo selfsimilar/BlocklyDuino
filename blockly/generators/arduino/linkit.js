@@ -38,6 +38,21 @@ Blockly.Arduino.linkit_ble_ready = function() {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino.linkit_wifi_wait_until_ready = function() {
+
+  var ssid = Blockly.Arduino.valueToCode(this, 'SSID', Blockly.Arduino.ORDER_ATOMIC) || ''
+  var password = Blockly.Arduino.valueToCode(this, 'PASSWORD', Blockly.Arduino.ORDER_ATOMIC) || ''
+  ssid = ssid.replace(/\"/g, "");
+  password = password.replace(/\"/g, "");
+
+  Blockly.Arduino.definitions_['define_linkit_wifi_include'] = '#include <LWiFi.h>';
+  Blockly.Arduino.definitions_['define_linkit_wifi_ssid'] = 'char _lwifi_ssid[] = "' + ssid + '";';
+  Blockly.Arduino.definitions_['define_linkit_wifi_pass'] = 'char _lwifi_pass[] = "' + password + '";';
+
+  var code = "while (WiFi.begin(_lwifi_ssid, _lwifi_pass) != WL_CONNECTED) { delay(1000); }\n";
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino.linkit_wifi_ready_advanced = function() {
 
   var ssid = Blockly.Arduino.valueToCode(this, 'SSID', Blockly.Arduino.ORDER_ATOMIC) || ''
@@ -87,7 +102,7 @@ Blockly.Arduino.linkit_wifi_ignore_result = function() {
   Blockly.Arduino.setups_['define_linkit_wifi_setup'] = 'WiFi.begin(_lwifi_ssid, _lwifi_pass);';
 
   var code = "\n";
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
+  return code;
 };
 
 Blockly.Arduino.linkit_wifi_status = function() {

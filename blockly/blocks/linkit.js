@@ -45,6 +45,27 @@ Blockly.Blocks['linkit_ble_ready'] = {
   }
 };
 
+Blockly.Blocks['linkit_wifi_wait_until_ready'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_WIFI_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_SET_WIFI_UNTIL_READY_TITLE)
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
+    this.appendValueInput("SSID")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_WIFI_SSID);
+    this.appendValueInput("PASSWORD")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_WIFI_PASSWORD);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LINKIT_SET_WIFI_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['linkit_wifi_ready_advanced'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_WIFI_HELPURL);
