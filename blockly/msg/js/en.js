@@ -1095,7 +1095,7 @@ Blockly.Msg.TEXT_APPEND_VARIABLE = Blockly.Msg.VARIABLES_DEFAULT_NAME;
 Blockly.Msg.CONTROLS_IF_ELSE_TITLE_ELSE = Blockly.Msg.CONTROLS_IF_MSG_ELSE;
 
 // LinkIt
-Blockly.Msg.CATEGORY_LINKIT = "LinktIt";
+Blockly.Msg.CATEGORY_LINKIT = "LinkIt";
 // WiFi
 Blockly.Msg.CATEGORY_LINKIT_WIFI = "WiFi";
 Blockly.Msg.LINKIT_SET_WIFI_HELPURL = "";
@@ -1113,3 +1113,5 @@ Blockly.Msg.LINKIT_SET_WIFI_STATUS_CONNECTION_LOST = "Connection Lost";
 Blockly.Msg.LINKIT_SET_WIFI_STATUS_DISCONNECTED = "Disconnected";
 // MCS
 Blockly.Msg.CATEGORY_LINKIT_MCS = "MCS";
+// BLE
+Blockly.Msg.CATEGORY_LINKIT_BLE = "Bluetooth";
