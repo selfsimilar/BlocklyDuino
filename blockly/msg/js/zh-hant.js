@@ -1091,3 +1091,4 @@ Blockly.Msg.CATEGORY_LINKIT_BLE = "藍牙";
 Blockly.Msg.LINKIT_SET_BLE_HELPURL = "";
 Blockly.Msg.LINKIT_SET_BLE_TOOLTIP = "";
 Blockly.Msg.LINKIT_SET_BLE_READY_TITLE = "藍牙就緒狀態";
+Blockly.Msg.LINKIT_SET_BLE_UNTIL_READY_TITLE = "等待藍牙就緒";

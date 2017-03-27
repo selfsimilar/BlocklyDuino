@@ -1120,3 +1120,4 @@ Blockly.Msg.CATEGORY_LINKIT_BLE = "Bluetooth";
 Blockly.Msg.LINKIT_SET_BLE_HELPURL = "";
 Blockly.Msg.LINKIT_SET_BLE_TOOLTIP = "";
 Blockly.Msg.LINKIT_SET_BLE_READY_TITLE = "Bluetooth ready()";
+Blockly.Msg.LINKIT_SET_BLE_UNTIL_READY_TITLE = "Wait Until Bluetooth is ready()";

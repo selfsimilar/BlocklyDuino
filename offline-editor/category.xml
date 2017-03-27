@@ -788,6 +788,7 @@
     <block type="linkit_wifi_status"></block>
   </category>
   <category id="category_linkit_ble">
+    <block type="linkit_ble_wait_until_ready"></block>
     <block type="linkit_ble_ready"></block>
   </category>
   <category id="category_linkit_mcs">

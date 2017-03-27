@@ -28,6 +28,17 @@ goog.provide('Blockly.Arduino.linkit');
 
 goog.require('Blockly.Arduino');
 
+Blockly.Arduino.linkit_ble_wait_until_ready = function() {
+
+  Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
+
+  Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(1000); }\n';
+
+  var code = "\n";
+  return code;
+};
+
 Blockly.Arduino.linkit_ble_ready = function() {
 
   Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
