@@ -37,7 +37,7 @@ Blockly.Blocks.linkit.image = filepath.media+'/linkit_7697.png';
 Blockly.Blocks['linkit_ble_ibeacon'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_IBEACON_HELPURL);
-    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.setColour(230);
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_IBEACON_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
@@ -66,7 +66,7 @@ Blockly.Blocks['linkit_ble_ibeacon'] = {
 Blockly.Blocks['linkit_ble_wait_until_ready'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_HELPURL);
-    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.setColour(230);
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_BLE_UNTIL_READY_TITLE);
     this.setPreviousStatement(true);
@@ -78,7 +78,7 @@ Blockly.Blocks['linkit_ble_wait_until_ready'] = {
 Blockly.Blocks['linkit_ble_ready'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_HELPURL);
-    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.setColour(230);
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_BLE_READY_TITLE);
     this.setOutput(true, 'Boolean');
