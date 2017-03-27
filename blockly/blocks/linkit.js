@@ -34,6 +34,17 @@ Blockly.Blocks.linkit.HUE = 35;
 
 Blockly.Blocks.linkit.image = filepath.media+'/linkit_7697.png';
 
+Blockly.Blocks['linkit_ble_ready'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_READY_TITLE);
+    this.setOutput(true, 'Boolean');
+    this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['linkit_wifi'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_WIFI_HELPURL);

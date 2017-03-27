@@ -1115,3 +1115,6 @@ Blockly.Msg.LINKIT_SET_WIFI_STATUS_DISCONNECTED = "Disconnected";
 Blockly.Msg.CATEGORY_LINKIT_MCS = "MCS";
 // BLE
 Blockly.Msg.CATEGORY_LINKIT_BLE = "Bluetooth";
+Blockly.Msg.LINKIT_SET_BLE_HELPURL = "";
+Blockly.Msg.LINKIT_SET_BLE_TOOLTIP = "";
+Blockly.Msg.LINKIT_SET_BLE_READY_TITLE = "Bluetooth ready()";

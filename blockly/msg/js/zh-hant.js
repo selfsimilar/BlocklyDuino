@@ -1086,3 +1086,6 @@ Blockly.Msg.LINKIT_SET_WIFI_STATUS_DISCONNECTED = "未連線";
 Blockly.Msg.CATEGORY_LINKIT_MCS = "MCS";
 // BLE
 Blockly.Msg.CATEGORY_LINKIT_BLE = "藍牙";
+Blockly.Msg.LINKIT_SET_BLE_HELPURL = "";
+Blockly.Msg.LINKIT_SET_BLE_TOOLTIP = "";
+Blockly.Msg.LINKIT_SET_BLE_READY_TITLE = "藍牙就緒狀態";

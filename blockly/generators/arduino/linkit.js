@@ -28,6 +28,16 @@ goog.provide('Blockly.Arduino.linkit');
 
 goog.require('Blockly.Arduino');
 
+Blockly.Arduino.linkit_ble_ready = function() {
+
+  Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
+
+  Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
+
+  var code = 'LBLE.ready()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino.linkit_wifi = function() {
 
   var ssid = Blockly.Arduino.valueToCode(this, 'SSID', Blockly.Arduino.ORDER_ATOMIC) || ''
