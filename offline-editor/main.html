@@ -997,7 +997,6 @@
 <sep></sep>
 <category id="category_linkit">
   <category id="category_linkit_wifi">
-    <block type="linkit_wifi_status"></block>
     <block type="linkit_wifi">
         <value name="SSID">
             <block type="text">
@@ -1010,6 +1009,32 @@
             </block>
         </value>
     </block>
+    <block type="linkit_wifi_ignore_result">
+        <value name="SSID">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <value name="PASSWORD">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <block type="linkit_wifi_ready_advanced">
+        <value name="SSID">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <value name="PASSWORD">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <block type="linkit_wifi_ready"></block>
+    <block type="linkit_wifi_status"></block>
   </category>
   <category id="category_linkit_ble">
     <block type="linkit_ble_ready"></block>

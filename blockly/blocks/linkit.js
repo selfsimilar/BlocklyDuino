@@ -45,6 +45,37 @@ Blockly.Blocks['linkit_ble_ready'] = {
   }
 };
 
+Blockly.Blocks['linkit_wifi_ready_advanced'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_WIFI_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_SET_WIFI_READY_TITLE)
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
+    this.appendValueInput("SSID")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_WIFI_SSID);
+    this.appendValueInput("PASSWORD")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_WIFI_PASSWORD);
+    this.setOutput(true, 'Boolean');
+    this.setTooltip(Blockly.Msg.LINKIT_SET_WIFI_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['linkit_wifi_ready'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_WIFI_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_SET_WIFI_READY_TITLE);
+    this.setOutput(true, 'Boolean');
+    this.setTooltip(Blockly.Msg.LINKIT_SET_WIFI_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['linkit_wifi'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_WIFI_HELPURL);
@@ -60,9 +91,28 @@ Blockly.Blocks['linkit_wifi'] = {
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.LINKIT_SET_WIFI_PASSWORD);
-    // this.setPreviousStatement(true, null);
-    // this.setNextStatement(true, null);
     this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.LINKIT_SET_WIFI_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['linkit_wifi_ignore_result'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_WIFI_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_SET_WIFI_TITLE)
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
+    this.appendValueInput("SSID")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_WIFI_SSID);
+    this.appendValueInput("PASSWORD")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_WIFI_PASSWORD);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.LINKIT_SET_WIFI_TOOLTIP);
   }
 };

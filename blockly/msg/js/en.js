@@ -1111,6 +1111,7 @@ Blockly.Msg.LINKIT_SET_WIFI_STATUS_CONNECTED = "Connected";
 Blockly.Msg.LINKIT_SET_WIFI_STATUS_CONNECT_FAILED = "Connect Failed";
 Blockly.Msg.LINKIT_SET_WIFI_STATUS_CONNECTION_LOST = "Connection Lost";
 Blockly.Msg.LINKIT_SET_WIFI_STATUS_DISCONNECTED = "Disconnected";
+Blockly.Msg.LINKIT_SET_WIFI_READY_TITLE = "WiFi Connected";
 // MCS
 Blockly.Msg.CATEGORY_LINKIT_MCS = "MCS";
 // BLE
