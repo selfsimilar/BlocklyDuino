@@ -42,6 +42,8 @@ Blockly.Arduino.linkit_ble_ibeacon = function() {
   Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
   Blockly.Arduino.definitions_['define_linkit_ble_periphral_include'] = '#include <LBLEPeriphral.h>';
 
+  Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
+
   Blockly.Arduino.setups_['define_linkit_ble_ibeacon_init'] = 'LBLEAdvertisementData __beaconData;';
   Blockly.Arduino.setups_['define_linkit_ble_ibeacon_config'] = '__beaconData.configAsIBeacon("' + uuid + '", ' + majorId + ', ' + minorId + ', ' + rssi + ');';
   Blockly.Arduino.setups_['define_linkit_ble_ibeacon_advertise'] = 'LBLEPeripheral.advertise(__beaconData);';
