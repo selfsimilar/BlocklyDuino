@@ -1116,11 +1116,11 @@ Blockly.Msg.LINKIT_SET_WIFI_UNTIL_READY_TITLE = "Wait Until WiFi is Connected";
 // MCS
 Blockly.Msg.CATEGORY_LINKIT_MCS = "MCS";
 // BLE
-Blockly.Msg.CATEGORY_LINKIT_BLE = "Bluetooth";
+Blockly.Msg.CATEGORY_LINKIT_BLE = "BLE";
 Blockly.Msg.LINKIT_SET_BLE_HELPURL = "https://docs.labs.mediatek.com/resource/linkit7697-arduino/en/using-bluetooth";
 Blockly.Msg.LINKIT_SET_BLE_TOOLTIP = "";
-Blockly.Msg.LINKIT_SET_BLE_READY_TITLE = "Bluetooth ready()";
-Blockly.Msg.LINKIT_SET_BLE_UNTIL_READY_TITLE = "Wait Until Bluetooth is ready()";
+Blockly.Msg.LINKIT_SET_BLE_READY_TITLE = "BLE ready()";
+Blockly.Msg.LINKIT_SET_BLE_UNTIL_READY_TITLE = "Wait Until BLE is ready()";
 Blockly.Msg.LINKIT_SET_IBEACON_HELPURL = "https://docs.labs.mediatek.com/resource/linkit7697-arduino/en/using-bluetooth#UsingBluetooth-UsingLinkIt7697asaniBeacon";
 Blockly.Msg.LINKIT_SET_IBEACON_TITLE = "iBeacon";
 Blockly.Msg.LINKIT_SET_IBEACON_UUID = "UUID";
@@ -1128,3 +1128,8 @@ Blockly.Msg.LINKIT_SET_IBEACON_MAJOR = "Major ID";
 Blockly.Msg.LINKIT_SET_IBEACON_MINOR = "Minor ID";
 Blockly.Msg.LINKIT_SET_IBEACON_RSSI = "RSSI";
 Blockly.Msg.LINKIT_SET_IBEACON_TOOLTIP = "";
+Blockly.Msg.LINKIT_SET_BLE_CENTRAL_HELPURL = "https://docs.labs.mediatek.com/resource/linkit7697-arduino/en/using-bluetooth#UsingBluetooth-UsingLinkIt7697asaCentralDevice";
+Blockly.Msg.LINKIT_SET_BLE_CENTRAL_SCAN_TITLE = "Scan for BLE Devices";
+Blockly.Msg.LINKIT_SET_BLE_CENTRAL_SCAN_TOOLTIP = "";
+Blockly.Msg.LINKIT_SET_BLE_CENTRAL_SCAN_COUNT = "Number of found BLE peripherals";
+Blockly.Msg.LINKIT_SET_BLE_CENTRAL_GET_PERIPHERAL_WITH_INDEX = "Name of # %1 BLE Peripheral in Index";

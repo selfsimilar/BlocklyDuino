@@ -28,6 +28,51 @@ goog.provide('Blockly.Arduino.linkit');
 
 goog.require('Blockly.Arduino');
 
+Blockly.Arduino.linkit_ble_central_get_peripheral_with_index = function() {
+
+  var index = Blockly.Arduino.valueToCode(this, 'INDEX', Blockly.Arduino.ORDER_ATOMIC) || ''
+  index = index.replace(/\"/g, "");
+
+  Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
+  Blockly.Arduino.definitions_['define_linkit_ble_central_include'] = '#include <LBLECentral.h>';
+  Blockly.Arduino.definitions_['define_linkit_ble_central_scanner'] = 'LBLECentral __scanner;';
+
+  Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(1000); }\n';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_central_scan'] = '__scanner.scan();';
+
+  var code = '__scanner.getName(' + index + ')';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.linkit_ble_central_scan_count = function() {
+
+  Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
+  Blockly.Arduino.definitions_['define_linkit_ble_central_include'] = '#include <LBLECentral.h>';
+  Blockly.Arduino.definitions_['define_linkit_ble_central_scanner'] = 'LBLECentral __scanner;';
+
+  Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(1000); }\n';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_central_scan'] = '__scanner.scan();';
+
+  var code = '__scanner.getPeripheralCount()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.linkit_ble_central_scan = function() {
+
+  Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
+  Blockly.Arduino.definitions_['define_linkit_ble_central_include'] = '#include <LBLECentral.h>';
+  Blockly.Arduino.definitions_['define_linkit_ble_central_scanner'] = 'LBLECentral __scanner;';
+
+  Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(1000); }\n';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_central_scan'] = '__scanner.scan();';
+
+  var code = "\n";
+  return code;
+};
+
 Blockly.Arduino.linkit_ble_ibeacon = function() {
 
   var uuid = Blockly.Arduino.valueToCode(this, 'UUID', Blockly.Arduino.ORDER_ATOMIC) || ''
@@ -41,10 +86,10 @@ Blockly.Arduino.linkit_ble_ibeacon = function() {
 
   Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
   Blockly.Arduino.definitions_['define_linkit_ble_periphral_include'] = '#include <LBLEPeriphral.h>';
+  Blockly.Arduino.definitions_['define_linkit_ble_ibeacon_init'] = 'LBLEAdvertisementData __beaconData;';
 
   Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
 
-  Blockly.Arduino.setups_['define_linkit_ble_ibeacon_init'] = 'LBLEAdvertisementData __beaconData;';
   Blockly.Arduino.setups_['define_linkit_ble_ibeacon_config'] = '__beaconData.configAsIBeacon("' + uuid + '", ' + majorId + ', ' + minorId + ', ' + rssi + ');';
   Blockly.Arduino.setups_['define_linkit_ble_ibeacon_advertise'] = 'LBLEPeripheral.advertise(__beaconData);';
 

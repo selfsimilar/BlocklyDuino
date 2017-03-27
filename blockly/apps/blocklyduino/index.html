@@ -982,6 +982,15 @@
   <category id="category_linkit_ble">
     <block type="linkit_ble_wait_until_ready"></block>
     <block type="linkit_ble_ready"></block>
+    <block type="linkit_ble_central_scan"></block>
+    <block type="linkit_ble_central_scan_count"></block>
+    <block type="linkit_ble_central_get_peripheral_with_index">
+      <value name="INDEX">
+          <block type="math_number">
+              <field name="NUM">0</field>
+          </block>
+      </value>
+    </block>
     <block type="linkit_ble_ibeacon">
         <value name="UUID">
             <block type="text">

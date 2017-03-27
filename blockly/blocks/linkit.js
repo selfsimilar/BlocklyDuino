@@ -34,6 +34,41 @@ Blockly.Blocks.linkit.HUE = 35;
 
 Blockly.Blocks.linkit.image = filepath.media+'/linkit_7697.png';
 
+Blockly.Blocks['linkit_ble_central_get_peripheral_with_index'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_CENTRAL_HELPURL);
+    this.setColour(230);
+    this.interpolateMsg(Blockly.Msg.LINKIT_SET_BLE_CENTRAL_GET_PERIPHERAL_WITH_INDEX,
+                        ['INDEX', 'Number', Blockly.ALIGN_RIGHT],
+                        Blockly.ALIGN_RIGHT);
+    this.setOutput(true, 'String');
+    this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_CENTRAL_SCAN_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['linkit_ble_central_scan_count'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_CENTRAL_HELPURL);
+    this.setColour(230);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_CENTRAL_SCAN_COUNT);
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_CENTRAL_SCAN_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['linkit_ble_central_scan'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_CENTRAL_HELPURL);
+    this.setColour(230);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_CENTRAL_SCAN_TITLE);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_CENTRAL_SCAN_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['linkit_ble_ibeacon'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_IBEACON_HELPURL);

@@ -1087,7 +1087,7 @@ Blockly.Msg.LINKIT_SET_WIFI_UNTIL_READY_TITLE = "等待 WiFi 就緒";
 // MCS
 Blockly.Msg.CATEGORY_LINKIT_MCS = "MCS";
 // BLE
-Blockly.Msg.CATEGORY_LINKIT_BLE = "藍牙";
+Blockly.Msg.CATEGORY_LINKIT_BLE = "藍牙低功耗";
 Blockly.Msg.LINKIT_SET_BLE_HELPURL = "https://docs.labs.mediatek.com/resource/linkit7697-arduino/en/using-bluetooth";
 Blockly.Msg.LINKIT_SET_BLE_TOOLTIP = "";
 Blockly.Msg.LINKIT_SET_BLE_READY_TITLE = "藍牙就緒狀態";
@@ -1099,3 +1099,8 @@ Blockly.Msg.LINKIT_SET_IBEACON_MAJOR = "主要 ID";
 Blockly.Msg.LINKIT_SET_IBEACON_MINOR = "次要 ID";
 Blockly.Msg.LINKIT_SET_IBEACON_RSSI = "RSSI 最小值";
 Blockly.Msg.LINKIT_SET_IBEACON_TOOLTIP = "";
+Blockly.Msg.LINKIT_SET_BLE_CENTRAL_HELPURL = "https://docs.labs.mediatek.com/resource/linkit7697-arduino/en/using-bluetooth#UsingBluetooth-UsingLinkIt7697asaCentralDevice";
+Blockly.Msg.LINKIT_SET_BLE_CENTRAL_SCAN_TITLE = "掃描藍牙低功耗裝置";
+Blockly.Msg.LINKIT_SET_BLE_CENTRAL_SCAN_TOOLTIP = "";
+Blockly.Msg.LINKIT_SET_BLE_CENTRAL_SCAN_COUNT = "掃描到的藍牙低功耗裝置總數";
+Blockly.Msg.LINKIT_SET_BLE_CENTRAL_GET_PERIPHERAL_WITH_INDEX = "第 %1 個藍牙低功耗裝置名稱";
