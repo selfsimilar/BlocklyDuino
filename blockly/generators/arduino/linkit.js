@@ -49,8 +49,10 @@ Blockly.Arduino.linkit_wifi_wait_until_ready = function() {
   Blockly.Arduino.definitions_['define_linkit_wifi_ssid'] = 'char _lwifi_ssid[] = "' + ssid + '";';
   Blockly.Arduino.definitions_['define_linkit_wifi_pass'] = 'char _lwifi_pass[] = "' + password + '";';
 
-  var code = "while (WiFi.begin(_lwifi_ssid, _lwifi_pass) != WL_CONNECTED) { delay(1000); }\n";
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
+  Blockly.Arduino.setups_['define_linkit_wifi_setup'] = 'while (WiFi.begin(_lwifi_ssid, _lwifi_pass) != WL_CONNECTED) { delay(1000); }\n';
+
+  var code = "\n";
+  return code;
 };
 
 Blockly.Arduino.linkit_wifi_ready_advanced = function() {
