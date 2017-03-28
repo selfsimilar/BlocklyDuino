@@ -20,13 +20,35 @@
 
 /**
  * @fileoverview Generating Arduino for list blocks.
- * @author fraser@google.com (Neil Fraser)
+ * @author hi@vox.vg (Zhi-Wei Cai)
  */
 'use strict';
 
 goog.provide('Blockly.Arduino.linkit');
 
 goog.require('Blockly.Arduino');
+
+Blockly.Arduino.linkit_ble_periphral = function() {
+
+  var service = Blockly.Arduino.valueToCode(this, 'SERVICE', Blockly.Arduino.ORDER_ATOMIC) || ''
+  var characteristic = Blockly.Arduino.valueToCode(this, 'CHARACTERISTIC', Blockly.Arduino.ORDER_ATOMIC) || ''
+  var characteristicType = this.getFieldValue('TYPE');
+  service = service.replace(/\"/g, "");
+  characteristic = characteristic.replace(/\"/g, "");
+
+  Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
+  Blockly.Arduino.definitions_['define_linkit_ble_periphral_include'] = '#include <LBLEPeriphral.h>';
+  Blockly.Arduino.definitions_['define_linkit_ble_periphral_include_service'] = 'LBLEService __periphralService("' + service + '");';
+  Blockly.Arduino.definitions_['define_linkit_ble_periphral_include_characteristic'] = 'LBLECharacteristicInt __periphralCharacteristic("' + characteristic + '", ' + characteristicType + ');';
+
+  Blockly.Arduino.setups_['define_linkit_ble_periphral_service_config'] = '__periphralService.addAttribute(__periphralCharacteristic);';
+  Blockly.Arduino.setups_['define_linkit_ble_periphral_config'] = 'LBLEPeripheral.addService(__periphralService);';
+
+  Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
+
+  var code = "\n";
+  return code;
+};
 
 Blockly.Arduino.linkit_ble_central_get_peripheral_with_index = function() {
 

@@ -799,6 +799,18 @@
           </block>
       </value>
     </block>
+    <block type="linkit_ble_periphral">
+        <value name="SERVICE">
+            <block type="text">
+                <field name="TEXT">951A6899-6F0F-456F-8AE0-5E0B4352D85B</field>
+            </block>
+        </value>
+        <value name="CHARACTERISTIC">
+            <block type="text">
+                <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+            </block>
+        </value>
+    </block>
     <block type="linkit_ble_ibeacon">
         <value name="UUID">
             <block type="text">

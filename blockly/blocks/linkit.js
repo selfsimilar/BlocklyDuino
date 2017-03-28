@@ -20,7 +20,7 @@
 
 /**
  * @fileoverview Helper functions for generating Arduino blocks.
- * @author gasolin@gmail.com (Fred Lin)
+ * @author hi@vox.vg (Zhi-Wei Cai)
  */
 'use strict';
 
@@ -34,10 +34,35 @@ Blockly.Blocks.linkit.HUE = 35;
 
 Blockly.Blocks.linkit.image = filepath.media+'/linkit_7697.png';
 
+Blockly.Blocks['linkit_ble_periphral'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_PERIPHRAL_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_SET_PERIPHRAL_TITLE)
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
+    this.appendValueInput("SERVICE")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_PERIPHRAL_SERVICE);
+    this.appendValueInput("CHARACTERISTIC")
+      .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_PERIPHRAL_CHARACTERISTIC);
+    this.appendDummyInput()
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_LBLE_ATTRIBUTE)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.LINKIT_SET_LBLE_READ, "LBLE_READ"], [Blockly.Msg.LINKIT_SET_LBLE_WRITE, "LBLE_WRITE"], [Blockly.Msg.LINKIT_SET_LBLE_READ_WRITE, "LBLE_READ | LBLE_WRITE"]]), 'TYPE');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LINKIT_SET_PERIPHRAL_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['linkit_ble_central_get_peripheral_with_index'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_CENTRAL_HELPURL);
-    this.setColour(230);
+    this.setColour(Blockly.Blocks.linkit.HUE);
     this.interpolateMsg(Blockly.Msg.LINKIT_SET_BLE_CENTRAL_GET_PERIPHERAL_WITH_INDEX,
                         ['INDEX', 'Number', Blockly.ALIGN_RIGHT],
                         Blockly.ALIGN_RIGHT);
@@ -49,7 +74,7 @@ Blockly.Blocks['linkit_ble_central_get_peripheral_with_index'] = {
 Blockly.Blocks['linkit_ble_central_scan_count'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_CENTRAL_HELPURL);
-    this.setColour(230);
+    this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_BLE_CENTRAL_SCAN_COUNT);
     this.setOutput(true, 'Number');
@@ -60,7 +85,7 @@ Blockly.Blocks['linkit_ble_central_scan_count'] = {
 Blockly.Blocks['linkit_ble_central_scan'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_CENTRAL_HELPURL);
-    this.setColour(230);
+    this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_BLE_CENTRAL_SCAN_TITLE);
     this.setPreviousStatement(true);
@@ -72,7 +97,7 @@ Blockly.Blocks['linkit_ble_central_scan'] = {
 Blockly.Blocks['linkit_ble_ibeacon'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_IBEACON_HELPURL);
-    this.setColour(230);
+    this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_IBEACON_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
@@ -101,7 +126,7 @@ Blockly.Blocks['linkit_ble_ibeacon'] = {
 Blockly.Blocks['linkit_ble_wait_until_ready'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_HELPURL);
-    this.setColour(230);
+    this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_BLE_UNTIL_READY_TITLE);
     this.setPreviousStatement(true);
@@ -113,7 +138,7 @@ Blockly.Blocks['linkit_ble_wait_until_ready'] = {
 Blockly.Blocks['linkit_ble_ready'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_HELPURL);
-    this.setColour(230);
+    this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_BLE_READY_TITLE);
     this.setOutput(true, 'Boolean');
@@ -219,7 +244,7 @@ Blockly.Blocks['linkit_wifi_status'] = {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_WIFI_HELPURL);
     this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.LINKIT_SET_WIFI_STATUS_NO_SHIELD, "WL_NO_SHIELD"], [Blockly.Msg.LINKIT_SET_WIFI_STATUS_IDLE, "WL_IDLE_STATUS"], [Blockly.Msg.LINKIT_SET_WIFI_STATUS_NO_SSID_AVAIL, "WL_NO_SSID_AVAIL"], [Blockly.Msg.LINKIT_SET_WIFI_STATUS_SCAN_COMPLETED, "WL_SCAN_COMPLETED"], [Blockly.Msg.LINKIT_SET_WIFI_STATUS_CONNECTED, "WL_CONNECTED"], [Blockly.Msg.LINKIT_SET_WIFI_STATUS_CONNECT_FAILED, "WL_CONNECT_FAILED"], [Blockly.Msg.LINKIT_SET_WIFI_STATUS_CONNECTION_LOST, "WL_CONNECTION_LOST"], [Blockly.Msg.LINKIT_SET_WIFI_STATUS_DISCONNECTED, "WL_DISCONNECTED"]]), 'String')
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.LINKIT_SET_WIFI_STATUS_NO_SHIELD, "WL_NO_SHIELD"], [Blockly.Msg.LINKIT_SET_WIFI_STATUS_IDLE, "WL_IDLE_STATUS"], [Blockly.Msg.LINKIT_SET_WIFI_STATUS_NO_SSID_AVAIL, "WL_NO_SSID_AVAIL"], [Blockly.Msg.LINKIT_SET_WIFI_STATUS_SCAN_COMPLETED, "WL_SCAN_COMPLETED"], [Blockly.Msg.LINKIT_SET_WIFI_STATUS_CONNECTED, "WL_CONNECTED"], [Blockly.Msg.LINKIT_SET_WIFI_STATUS_CONNECT_FAILED, "WL_CONNECT_FAILED"], [Blockly.Msg.LINKIT_SET_WIFI_STATUS_CONNECTION_LOST, "WL_CONNECTION_LOST"], [Blockly.Msg.LINKIT_SET_WIFI_STATUS_DISCONNECTED, "WL_DISCONNECTED"]]), 'String');
     this.setOutput(true, 'String');
     this.setTooltip('');
   }

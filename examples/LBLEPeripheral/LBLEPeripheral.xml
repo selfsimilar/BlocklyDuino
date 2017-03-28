@@ -1,0 +1,19 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="33" x="13" y="-12">
+    <statement name="CONTENT">
+      <block type="linkit_ble_periphral" id="15" inline="false">
+        <field name="TYPE">LBLE_READ | LBLE_WRITE</field>
+        <value name="SERVICE">
+          <block type="text" id="16">
+            <field name="TEXT">951A6899-6F0F-456F-8AE0-5E0B4352D85B</field>
+          </block>
+        </value>
+        <value name="CHARACTERISTIC">
+          <block type="text" id="17">
+            <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>
