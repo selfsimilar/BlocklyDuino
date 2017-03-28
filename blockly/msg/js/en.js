@@ -1093,3 +1093,52 @@ Blockly.Msg.CONTROLS_WHILEUNTIL_INPUT_DO = Blockly.Msg.CONTROLS_REPEAT_INPUT_DO;
 Blockly.Msg.CONTROLS_IF_ELSEIF_TITLE_ELSEIF = Blockly.Msg.CONTROLS_IF_MSG_ELSEIF;
 Blockly.Msg.TEXT_APPEND_VARIABLE = Blockly.Msg.VARIABLES_DEFAULT_NAME;
 Blockly.Msg.CONTROLS_IF_ELSE_TITLE_ELSE = Blockly.Msg.CONTROLS_IF_MSG_ELSE;
+
+// LinkIt
+Blockly.Msg.CATEGORY_LINKIT = "LinkIt";
+// WiFi
+Blockly.Msg.CATEGORY_LINKIT_WIFI = "WiFi";
+Blockly.Msg.LINKIT_SET_WIFI_HELPURL = "";
+Blockly.Msg.LINKIT_SET_WIFI_TITLE = "WiFi Setup";
+Blockly.Msg.LINKIT_SET_WIFI_SSID = "SSID";
+Blockly.Msg.LINKIT_SET_WIFI_PASSWORD = "Password";
+Blockly.Msg.LINKIT_SET_WIFI_TOOLTIP = "";
+Blockly.Msg.LINKIT_SET_WIFI_STATUS_NO_SHIELD = "No WiFi Sheld";
+Blockly.Msg.LINKIT_SET_WIFI_STATUS_IDLE = "Idle";
+Blockly.Msg.LINKIT_SET_WIFI_STATUS_NO_SSID_AVAIL = "No SSID Available";
+Blockly.Msg.LINKIT_SET_WIFI_STATUS_SCAN_COMPLETED = "Scan Completed";
+Blockly.Msg.LINKIT_SET_WIFI_STATUS_CONNECTED = "Connected";
+Blockly.Msg.LINKIT_SET_WIFI_STATUS_CONNECT_FAILED = "Connect Failed";
+Blockly.Msg.LINKIT_SET_WIFI_STATUS_CONNECTION_LOST = "Connection Lost";
+Blockly.Msg.LINKIT_SET_WIFI_STATUS_DISCONNECTED = "Disconnected";
+Blockly.Msg.LINKIT_SET_WIFI_READY_TITLE = "WiFi Connected";
+Blockly.Msg.LINKIT_SET_WIFI_UNTIL_READY_TITLE = "Wait Until WiFi is Connected";
+// MCS
+Blockly.Msg.CATEGORY_LINKIT_MCS = "MCS";
+// BLE
+Blockly.Msg.CATEGORY_LINKIT_BLE = "BLE";
+Blockly.Msg.LINKIT_SET_BLE_HELPURL = "https://docs.labs.mediatek.com/resource/linkit7697-arduino/en/using-bluetooth";
+Blockly.Msg.LINKIT_SET_BLE_TOOLTIP = "";
+Blockly.Msg.LINKIT_SET_BLE_READY_TITLE = "BLE ready()";
+Blockly.Msg.LINKIT_SET_BLE_UNTIL_READY_TITLE = "Wait Until BLE is ready()";
+Blockly.Msg.LINKIT_SET_IBEACON_HELPURL = "https://docs.labs.mediatek.com/resource/linkit7697-arduino/en/using-bluetooth#UsingBluetooth-UsingLinkIt7697asaniBeacon";
+Blockly.Msg.LINKIT_SET_IBEACON_TITLE = "iBeacon";
+Blockly.Msg.LINKIT_SET_IBEACON_UUID = "128bit UUID";
+Blockly.Msg.LINKIT_SET_IBEACON_MAJOR = "Major ID";
+Blockly.Msg.LINKIT_SET_IBEACON_MINOR = "Minor ID";
+Blockly.Msg.LINKIT_SET_IBEACON_RSSI = "RSSI";
+Blockly.Msg.LINKIT_SET_IBEACON_TOOLTIP = "";
+Blockly.Msg.LINKIT_SET_BLE_CENTRAL_HELPURL = "https://docs.labs.mediatek.com/resource/linkit7697-arduino/en/using-bluetooth#UsingBluetooth-UsingLinkIt7697asaCentralDevice";
+Blockly.Msg.LINKIT_SET_BLE_CENTRAL_SCAN_TITLE = "Scan for BLE Devices";
+Blockly.Msg.LINKIT_SET_BLE_CENTRAL_SCAN_TOOLTIP = "";
+Blockly.Msg.LINKIT_SET_BLE_CENTRAL_SCAN_COUNT = "Number of found BLE peripherals";
+Blockly.Msg.LINKIT_SET_BLE_CENTRAL_GET_PERIPHERAL_WITH_INDEX = "Name of # %1 BLE Peripheral in Index";
+Blockly.Msg.LINKIT_SET_PERIPHRAL_HELPURL = "https://docs.labs.mediatek.com/resource/linkit7697-arduino/en/using-bluetooth#UsingBluetooth-UsingLinkIt7697asaSimpleBLEPeripheral";
+Blockly.Msg.LINKIT_SET_PERIPHRAL_TITLE = "Create BLE Peripheral";
+Blockly.Msg.LINKIT_SET_PERIPHRAL_SERVICE = "128bit Service UUID";
+Blockly.Msg.LINKIT_SET_PERIPHRAL_CHARACTERISTIC = "128bit Characteristic UUID";
+Blockly.Msg.LINKIT_SET_LBLE_ATTRIBUTE = "Attribute";
+Blockly.Msg.LINKIT_SET_LBLE_READ_WRITE = "Read & Write";
+Blockly.Msg.LINKIT_SET_LBLE_READ = "Read";
+Blockly.Msg.LINKIT_SET_LBLE_WRITE = "Write";
+Blockly.Msg.LINKIT_SET_PERIPHRAL_TOOLTIP = "";

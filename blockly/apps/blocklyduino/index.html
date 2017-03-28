@@ -18,10 +18,6 @@
         <div class="nav-wrapper blue-grey darken-4">
             <a href="./" class="brand-logo">BlocklyDuino Editor</a>
             <ul class="right show-on-small">
-                <li><a class="tooltipped" href="https://chrome.google.com/webstore/detail/blocklyduino-editor/ohncgafccgdbigbbikgkfbkiebahihmb" target="_blank" id="get-app" data-tooltip="I am tooltip"><i class="material-icons">get_app</i></a>
-                </li>
-                <li><a class="tooltipped" href="http://lets.makewitharduino.com" target="_blank" id="go-to-sample" data-tooltip="I am tooltip"><i class="material-icons">receipt</i></a>
-                </li>
                 <li><a class="waves-effect waves-light modal-trigger tooltipped" id="change-lang" href="#modal1" data-tooltip="I am tooltip"><i class="material-icons">settings</i></a>
                 </li>
             </ul>
@@ -41,12 +37,8 @@
                                 <label for="select-lang-en" id="label-en">English</label>
                             </td>
                             <td>
-                                <input class="with-gap" name="group1" type="radio" id="select-lang-ja" value="ja">
-                                <label for="select-lang-ja" id="label-ja">日本語</label>
-                            </td>
-                            <td>
-                                <input class="with-gap" name="group1" type="radio" id="select-lang-ja_kids" value="ja_kids">
-                                <label for="select-lang-ja_kids" id="label-ja-kids">にほんご</label>
+                                <input class="with-gap" name="group1" type="radio" id="select-lang-zh" value="zh">
+                                <label for="select-lang-zh" id="label-zh">正體中文</label>
                             </td>
                         </tr>
                     </tbody>
@@ -55,6 +47,14 @@
                 <p>
                     </p><table>
                         <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_linkit" value="category_linkit">
+                                    <label for="chbox_category_linkit">linkit</label>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
                             <tr>
                                 <td>
                                     <input type="checkbox" class="filled-in" id="chbox_category_adafruit" value="category_adafruit">
@@ -78,10 +78,7 @@
                                     <input type="checkbox" class="filled-in" id="chbox_category_cloud_service" value="category_cloud_service">
                                     <label for="chbox_category_cloud_service">category_cloud_service</label>
                                 </td>
-                                <td>
-                                    <input type="checkbox" class="filled-in" id="chbox_category_sparkfun" value="category_sparkfun">
-                                    <label for="chbox_category_sparkfun">SparkFun</label>
-                                </td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>
@@ -128,7 +125,7 @@
             <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">CANCEL</a>
         </div>
     </div>
-    
+
     <!-- modal_import Structure -->
     <div id="modal_import" class="modal">
         <div class="modal-content">
@@ -155,7 +152,7 @@
             <a id="dialog_export_ok" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
         </div>
     </div>
-    
+
     <!-- Dropdown Structure -->
     <ul id="dropdown1" class="dropdown-content">
         <li><a class="modal-trigger" href="#modal_import" id="button_import">Import</a>
@@ -164,7 +161,7 @@
         <li><a class="modal-trigger" href="#!" id="button_export" onclick="export_xml()">Export</a>
         </li>
     </ul>
-    
+
     <table id="main">
         <tr>
             <td>
@@ -735,33 +732,7 @@
 </category>
 <category id="category_sparkfun">
     <category id="category_ir_remote">
-
-        <block type="variables_set" inline="false">
-            <field name="TYPE">Unsigned_Long</field>
-            <field name="VAR">button</field>
-            <value name="VALUE">
-                <block type="ir_remote_get"></block>
-            </value>
-        </block> <!-- ir_get shown inside a set var block -->
-        <!--
-        <block type="logic_compare">
-            <field name="OP">EQ</field>
-            <value name="A">
-                <block type="variables_get">
-                    <field name="TYPE">Unsigned_Long</field>
-                    <field name="VAR">button</field>
-                </block>
-            </value>
-            <value name="B">
-                <block type="ir_remote_button">
-                    <field name="BUTTON">POWER</field>
-                </block>
-            </value>
-        </block> <!- - ir_button compared w/ variable in an equals block - ->
-        -->
-        <!--
         <block type="ir_remote_get"></block>
-        -->
         <block type="ir_remote_button"></block>
     </category>
 </category>
@@ -953,7 +924,112 @@
 <block type="involt_chromereceive"></block>
 <block type="involt_sendvalue"></block>
 <block type="involt_receivevalue"></block>
-</category--></xml>
+</category-->
+<sep></sep>
+<category id="category_linkit">
+  <category id="category_linkit_wifi">
+    <block type="linkit_wifi_wait_until_ready">
+        <value name="SSID">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <value name="PASSWORD">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <block type="linkit_wifi">
+        <value name="SSID">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <value name="PASSWORD">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <block type="linkit_wifi_ignore_result">
+        <value name="SSID">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <value name="PASSWORD">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <block type="linkit_wifi_ready_advanced">
+        <value name="SSID">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <value name="PASSWORD">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <block type="linkit_wifi_ready"></block>
+    <block type="linkit_wifi_status"></block>
+  </category>
+  <category id="category_linkit_ble">
+    <block type="linkit_ble_wait_until_ready"></block>
+    <block type="linkit_ble_ready"></block>
+    <block type="linkit_ble_central_scan"></block>
+    <block type="linkit_ble_central_scan_count"></block>
+    <block type="linkit_ble_central_get_peripheral_with_index">
+      <value name="INDEX">
+          <block type="math_number">
+              <field name="NUM">0</field>
+          </block>
+      </value>
+    </block>
+    <block type="linkit_ble_periphral">
+        <value name="SERVICE">
+            <block type="text">
+                <field name="TEXT">951A6899-6F0F-456F-8AE0-5E0B4352D85B</field>
+            </block>
+        </value>
+        <value name="CHARACTERISTIC">
+            <block type="text">
+                <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+            </block>
+        </value>
+    </block>
+    <block type="linkit_ble_ibeacon">
+        <value name="UUID">
+            <block type="text">
+                <field name="TEXT">74278BDA-B644-4520-8F0C-720EAF059935</field>
+            </block>
+        </value>
+        <value name="MAJOR">
+            <block type="math_number">
+                <field name="NUM">1</field>
+            </block>
+        </value>
+        <value name="MINOR">
+            <block type="math_number">
+                <field name="NUM">2</field>
+            </block>
+        </value>
+        <value name="RSSI">
+            <block type="math_number">
+                <field name="NUM">-40</field>
+            </block>
+        </value>
+    </block>
+  </category>
+  <category id="category_linkit_mcs">
+  </category>
+</category>
+</xml>
 
     <div class="info">
     </div>
