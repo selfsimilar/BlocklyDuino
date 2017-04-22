@@ -489,8 +489,7 @@ Blockly.Blocks['ht1632_matrix_drawline'] = {
       .setCheck("Number")
       .appendField(Blockly.Msg.HT1632_MATRIX_Y1);
     this.appendDummyInput()
-      .appendField(Blockly.Msg.COLOR)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.HT1632_MATRIX_LED_ON,"1"],[Blockly.Msg.HT1632_MATRIX_LED_OFF,"0"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"1"]]), 'COLOR');
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.HT1632_MATRIX_LED_ON,"1"],[Blockly.Msg.HT1632_MATRIX_LED_OFF,"0"]]), 'COLOR');
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);

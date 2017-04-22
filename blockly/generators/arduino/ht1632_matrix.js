@@ -102,7 +102,7 @@ Blockly.Arduino.ht1632_matrix_drawline = function() {
   var x1 = Blockly.Arduino.valueToCode(this, 'X1', Blockly.Arduino.ORDER_ATOMIC) || '0'
   var y1 = Blockly.Arduino.valueToCode(this, 'Y1', Blockly.Arduino.ORDER_ATOMIC) || '0'
   var color = this.getFieldValue('COLOR');
-  var code = "matrix.drawLine(" + x0 + "," + y0 + "," + x1 + "," + y1 + "," + color + ");\n";
+  var code = "HTmatrix.drawLine(" + x0 + "," + y0 + "," + x1 + "," + y1 + "," + color + ");\n";
   return code;
 };
 
