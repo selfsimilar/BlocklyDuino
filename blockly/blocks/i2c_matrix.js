@@ -34,8 +34,6 @@ Blockly.Blocks.i2c_matrix.HUE = 215;
 
 Blockly.Blocks.mini_matrix_image = filepath.media+'/mini_matrix.jpg';
 
-Blockly.Blocks.i2c_matrix.current_type = null;
-
 Blockly.Blocks.i2c_matrix.checkBlocks = function(obj) {
   var legal = null;
   var current = obj.type;
@@ -80,7 +78,6 @@ Blockly.Blocks['i2c_matrix_begin'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip('');
-    Blockly.Blocks.i2c_matrix.current_type = this.getFieldValue("TYPE");
   },
   onchange: function() {
     if (!this.workspace) {
