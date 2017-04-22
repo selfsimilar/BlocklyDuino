@@ -128,7 +128,11 @@ Blockly.Arduino.i2c_matrix_setrotation = function() {
 };
 
 Blockly.Arduino.i2c_matrix_writedisplay = function() {
-  var code = "matrix.writeDisplay();\n";
+  if (Blockly.Blocks.i2c_matrix.current_type == "HT1632_16x24") {
+    var code = "matrix.writeScreen();\n";
+  } else {
+    var code = "matrix.writeDisplay();\n";
+  }
   return code;
 };
 
