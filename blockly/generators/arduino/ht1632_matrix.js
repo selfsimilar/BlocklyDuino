@@ -51,6 +51,12 @@ Blockly.Arduino.ht1632_matrix_settextsize = function() {
   return code;
 };
 
+Blockly.Arduino.ht1632_matrix_setbrightness = function() {
+  var brightness = Blockly.Arduino.valueToCode(this, 'BRIGHTNESS', Blockly.Arduino.ORDER_ATOMIC) || '0'
+  var code = "HTmatrix.setBrightness("+ brightness + ");\n";
+  return code;
+};
+
 Blockly.Arduino.ht1632_matrix_settextcolor = function() {
   var color = this.getFieldValue('COLOR');
   var code = "matrix.setTextColor(" + color + ");\n";
