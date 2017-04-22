@@ -34,6 +34,8 @@ Blockly.Blocks.i2c_matrix.HUE = 215;
 
 Blockly.Blocks.mini_matrix_image = filepath.media+'/mini_matrix.jpg';
 
+Blockly.Blocks.i2c_matrix.current_type = null;
+
 Blockly.Blocks.i2c_matrix.checkBlocks = function(obj) {
   var legal = null;
   var current = obj.type;
@@ -55,7 +57,7 @@ Blockly.Blocks.i2c_matrix.checkBlocks = function(obj) {
         legal == null){
       if (blocks[i].type != current)  legal = true;
       else  legal = false;
-    }
+    } 
     if(blocks[i].type == 'i2c_matrix_begin'){
       return true;
     }
@@ -84,6 +86,7 @@ Blockly.Blocks['i2c_matrix_begin'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip('');
+    Blockly.Blocks.i2c_matrix.current_type = this.getFieldValue("TYPE");
   },
   onchange: function() {
     if (!this.workspace) {
@@ -113,7 +116,6 @@ Blockly.Blocks['i2c_matrix_begin'] = {
    * @this Blockly.Block
    */
   domToMutation: function(xmlElement) {
-    console.log("xml element: " + xmlElement)
     var isHT1632 = (xmlElement.getAttribute('is_ht1632') == 'true');
     this.updateShape_(isHT1632);
   },
@@ -132,10 +134,10 @@ Blockly.Blocks['i2c_matrix_begin'] = {
         this.appendDummyInput("HT1632_inputs")
         .appendField("Data pin:")
         .appendField(new Blockly.FieldDropdown(profile.default.digital), "HT_DATA")
-        .appendField("CS pin:")
-        .appendField(new Blockly.FieldDropdown(profile.default.digital), "HT_CS")
         .appendField("WR pin:")
-        .appendField(new Blockly.FieldDropdown(profile.default.digital), "HT_WR");
+        .appendField(new Blockly.FieldDropdown(profile.default.digital), "HT_WR")
+        .appendField("CS pin:")
+        .appendField(new Blockly.FieldDropdown(profile.default.digital), "HT_CS");
       }
       if (addressInputExists) {
         this.removeInput("i2c_address")
@@ -307,6 +309,34 @@ Blockly.Blocks['i2c_matrix_settextcolor'] = {
       .appendField(Blockly.Msg.I2C_MATRIX_SETTEXTCOLOR);
     this.appendDummyInput()
       .appendField(Blockly.Msg.COLOR)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.I2C_MATRIX_LED_ON,"1"],[Blockly.Msg.I2C_MATRIX_LED_OFF,"0"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"1"]]), 'COLOR');
+    this.setInputsInline(true);
+    this.setPreviousStatement(true,null);
+    this.setNextStatement(true,null);
+    this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.i2c_matrix.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.I2C_MATRIX_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
+  }
+};
+
+Blockly.Blocks['i2c_matrix_fillscreen'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.I2C_MATRIX_HELPURL);
+    this.setColour(Blockly.Blocks.i2c_matrix.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.I2C_MATRIX_TITLE)
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField("Fill screen with color:");
+    this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.I2C_MATRIX_LED_ON,"1"],[Blockly.Msg.I2C_MATRIX_LED_OFF,"0"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"1"]]), 'COLOR');
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
