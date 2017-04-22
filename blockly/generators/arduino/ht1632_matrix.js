@@ -24,6 +24,11 @@ Blockly.Arduino.ht1632_matrix_clear = function() {
   return code;
 };
 
+Blockly.Arduino.ht1632_matrix_write = function() {
+  var code = "HTmatrix.writeScreen();\n";
+  return code;
+};
+
 Blockly.Arduino.ht1632_matrix_setcursor = function() {
   var col = Blockly.Arduino.valueToCode(this, 'COL', Blockly.Arduino.ORDER_ATOMIC) || '0'
   var row = Blockly.Arduino.valueToCode(this, 'ROW', Blockly.Arduino.ORDER_ATOMIC) || '0'
@@ -105,15 +110,6 @@ Blockly.Arduino.ht1632_matrix_fillrect = function() {
 Blockly.Arduino.ht1632_matrix_setrotation = function() {
   var angle = this.getFieldValue('ANGLE');
   var code = "matrix.setRotation(" + angle + ");\n";
-  return code;
-};
-
-Blockly.Arduino.ht1632_matrix_writedisplay = function() {
-  if (Blockly.Blocks.HT1632_matrix.current_type == "HT1632_16x24") {
-    var code = "matrix.writeScreen();\n";
-  } else {
-    var code = "matrix.writeDisplay();\n";
-  }
   return code;
 };
 

@@ -357,7 +357,7 @@
         <block type="ht1632_matrix_begin"></block>
         <block type="ht1632_matrix_fill"></block>
         <block type="ht1632_matrix_clear"></block>
-        <block type="ht1632_matrix_writedisplay"></block>
+        <block type="ht1632_matrix_write"></block>
         <block type="ht1632_matrix_setcursor"></block>
         <block type="ht1632_matrix_settextsize"></block>
         <block type="ht1632_matrix_settextwrap"></block>

@@ -53,7 +53,7 @@ Blockly.Blocks.HT1632_matrix.checkBlocks = function(obj) {
          blocks[i].type == 'ht1632_matrix_drawline' ||
          blocks[i].type == 'ht1632_matrix_fillrect' ||
          blocks[i].type == 'ht1632_matrix_setrotation' ||
-         blocks[i].type == 'ht1632_matrix_writedisplay') &&
+         blocks[i].type == 'ht1632_matrix_write') &&
         legal == null){
       if (blocks[i].type != current)  legal = true;
       else  legal = false;
@@ -128,6 +128,32 @@ Blockly.Blocks['ht1632_matrix_clear'] = {
       .appendField(Blockly.Msg.HT1632_MATRIX_CLEAR);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.HT1632_matrix.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.HT1632_MATRIX_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
+  }
+};
+
+Blockly.Blocks['ht1632_matrix_write'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.HT1632_MATRIX_HELPURL);
+    this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(Blockly.Msg.HT1632_MATRIX_WRITEDISPLAY);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true,null);
+    this.setNextStatement(true,null);
     this.setTooltip('');
   },
   onchange: function() {
@@ -498,32 +524,6 @@ Blockly.Blocks['ht1632_matrix_setrotation'] = {
       .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_SETROTATION)
       .appendField(new Blockly.FieldTextInput("1"),"ANGLE");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true,null);
-    this.setNextStatement(true,null);
-    this.setTooltip('');
-  },
-  onchange: function() {
-    if (!this.workspace) {
-      // Block has en deleted.
-      return;
-    }
-    if (!Blockly.Blocks.HT1632_matrix.checkBlocks(this)) {
-      this.setWarningText(Blockly.Msg.HT1632_MATRIX_WARNING);
-    } else {
-      this.setWarningText(null);
-    }
-  }
-};
-
-Blockly.Blocks['ht1632_matrix_writedisplay'] = {
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.HT1632_MATRIX_HELPURL);
-    this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
-      .appendField(Blockly.Msg.HT1632_MATRIX_WRITEDISPLAY);
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
