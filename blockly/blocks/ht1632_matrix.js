@@ -92,6 +92,32 @@ Blockly.Blocks['ht1632_matrix_begin'] = {
   }
 };
 
+Blockly.Blocks['ht1632_matrix_fill'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.HT1632_MATRIX_HELPURL);
+    this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField("Fill screen");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true,null);
+    this.setNextStatement(true,null);
+    this.setTooltip('');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has en deleted.
+      return;
+    }
+    if (!Blockly.Blocks.HT1632_matrix.checkBlocks(this)) {
+      this.setWarningText(Blockly.Msg.HT1632_MATRIX_WARNING);
+    } else {
+      this.setWarningText(null);
+    }
+  }
+};
+
 Blockly.Blocks['ht1632_matrix_clear'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.HT1632_MATRIX_HELPURL);
@@ -246,34 +272,6 @@ Blockly.Blocks['ht1632_matrix_settextcolor'] = {
       .appendField(Blockly.Msg.HT1632_MATRIX_SETTEXTCOLOR);
     this.appendDummyInput()
       .appendField(Blockly.Msg.COLOR)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.HT1632_MATRIX_LED_ON,"1"],[Blockly.Msg.HT1632_MATRIX_LED_OFF,"0"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"1"]]), 'COLOR');
-    this.setInputsInline(true);
-    this.setPreviousStatement(true,null);
-    this.setNextStatement(true,null);
-    this.setTooltip('');
-  },
-  onchange: function() {
-    if (!this.workspace) {
-      // Block has en deleted.
-      return;
-    }
-    if (!Blockly.Blocks.HT1632_matrix.checkBlocks(this)) {
-      this.setWarningText(Blockly.Msg.HT1632_MATRIX_WARNING);
-    } else {
-      this.setWarningText(null);
-    }
-  }
-};
-
-Blockly.Blocks['ht1632_matrix_fillscreen'] = {
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.HT1632_MATRIX_HELPURL);
-    this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
-      .appendField("Fill screen with color:");
-    this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.HT1632_MATRIX_LED_ON,"1"],[Blockly.Msg.HT1632_MATRIX_LED_OFF,"0"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"1"]]), 'COLOR');
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);

@@ -355,7 +355,7 @@
     </category>
     <category id="category_ht1632_matrix">
         <block type="ht1632_matrix_begin"></block>
-        <block type="ht1632_matrix_fillscreen"></block>
+        <block type="ht1632_matrix_fill"></block>
         <block type="ht1632_matrix_clear"></block>
         <block type="ht1632_matrix_writedisplay"></block>
         <block type="ht1632_matrix_setcursor"></block>

@@ -14,6 +14,11 @@ Blockly.Arduino.ht1632_matrix_begin = function() {
   return "";
 };
 
+Blockly.Arduino.ht1632_matrix_fill = function() {
+  var code = "HTmatrix.fillScreen();\n";
+  return code;
+};
+
 Blockly.Arduino.ht1632_matrix_clear = function() {
   var code = "matrix.clear();\n";
   return code;
@@ -35,20 +40,6 @@ Blockly.Arduino.ht1632_matrix_print = function() {
 Blockly.Arduino.ht1632_matrix_settextsize = function() {
   var size = this.getFieldValue('SIZE');
   var code = "matrix.setTextSize("+ size + ");\n";
-  return code;
-};
-
-Blockly.Arduino.ht1632_matrix_fillscreen = function() {
-  var color = this.getFieldValue('COLOR');
-  if (Blockly.Blocks.HT1632_matrix.current_type == "HT1632_16x24") {
-    if(color==1) {
-      var code = "matrix.fillScreen((uint16_t)"+ color+");\n";
-    } else {
-      var code = "matrix.clearScreen()"
-    }
-  } else {
-    var code = "// This kind of matrix doesn't have a fillScreen()!";
-  }
   return code;
 };
 
