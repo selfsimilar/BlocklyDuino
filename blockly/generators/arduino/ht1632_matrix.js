@@ -15,12 +15,13 @@ Blockly.Arduino.ht1632_matrix_begin = function() {
 };
 
 Blockly.Arduino.ht1632_matrix_fill = function() {
-  var code = "HTmatrix.fillScreen();\n";
-  return code;
-};
-
-Blockly.Arduino.ht1632_matrix_clear = function() {
-  var code = "HTmatrix.clearScreen();\n";
+  var style = this.getFieldValue('STYLE');
+  if (style=='FILL') {
+    var code = "HTmatrix.fillScreen();\n";
+  } else {
+    var code = "HTmatrix.clearScreen();\n";
+  }
+  
   return code;
 };
 
@@ -39,9 +40,9 @@ Blockly.Arduino.ht1632_matrix_print = function() {
 };
 
 Blockly.Arduino.ht1632_matrix_setcursor = function() {
-  var col = Blockly.Arduino.valueToCode(this, 'COL', Blockly.Arduino.ORDER_ATOMIC) || '0'
-  var row = Blockly.Arduino.valueToCode(this, 'ROW', Blockly.Arduino.ORDER_ATOMIC) || '0'
-  var code = "HTmatrix.setCursor("+ col + "," + row + ");\n";
+  var x = Blockly.Arduino.valueToCode(this, 'X', Blockly.Arduino.ORDER_ATOMIC) || '0'
+  var y = Blockly.Arduino.valueToCode(this, 'Y', Blockly.Arduino.ORDER_ATOMIC) || '0'
+  var code = "HTmatrix.setCursor("+ x + "," + y + ");\n";
   return code;
 };
 

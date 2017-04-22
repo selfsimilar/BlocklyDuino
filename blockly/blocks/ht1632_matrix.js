@@ -99,35 +99,10 @@ Blockly.Blocks['ht1632_matrix_fill'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
-      .appendField("Fill screen");
+      .appendField(new Blockly.FieldDropdown([["Fill screen",'FILL'],["Clear screen",'CLEAR']]), 'STYLE');
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
-    this.setTooltip('');
-  },
-  onchange: function() {
-    if (!this.workspace) {
-      // Block has en deleted.
-      return;
-    }
-    if (!Blockly.Blocks.HT1632_matrix.checkBlocks(this)) {
-      this.setWarningText(Blockly.Msg.HT1632_MATRIX_WARNING);
-    } else {
-      this.setWarningText(null);
-    }
-  }
-};
-
-Blockly.Blocks['ht1632_matrix_clear'] = {
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.HT1632_MATRIX_HELPURL);
-    this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
-      .appendField(Blockly.Msg.HT1632_MATRIX_CLEAR);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
     this.setTooltip('');
   },
   onchange: function() {
