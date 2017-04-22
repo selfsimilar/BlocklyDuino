@@ -57,6 +57,14 @@ Blockly.Arduino.ht1632_matrix_setbrightness = function() {
   return code;
 };
 
+Blockly.Arduino.ht1632_matrix_drawpixel = function() {
+  var x = Blockly.Arduino.valueToCode(this, 'X', Blockly.Arduino.ORDER_ATOMIC) || '0'
+  var y = Blockly.Arduino.valueToCode(this, 'Y', Blockly.Arduino.ORDER_ATOMIC) || '0'
+  var color = this.getFieldValue('COLOR');
+  var code = "HTmatrix.drawPixel(" + x + "," + y + "," + color + ");\n";
+  return code;
+};
+
 Blockly.Arduino.ht1632_matrix_settextcolor = function() {
   var color = this.getFieldValue('COLOR');
   var code = "matrix.setTextColor(" + color + ");\n";
@@ -66,14 +74,6 @@ Blockly.Arduino.ht1632_matrix_settextcolor = function() {
 Blockly.Arduino.ht1632_matrix_settextwrap = function() {
   var bool = (this.getFieldValue('BOOL') == 'TRUE') ? 'true' : 'false';
   var code = "matrix.setTextWrap("+bool + ");\n";
-  return code;
-};
-
-Blockly.Arduino.ht1632_matrix_drawpixel = function() {
-  var x = Blockly.Arduino.valueToCode(this, 'X', Blockly.Arduino.ORDER_ATOMIC) || '0'
-  var y = Blockly.Arduino.valueToCode(this, 'Y', Blockly.Arduino.ORDER_ATOMIC) || '0'
-  var color = this.getFieldValue('COLOR');
-  var code = "matrix.drawPixel(" + x + "," + y + "," + color + ");\n";
   return code;
 };
 
