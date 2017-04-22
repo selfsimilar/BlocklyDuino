@@ -245,7 +245,7 @@ Blockly.Blocks['i2c_matrix_settextcolor'] = {
       .appendField(Blockly.Msg.I2C_MATRIX_SETTEXTCOLOR);
     this.appendDummyInput()
       .appendField(Blockly.Msg.COLOR)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.I2C_MATRIX_LED_ON,"1"],[Blockly.Msg.I2C_MATRIX_LED_OFF,"0"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"1"]]), 'COLOR');
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.I2C_MATRIX_LED_ON,"LED_ON"],[Blockly.Msg.I2C_MATRIX_LED_OFF,"LED_OFF"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"LED_RED"]]), 'COLOR');
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
@@ -310,7 +310,7 @@ Blockly.Blocks['i2c_matrix_drawpixel'] = {
       .appendField(Blockly.Msg.I2C_MATRIX_Y);
     this.appendDummyInput()
       .appendField(Blockly.Msg.COLOR)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.I2C_MATRIX_LED_ON,"1"],[Blockly.Msg.I2C_MATRIX_LED_OFF,"0"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"1"]]), 'COLOR');
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.I2C_MATRIX_LED_ON,"LED_ON"],[Blockly.Msg.I2C_MATRIX_LED_OFF,"LED_OFF"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"LED_RED"]]), 'COLOR');
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
@@ -348,7 +348,7 @@ Blockly.Blocks['i2c_matrix_drawcircle'] = {
       .appendField(Blockly.Msg.I2C_MATRIX_DIAMETER);
     this.appendDummyInput()
       .appendField(Blockly.Msg.COLOR)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.I2C_MATRIX_LED_ON,"1"],[Blockly.Msg.I2C_MATRIX_LED_OFF,"0"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"1"]]), 'COLOR');
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.I2C_MATRIX_LED_ON,"LED_ON"],[Blockly.Msg.I2C_MATRIX_LED_OFF,"LED_OFF"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"LED_RED"]]), 'COLOR');
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
@@ -389,7 +389,7 @@ Blockly.Blocks['i2c_matrix_drawrect'] = {
       .appendField(Blockly.Msg.I2C_MATRIX_Y1);
     this.appendDummyInput()
       .appendField(Blockly.Msg.COLOR)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.I2C_MATRIX_LED_ON,"1"],[Blockly.Msg.I2C_MATRIX_LED_OFF,"0"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"1"]]), 'COLOR');
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.I2C_MATRIX_LED_ON,"LED_ON"],[Blockly.Msg.I2C_MATRIX_LED_OFF,"LED_OFF"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"LED_RED"]]), 'COLOR');
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
@@ -430,7 +430,7 @@ Blockly.Blocks['i2c_matrix_drawline'] = {
       .appendField(Blockly.Msg.I2C_MATRIX_Y1);
     this.appendDummyInput()
       .appendField(Blockly.Msg.COLOR)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.I2C_MATRIX_LED_ON,"1"],[Blockly.Msg.I2C_MATRIX_LED_OFF,"0"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"1"]]), 'COLOR');
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.I2C_MATRIX_LED_ON,"LED_ON"],[Blockly.Msg.I2C_MATRIX_LED_OFF,"LED_OFF"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"LED_RED"]]), 'COLOR');
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
@@ -471,7 +471,7 @@ Blockly.Blocks['i2c_matrix_fillrect'] = {
       .appendField(Blockly.Msg.I2C_MATRIX_Y1);
     this.appendDummyInput()
       .appendField(Blockly.Msg.COLOR)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.I2C_MATRIX_LED_ON,"1"],[Blockly.Msg.I2C_MATRIX_LED_OFF,"0"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"1"]]), 'COLOR');
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.I2C_MATRIX_LED_ON,"LED_ON"],[Blockly.Msg.I2C_MATRIX_LED_OFF,"LED_OFF"],[Blockly.Msg.GREEN,"LED_GREEN"],[Blockly.Msg.YELLOW,"LED_YELLOW"],[Blockly.Msg.RED,"LED_RED"]]), 'COLOR');
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
