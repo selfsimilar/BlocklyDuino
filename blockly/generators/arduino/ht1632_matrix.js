@@ -97,23 +97,18 @@ Blockly.Arduino.ht1632_matrix_drawline = function() {
   return code;
 };
 
-Blockly.Arduino.ht1632_matrix_fillrect = function() {
-  var x0 = Blockly.Arduino.valueToCode(this, 'X0', Blockly.Arduino.ORDER_ATOMIC) || '0'
-  var y0 = Blockly.Arduino.valueToCode(this, 'Y0', Blockly.Arduino.ORDER_ATOMIC) || '0'
-  var w = Blockly.Arduino.valueToCode(this, 'W', Blockly.Arduino.ORDER_ATOMIC) || '0'
-  var h = Blockly.Arduino.valueToCode(this, 'H', Blockly.Arduino.ORDER_ATOMIC) || '0'
-  var color = this.getFieldValue('COLOR');
-  var code = "HTmatrix.fillRect(" + x0 + "," + y0 + "," + w + "," + h + "," + color + ");\n";
-  return code;
-};
-
 Blockly.Arduino.ht1632_matrix_drawrect = function() {
   var x0 = Blockly.Arduino.valueToCode(this, 'X0', Blockly.Arduino.ORDER_ATOMIC) || '0'
   var y0 = Blockly.Arduino.valueToCode(this, 'Y0', Blockly.Arduino.ORDER_ATOMIC) || '0'
   var w = Blockly.Arduino.valueToCode(this, 'W', Blockly.Arduino.ORDER_ATOMIC) || '0'
   var h = Blockly.Arduino.valueToCode(this, 'H', Blockly.Arduino.ORDER_ATOMIC) || '0'
   var color = this.getFieldValue('COLOR');
-  var code = "HTmatrix.drawRect(" + x0 + "," + y0 + "," + w + "," + h + "," + color + ");\n";
+  var style = this.getFieldValue('STYLE');
+  if (style=='FILL') {
+    var code = "HTmatrix.fillRect(" + x0 + "," + y0 + "," + w + "," + h + "," + color + ");\n";
+  } else {
+    var code = "HTmatrix.drawRect(" + x0 + "," + y0 + "," + w + "," + h + "," + color + ");\n";
+  }
   return code;
 };
 

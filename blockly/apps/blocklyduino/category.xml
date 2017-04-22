@@ -367,7 +367,7 @@
         <block type="ht1632_matrix_drawpixel"></block>
         <block type="ht1632_matrix_drawline"></block>
         <block type="ht1632_matrix_drawcircle"></block>
-        <block type="ht1632_matrix_fillrect"></block>
+        <block type="ht1632_matrix_drawrect"></block>
     </category>
     <category id="category_i2c_matrix">
         <block type="i2c_matrix_begin"></block>

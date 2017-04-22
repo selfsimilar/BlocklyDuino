@@ -344,7 +344,6 @@ Blockly.Blocks['ht1632_matrix_settextcolor'] = {
       .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_SETTEXTCOLOR);
     this.appendDummyInput()
-      .appendField(Blockly.Msg.COLOR)
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.HT1632_MATRIX_LED_ON,"1"],[Blockly.Msg.HT1632_MATRIX_LED_OFF,"0"]]), 'COLOR');
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
@@ -402,46 +401,6 @@ Blockly.Blocks['ht1632_matrix_drawcircle'] = {
   }
 };
 
-Blockly.Blocks['ht1632_matrix_fillrect'] = {
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.HT1632_MATRIX_HELPURL);
-    this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
-      .appendField(Blockly.Msg.HT1632_MATRIX_FILLRECT);
-    this.appendValueInput("X0")
-      .setCheck("Number")
-      .appendField(Blockly.Msg.HT1632_MATRIX_X0);
-    this.appendValueInput("Y0")
-      .setCheck("Number")
-      .appendField(Blockly.Msg.HT1632_MATRIX_Y0);
-    this.appendValueInput("W")
-      .setCheck("Number")
-      .appendField("Width");
-    this.appendValueInput("H")
-      .setCheck("Number")
-      .appendField("Height");
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.HT1632_MATRIX_LED_ON,"1"],[Blockly.Msg.HT1632_MATRIX_LED_OFF,"0"]]), 'COLOR');
-    this.setInputsInline(true);
-    this.setPreviousStatement(true,null);
-    this.setNextStatement(true,null);
-    this.setTooltip('');
-  },
-  onchange: function() {
-    if (!this.workspace) {
-      // Block has en deleted.
-      return;
-    }
-    if (!Blockly.Blocks.HT1632_matrix.checkBlocks(this)) {
-      this.setWarningText(Blockly.Msg.HT1632_MATRIX_WARNING);
-    } else {
-      this.setWarningText(null);
-    }
-  }
-};
-
 Blockly.Blocks['ht1632_matrix_drawrect'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.HT1632_MATRIX_HELPURL);
@@ -449,7 +408,7 @@ Blockly.Blocks['ht1632_matrix_drawrect'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
-      .appendField(Blockly.Msg.HT1632_MATRIX_DRAWRECT);
+      .appendField(new Blockly.FieldDropdown([["Draw rectangle", "DRAW"],["Fill rectangle", "FILL"]]), 'STYLE');
     this.appendValueInput("X0")
       .setCheck("Number")
       .appendField(Blockly.Msg.HT1632_MATRIX_X0);
