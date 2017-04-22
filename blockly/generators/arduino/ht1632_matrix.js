@@ -29,16 +29,19 @@ Blockly.Arduino.ht1632_matrix_write = function() {
   return code;
 };
 
+Blockly.Arduino.ht1632_matrix_print = function() {
+  var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || '""'
+  var x = Blockly.Arduino.valueToCode(this, 'X', Blockly.Arduino.ORDER_ATOMIC) || 0
+  var y = Blockly.Arduino.valueToCode(this, 'Y', Blockly.Arduino.ORDER_ATOMIC) || 0
+  var code = "HTmatrix.setCursor("+x+", "+y+");\n";
+  code += "HTmatrix.print("+ content + ");\n";
+  return code;
+};
+
 Blockly.Arduino.ht1632_matrix_setcursor = function() {
   var col = Blockly.Arduino.valueToCode(this, 'COL', Blockly.Arduino.ORDER_ATOMIC) || '0'
   var row = Blockly.Arduino.valueToCode(this, 'ROW', Blockly.Arduino.ORDER_ATOMIC) || '0'
   var code = "matrix.setCursor("+ col + "," + row + ");\n";
-  return code;
-};
-
-Blockly.Arduino.ht1632_matrix_print = function() {
-  var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || ''
-  var code = "matrix.print("+ content + ");\n";
   return code;
 };
 

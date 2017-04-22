@@ -209,6 +209,14 @@ Blockly.Blocks['ht1632_matrix_print'] = {
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_PRINT);
+    this.appendValueInput("X")
+      .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField("x position");
+    this.appendValueInput("Y")
+      .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField("y position");
     this.appendValueInput("CONTENT")
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
