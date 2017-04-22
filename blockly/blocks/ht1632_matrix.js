@@ -176,13 +176,13 @@ Blockly.Blocks['ht1632_matrix_setcursor'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
-      .appendField(Blockly.Msg.HT1632_MATRIX_SETCURSOR);
-    this.appendValueInput("COL")
+      .appendField("Set cursor to");
+    this.appendValueInput("X")
       .setCheck("Number")
-      .appendField(Blockly.Msg.COL);
-    this.appendValueInput("ROW")
+      .appendField("x");
+    this.appendValueInput("Y")
       .setCheck("Number")
-      .appendField(Blockly.Msg.ROW);
+      .appendField("y");
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);

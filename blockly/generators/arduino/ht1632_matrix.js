@@ -41,7 +41,7 @@ Blockly.Arduino.ht1632_matrix_print = function() {
 Blockly.Arduino.ht1632_matrix_setcursor = function() {
   var col = Blockly.Arduino.valueToCode(this, 'COL', Blockly.Arduino.ORDER_ATOMIC) || '0'
   var row = Blockly.Arduino.valueToCode(this, 'ROW', Blockly.Arduino.ORDER_ATOMIC) || '0'
-  var code = "matrix.setCursor("+ col + "," + row + ");\n";
+  var code = "HTmatrix.setCursor("+ col + "," + row + ");\n";
   return code;
 };
 
@@ -119,19 +119,5 @@ Blockly.Arduino.ht1632_matrix_drawrect = function() {
 Blockly.Arduino.ht1632_matrix_setrotation = function() {
   var angle = this.getFieldValue('ANGLE');
   var code = "matrix.setRotation(" + angle + ");\n";
-  return code;
-};
-
-Blockly.Arduino.ht1632_matrix_writedigitnum = function() {
-  var pos = this.getFieldValue('POSITION');
-  var num = Blockly.Arduino.valueToCode(this, 'NUM', Blockly.Arduino.ORDER_ATOMIC) || '0'
-  var bool = Blockly.Arduino.valueToCode(this, 'DOTS', Blockly.Arduino.ORDER_NONE) || 'false';
-  var code = "matrix.writeDigitNum(" + pos + "," + num + "," + bool + ");\n";
-  return code;
-};
-
-Blockly.Arduino.ht1632_matrix_drawcolon = function() {
-  var bool = Blockly.Arduino.valueToCode(this, 'DOTS', Blockly.Arduino.ORDER_NONE) || 'false';
-  var code = "matrix.drawColon("+ bool + ");\n";
   return code;
 };
