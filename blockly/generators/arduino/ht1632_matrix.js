@@ -47,7 +47,7 @@ Blockly.Arduino.ht1632_matrix_setcursor = function() {
 
 Blockly.Arduino.ht1632_matrix_settextsize = function() {
   var size = this.getFieldValue('SIZE');
-  var code = "matrix.setTextSize("+ size + ");\n";
+  var code = "HTmatrix.setTextSize("+ size + ");\n";
   return code;
 };
 
