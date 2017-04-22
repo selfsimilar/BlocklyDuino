@@ -32,7 +32,7 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks.HT1632_matrix.HUE = 215;
 
-Blockly.Blocks.mini_matrix_image = filepath.media+'/mini_matrix.jpg';
+Blockly.Blocks.ht1632_16x24_matrix_image = filepath.media+'/ht1632_16x24_matrix.jpg';
 
 Blockly.Blocks.HT1632_matrix.current_type = null;
 
@@ -71,7 +71,7 @@ Blockly.Blocks['ht1632_matrix_begin'] = {
     this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_BEGIN_TITLE)
       .appendField("Data pin:")
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "HT_DATA")
@@ -98,7 +98,7 @@ Blockly.Blocks['ht1632_matrix_fill'] = {
     this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField("Fill screen");
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
@@ -124,7 +124,7 @@ Blockly.Blocks['ht1632_matrix_clear'] = {
     this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_CLEAR);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -149,7 +149,7 @@ Blockly.Blocks['ht1632_matrix_write'] = {
     this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_WRITEDISPLAY);
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
@@ -175,7 +175,7 @@ Blockly.Blocks['ht1632_matrix_setcursor'] = {
     this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_SETCURSOR);
     this.appendValueInput("COL")
       .setCheck("Number")
@@ -207,7 +207,7 @@ Blockly.Blocks['ht1632_matrix_print'] = {
     this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_PRINT);
     this.appendValueInput("X")
       .setCheck("Number")
@@ -244,7 +244,7 @@ Blockly.Blocks['ht1632_matrix_settextsize'] = {
     this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_SETTEXTSIZE)
       .appendField(new Blockly.FieldTextInput("1"),"SIZE");
     this.setInputsInline(true);
@@ -273,7 +273,7 @@ Blockly.Blocks['ht1632_matrix_setbrightness'] = {
       .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField("Brightness level")
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
@@ -299,7 +299,7 @@ Blockly.Blocks['ht1632_matrix_drawpixel'] = {
     this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_DRAWPIXEL);
     this.appendValueInput("X")
       .setCheck("Number")
@@ -338,7 +338,7 @@ Blockly.Blocks['ht1632_matrix_settextwrap'] = {
     this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_SETTEXTWRAP);
     this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown(BOOLEANS), 'BOOL');
@@ -366,7 +366,7 @@ Blockly.Blocks['ht1632_matrix_settextcolor'] = {
     this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_SETTEXTCOLOR);
     this.appendDummyInput()
       .appendField(Blockly.Msg.COLOR)
@@ -395,7 +395,7 @@ Blockly.Blocks['ht1632_matrix_drawcircle'] = {
     this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_DRAWCIRCLE);
     this.appendValueInput("X")
       .setCheck("Number")
@@ -433,7 +433,7 @@ Blockly.Blocks['ht1632_matrix_fillrect'] = {
     this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_FILLRECT);
     this.appendValueInput("X0")
       .setCheck("Number")
@@ -473,7 +473,7 @@ Blockly.Blocks['ht1632_matrix_drawrect'] = {
     this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_DRAWRECT);
     this.appendValueInput("X0")
       .setCheck("Number")
@@ -513,7 +513,7 @@ Blockly.Blocks['ht1632_matrix_drawline'] = {
     this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_DRAWLINE);
     this.appendValueInput("X0")
       .setCheck("Number")
@@ -553,7 +553,7 @@ Blockly.Blocks['ht1632_matrix_setrotation'] = {
     this.setColour(Blockly.Blocks.HT1632_matrix.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_SETROTATION)
       .appendField(new Blockly.FieldTextInput("1"),"ANGLE");
     this.setInputsInline(true);
