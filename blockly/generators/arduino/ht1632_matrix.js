@@ -20,7 +20,7 @@ Blockly.Arduino.ht1632_matrix_fill = function() {
 };
 
 Blockly.Arduino.ht1632_matrix_clear = function() {
-  var code = "matrix.clear();\n";
+  var code = "HTmatrix.clearScreen();\n";
   return code;
 };
 
