@@ -3,23 +3,13 @@ goog.provide('Blockly.Arduino.ht1632_matrix');
 goog.require('Blockly.Arduino');
 
 Blockly.Arduino.ht1632_matrix_begin = function() {
-  var dropdown_address = this.getFieldValue('ADDRESS');
-  var type = this.getFieldValue('TYPE');
-  var isHT1632 = type == 'HT1632_16x24'
-  Blockly.Arduino.definitions_['define_wire'] = '#include <Wire.h>\n';
   Blockly.Arduino.definitions_['define_adafruit_gfx'] = '#include "Adafruit_GFX.h"\n';
-  if (isHT1632) {
-    var ht_data = this.getFieldValue("HT_DATA");
-    var ht_cs = this.getFieldValue("HT_CS");
-    var ht_wr = this.getFieldValue("HT_WR");
-    Blockly.Arduino.definitions_['define_adafruit_HT1632'] = '#include "Adafruit_HT1632.h"\n';
-    Blockly.Arduino.definitions_['define_' + type] = 'Adafruit_HT1632LEDMatrix matrix = Adafruit_HT1632LEDMatrix('+ht_data+','+ht_wr+','+ht_cs+');\n';
-    Blockly.Arduino.setups_['setup_matrix'] = 'matrix.begin(ADA_HT1632_COMMON_16NMOS);';
-  } else {
-    Blockly.Arduino.definitions_['define_adafruit_ledbackpack'] = '#include "Adafruit_LEDBackpack.h"\n'; 
-    Blockly.Arduino.definitions_['define_' + type] = 'Adafruit_' + type + ' matrix = Adafruit_' + type + '();\n';
-    Blockly.Arduino.setups_['setup_' + type + '_' + dropdown_address] = 'matrix.begin(' + dropdown_address + ');';
-  }
+  Blockly.Arduino.definitions_['define_adafruit_HT1632'] = '#include "Adafruit_HT1632.h"\n';
+  var ht_data = this.getFieldValue("HT_DATA");
+  var ht_cs = this.getFieldValue("HT_CS");
+  var ht_wr = this.getFieldValue("HT_WR");
+  Blockly.Arduino.definitions_['define_HT1632'] = 'Adafruit_HT1632LEDMatrix matrix = Adafruit_HT1632LEDMatrix('+ht_data+', '+ht_wr+', '+ht_cs+');\n';
+  Blockly.Arduino.setups_['setup_matrix'] = 'matrix.begin(ADA_HT1632_COMMON_16NMOS);\n';
   var code = "";
   return "";
 };

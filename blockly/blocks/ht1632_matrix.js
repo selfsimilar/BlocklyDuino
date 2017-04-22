@@ -73,85 +73,22 @@ Blockly.Blocks['ht1632_matrix_begin'] = {
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.mini_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_BEGIN_TITLE)
-      .appendField(Blockly.Msg.HT1632_MATRIX_TYPE)
-      .appendField(new Blockly.FieldDropdown(
-        profile.default.i2c_matrix_type, function(option) {
-          var isHT1632 = (option == 'HT1632_16x24');
-          this.sourceBlock_.updateShape_(isHT1632);
-        }),
-        "TYPE")
-    this.appendDummyInput("HT1632_address")
-      .appendField(Blockly.Msg.HT1632_MATRIX_ADDRESS)
-      .appendField(new Blockly.FieldDropdown(profile.default.led_backpack_address),"ADDRESS");
+      .appendField("Data pin:")
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "HT_DATA")
+      .appendField("WR pin:")
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "HT_WR")
+      .appendField("CS pin:")
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "HT_CS");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip('');
-    Blockly.Blocks.HT1632_matrix.current_type = this.getFieldValue("TYPE");
   },
   onchange: function() {
     if (!this.workspace) {
       // Block has been deleted.
       return;
     }
-    if (this.getFieldValue('TYPE') == 'HT1632_16x24') {
-      this.setWarningText("Need to install the Adafruit-GFX library and the Adafruit-HT1632 library.")
-    } else {
-      this.setWarningText(Blockly.Msg.HT1632_MATRIX_BEGIN_WARNING);
-    }
-  },
-    /**
-   * Create XML to represent whether the HT1632 pin inputs should be present.
-   * @return {Element} XML storage element.
-   * @this Blockly.Block
-   */
-  mutationToDom: function() {
-    var container = document.createElement('mutation');
-    var isHT1632 = (this.getFieldValue('TYPE') == 'HT1632_16x24');
-    container.setAttribute('is_ht1632', isHT1632);
-    return container;
-  },
-  /**
-   * Parse XML to restore the HT1632 input pins or HT1632 address select.
-   * @param {!Element} xmlElement XML storage element.
-   * @this Blockly.Block
-   */
-  domToMutation: function(xmlElement) {
-    var isHT1632 = (xmlElement.getAttribute('is_ht1632') == 'true');
-    this.updateShape_(isHT1632);
-  },
-  /**
-   * Modify this block to have(or not) inputs for HT1632 pins instead of an HT1632 address.
-   * @param {boolean} isHT1632 True if this block starts an HT1632 matrix.
-   * @private
-   * @this Blockly.Block
-   */
-  updateShape_: function(isHT1632) {
-    // Add or remove a Value Input.
-    var HT1632inputExists = this.getInput('HT1632_inputs');
-    var addressInputExists = this.getInput('HT1632_address');
-    if (isHT1632) {
-      if (!HT1632inputExists) {
-        this.appendDummyInput("HT1632_inputs")
-        .appendField("Data pin:")
-        .appendField(new Blockly.FieldDropdown(profile.default.digital), "HT_DATA")
-        .appendField("WR pin:")
-        .appendField(new Blockly.FieldDropdown(profile.default.digital), "HT_WR")
-        .appendField("CS pin:")
-        .appendField(new Blockly.FieldDropdown(profile.default.digital), "HT_CS");
-      }
-      if (addressInputExists) {
-        this.removeInput("HT1632_address")
-      }
-    } else {
-      if (HT1632inputExists) {
-        this.removeInput("HT1632_inputs");
-      }
-      if (!addressInputExists) {
-        this.appendDummyInput("HT1632_address")
-          .appendField(Blockly.Msg.HT1632_MATRIX_ADDRESS)
-          .appendField(new Blockly.FieldDropdown(profile.default.led_backpack_address),"ADDRESS");
-      }
-    }
+    this.setWarningText(Blockly.Msg.HT1632_MATRIX_BEGIN_WARNING);
   }
 };
 
