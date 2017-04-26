@@ -41,22 +41,21 @@ Blockly.Blocks.HT1632_matrix.checkBlocks = function(obj) {
   var current = obj.type;
   var blocks = obj.workspace.getAllBlocks();
   for (var i = 0; i < blocks.length; i++) {
-    if ((blocks[i].type == 'ht1632_matrix_clear' ||
+    if ((blocks[i].type == 'ht1632_matrix_fill' ||
          blocks[i].type == 'ht1632_matrix_setcursor' ||
          blocks[i].type == 'ht1632_matrix_print' ||
          blocks[i].type == 'ht1632_matrix_settextsize' ||
+         blocks[i].type == 'ht1632_matrix_setbrightness' ||
          blocks[i].type == 'ht1632_matrix_settextwrap' ||
          blocks[i].type == 'ht1632_matrix_settextcolor' ||
          blocks[i].type == 'ht1632_matrix_drawpixel' ||
          blocks[i].type == 'ht1632_matrix_drawcircle' ||
          blocks[i].type == 'ht1632_matrix_drawrect' ||
          blocks[i].type == 'ht1632_matrix_drawline' ||
-         blocks[i].type == 'ht1632_matrix_fillrect' ||
          blocks[i].type == 'ht1632_matrix_setrotation' ||
          blocks[i].type == 'ht1632_matrix_write') &&
         legal == null){
-      if (blocks[i].type != current)  legal = true;
-      else  legal = false;
+      legal = blocks[i].type != current;
     } 
     if(blocks[i].type == 'ht1632_matrix_begin'){
       return true;
