@@ -9,9 +9,10 @@ Blockly.Arduino.ht1632_matrix_begin = function() {
   var ht_cs = this.getFieldValue("HT_CS");
   var ht_wr = this.getFieldValue("HT_WR");
   Blockly.Arduino.definitions_['define_HT1632'] = 'Adafruit_HT1632LEDMatrix HTmatrix = Adafruit_HT1632LEDMatrix('+ht_data+', '+ht_wr+', '+ht_cs+');\n';
-  Blockly.Arduino.setups_['setup_matrix'] = 'HTmatrix.begin(ADA_HT1632_COMMON_16NMOS);\n';
+  Blockly.Arduino.setups_['setup_HT1632'] = 'HTmatrix.begin(ADA_HT1632_COMMON_16NMOS);\n';
+  Blockly.Arduino.setups_['setup_HT1632_textwrap'] = 'HTmatrix.setTextWrap(false);\n';
   var code = "";
-  return "";
+  return code;
 };
 
 Blockly.Arduino.ht1632_matrix_fill = function() {
