@@ -151,9 +151,11 @@ Blockly.Blocks['ht1632_matrix_setcursor'] = {
       .appendField("Set cursor to");
     this.appendValueInput("X")
       .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
       .appendField("x");
     this.appendValueInput("Y")
       .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
       .appendField("y");
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
@@ -370,12 +372,15 @@ Blockly.Blocks['ht1632_matrix_drawcircle'] = {
       .appendField(new Blockly.FieldDropdown([["Draw circle", "DRAW"],["Fill circle", "FILL"]]), 'STYLE');
     this.appendValueInput("X")
       .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.HT1632_MATRIX_X);
     this.appendValueInput("Y")
       .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.HT1632_MATRIX_Y);
     this.appendValueInput("D")
       .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.HT1632_MATRIX_DIAMETER);
     this.appendDummyInput()
       .appendField(Blockly.Msg.COLOR)
@@ -408,15 +413,19 @@ Blockly.Blocks['ht1632_matrix_drawrect'] = {
       .appendField(new Blockly.FieldDropdown([["Draw rectangle", "DRAW"],["Fill rectangle", "FILL"]]), 'STYLE');
     this.appendValueInput("X0")
       .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.HT1632_MATRIX_X0);
     this.appendValueInput("Y0")
       .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.HT1632_MATRIX_Y0);
     this.appendValueInput("W")
       .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
       .appendField("Width");
     this.appendValueInput("H")
       .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
       .appendField("Height");
     this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.HT1632_MATRIX_LED_ON,"1"],[Blockly.Msg.HT1632_MATRIX_LED_OFF,"0"]]), 'COLOR');
@@ -448,15 +457,19 @@ Blockly.Blocks['ht1632_matrix_drawline'] = {
       .appendField(Blockly.Msg.HT1632_MATRIX_DRAWLINE);
     this.appendValueInput("X0")
       .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.HT1632_MATRIX_X0);
     this.appendValueInput("Y0")
       .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.HT1632_MATRIX_Y0);
     this.appendValueInput("X1")
       .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.HT1632_MATRIX_X1);
     this.appendValueInput("Y1")
       .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.HT1632_MATRIX_Y1);
     this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.HT1632_MATRIX_LED_ON,"1"],[Blockly.Msg.HT1632_MATRIX_LED_OFF,"0"]]), 'COLOR');
