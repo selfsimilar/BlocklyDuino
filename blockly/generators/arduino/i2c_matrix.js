@@ -38,6 +38,20 @@ Blockly.Arduino.i2c_matrix_settextsize = function() {
   return code;
 };
 
+Blockly.Arduino.i2c_matrix_fillscreen = function() {
+  var color = this.getFieldValue('COLOR');
+  if (Blockly.Blocks.i2c_matrix.current_type == "HT1632_16x24") {
+    if(color==1) {
+      var code = "matrix.fillScreen((uint16_t)"+ color+");\n";
+    } else {
+      var code = "matrix.clearScreen()"
+    }
+  } else {
+    var code = "// This kind of matrix doesn't have a fillScreen()!";
+  }
+  return code;
+};
+
 Blockly.Arduino.i2c_matrix_settextcolor = function() {
   var color = this.getFieldValue('COLOR');
   var code = "matrix.setTextColor(" + color + ");\n";
@@ -104,7 +118,11 @@ Blockly.Arduino.i2c_matrix_setrotation = function() {
 };
 
 Blockly.Arduino.i2c_matrix_writedisplay = function() {
-  var code = "matrix.writeDisplay();\n";
+  if (Blockly.Blocks.i2c_matrix.current_type == "HT1632_16x24") {
+    var code = "matrix.writeScreen();\n";
+  } else {
+    var code = "matrix.writeDisplay();\n";
+  }
   return code;
 };
 
