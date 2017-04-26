@@ -68,13 +68,13 @@ Blockly.Arduino.ht1632_matrix_drawpixel = function() {
 
 Blockly.Arduino.ht1632_matrix_settextcolor = function() {
   var color = this.getFieldValue('COLOR');
-  var code = "matrix.setTextColor(" + color + ");\n";
+  var code = "HTmatrix.setTextColor(" + color + ");\n";
   return code;
 };
 
 Blockly.Arduino.ht1632_matrix_settextwrap = function() {
   var bool = (this.getFieldValue('BOOL') == 'TRUE') ? 'true' : 'false';
-  var code = "matrix.setTextWrap("+bool + ");\n";
+  var code = "HTmatrix.setTextWrap("+bool + ");\n";
   return code;
 };
 
@@ -85,9 +85,9 @@ Blockly.Arduino.ht1632_matrix_drawcircle = function() {
   var color = this.getFieldValue('COLOR');
   var style = this.getFieldValue('STYLE');
   if (style == 'FILL') {
-    var code = "matrix.fillCircle(" + x + "," + y + "," + d + "," + color + ");\n";
+    var code = "HTmatrix.fillCircle(" + x + "," + y + "," + d + "," + color + ");\n";
   } else {
-    var code = "matrix.drawCircle(" + x + "," + y + "," + d + "," + color + ");\n";
+    var code = "HTmatrix.drawCircle(" + x + "," + y + "," + d + "," + color + ");\n";
   }
   return code;
 };
@@ -119,6 +119,6 @@ Blockly.Arduino.ht1632_matrix_drawrect = function() {
 
 Blockly.Arduino.ht1632_matrix_setrotation = function() {
   var angle = this.getFieldValue('ANGLE');
-  var code = "matrix.setRotation(" + angle + ");\n";
+  var code = "HTmatrix.setRotation(" + angle + ");\n";
   return code;
 };
