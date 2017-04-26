@@ -70,11 +70,11 @@ Blockly.Blocks['ht1632_matrix_begin'] = {
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(Blockly.Msg.HT1632_MATRIX_BEGIN_TITLE)
-      .appendField("Data pin:")
+      .appendField(Blockly.Msg.HT1632_MATRIX_PIN_DATA)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "HT_DATA")
-      .appendField("WR pin:")
+      .appendField(Blockly.Msg.HT1632_MATRIX_PIN_WR)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "HT_WR")
-      .appendField("CS pin:")
+      .appendField(Blockly.Msg.HT1632_MATRIX_PIN_CS)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "HT_CS");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -96,7 +96,9 @@ Blockly.Blocks['ht1632_matrix_fill'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
-      .appendField(new Blockly.FieldDropdown([["Fill screen",'FILL'],["Clear screen",'CLEAR']]), 'STYLE');
+      .appendField(new Blockly.FieldDropdown(
+        [[Blockly.Msg.HT1632_MATRIX_SCREEN_FILL,'FILL'],
+        [Blockly.Msg.HT1632_MATRIX_SCREEN_CLEAR,'CLEAR']]), 'STYLE');
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
@@ -148,15 +150,15 @@ Blockly.Blocks['ht1632_matrix_setcursor'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
-      .appendField("Set cursor to");
+      .appendField(Blockly.Msg.HT1632_MATRIX_SETCURSOR);
     this.appendValueInput("X")
       .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField("x");
+      .appendField(Blockly.Msg.I2C_MATRIX_X);
     this.appendValueInput("Y")
       .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField("y");
+      .appendField(Blockly.Msg.I2C_MATRIX_Y);
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
@@ -186,11 +188,11 @@ Blockly.Blocks['ht1632_matrix_print'] = {
     this.appendValueInput("X")
       .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField("x position");
+      .appendField(Blockly.Msg.I2C_MATRIX_X);
     this.appendValueInput("Y")
       .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField("y position");
+      .appendField(Blockly.Msg.I2C_MATRIX_Y);
     this.appendValueInput("CONTENT")
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
@@ -248,7 +250,7 @@ Blockly.Blocks['ht1632_matrix_setbrightness'] = {
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
-      .appendField("Brightness level")
+      .appendField(Blockly.Msg.HT1632_MATRIX_BRIGHTNESS)
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
@@ -369,7 +371,9 @@ Blockly.Blocks['ht1632_matrix_drawcircle'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
-      .appendField(new Blockly.FieldDropdown([["Draw circle", "DRAW"],["Fill circle", "FILL"]]), 'STYLE');
+      .appendField(new Blockly.FieldDropdown(
+        [[Blockly.Msg.HT1632_MATRIX_CIRCLE_DRAW, "DRAW"],
+        [Blockly.Msg.HT1632_MATRIX_CIRCLE_FILL, "FILL"]]), 'STYLE');
     this.appendValueInput("X")
       .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
@@ -410,7 +414,9 @@ Blockly.Blocks['ht1632_matrix_drawrect'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
-      .appendField(new Blockly.FieldDropdown([["Draw rectangle", "DRAW"],["Fill rectangle", "FILL"]]), 'STYLE');
+      .appendField(new Blockly.FieldDropdown(
+        [[Blockly.Msg.HT1632_MATRIX_RECT_DRAW, "DRAW"],
+        [Blockly.Msg.HT1632_MATRIX_RECT_FILL, "FILL"]]), 'STYLE');
     this.appendValueInput("X0")
       .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
@@ -422,11 +428,11 @@ Blockly.Blocks['ht1632_matrix_drawrect'] = {
     this.appendValueInput("W")
       .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField("Width");
+      .appendField(Blockly.Msg.HT1632_MATRIX_WIDTH);
     this.appendValueInput("H")
       .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField("Height");
+      .appendField(Blockly.Msg.HT1632_MATRIX_HEIGHT);
     this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.HT1632_MATRIX_LED_ON,"1"],[Blockly.Msg.HT1632_MATRIX_LED_OFF,"0"]]), 'COLOR');
     this.setInputsInline(true);
