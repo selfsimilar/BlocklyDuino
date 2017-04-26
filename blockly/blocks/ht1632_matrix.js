@@ -34,8 +34,6 @@ Blockly.Blocks.HT1632_matrix.HUE = 215;
 
 Blockly.Blocks.ht1632_16x24_matrix_image = filepath.media+'/ht1632_16x24_matrix.jpg';
 
-Blockly.Blocks.HT1632_matrix.current_type = null;
-
 Blockly.Blocks.HT1632_matrix.checkBlocks = function(obj) {
   var legal = null;
   var current = obj.type;
@@ -369,7 +367,7 @@ Blockly.Blocks['ht1632_matrix_drawcircle'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
-      .appendField(Blockly.Msg.HT1632_MATRIX_DRAWCIRCLE);
+      .appendField(new Blockly.FieldDropdown([["Draw circle", "DRAW"],["Fill circle", "FILL"]]), 'STYLE');
     this.appendValueInput("X")
       .setCheck("Number")
       .appendField(Blockly.Msg.HT1632_MATRIX_X);

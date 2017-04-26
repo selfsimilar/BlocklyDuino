@@ -83,7 +83,12 @@ Blockly.Arduino.ht1632_matrix_drawcircle = function() {
   var y = Blockly.Arduino.valueToCode(this, 'Y', Blockly.Arduino.ORDER_ATOMIC) || '0'
   var d = Blockly.Arduino.valueToCode(this, 'D', Blockly.Arduino.ORDER_ATOMIC) || '0'
   var color = this.getFieldValue('COLOR');
-  var code = "matrix.drawCircle(" + x + "," + y + "," + d + "," + color + ");\n";
+  var style = this.getFieldValue('STYLE');
+  if (style == 'FILL') {
+    var code = "matrix.fillCircle(" + x + "," + y + "," + d + "," + color + ");\n";
+  } else {
+    var code = "matrix.drawCircle(" + x + "," + y + "," + d + "," + color + ");\n";
+  }
   return code;
 };
 
