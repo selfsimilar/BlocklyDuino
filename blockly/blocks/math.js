@@ -484,7 +484,7 @@ Blockly.Blocks['math_map'] = {
       .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_TOHIGH);
-    this.setOutput(true, "Number");
+    this.setOutput(true, ["Number","Float"]);
     this.setTooltip(Blockly.Msg.MATH_MAP_TOOLTIP);
   }
 };
