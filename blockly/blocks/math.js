@@ -466,19 +466,24 @@ Blockly.Blocks['math_map'] = {
         ['float','FLOAT']]), 'TYPE');
     this.appendValueInput("VALUE")
       .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_VALUE);
-    this.appendDummyInput("FROMLOW")
-      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_FROMLOW)
-      .appendField(new Blockly.FieldTextInput("0"),"FROMLOW");
-    this.appendDummyInput("FROMHIGH")
-      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_FROMHIGH)
-      .appendField(new Blockly.FieldTextInput("1023"),"FROMHIGH");
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_TOLOW)
-      .appendField(new Blockly.FieldTextInput("0"),"TOLOW");
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_TOHIGH)
-      .appendField(new Blockly.FieldTextInput("255"),"TOHIGH");
+    this.appendValueInput("FROMLOW")
+      .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_FROMLOW);
+    this.appendValueInput("FROMHIGH")
+      .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_FROMHIGH);
+    this.appendValueInput("TOLOW")
+      .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_TOLOW);
+    this.appendValueInput("TOHIGH")
+      .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.MATH_MAP_APPENDTEXT_TOHIGH);
     this.setOutput(true, "Number");
     this.setTooltip(Blockly.Msg.MATH_MAP_TOOLTIP);
   }
