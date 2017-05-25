@@ -40,7 +40,6 @@ Blockly.Blocks['ir_remote_button'] = {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage(Blockly.Blocks.ir_remote.image, 64, 64))
         .appendField(new Blockly.FieldDropdown(BUTTONS), 'BUTTON')
-        .appendField(Blockly.Msg.IR_REMOTE_BUTTON_BUTTON);
     this.setOutput(true, "Unsigned_Long");
     this.setColour(Blockly.Blocks.ir_remote.HUE);
     this.setHelpUrl(Blockly.Msg.IR_REMOTE_BUTTON_HELPURL);
