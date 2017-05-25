@@ -97,8 +97,8 @@ Blockly.Blocks['ht1632_matrix_fill'] = {
       .appendField(Blockly.Msg.HT1632_MATRIX_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.ht1632_16x24_matrix_image, 64, 64))
       .appendField(new Blockly.FieldDropdown(
-        [[Blockly.Msg.HT1632_MATRIX_SCREEN_FILL,'FILL'],
-        [Blockly.Msg.HT1632_MATRIX_SCREEN_CLEAR,'CLEAR']]), 'STYLE');
+        [[Blockly.Msg.HT1632_MATRIX_SCREEN_CLEAR,'CLEAR'],
+        [Blockly.Msg.HT1632_MATRIX_SCREEN_FILL,'FILL']]), 'STYLE');
     this.setInputsInline(true);
     this.setPreviousStatement(true,null);
     this.setNextStatement(true,null);
