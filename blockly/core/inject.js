@@ -162,6 +162,10 @@ Blockly.parseOptions_ = function(options) {
     // 'path' is a deprecated option which has been replaced by 'media'.
     Blockly.pathToMedia = options['path'] + 'media/';
   }
+  // Media path must contain a trailing slash, but may not.
+  if (Blockly.pathToMedia.slice(-1) !== '/') {
+    Blockly.pathToMedia += '/';
+  }
   Blockly.hasCategories = hasCategories;
   Blockly.hasScrollbars = hasScrollbars;
   Blockly.hasTrashcan = hasTrashcan;
