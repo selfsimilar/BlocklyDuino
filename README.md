@@ -30,7 +30,7 @@ Or watch the [video demo](http://www.youtube.com/watch?v=_swiyXcUvNY)
 
 Run the `build.sh` script in the root directory to compile the app to the `build` directory. This requires running some python scripts with at least one library dependency that must be installed separately (lxml). It's recommended to use virtualenv to install and run this script, though you can also install lxml globally.
 
-The directory `build` is the full app. You can open `build.index.html` directly in your browser or host it yourself on your own website.
+The directory `build` is the full app. You can open `build/index.html` directly in your browser or host it yourself on your own website.
 
 ### Integrated Arduino upload
 
