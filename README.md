@@ -28,9 +28,9 @@ Or watch the [video demo](http://www.youtube.com/watch?v=_swiyXcUvNY)
 
 ### Run locally on your web browser
 
-If you want to install it locally. Get code from github and open `blockly/apps/blocklyduino/index.html` in your browser.
+Run the `build.sh` script in the root directory to compile the app to the `build` directory. This requires running some python scripts with at least one library dependency that must be installed separately (lxml). It's recommended to use virtualenv to install and run this script, though you can also install lxml globally.
 
-The preffered way is to put the BlocklyDuino/web folder into a web server and open the url like localhost/public/blockly/demos/blocklyduino/index.html for use.
+The directory `build` is the full app. You can open `build.index.html` directly in your browser or host it yourself on your own website.
 
 ### Integrated Arduino upload
 
