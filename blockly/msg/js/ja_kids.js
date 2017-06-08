@@ -496,6 +496,14 @@ Blockly.Msg.INOUT_TONE_APPENDTEXT_DURATION = "ながさ";
 Blockly.Msg.INOUT_TONE_APPENDTEXT_FREQ = "ねいろ";
 Blockly.Msg.INOUT_TONE_APPENDTEXT_PIN = "おとをならす ピン";
 Blockly.Msg.INOUT_TONE_HELPURL = "http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2462";
+Blockly.Msg.INOUT_TONE_NOTE_A5 = "ラ";
+Blockly.Msg.INOUT_TONE_NOTE_B5 = "シ";
+Blockly.Msg.INOUT_TONE_NOTE_C4 = "ド";
+Blockly.Msg.INOUT_TONE_NOTE_C5 = "ド";
+Blockly.Msg.INOUT_TONE_NOTE_D4 = "レ";
+Blockly.Msg.INOUT_TONE_NOTE_E4 = "ミ";
+Blockly.Msg.INOUT_TONE_NOTE_F4 = "ファ";
+Blockly.Msg.INOUT_TONE_NOTE_G4 = "ソ";
 Blockly.Msg.INOUT_TONE_TOOLTIP = "ブザーやスピーカでおとをならせます";
 Blockly.Msg.INTEGER = "せいすう";
 Blockly.Msg.INTERRUPTS_ATTACH_HELPURL = "https://www.arduino.cc/en/Reference/AttachInterrupt";  // untranslated
