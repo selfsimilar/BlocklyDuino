@@ -4,3 +4,4 @@ build
 **/*.pyc
 blockly/msg/js/
 blockly/*_compressed.js
+blockly/*_uncompressed.js
