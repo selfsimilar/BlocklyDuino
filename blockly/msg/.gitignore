@@ -1,0 +1,5 @@
+# this directory needs to exist for build artifacts to populate it
+# Ignore everything in this directory
+*
+# Except this file
+!.gitignore
