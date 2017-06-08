@@ -845,7 +845,7 @@
         <field name="TYPE">FLOAT</field>
         <value name="VALUE"></value>
         <value name="FROMLOW"><block type="math_number"><field name="NUM">0</field></block></value>
-        <value name="FROMHIGH"><block type="math_number"><field name="NUM">1024</field></block></value>
+        <value name="FROMHIGH"><block type="math_number"><field name="NUM">1023</field></block></value>
         <value name="TOLOW"><block type="math_number"><field name="NUM">0</field></block></value>
         <value name="TOHIGH"><block type="math_number"><field name="NUM">255</field></block></value></block>
 </category>

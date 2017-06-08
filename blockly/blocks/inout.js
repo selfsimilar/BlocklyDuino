@@ -184,6 +184,15 @@ Blockly.Blocks['custom_tone'] = {
 
 Blockly.Blocks['tone'] = {
   init: function() {
+    Blockly.Blocks.inout.tones = [
+      [Blockly.Msg.INOUT_TONE_NOTE_C4, profile.default.toneFreqs[0]],
+      [Blockly.Msg.INOUT_TONE_NOTE_D4, profile.default.toneFreqs[1]],
+      [Blockly.Msg.INOUT_TONE_NOTE_E4, profile.default.toneFreqs[2]],
+      [Blockly.Msg.INOUT_TONE_NOTE_F4, profile.default.toneFreqs[3]],
+      [Blockly.Msg.INOUT_TONE_NOTE_G4, profile.default.toneFreqs[4]],
+      [Blockly.Msg.INOUT_TONE_NOTE_A5, profile.default.toneFreqs[5]],
+      [Blockly.Msg.INOUT_TONE_NOTE_B5, profile.default.toneFreqs[6]],
+      [Blockly.Msg.INOUT_TONE_NOTE_C5, profile.default.toneFreqs[7]]];
     this.setHelpUrl(Blockly.Msg.INOUT_TONE_HELPURL);
     this.setColour(Blockly.Blocks.inout.HUE);
     this.appendDummyInput()
@@ -191,7 +200,7 @@ Blockly.Blocks['tone'] = {
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
     this.appendDummyInput()
       .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_FREQ)
-      .appendField(new Blockly.FieldDropdown(profile.default.tone), "FREQ");
+      .appendField(new Blockly.FieldDropdown(Blockly.Blocks.inout.tones), "FREQ");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
