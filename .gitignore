@@ -2,3 +2,4 @@
 closure-library
 build
 blockly/msg/js/
+blockly/*_compressed.js
