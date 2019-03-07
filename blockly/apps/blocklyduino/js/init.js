@@ -100,9 +100,9 @@ function init() {
       // Height and width need to be set, read back, then set again to
       // compensate for scrollbars.
       el.style.height = bBox.height + 'px';
-      el.style.height = (2 * bBox.height - el.offsetHeight) + 'px';
+      el.style.height = (2 * bBox.height - el.offsetHeight - bBox.y) + 'px';
       el.style.width = bBox.width + 'px';
-      el.style.width = (2 * bBox.width - el.offsetWidth) + 'px';
+      el.style.width = (2 * bBox.width - el.offsetWidth - bBox.x) + 'px';
     }
     // Make the 'Blocks' tab line up with the toolbox.
     if (Blockly.mainWorkspace.toolbox_.width) {
