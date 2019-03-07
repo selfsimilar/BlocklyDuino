@@ -385,7 +385,7 @@ Blockly.Blocks['ht1632_matrix_drawcircle'] = {
     this.appendValueInput("D")
       .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.HT1632_MATRIX_DIAMETER);
+      .appendField(Blockly.Msg.HT1632_MATRIX_RADIUS);
     this.appendDummyInput()
       .appendField(Blockly.Msg.COLOR)
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.HT1632_MATRIX_LED_ON,"1"],[Blockly.Msg.HT1632_MATRIX_LED_OFF,"0"]]), 'COLOR');

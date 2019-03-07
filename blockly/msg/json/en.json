@@ -879,7 +879,7 @@
   "HT1632_MATRIX_BRIGHTNESS": "Set brightness",
   "HT1632_MATRIX_CIRCLE_DRAW": "Outline circle",
   "HT1632_MATRIX_CIRCLE_FILL": "Fill circle",
-  "HT1632_MATRIX_DIAMETER": "Diameter",
+  "HT1632_MATRIX_RADIUS": "Radius",
   "HT1632_MATRIX_DRAWLINE": "DrawLine",
   "HT1632_MATRIX_DRAWPIXEL": "DrawPixel",
   "HT1632_MATRIX_HEIGHT": "Height",
