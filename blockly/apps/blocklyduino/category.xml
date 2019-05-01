@@ -392,6 +392,22 @@
         </value>
     </block>
 </category>
+<category id = "category_sparki">
+	<block type = "include_sparki_library"></block>
+	<block type = "sparki_move_forward"></block>
+	<block type = "sparki_move_backward"></block>
+	<block type = "sparki_move_left"></block>
+	<block type = "sparki_move_right"></block>
+	<block type = "sparki_opengripper"></block>
+	<block type = "sparki_closegripper"></block>
+	<block type = "sparki_stop_movement"></block>
+	<block type = "sparki_stopgripper"></block>
+	<block type = "sparki_bark"></block>
+	<block type = "sparki_ultrasonicdistance"></block>
+	<block type = "sparki_leftlight"></block>
+	<block type = "sparki_rightlight"></block>
+	<block type = "sparki_centerlight"></block>
+</category>
 <category id="category_ir_remote">
 
     <block type="variables_set" inline="false">
