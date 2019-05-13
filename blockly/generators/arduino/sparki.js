@@ -20,6 +20,7 @@ Blockly.JavaScript['sparki_move_left'] = function(block) {
   var value_leftangle = Blockly.JavaScript.valueToCode(block, 'leftAngle', Blockly.JavaScript.ORDER_ATOMIC);
   var code = 'sparki.moveLeft(' + value_leftangle + ');\n';
   return code;
+}
 
 Blockly.JavaScript['sparki_move_right'] = function(block) {
   var value_rightangle = Blockly.JavaScript.valueToCode(block, 'rightAngle', Blockly.JavaScript.ORDER_ATOMIC);
