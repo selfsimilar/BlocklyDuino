@@ -3,3 +3,5 @@
 *
 # Except this file
 !.gitignore
+# and the empty js folder, required for create_messages.py
+!js/
