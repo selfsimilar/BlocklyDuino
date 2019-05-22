@@ -138,7 +138,7 @@ function init() {
 
 function buildtoolBox() {
   var loadIds;
-  var base = "category_logic,category_loops,category_array,category_math,category_text,category_variables,category_functions,category_sep,category_initializes,category_inout,category_time,category_serial,category_interrupts,category_sep,category_ht1632_matrix,category_ir_remote,category_sep";
+  var base = "category_logic,category_loops,category_array,category_math,category_text,category_variables,category_functions,category_sep,category_initializes,category_inout,category_time,category_serial,category_interrupts,category_sep,category_ht1632_matrix,category_ir_remote,category_sep,category_sparki";
 
   var option = window.localStorage.toolboxids;
 
@@ -282,7 +282,7 @@ function setCharacter(){
   $("#change-lang").attr("data-tooltip",Blockly.Msg.CHANGE_LANG);
   $("#dialog-lang-title").text(Blockly.Msg.DIALOG_LANG_TITLE);
   $("#dialog-block-title").text(Blockly.Msg.DIALOG_BLOCK_TITLE);
-  
+
   $("#button_import").text(Blockly.Msg.BUTTON_IMPORT);
   $("#button_export").text(Blockly.Msg.BUTTON_EXPORT);
   $('#textarea_import_label').text(Blockly.Msg.TEXTAREA_IMPORT_LABEL);

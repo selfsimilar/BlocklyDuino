@@ -1,4 +1,4 @@
-'use strict'; 
+'use strict';
 
 goog.provide('Blockly.Blocks.sparki');
 
@@ -39,7 +39,7 @@ Blockly.Blocks['sparki_move_backward'] = {
   }
 };
 
-Blockly.Blocks['sparki_move_left'] = {	
+Blockly.Blocks['sparki_move_left'] = {
 	/**
 	* Block for moving sparki left
 	*/
@@ -109,7 +109,7 @@ Blockly.Blocks['sparki_closegripper'] = {
 
 Blockly.Blocks['sparki_stop_movement'] = {
 	/**
-	* Block for stopping sparki 
+	* Block for stopping sparki
 	*/
   init: function() {
     this.appendDummyInput()
@@ -220,6 +220,8 @@ Blockly.Blocks['include_sparki_library'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Include Sparki Library");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(230);
   }
 };

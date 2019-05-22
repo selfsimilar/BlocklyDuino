@@ -42,6 +42,7 @@ function setCategoryCharacter() {
   $('#category_variables').attr('name',Blockly.Msg.CATEGORY_VARIABLES);
   $('#category_functions').attr('name',Blockly.Msg.CATEGORY_FUNCTIONS);
   $('#category_robot').attr('name',Blockly.Msg.CATEGORY_ROBOT);
+  $('#category_sparki').attr('name',Blockly.Msg.CATEGORY_SPARKI);
   //  $('#category_involt').attr('name',Blockly.Msg.CATEGORY_INVOLT);
   $('label[for="chbox_category_ethernet"]').text(Blockly.Msg.CATEGORY_ETHERNET);
   $('label[for="chbox_category_cloud_service"]').text(Blockly.Msg.CATEGORY_CLOUD_SERVICE);
