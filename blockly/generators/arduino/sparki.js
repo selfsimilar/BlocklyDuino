@@ -61,7 +61,7 @@ Blockly.Arduino.sparki_bark = function() {
 
 Blockly.Arduino['sparki_ultrasonicdistance'] = function() {
   var code = 'sparki.ping()';
-  return code;
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['sparki_lose'] = function() {
@@ -71,17 +71,17 @@ Blockly.Arduino['sparki_lose'] = function() {
 
 Blockly.Arduino.sparki_leftlight = function() {
   var code = 'sparki.lightLeft()';
-  return code;
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['sparki_rightlight'] = function() {
   var code = 'sparki.lightRight()';
-  return code;
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['sparki_centerlight'] = function() {
   var code = 'sparki.lightCenter()';
-  return code;
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['include_sparki_library'] = function() {
