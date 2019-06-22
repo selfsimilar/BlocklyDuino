@@ -1129,8 +1129,6 @@
   "SPARKI_BARK_MS_APPENDTEXT": "milliseconds",
   "SPARKI_DISTANCE_APPENDTEXT": "distance sensor",
   "SPARKI_LOSE_APPENDTEXT": "lose sparki",
-  "SPARKI_LEFTSENSOR_APPENDTEXT": "left light sensor",
-  "SPARKI_RIGHTSENSOR_APPENDTEXT": "right light sensor",
-  "SPARKI_CENTERLIGHT_APPENDTEXT": "center light sensor",
+  "SPARKI_IR_REFLECTANCE_SENSOR": "IR reflectance sensor",
   "SPARKI_LIBRARY_APPENDTEXT": "include sparki library"
 }

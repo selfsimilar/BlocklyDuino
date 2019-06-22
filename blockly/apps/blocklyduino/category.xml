@@ -793,9 +793,7 @@
 	<block type="sparki_stopgripper"></block>
 	<block type="sparki_bark"></block>
 	<block type="sparki_ultrasonicdistance"></block>
-	<block type="sparki_leftlight"></block>
-	<block type="sparki_rightlight"></block>
-	<block type="sparki_centerlight"></block>
+	<block type="sparki_ir_reflectance_sensor"></block>
   <block type="sparki_lose"></block>
 </category>
 <category id="category_loops">

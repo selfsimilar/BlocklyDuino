@@ -69,18 +69,8 @@ Blockly.Arduino['sparki_lose'] = function() {
   return code;
 }
 
-Blockly.Arduino.sparki_leftlight = function() {
-  var code = 'sparki.lightLeft()';
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
-};
-
-Blockly.Arduino['sparki_rightlight'] = function() {
-  var code = 'sparki.lightRight()';
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
-};
-
-Blockly.Arduino['sparki_centerlight'] = function() {
-  var code = 'sparki.lightCenter()';
+Blockly.Arduino.sparki_ir_reflectance_sensor = function() {
+  var code = 'sparki.' + this.getFieldValue('methodName') + '();';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 

@@ -173,46 +173,15 @@ Blockly.Blocks['sparki_lose']={
   }
 };
 
-Blockly.Blocks['sparki_leftlight'] = {
-	/**
-	* Block for sparki to sense light coming from left (returns a number)
-	*/
+Blockly.Blocks['sparki_ir_reflectance_sensor'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(Blockly.Msg.SPARKI_LEFTSENSOR_APPENDTEXT);
+        .appendField(new Blockly.FieldImage("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Light_matter_reflection.svg/200px-Light_matter_reflection.svg.png", 48, 48))
+        .appendField(new Blockly.FieldDropdown([["Left Edge","edgeLeft"], ["Left Line","lineLeft"], ["Center Line","lineCenter"], ["Right Line","lineRight"], ["Right Edge","edgeRight"]]), "methodName")
+        .appendField(Blockly.Msg.SPARKI_IR_REFLECTANCE_SENSOR);
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(330);
-// this.setTooltip(Blockly.Msg.SPARKI_LEFT_TOOLTIP );
-  }
-};
-
-Blockly.Blocks['sparki_rightlight'] = {
-	/**
-	* Block for sparki to sense light coming from right (returns a number)
-	*/
-  init: function() {
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.SPARKI_RIGHTSENSOR_APPENDTEXT);
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(330);
- //this.setTooltip(Blockly.Msg.SPARKI_RIGHTLIGHT_TOOLTIP);
-  }
-};
-
-Blockly.Blocks['sparki_centerlight'] = {
-	/**
-	* Block for sparki to sense light coming from forward direction
-	*(returns a number)
-	*/
-  init: function() {
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.SPARKI_CENTERLIGHT_APPENDTEXT);
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(330);
- //this.setTooltip(Blockly.Msg.SPARKI_CENTER_TOOLTIP);
   }
 };
 
