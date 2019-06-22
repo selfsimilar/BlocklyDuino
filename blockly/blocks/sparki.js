@@ -217,13 +217,3 @@ Blockly.Blocks['sparki_lcd_clear'] = {
     this.setNextStatement(true, null);
   }
 };
-
-Blockly.Blocks['include_sparki_library'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.SPARKI_LIBRARY_APPENDTEXT);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
-  }
-};

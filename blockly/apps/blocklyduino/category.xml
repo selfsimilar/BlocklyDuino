@@ -782,7 +782,6 @@
     <block type="logic_boolean"></block>
 </category>
 <category id="category_sparki">
-	<block type="include_sparki_library"></block>
 	<block type="sparki_move_forward"></block>
 	<block type="sparki_move_backward"></block>
 	<block type="sparki_move_left"></block>

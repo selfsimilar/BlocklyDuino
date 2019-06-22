@@ -1133,6 +1133,5 @@
   "SPARKI_ACCELEROMETER": "accelerometer",
   "SPARKI_ACCELEROMETER_AXIS": "axis",
   "SPARKI_LCD_PRINT": "LCD print",
-  "SPARKI_LCD_CLEAR": "LCD clear",
-  "SPARKI_LIBRARY_APPENDTEXT": "include sparki library"
+  "SPARKI_LCD_CLEAR": "LCD clear"
 }
