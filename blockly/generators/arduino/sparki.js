@@ -70,7 +70,12 @@ Blockly.Arduino['sparki_lose'] = function() {
 }
 
 Blockly.Arduino.sparki_ir_reflectance_sensor = function() {
-  var code = 'sparki.' + this.getFieldValue('methodName') + '();';
+  var code = 'sparki.' + this.getFieldValue('methodName') + '()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.sparki_accelerometer = function() {
+  var code = 'sparki.accel' + this.getFieldValue('axis') + '()';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 

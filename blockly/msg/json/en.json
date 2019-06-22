@@ -1130,5 +1130,7 @@
   "SPARKI_DISTANCE_APPENDTEXT": "distance sensor",
   "SPARKI_LOSE_APPENDTEXT": "lose sparki",
   "SPARKI_IR_REFLECTANCE_SENSOR": "IR reflectance sensor",
+  "SPARKI_ACCELEROMETER": "accelerometer",
+  "SPARKI_ACCELEROMETER_AXIS": "axis",
   "SPARKI_LIBRARY_APPENDTEXT": "include sparki library"
 }

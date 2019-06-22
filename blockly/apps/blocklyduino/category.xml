@@ -794,6 +794,7 @@
 	<block type="sparki_bark"></block>
 	<block type="sparki_ultrasonicdistance"></block>
 	<block type="sparki_ir_reflectance_sensor"></block>
+	<block type="sparki_accelerometer"></block>
   <block type="sparki_lose"></block>
 </category>
 <category id="category_loops">

@@ -173,6 +173,18 @@ Blockly.Blocks['sparki_lose']={
   }
 };
 
+Blockly.Blocks['sparki_accelerometer'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.SPARKI_ACCELEROMETER)
+        .appendField(new Blockly.FieldDropdown([["X","X"],["Y","Y"],["Z","Z"]]), "axis")
+        .appendField(Blockly.Msg.SPARKI_ACCELEROMETER_AXIS);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(330);
+  }
+};
+
 Blockly.Blocks['sparki_ir_reflectance_sensor'] = {
   init: function() {
     this.appendDummyInput()
