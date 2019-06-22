@@ -75,7 +75,7 @@ Blockly.Blocks['sparki_opengripper'] = {
 	*/
   init: function() {
     this.appendDummyInput()
-        .appendField("Open Gripper")
+        .appendField("open gripper")
         .appendField(new Blockly.FieldTextInput("5"),"openGripperDist")
         .appendField("cm");
     this.setPreviousStatement(true, null);
@@ -107,7 +107,7 @@ Blockly.Blocks['sparki_stop_movement'] = {
 	*/
   init: function() {
     this.appendDummyInput()
-        .appendField("Stop");
+        .appendField("stop");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
