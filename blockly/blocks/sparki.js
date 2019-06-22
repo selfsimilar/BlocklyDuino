@@ -197,6 +197,27 @@ Blockly.Blocks['sparki_ir_reflectance_sensor'] = {
   }
 };
 
+Blockly.Blocks['sparki_lcd_print'] = {
+  init: function() {
+    this.setColour(230);
+    this.appendValueInput("CONTENT")
+      .setCheck(["Number", "String"])
+      .appendField(Blockly.Msg.SPARKI_LCD_PRINT);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+  }
+};
+
+Blockly.Blocks['sparki_lcd_clear'] = {
+  init: function() {
+    this.setColour(230);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.SPARKI_LCD_CLEAR);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+  }
+};
+
 Blockly.Blocks['include_sparki_library'] = {
   init: function() {
     this.appendDummyInput()

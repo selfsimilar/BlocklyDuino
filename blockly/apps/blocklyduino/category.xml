@@ -795,6 +795,14 @@
 	<block type="sparki_ultrasonicdistance"></block>
 	<block type="sparki_ir_reflectance_sensor"></block>
 	<block type="sparki_accelerometer"></block>
+	<block type="sparki_lcd_print">
+        <value name="CONTENT">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+	</block>
+	<block type="sparki_lcd_clear"></block>
   <block type="sparki_lose"></block>
 </category>
 <category id="category_loops">

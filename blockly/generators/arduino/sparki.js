@@ -79,6 +79,18 @@ Blockly.Arduino.sparki_accelerometer = function() {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino.sparki_lcd_print = function() {
+  var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || '0'
+  var code = 'sparki.println(' + content + ');\n' +
+             'sparki.updateLCD();\n';
+  return code;
+};
+
+Blockly.Arduino.sparki_lcd_clear = function() {
+  var code = 'sparki.clearLCD();\n'
+  return code;
+};
+
 Blockly.Arduino['include_sparki_library'] = function() {
   Blockly.Arduino.definitions_['define_sparki'] = '#include <sparki.h>;\n';
   var code = '';
