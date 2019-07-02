@@ -792,6 +792,7 @@
 	<block type="sparki_stopgripper"></block>
 	<block type="sparki_bark"></block>
 	<block type="sparki_ultrasonicdistance"></block>
+	<block type="sparki_light_sensor"></block>
 	<block type="sparki_ir_reflectance_sensor"></block>
 	<block type="sparki_accelerometer"></block>
 	<block type="sparki_lcd_print">

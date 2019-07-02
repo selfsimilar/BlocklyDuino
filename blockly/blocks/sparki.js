@@ -197,6 +197,18 @@ Blockly.Blocks['sparki_ir_reflectance_sensor'] = {
   }
 };
 
+Blockly.Blocks['sparki_light_sensor'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldImage("https://www.publicdomainpictures.net/pictures/190000/velka/the-sun-4-14685111738iS.jpg", 48, 48))
+        .appendField(new Blockly.FieldDropdown([["Left","lightLeft"], ["Center","lightCenter"], ["Right","lightRight"]]), "methodName")
+        .appendField(Blockly.Msg.SPARKI_LIGHT_SENSOR);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(330);
+  }
+};
+
 Blockly.Blocks['sparki_lcd_print'] = {
   init: function() {
     this.setColour(230);

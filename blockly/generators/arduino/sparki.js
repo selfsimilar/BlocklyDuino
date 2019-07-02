@@ -86,6 +86,12 @@ Blockly.Arduino.sparki_ir_reflectance_sensor = function() {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino.sparki_light_sensor = function() {
+  Blockly.Arduino.definitions_['define_sparki'] = '#include <sparki.h>;\n';
+  var code = 'sparki.' + this.getFieldValue('methodName') + '()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino.sparki_accelerometer = function() {
   Blockly.Arduino.definitions_['define_sparki'] = '#include <sparki.h>;\n';
   var code = 'sparki.accel' + this.getFieldValue('axis') + '()';
