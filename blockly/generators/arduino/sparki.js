@@ -60,6 +60,13 @@ Blockly.Arduino.sparki_stopgripper = function() {
   return code;
 };
 
+Blockly.Arduino.sparki_servo = function() {
+  Blockly.Arduino.definitions_['define_sparki'] = '#include <sparki.h>;\n';
+  var angle = Blockly.Arduino.valueToCode(this, 'ANGLE', Blockly.Arduino.ORDER_ATOMIC) || '0'
+  var code = 'sparki.servo(' + angle + ');\n';
+  return code;
+};
+
 Blockly.Arduino.sparki_bark = function() {
   Blockly.Arduino.definitions_['define_sparki'] = '#include <sparki.h>;\n';
   var value_frequency = this.getFieldValue('frequency');

@@ -786,6 +786,11 @@
 	<block type="sparki_move_backward"></block>
 	<block type="sparki_move_left"></block>
 	<block type="sparki_move_right"></block>
+	<block type="sparki_servo">
+        <value name="ANGLE"><block type="math_number">
+			<field name="NUM">0</field>
+		</block></value>
+	</block>
 	<block type="sparki_opengripper"></block>
 	<block type="sparki_closegripper"></block>
 	<block type="sparki_stop_movement"></block>

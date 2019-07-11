@@ -129,6 +129,19 @@ Blockly.Blocks['sparki_stopgripper'] = {
   }
 };
 
+Blockly.Blocks['sparki_servo'] = {
+  init: function() {
+    this.appendValueInput("ANGLE")
+      .setCheck("Number")
+      .appendField(Blockly.Msg.SPARKI_SERVO);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.SPARKI_DEGREES_APPENDTEXT);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+  }
+};
 
 Blockly.Blocks['sparki_bark'] = {
 	/**

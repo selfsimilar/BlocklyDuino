@@ -1134,5 +1134,6 @@
   "SPARKI_ACCELEROMETER_AXIS": "axis",
   "SPARKI_LCD_PRINT": "LCD print",
   "SPARKI_LCD_CLEAR": "LCD clear",
-  "SPARKI_LIGHT_SENSOR": "light sensor"
+  "SPARKI_LIGHT_SENSOR": "light sensor",
+  "SPARKI_SERVO": "head servo"
 }
