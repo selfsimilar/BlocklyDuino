@@ -126,9 +126,9 @@ Blockly.Blocks['sparki_stopgripper'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
-// this.setTooltip(Blockly.Msg.SPARKI_STOPGRIPPER_TOOLTIP);
   }
 };
+
 
 Blockly.Blocks['sparki_bark'] = {
 	/**
